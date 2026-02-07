@@ -44,7 +44,7 @@ By combining **Zero-Knowledge Proofs (ZK)** for privacy and **Chainlink Runtime 
 4. **CCIP Interoperability:** With one click, the NFT (and its proof of compliance) is bridged to any other chain (e.g., Avalanche Fuji) via Chainlink CCIP.
 
 ## 🔗 Why Chainlink is Essential
-- **Chainlink Runtime Environment (CRE):** End-to-end automation via programmatic TypeScript workflows (`cre/workflow.ts`).
+- **Chainlink Runtime Environment (CRE):** The execution backbone of the protocol. Programmatic TypeScript workflows (`cre/workflow.ts`) coordinating data, ZK, and cross-chain actions.
 - **Chainlink CCIP:** Ensures Global RWA portability, allowing ESG NFTs to move across chains seamlessly.
 - **Chainlink Functions:** Powers the LLM-based ESG scoring, converting unstructured textual reports into verifiable metrics.
 
@@ -81,7 +81,8 @@ cre run
 ### Option B: Interactive Dashboard
 1. **[3s]** Click **"Start Verification"** on the dashboard.
 2. **[5s] Triple Oracle Consensus:** Watch the orbs analyze data and light up green.
-3. **[12s] ZK Proof Generation:** Cryptographically proving the ESG threshold (simulated for speed).
+3. [12. **ZK Proof Generation:** Off-chain cryptographic verification that the score meets the required threshold without ever revealing the underlying data.
+*GreenProof turns ESG compliance into a portable, verifiable, and privacy-preserving digital asset.*
 4. **[10s] NFT Minting:** Certification recorded on the Ethereum Sepolia testnet.
 5. **[15s] CCIP Bridge:** Seamless cross-chain migration of the ESG NFT to Avalanche Fuji.
 
