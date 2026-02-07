@@ -47,7 +47,7 @@ By combining **Zero-Knowledge Proofs (ZK)** for privacy and **Chainlink Runtime 
 
 GreenProof uses **Chainlink Runtime Environment (CRE)** as its execution backbone — not just as an oracle, but as a programmable orchestration layer. CRE coordinates the full ESG certification lifecycle:
 
-- **Data Ingestion:** CRE ingests signals from IoT sensors, third-party audits, and LLM-analyzed reports.
+- **Data Ingestion:** CRE ingests signals from IoT sensors, **Themis Juridical Engine** (for legal compliance), and LLM-analyzed reports.
 - **Anti-Greenwashing Consensus:** CRE enforces a triple-oracle model. Only entities reaching a ≥80 score through consensus can proceed.
 - **Zero-Knowledge Proof Execution:** CRE triggers an off-chain ZK-SNARK computation to prove compliance without revealing private data.
 - **On-Chain Certification:** CRE mints a GreenProof ERC-721 NFT on Sepolia with a cryptographic commitment.
@@ -94,7 +94,7 @@ cre run
 
 ### Option B: Interactive Dashboard
 1. **[3s]** Click **"Start Verification"** on the dashboard.
-2. **[5s] Triple Oracle Consensus:** Watch the orbs analyze data and light up green.
+2. **[5s] Triple Oracle Consensus:** Watch the orbs (IoT, Themis Legal, Report AI) analyze data and light up green.
 3. **[12s] ZK Proof Generation:** Off-chain cryptographic verification that the score meets the required threshold without ever revealing the underlying data.
 *GreenProof turns ESG compliance into a portable, verifiable, and privacy-preserving digital asset.*
 4. **[10s] NFT Minting:** Certification recorded on the Ethereum Sepolia testnet.

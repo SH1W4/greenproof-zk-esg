@@ -20,15 +20,15 @@ export async function main(args: any) {
 
   // 1️⃣ Triple Oracle Consensus (Anti-Greenwashing)
   // ESG data is ingested from three independent sources:
-  // 1. IoT sensors (environmental signals)
-  // 2. Third-party audits (human verification)
-  // 3. LLM-based analysis of sustainability reports
+  // 1. IoT Sensors (Environmental signals via Chainlink Functions)
+  // 2. Themis Engine (Juridical & Compliance Audit via Symbeon Labs)
+  // 3. AI Ingestion (LLM-based analysis of sustainability reports)
   const iotData = await ChainlinkFunctions.fetch("https://api.greenproof.io/v1/sensors");
-  const auditData = await ChainlinkFunctions.fetch("https://api.greenproof.io/v1/audits");
+  const themisCompliance = await ChainlinkFunctions.fetch("https://api.themis.symbeon.io/v1/audit");
   const llmScore = await ChainlinkFunctions.fetch("https://api.greenproof.io/v1/llm-analysis");
 
   // CRE enforces a 2/3 major-style agreement on a high threshold.
-const consensusScore = (iotData.score + auditData.score + llmScore.score) / 3;
+  const consensusScore = (iotData.score + themisCompliance.score + llmScore.score) / 3;
   
   if (consensusScore < 80) {
     throw new Error("Consensus failed: ESG Score below 80% threshold.");
