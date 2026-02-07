@@ -4,19 +4,28 @@
 The $2.1 Trillion green bond market is currently plagued by **Greenwashing** and expensive, non-verifiable audit processes. Companies often face a dilemma between transparency (revealing sensitive operational data) and compliance.
 
 ## 🔗 The Chainlink Solution
-GreenProof is not just a project; it's a production-ready infrastructure built on the latest Chainlink stack:
+GreenProof is a production-ready infrastructure built on the latest Chainlink stack:
 - **Chainlink Runtime Environment (CRE):** End-to-end automation via programmatic TypeScript workflows (`cre/workflow.ts`).
-- **Chainlink CRE:** The execution backbone of the protocol. We've implemented a programmatic orchestrator in `cre/workflow.ts` (TypeScript) that manages the entire lifecycle from data ingestion to cross-chain bridging.
-- **Chainlink Functions:** Bridges the gap between unstructured sustainability reports and verifiable on-chain metrics via LLM scoring.
+- **Chainlink CCIP:** Ensures Global RWA portability, allowing ESG NFTs to move across chains seamlessly.
+- **Chainlink Functions:** Bridges the gap between unstructured reports and verifiable on-chain metrics.
+
+## 📊 Market Comparison: Status Quo vs. GreenProof
+
+| Feature | TradFi / Legacy ESG | GreenProof (The Winner) |
+| :--- | :--- | :--- |
+| **Integrity** | Self-reported (Greenwashing risk) | Triple Oracle Consensus (Consensus-driven) |
+| **Privacy** | Binary: Private or Public | **ZK-SNARKs** (Verify standard, keep data private) |
+| **Frequency** | Annual / Static | Real-time / Automatable via CRE |
+| **Portability**| Isolated Centralized Databases | Universal Credential via CCIP |
+
+## 👥 Targeted User Profiles
+- **Institutional Investors:** Verifying green bond compliance without exposing corporate telemetry.
+- **Carbon Marketplaces:** Real-time, private validation of credit origins.
+- **Governments:** Automating CSRD/GDPR compliant reporting at scale.
 
 ## ✅ Technical Achievements
-- **ZK Threshold Proof:** We solve the privacy paradox by proving a score passes a threshold (≥ 80%) without exposing the raw valuation data.
-- **Triple-Oracle Consensus (2/3):** A resilient anti-greenwashing mechanism combining IoT telemetry, AI analysis, and forensic audits.
-- **Multi-Chain Connectivity:** Proof of concept deployed and bridged between Sepolia and Avalanche Fuji.
+- **ZK Threshold Proof:** Proving score ≥ 80% without exposing valuation data.
+- **Triple-Oracle Consensus:** Resilient mechanism (IoT + AI + Audit).
+- **Multi-Chain Connectivity:** Live bridging between Sepolia and Fuji.
 
-## 📊 Business Impact
-- **Cost Reduction:** Reduces annual audit and compliance costs by up to 60% through automation.
-- **Market Integrity:** Eliminates the "Double Counting" and Greenwashing risks in carbon credit markets.
-- **RWA Primitive:** Acts as a standard metadata layer for ESG-linked assets, increasing trust for institutional investors.
-
-**This is not a hackathon experiment; this is a foundation for a new standard in sustainable finance.**
+**This is not just a hackathon experiment; this is a foundation for a new standard in sustainable finance.**

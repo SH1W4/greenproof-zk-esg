@@ -56,6 +56,17 @@ Green credentials are the ultimate RWA (Real World Asset) metadata. By making ES
 
 > **Privacy Note:** We do NOT prove the score. We only prove that it passes the threshold.
 
+## ⚡ Quick Start (Judges Only)
+To verify the core protocol logic in seconds:
+```bash
+# 1. Start the local simulation
+npm install
+npm run dev
+
+# 2. (Optional) Run the programmatic CRE workflow
+cd cre && cre run
+```
+
 ---
 
 ## 🛠 Demo Execution (45s total)
@@ -76,11 +87,8 @@ cre run
 
 > **Pro Tip:** Check out our [JUDGES_README.md](docs/JUDGES_README.md) for a deep dive into our technical impact.
 
----
-
-## 🛡️ Reliability & QA
-- **Failure-Resilient:** The demo is designed with fallback mocks to ensure a smooth presentation even during RPC instability.
-- **ZK Logic:** Remember—we never reveal the raw score. We only prove the checkmark.
+## 🛡️ Demo Stability (Mocks Enabled for Presentation)
+To ensure a flawless experience for judges regardless of testnet volatility (RPC latency, gas spikes), the demo utilizes **strategic mocks** for non-critical network calls. This preserves the narrative flow while accurately simulating the ZK and CCIP logic.
 
 ## ⚠️ Disclaimer
 *This project uses mock data for sensors and audits to demonstrate the protocol flow. The goal is to showcase the integration of Chainlink CRE, ZK, and CCIP.*
