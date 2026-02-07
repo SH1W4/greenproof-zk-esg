@@ -7,7 +7,7 @@
 ---
 
 <p align="center">
-  <img src="branding/banner.svg" alt="GreenProof Banner" width="800">
+  <img src="docs/Public/Assets/hero_banner.png" alt="GreenProof Banner" width="800">
 </p>
 
 # 🌿 GREENPROOF
