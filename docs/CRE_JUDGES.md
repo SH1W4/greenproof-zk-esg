@@ -8,16 +8,16 @@ This document provides a high-level walkthrough of the **GreenProof** programmat
 In GreenProof, **Chainlink CRE** is not just an oracle; it is the **execution backbone** that coordinates a complex, multi-stage compliance lifecycle:
 
 ### 1️⃣ Triple Oracle Consensus (Anti-Greenwashing)
-ESG data is ingested from three independent sources:
-1. **IoT Sensors:** Real-time environmental signals (e.g., carbon emissions).
-2. **Themis Engine:** Juridical & Compliance Audit via Symbeon Labs (Legal/LPI 9.279/96 alignment).
-3. **AI Ingestion:** Unstructured sustainability reports processed via Chainlink Functions.
+ESG data is ingested from three independent dimensions of reality to ensure absolute integrity:
+1. **Physical Reality (IoT Sensors):** Real-time environmental signals (carbon, energy, water).
+2. **Legal Reality (Themis Engine):** Juridical & Compliance Audit via Symbeon Labs.
+3. **Ethical Reality (SEVE Engine):** Symbiotic Ethical Vision Audit for deep value alignment.
 
-> **📌 Why this matters:** Greenwashing typically occurs when ESG scores rely on a single, manipulable source. GreenProof enforces **plurality by design** by combining hard telemetry (IoT) with legal authority (Themis) and data analysis (AI).
+> **📌 Why this matters:** Greenwashing typically occurs when ESG scores rely on a single, manipulable source. GreenProof enforces a **"Trinity of Proof"**—combining hard telemetry (IoT) with legal authority (Themis) and ethical intelligence (SEVE).
 
 ```typescript
 // Conceptual logic executed by CRE
-const consensusScore = (iotData.score + themisCompliance.score + llmScore.score) / 3;
+const consensusScore = (iotData.score + themisCompliance.score + seveEthics.score) / 3;
 
 if (consensusScore < 80) {
   throw new Error("Consensus failed: ESG Score below 80% threshold.");
