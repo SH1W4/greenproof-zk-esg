@@ -21,14 +21,14 @@ export async function main(args: any) {
   // 1️⃣ Triple Oracle Consensus (Anti-Greenwashing)
   // ESG data is ingested from three independent dimensions of reality:
   // 1. Physical Reality: IoT Sensors (Environmental signals via Functions)
-  // 2. Legal Reality: Themis Engine (Juridical Compliance Audit)
-  // 3. Ethical Reality: SEVE Engine (Symbiotic Ethical Vision Audit)
+  // 2. Legal Reality: Juridical Audit Engine (Automated Regulatory Compliance)
+  // 3. Ethical Reality: Ethical Integrity Engine (Alignment & Value Verification)
   const iotData = await ChainlinkFunctions.fetch("https://api.greenproof.io/v1/sensors");
-  const themisCompliance = await ChainlinkFunctions.fetch("https://api.themis.symbeon.io/v1/audit");
-  const seveEthics = await ChainlinkFunctions.fetch("https://api.seve.symbeon.io/v1/ethical-audit");
+  const juridicalAudit = await ChainlinkFunctions.fetch("https://api.greenproof.io/v1/legal-audit");
+  const ethicalAudit = await ChainlinkFunctions.fetch("https://api.greenproof.io/v1/ethical-audit");
 
   // CRE enforces a 2/3 major-style agreement on a high threshold.
-  const consensusScore = (iotData.score + themisCompliance.score + seveEthics.score) / 3;
+  const consensusScore = (iotData.score + juridicalAudit.score + ethicalAudit.score) / 3;
   
   if (consensusScore < 80) {
     throw new Error("Consensus failed: ESG Score below 80% threshold.");

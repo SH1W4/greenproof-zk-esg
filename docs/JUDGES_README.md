@@ -24,10 +24,10 @@ GreenProof is a production-ready infrastructure built on the latest Chainlink st
 - **Governments:** Automating CSRD/GDPR compliant reporting at scale.
 
 ## ✅ Technical Achievements
-- **Themis Juridical Integration:** Powered by our external **Juridical Innovation Agent**, we audit RWA legal compliance in real-time.
-- **SEVE Ethical Engine:** Integrating the **Symbiotic Ethical Vision Engine** for deep value alignment and transparency.
+- **Juridical Compliance Integration:** Automated audit of RWA legal compliance in real-time.
+- **Ethical Integrity Engine:** Deep value alignment and governance transparency framework.
 - **ZK Threshold Proof:** Proving score ≥ 80% without exposing valuation data.
-- **Triple-Oracle Consensus:** Resilient mechanism (IoT + Themis Legal AI + SEVE Ethical AI).
+- **Triple-Oracle Consensus:** Resilient mechanism (IoT + Legal Audit + Ethical Engine).
 - **Multi-Chain Connectivity:** Live bridging between Sepolia and Fuji.
 
 **This is not just a hackathon experiment; this is a foundation for a new standard in sustainable finance.**
