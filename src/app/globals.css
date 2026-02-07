@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #052e16;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #052e16;
+    --foreground: #f0fdf4;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,55 @@
+# Chainlink CRE Workflow: GreenProof
+# Goal: Triple Oracle Consensus + ZK Verification + NFT Mint + CCIP Bridge
+
+name: greenproof-workflow
+description: "Anti-greenwashing protocol via Chainlink CRE + ZK"
+
+triggers:
+  - type: event
+    contract: "GreenProofTrigger"
+    name: "ManualTrigger"
+
+steps:
+  # STEP 1: Triple Oracle Consensus (Simulated)
+  - name: triple_oracle_ingestion
+    type: "consensus"
+    config:
+      threshold: 2/3
+      oracles:
+        - name: "Oracle_1_Environmental_IoT"
+          source: "api.greenproof.io/sensors"
+        - name: "Oracle_2_LLM_ESG_Scorer"
+          source: "functions.chain.link/llm-scorer"
+        - name: "Oracle_3_Third_Party_Audit"
+          source: "api.greenaudit.io/v1"
+
+  # STEP 2: ZK Proof Generation (Off-chain)
+  - name: generate_zk_proof
+    type: "compute"
+    inputs:
+      - score: "${triple_oracle_ingestion.result.consensus_score}"
+    circuit: "circom/ESGScore.circom"
+    output: "proof.json"
+
+  # STEP 3: On-chain Verification & NFT Mint (Sepolia)
+  - name: mint_certification
+    type: "transaction"
+    config:
+      chain: "sepolia"
+      contract: "GreenProofNFT"
+      function: "mintGreenProof"
+      args:
+        - "${trigger.user_address}"
+        - "${generate_zk_proof.isCompliant}"
+
+  # STEP 4: Optional CCIP Bridge (Sepolia -> Fuji)
+  - name: ccip_bridge_fuji
+    type: "transaction"
+    config:
+      chain: "sepolia"
+      contract: "CCIPBridge"
+      function: "bridgeGreenProof"
+      args:
+        - "43113" # Fuji Selector
+        - "${trigger.user_address}"
+        - "${mint_certification.tokenId}"
