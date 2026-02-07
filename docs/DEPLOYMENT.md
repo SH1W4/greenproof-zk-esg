@@ -39,6 +39,7 @@ Wait for the Vercel auto-deployment or run:
 ```bash
 vercel --prod
 ```
+> **Note:** The official deployment account is linked to `neo.sh1w4@gmail.com`. Ensure you are logged into this account via `vercel login`.
 
 ---
 
