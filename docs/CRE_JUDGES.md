@@ -2,7 +2,7 @@
 
 This document provides a high-level walkthrough of the **GreenProof** programmatic orchestration layer, implemented using the **Chainlink Runtime Environment (CRE)**.
 
-![GreenProof Technical Ecosystem](docs/Public/Assets/technical_infographic.png)
+![GreenProof Technical Ecosystem](docs/assets/technical/greenproof_master_infographic.png)
 
 ---
 
@@ -50,7 +50,7 @@ Finally, CRE uses **Chainlink CCIP** to bridge the ESG credential to other netwo
 
 ---
 
-![Process Icons](docs/Public/Assets/icon_grid.png)
+![Process Icons](docs/assets/branding/icon_grid.png)
 
 ## 🏁 Summary
 The entire lifecycle — **data → proof → asset → bridge** — is fully executed and coordinated by **Chainlink CRE**, demonstrating the power of programmable trust.

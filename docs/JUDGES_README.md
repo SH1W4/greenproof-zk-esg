@@ -9,7 +9,7 @@ GreenProof is a production-ready infrastructure built on the latest Chainlink st
 - **Chainlink CCIP:** Ensures Global RWA portability, allowing ESG NFTs to move across chains seamlessly.
 - **Chainlink Functions:** Bridges the gap between unstructured reports and verifiable on-chain metrics.
 
-![GreenProof Ecosystem Icons](docs/Public/Assets/icon_grid.png)
+![GreenProof Ecosystem Icons](docs/assets/branding/icon_grid.png)
 
 ## 📊 Market Comparison: Status Quo vs. GreenProof
 
