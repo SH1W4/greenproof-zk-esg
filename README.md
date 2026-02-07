@@ -43,6 +43,20 @@ By combining **Zero-Knowledge Proofs (ZK)** for privacy and **Chainlink Runtime 
 3. **On-chain Certification:** A successful proof triggers a Chainlink CRE automation to mint a "GreenProof" NFT on Ethereum Sepolia.
 4. **CCIP Interoperability:** With one click, the NFT (and its proof of compliance) is bridged to any other chain (e.g., Avalanche Fuji) via Chainlink CCIP.
 
+## 🔗 How Chainlink CRE Is Used
+
+GreenProof uses **Chainlink Runtime Environment (CRE)** as its execution backbone — not just as an oracle, but as a programmable orchestration layer. CRE coordinates the full ESG certification lifecycle:
+
+- **Data Ingestion:** CRE ingests signals from IoT sensors, third-party audits, and LLM-analyzed reports.
+- **Anti-Greenwashing Consensus:** CRE enforces a triple-oracle model. Only entities reaching a ≥80 score through consensus can proceed.
+- **Zero-Knowledge Proof Execution:** CRE triggers an off-chain ZK-SNARK computation to prove compliance without revealing private data.
+- **On-Chain Certification:** CRE mints a GreenProof ERC-721 NFT on Sepolia with a cryptographic commitment.
+- **Cross-Chain Portability:** Using **Chainlink CCIP**, CRE enables bridging the credential to other chains (e.g., Avalanche Fuji) in a single action.
+
+*By using CRE as a programmatic coordinator, GreenProof demonstrates how Chainlink orchestrates complex, real-world compliance workflows across off-chain computation and on-chain execution.*
+
+---
+
 ## 🔗 Why Chainlink is Essential
 - **Chainlink Runtime Environment (CRE):** The execution backbone of the protocol. Programmatic TypeScript workflows (`cre/workflow.ts`) coordinating data, ZK, and cross-chain actions.
 - **Chainlink CCIP:** Ensures Global RWA portability, allowing ESG NFTs to move across chains seamlessly.
