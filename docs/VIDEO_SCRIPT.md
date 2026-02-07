@@ -1,33 +1,24 @@
-# 🎥 GREENPROOF: VIDEO SCRIPT (90s Max)
+# GreenProof: Video Pitch Script (3 Minutes)
 
-**Project:** GreenProof
-**Target:** Chainlink Convergence Hackathon 2026
+## 00:00 - 00:30 | The Hook & Problem
+- **Visual:** Stock footage of a factory with "Sustainable" label / Greenwashing news headlines.
+- **Narrative:** "ESG is the world's most trusted label with the least amount of trust. Greenwashing and data privacy leaks are killing the green bond market. How do you prove you're sustainable without exposing your secrets?"
 
----
+## 00:30 - 01:00 | The Tagline & ZK Privacy
+- **Visual:** GreenProof Logo + Dashboard intro.
+- **Narrative:** "Introducing GreenProof. We don't prove the score; we prove the standard. Using ZK-Proofs, we verify that a company meets an 80% ESG threshold while keeping their raw operational data 100% private."
 
-### [00:00 - 00:15] The Hook
-**Visual:** Close-up of "Greenwashing" news headlines. Slow zoom out to a murky, non-transparent chart.
-**Audio (Narrator):** ESG is the backbone of the new global economy. But today, investors face two massive hurdles: Greenwashing and Data Privacy. How can a company prove it's sustainable without leaking trade secrets?
+## 01:00 - 02:00 | Live Demo: The Chainlink Backbone
+- **Visual:** Dashboard screen recording.
+- **01:00-01:15:** "Clicking 'Start Verification' triggers the Chainlink CRE orchestration."
+- **01:15-01:30:** "Watch the Triple Oracle Consensus: IoT sensors, LLM analysis, and Audits agree on a score."
+- **01:30-01:45:** "The ZK Proof is generated off-chain. No score is revealed, just a cryptographic checkmark."
+- **01:45-02:00:** "The NFT is minted on Sepolia. It's a verifiable, permanent record of compliance."
 
-### [00:15 - 00:30] The Solution
-**Visual:** Transition to GREENPROOF Logo. Sleek, green, and professional.
-**Audio (Narrator):** Introducing GreenProof. The first anti-greenwashing protocol powered by Chainlink CRE and Zero-Knowledge Proofs. We don't ask you to trust a PDF. We ask you to trust the math.
+## 02:00 - 02:30 | CCIP & RWA Infinity
+- **Visual:** Map showing Sepolia to Fuji bridging animation.
+- **Narrative:** "Sustainability is global, and so is GreenProof. Powered by Chainlink CCIP, our ESG NFTs are portable RWAs that can be bridged to any chain for secondary market trading or green bond collateral."
 
-### [00:30 - 01:00] The Tech Stack (Demo)
-**Visual:** Screen recording of the Dashboard. Click "Start Verification". Watch the 3 Orbs (IoT, LLM, Audit) spin and turn Green.
-**Audio (Narrator):** Our workflow starts with Triple Oracle Consensus. Chainlink CRE orchestrates data from IoT sensors, LLM scorers, and third-party auditors. Then, an off-chain ZK-circuit proves the score is ≥ 80% without revealing the raw data points.
-
-### [01:00 - 01:15] Cross-Chain & Minting
-**Visual:** NFT Minting pop-up on Sepolia. Then, a button click: "Bridge to Fuji". Show CCIP message progress.
-**Audio (Narrator):** Once verified, a GreenProof NFT is minted on Sepolia. And with one click, it's bridged across the fragmented Web3 ecosystem via Chainlink CCIP. Portable, private, and verifiable credentials.
-
-### [01:15 - 01:30] The Impact
-**Visual:** Beautiful drone shots of nature / sustainable cities. Final Headline: "Prove ESG ≥ 80%. Bridge it to any chain in 1 click."
-**Audio (Narrator):** GreenProof is the infrastructure for the next generation of Green Bonds and Carbon Markets. Join us in making sustainability verifiable. GreenProof: Anti-greenwashing by design.
-
----
-
-### **Video Production Notes:**
-- **Pace:** Fast and professional.
-- **Visuals:** Use high-contrast UI screenshots.
-- **Narrative:** Focus on "Math over Marketing".
+## 02:30 - 03:00 | Call to Action
+- **Visual:** Team slide / GitHub Repo URL / "Designed to eliminate greenwashing."
+- **Narrative:** "GreenProof is more than a demo; it's a failure-resilient, production-grade protocol built to bring integrity back to ESG. Check out our repo and join the transparency revolution."

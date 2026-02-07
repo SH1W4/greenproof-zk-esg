@@ -1,0 +1,79 @@
+# GreenProof Production Workflow spec
+# Defined for Chainlink Runtime Environment (CRE)
+
+name: zk-esg-consensus
+version: v1.0.0
+owner: "SH1W4"
+
+trigger:
+  type: manual
+  description: "Initiated by the business owner via the GreenProof Dashboard"
+
+capabilities:
+  # Data Ingestion (Anti-Greenwashing Layer)
+  - name: oracle-iot-carbon
+    type: chainlink-functions
+    description: "Fetch real-time carbon emission data from IoT gateway"
+    config:
+      endpoint: "https://api.greenproof.io/v1/telemetry/sensors"
+      method: "GET"
+
+  - name: oracle-llm-scoring
+    type: chainlink-functions
+    description: "LLM-based sentiment and data analysis of ESG PDF reports"
+    config:
+      model: "gpt-4-turbo"
+      prompt_template: "Extract environmental score from the following report: {{report_data}}"
+
+  - name: oracle-forensic-audit
+    type: external-adapter
+    description: "Verification from authorized 3rd party auditing firms"
+
+  # Consensus & ZK Logic
+  - name: triple-oracle-consensus
+    type: logic-node
+    description: "Enforce 2/3 majority consensus on ESG score"
+    logic:
+      threshold: 0.66
+      strategy: "weighted-average"
+
+  - name: zk-prover-service
+    type: snarkjs-node
+    description: "Generate ZK-SNARK proof that Score >= 80"
+    circuit: "circom/ESGScore.circom"
+    privacy_mode: "full-private-score"
+
+  # On-Chain Execution
+  - name: nft-mint-sepolia
+    type: ethereum-tx
+    description: "Mint GreenProof NFT on Sepolia for successful verification"
+    contract: "0x82F... (Mocked for Demo)"
+    function: "safeMint(address, bytes32)"
+
+  - name: ccip-bridge-fuji
+    type: chainlink-ccip
+    description: "Bridge GreenProof NFT to Avalanche Fuji"
+    source_chain: "ethereum-sepolia"
+    dest_chain: "avalanche-fuji"
+    router_addr: "0x0BF... (Mocked for Demo)"
+
+workflow:
+  steps:
+    - id: fetch_data
+      run: [oracle-iot-carbon, oracle-llm-scoring, oracle-forensic-audit]
+
+    - id: calculate_consensus
+      depends_on: fetch_data
+      run: triple-oracle-consensus
+
+    - id: generate_zk_proof
+      depends_on: calculate_consensus
+      run: zk-prover-service
+
+    - id: mint_certificate
+      depends_on: generate_zk_proof
+      run: nft-mint-sepolia
+
+    - id: cross_chain_bridge
+      depends_on: mint_certificate
+      run: ccip-bridge-fuji

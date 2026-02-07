@@ -1,3 +1,11 @@
+# 🏆 CONVERGENCE HACKATHON 2026
+**Track**: Tokenization/RWA  
+**Live Demo**: [greenproof.vercel.app](https://greenproof.vercel.app)  
+**Video**: [3min Pitch (YouTube)](https://youtube.com/watch?v=placeholder)  
+**Contract**: [Sepolia Explorer (tx)](https://sepolia.etherscan.io/tx/placeholder)  
+
+---
+
 <p align="center">
   <img src="branding/banner.svg" alt="GreenProof Banner" width="800">
 </p>
@@ -12,6 +20,10 @@
 > *“Designed to eliminate greenwashing at the protocol level.”*
 
 **TAGLINE:** Anti-greenwashing by design via Chainlink CRE + ZK + Triple Oracle Consensus
+
+[![Chainlink](https://img.shields.io/badge/Chainlink-CRE%20%7C%20CCIP%20%7C%20Functions-3382ed?logo=chainlink)](https://chain.link/)
+[![ZK-SNARK](https://img.shields.io/badge/ZK--SNARK-Circom-green)](https://iden3.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
@@ -46,14 +58,14 @@ Green credentials are the ultimate RWA (Real World Asset) metadata. By making ES
 
 ---
 
-## 🛠 Demo Instructions
-1. `npm install`
-2. `npm run dev`
-3. Click **"Start Verification"** on the dashboard.
-4. Watch the **Triple Oracle Consensus** orbs light up.
-5. Generate the **ZK Proof** (simulated).
-6. Confirm the **NFT Minting** on Sepolia.
-7. Click **"Bridge to Fuji"** to see CCIP in action.
+## 🛠 Demo Execution (45s total)
+1. **[3s]** Click **"Start Verification"** on the dashboard.
+2. **[5s] Triple Oracle Consensus:** Watch the orbs analyze data and light up green.
+3. **[12s] ZK Proof Generation:** Cryptographically proving the ESG threshold (simulated for speed).
+4. **[10s] NFT Minting:** Certification recorded on the Ethereum Sepolia testnet.
+5. **[15s] CCIP Bridge:** Seamless cross-chain migration of the ESG NFT to Avalanche Fuji.
+
+> **Pro Tip:** Check out our [JUDGES_README.md](docs/JUDGES_README.md) for a deep dive into our technical impact.
 
 ---
 
