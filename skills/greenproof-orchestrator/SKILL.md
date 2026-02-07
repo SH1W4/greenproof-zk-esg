@@ -37,6 +37,10 @@ This skill allows an agent to manage, extend, and verify the GreenProof protocol
 2. Specify the new `chainSelector` for the target network.
 3. Verify that the `CCIPBridge.sol` router address is updated for the new chain in the `project.yaml` (simulated).
 
+## 🌍 Localization / Localização
+- **English:** `SKILL.md` (Main)
+- **Português:** [DOCUMENTAÇÃO.md](file:///c:/Users/Jo%C3%A3o/Desktop/Hackertons/greenproof-zk-esg/skills/greenproof-orchestrator/DOCUMENTA%C3%87%C3%83O.md)
+
 ## 🛡 Verification & Safety
 - **Anti-Greenwashing:** Always ensure at least 2/3 consensus is required for the initial scoring ingestion.
 - **Privacy:** Never allow raw score data to be emitted in on-chain events. Use ONLY the ZK verified boolean result.
