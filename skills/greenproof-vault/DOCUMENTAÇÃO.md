@@ -14,6 +14,7 @@ A skill `greenproof-vault` é o guardião da soberania intelectual do protocolo 
 | `PROTOCOL_FOUNDATIONS.md` | O "DNA" do protocolo e princípios biocibernéticos. |
 | `BUSINESS_STRATEGY.md` | Estratégia de "Moat" (fosso competitivo) e monetização. |
 | `TECHNICAL_ARCHITECTURE.md` | Detalhes profundos de implementação (CRE, ZK, CCIP). |
+| `INSTITUTIONAL_STANDARDS.md` | Diretrizes estéticas (Glassmorphism), organização de ativos e transparência de UI (ZK-Terminal). |
 | `NOTEBOOK_LM_BUNDLE.md` | Arquivo otimizado para IAs de leitura longa. |
 
 ## 🚀 Como Expandir

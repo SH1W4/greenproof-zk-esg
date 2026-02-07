@@ -17,6 +17,7 @@ This skill manages the **Knowledge Vault** (`_vault/`), a proprietary repository
 - **`PROTOCOL_FOUNDATIONS.md`**: Biocybernetic principles and core identity.
 - **`BUSINESS_STRATEGY.md`**: Market moats, monetization, and adoption roadmaps.
 - **`TECHNICAL_ARCHITECTURE.md`**: In-depth logic of CRE, ZK, and CCIP integrations.
+- **`INSTITUTIONAL_STANDARDS.md`**: Aesthetic guidelines (Glassmorphism), asset organization, and UI transparency (ZK-Terminal).
 - **`NOTEBOOK_LM_BUNDLE.md`**: Consolidated AI-ready data.
 
 ## 4. Interaction Protocol
