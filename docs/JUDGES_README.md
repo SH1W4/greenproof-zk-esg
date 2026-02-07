@@ -5,8 +5,8 @@ The $2.1 Trillion green bond market is currently plagued by **Greenwashing** and
 
 ## 🔗 The Chainlink Solution
 GreenProof is not just a project; it's a production-ready infrastructure built on the latest Chainlink stack:
-- **Chainlink Runtime Environment (CRE):** End-to-end automation of the compliance pipeline.
-- **Chainlink CCIP:** Ensures Global RWA portability, allowing ESG NFTs to move across chains seamlessly.
+- **Chainlink Runtime Environment (CRE):** End-to-end automation via programmatic TypeScript workflows (`cre/workflow.ts`).
+- **Chainlink CRE:** The execution backbone of the protocol. We've implemented a programmatic orchestrator in `cre/workflow.ts` (TypeScript) that manages the entire lifecycle from data ingestion to cross-chain bridging.
 - **Chainlink Functions:** Bridges the gap between unstructured sustainability reports and verifiable on-chain metrics via LLM scoring.
 
 ## ✅ Technical Achievements
