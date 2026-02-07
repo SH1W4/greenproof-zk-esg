@@ -9,18 +9,40 @@ O **GreenProof** é um protocolo de conformidade ESG (Ambiental, Social e Govern
 
 ### A Proposta de Valor
 > "Prove que seu Score ESG é ≥ 80% sem revelar dados privados. Faça a ponte para qualquer rede com 1 clique."
+> *“Projetado para eliminar o greenwashing em nível de protocolo.”*
 
 ## 2. A Arquitetura "Chainlink-First"
 O projeto utiliza o ecossistema Chainlink como o sistema nervoso central:
 
-- **Chainlink CRE (Runtime Environment):** Orquestra todo o fluxo, desde a captura de dados até a execução cross-chain.
+```text
+       [ Sensores IoT ]   [ LLM ESG Scorer ]   [ Auditoria ]
+                \               |               /
+                 \              |              /
+                  v             v             v
+                [    Consenso Triple Oracle      ]
+                [   (Orquestrado por CL CRE)    ]
+                                |
+                                v
+                [     Auto-Compute ZK (Prover)  ]
+                [    "Score passa de ≥ 80?"     ]
+                                |
+                                v
+                [   Verificação On-Chain &      ]
+                [    Mint do NFT GreenProof     ]
+                                |
+                                v
+                [    Chainlink CCIP Bridge      ]
+                [  (Sepolia -> Fuji Portável)   ]
+```
+
+- **Chainlink CRE (Runtime Environment):** A espinha dorsal de execução do protocolo, orquestrando todo o fluxo.
 - **Consenso de Oráculo Triplo:** Para evitar manipulação de dados (anti-greenwashing), consultamos três fontes distintas: Sensores IoT, análise de relatórios via LLM e auditorias de terceiros. 2/3 de consenso são necessários para validar o score.
 - **Chainlink CCIP:** Garante que a prova de conformidade (o NFT GreenProof) possa ser levada para qualquer blockchain, habilitando a interoperabilidade global.
 
 ## 3. Privacidade com Zero-Knowledge (ZK)
 O grande diferencial tecnológico é o uso de **ZK-SNARKs**.
 - **O Problema:** Empresas não querem expor dados operacionais detalhados.
-- **A Solução:** O circuito ZK em `circom/ESGScore.circom` verifica matematicamente se `Score >= 80`. O resultado enviado para a blockchain é apenas um "Sim/Não" (booleano), mantendo o score exato e os dados brutos totalmente privados.
+- **A Solução:** O circuito ZK em `circom/ESGScore.circom` verifica matematicamente se `Score >= 80`. **É fundamental entender: nós NÃO provamos o score exato, apenas que ele atinge o limite necessário.** Isso mantém a privacidade total.
 
 ## 4. Guia da Skill do Projeto
 A **Skill** (`skills/greenproof-orchestrator`) não é apenas documentação, é um conjunto de ferramentas para gerenciar o protocolo.
@@ -37,11 +59,17 @@ Ao apresentar o repositório, siga este flow:
 4. **Verificação on-chain:** O contrato inteligente verifica a prova e emite o NFT na Sepolia.
 5. **Bridge:** O usuário clica em "Bridge" e o CCIP envia o certificado para a rede Fuji.
 
+### Por que isso vence em RWA?
+O GreenProof transforma conformidade ambiental no metadado definitivo para RWA (Real World Assets):
+- **Green Bonds:** Automação de compliance para dívidas sustentáveis.
+- **Créditos de Carbono:** Origem verificável e liquidez imediata.
+- **Ativos Atrelados a ESG:** Ajuste de rendimento em tempo real baseado em dados privados.
+
 ---
 
-## 🛡️ Dicas de Segurança e Escalabilidade
-- **Auditabilidade:** Todo o fluxo do CRE é auditável on-chain.
-- **RWA:** O GreenProof transforma conformidade ambiental em um ativo digital verificável (Green Bonds / Créditos de Carbono).
+## 🛡️ Confiabilidade e QA
+- **Resiliente a Falhas:** O demo foi projetado com mocks para garantir fluidez mesmo com instabilidades na rede.
+- **Lógica ZK:** Lembre-se—nunca revelamos o score, apenas o "checkmark" verde.
 
 ---
 *Documentação gerada pela IA Unificada para o Hackathon Chainlink Convergence 2026.*

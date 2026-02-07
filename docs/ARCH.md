@@ -4,6 +4,28 @@
 GreenProof is a decentralized protocol for private ESG compliance verification. It uses Chainlink CRE as the central nervous system, orchestrating off-chain compute (ZK) and data (Oracles) to produce on-chain trust.
 
 ## Flow Diagram
+
+```text
+       [ IoT Sensors ]   [ LLM ESG Scorer ]   [ 3rd Party Audit ]
+                \               |               /
+                 \              |              /
+                  v             v             v
+                [    Triple Oracle Consensus     ]
+                [   (Orchestrated by CL CRE)    ]
+                                |
+                                v
+                [     ZK Compute (Prover)       ]
+                [    "Does Score Pass ≥ 80?"    ]
+                                |
+                                v
+                [   On-Chain Verification &     ]
+                [    GreenProof NFT Minting     ]
+                                |
+                                v
+                [    Chainlink CCIP Bridge      ]
+                [  (Sepolia -> Fuji Portability) ]
+```
+
 1. **Trigger:** User initiates verification via Dashboard.
 2. **Orchestration (Chainlink CRE):**
     - **Step A:** Query 3 Oracles (IoT, LLM, Audit) -> Generate Consensus ESG Score.
