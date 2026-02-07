@@ -81,7 +81,7 @@ cre run
 ### Option B: Interactive Dashboard
 1. **[3s]** Click **"Start Verification"** on the dashboard.
 2. **[5s] Triple Oracle Consensus:** Watch the orbs analyze data and light up green.
-3. [12. **ZK Proof Generation:** Off-chain cryptographic verification that the score meets the required threshold without ever revealing the underlying data.
+3. **[12s] ZK Proof Generation:** Off-chain cryptographic verification that the score meets the required threshold without ever revealing the underlying data.
 *GreenProof turns ESG compliance into a portable, verifiable, and privacy-preserving digital asset.*
 4. **[10s] NFT Minting:** Certification recorded on the Ethereum Sepolia testnet.
 5. **[15s] CCIP Bridge:** Seamless cross-chain migration of the ESG NFT to Avalanche Fuji.
