@@ -11,18 +11,22 @@ This guide details how to deploy the **GreenProof** protocol and its dashboard f
 - A wallet with Sepolia ETH and Fuji AVAX test tokens.
 - Chainlink LINK tokens (for CCIP fees).
 
-### Step 1: Deploy GreenProofNFT
-Deploy the certification contract to **Ethereum Sepolia**.
+### Step 1: Automated Deployment (Recommended)
+You can deploy the entire protocol using the provided Node.js script.
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Configure .env with your DEPLOYER_PRIVATE_KEY
+# 3. Run the deployment script
+npx ts-node scripts/deploy.ts
+```
+
+### Step 2: Manual Deployment (Foundry/Hardhat)
+If you prefer manual deployment:
 ```bash
 # Example using Foundry
 forge create --rpc-url $SEPOLIA_RPC --private-key $PRIVATE_KEY contracts/GreenProofNFT.sol:GreenProofNFT
-```
-
-### Step 2: Deploy CCIPBridge
-Deploy the bridge contract to **Ethereum Sepolia** and **Avalanche Fuji**.
-```bash
-# Example for Sepolia
-forge create --rpc-url $SEPOLIA_RPC --private-key $PRIVATE_KEY contracts/CCIPBridge.sol:CCIPBridge --constructor-args $ROUTER_ADDRESS $LINK_TOKEN
 ```
 
 ---
