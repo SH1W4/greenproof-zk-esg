@@ -1,26 +1,63 @@
 ---
-description: Strategic intelligence management, encryption protocols, and foundational logic synthesis for the GreenProof private vault.
+description: GreenProof Operational Field Manual - Deploy, Mint, and Vault Access.
 ---
 
-# 🔐 GreenProof Knowledge Vault Skill
+# ⚔️ GreenProof Field Manual
 
-## 1. Skill Purpose
-This skill manages the **Knowledge Vault** (`../greenproof-vault/` or `_vault/`), a proprietary repository of strategic, technical, and business intelligence. It ensures sensitive core logic remains protected while providing a structured way to enrich it for AI analysis.
+Esta skill é o **Painel de Controle** do GreenProof Protocol. Use-a para operar a infraestrutura, realizar deploys e acessar a inteligência estratégica.
 
-## 2. Core Directives
-- **Zero-Visibility:** Never allow files from the vault to be committed to the public repository.
-- **Foundational Synthesis:** Update vault files to maintain a "Living Foundation" of project intelligence.
-- **NotebookLM Optimization:** Maintain `NOTEBOOK_LM_BUNDLE.md` as the source of truth for AI context.
+## 🚀 Live Action (Hackathon Demo)
 
-## 3. Vault Components
-- **`PROTOCOL_FOUNDATIONS.md`**: Biocybernetic principles and core identity.
-- **`BUSINESS_STRATEGY.md`**: Market moats, monetization, and adoption roadmaps.
-- **`TECHNICAL_ARCHITECTURE.md`**: In-depth logic of CRE, ZK, and CCIP integrations.
-- **`ROADMAP_EXPANSAO.md`**: [Strategy] Multi-phase expansion (Avalanche/Polygon).
-- **`ASSET_CATALOG.md`**: [Assets] Index of high-fidelity visuals and core backups.
+O comando único para provar a validade do protocolo em tempo real.
+```bash
+# Executa a Trinity of Proof e minta o NFT na Sepolia
+npx ts-node scripts/terminal-mint.ts
+```
 
-## 4. Operational Context
-Use this skill to retrieve **Strategic Context** before initiating new development phases.
-*   **Expansion Plan**: `cat ../greenproof-vault/ROADMAP_EXPANSAO.md`
-*   **Visual Assets**: `cat ../greenproof-vault/ASSET_CATALOG.md`
+## 🛠️ DevOps & Infra
+
+### Instalação & Setup
+```bash
+npm install
+npx hardhat compile
+```
+
+### Deploy de Contratos (Sepolia)
+```bash
+# Implanta GreenProofNFT e CCIPBridge
+npx ts-node scripts/deploy.ts
+```
+
+### Verificação (Etherscan)
+```bash
+npx hardhat verify --network sepolia <DEPLOYED_CONTRACT_ADDRESS>
+```
+
+---
+
+## 🔐 Acesso ao Cofre (Vault)
+
+O código é público. A estratégia é privada. Acesse os segredos aqui:
+
+### 🗺️ Estratégia de Expansão (2026)
+Consulte para saber qual hackathon atacar (Avalanche, Polygon, DeSci).
+```bash
+code ../greenproof-vault/ROADMAP_EXPANSAO.md
+```
+
+### 🖼️ Arsenal Visual (Assets)
+Imagens 4K para Pitch Decks e Vídeos.
+```bash
+code ../greenproof-vault/ASSET_CATALOG.md
+```
+
+### 💾 Core Backup (Código Fonte)
+Se tudo der errado, o código vital está salvo aqui.
+```bash
+explorer.exe ../greenproof-vault/core_backup
+```
+
+---
+> **Status**: OPERACIONAL 🟢
+> **Network**: Sepolia (Testnet) / Fuji (Destination)
 y
