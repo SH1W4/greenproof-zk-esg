@@ -21,17 +21,22 @@ Hoje transformamos o GreenProof de um protótipo técnico em uma solução de in
 
 ## 💎 Marcos da REVOLUÇÃO INSTITUCIONAL
 
-### 1. 🎨 Master UI/UX Polish
+### 1. 🎨 Master UI/UX & Certification
 *   **Estética Premium**: Glassmorphism avançado e paleta "Halcyon Green" para autoridade institucional.
 *   **Visualização 3D Dinâmica**: Orbes adaptativas que reagem em tempo real ao consenso dos oráculos.
+*   **Proof Certificate**: Sistema de credenciamento visual verificável (`ProofCertificate.tsx`).
 *   **ZK-Terminal**: Transparência criptográfica ativa, narrando o processamento dos SNARKs.
 
-### 2. 📂 Reorganização Sistêmica & Ativos
+### 2. 🧰 Developer Ecosystem (SDK)
+*   **Membrane SDK Alpha**: Lançamento do pacote `@greenproof/membrane-sdk` para integração programática.
+*   **Developer Experience**: Documentação técnica e exemplos para ingestão autônoma de dados ESG.
+
+### 3. 📂 Reorganização Sistêmica & Ativos
 *   **Modularização**: Estrutura `docs/assets/` subdividida (Branding, Technical, Concepts).
 *   **Profissionalização**: Ativos renomeados semanticamente (ex: `greenproof_master_infographic.png`).
 *   **Recuperação**: Estabilização total de links e restauração de ativos de alta fidelidade via Git.
 
-### 3. 🔐 Blindagem IP & Mastery Vault
+### 4. 🔐 Blindagem IP & Mastery Vault
 *   **Patente GP-IP-2026-001**: Rascunho finalizado para a arquitetura de prova trinitária.
 *   **EAP (WBS)**: Estrutura Analítica do Projeto formalizada para governança elite.
 *   **Vault Intelligence**: Skill atualizada para gerir padrões de design e lógicas privadas.
