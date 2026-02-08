@@ -17,7 +17,7 @@ import {
   Zap,
   CheckCircle2
 } from "lucide-react";
-import { Typewriter, TerminalCommand } from "@/components/Typewriter";
+import { Typewriter, TerminalCommand } from "../components/Typewriter";
 
 export default function LandingPage() {
   return (
@@ -138,7 +138,7 @@ export default function LandingPage() {
 
           <div className="text-xl text-green-100/40 italic max-w-2xl mx-auto font-mono">
             <Typewriter 
-              text='"The world\'s first biocybernetic consensus engine."' 
+              text={`"The world's first biocybernetic consensus engine."`} 
               delay={80}
               className="text-green-400"
             />
@@ -377,3 +377,6 @@ export default function LandingPage() {
     </main>
   );
 }
+
+
+
