@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 import { 
   ShieldCheck, 
   ArrowRight, 
@@ -15,31 +16,37 @@ import {
   Terminal as TerminalIcon,
   Github,
   Zap,
-  CheckCircle2
+  CheckCircle2,
+  AlertTriangle,
+  EyeOff,
+  Network
 } from "lucide-react";
 import { Typewriter, TerminalCommand } from "../components/Typewriter";
 
 export default function LandingPage() {
-  return (
-    <main className="min-h-screen bg-[#020c06] text-[#f0fdf4] overflow-hidden">
-      {/* Background Effects */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-green-500/5 blur-[160px] rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-green-500/5 blur-[160px] rounded-full" />
-      </div>
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
 
-      {/* Navigation */}
-      <nav className="relative z-50 border-b border-white/5 px-8 py-5 flex items-center justify-between backdrop-blur-2xl bg-black/10">
+  const shieldScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.2]);
+  const shieldOpacity = useTransform(scrollYProgress, [0.1, 0.25], [0, 1]);
+
+  return (
+    <main ref={containerRef} className="min-h-screen bg-[#020c06] text-[#f0fdf4] selection:bg-green-500/30">
+      {/* SECTION 0: NAV (Discreet Institutional) */}
+      <nav className="fixed top-0 inset-x-0 z-[100] border-b border-white/5 px-8 py-5 flex items-center justify-between backdrop-blur-xl bg-[#020c06]/80">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 bg-green-500 rounded-xl shadow-[0_0_15px_rgba(34,197,94,0.4)]">
-            <ShieldCheck className="w-6 h-6 text-green-950" />
+          <div className="p-2 bg-green-500 rounded-lg shadow-[0_0_20px_rgba(34,197,94,0.2)]">
+            <ShieldCheck className="w-5 h-5 text-green-950" />
           </div>
           <div className="flex flex-col">
-            <span className="font-black text-xl tracking-tighter glow-text">GREENPROOF</span>
-            <span className="text-[10px] text-green-500/60 font-mono font-bold tracking-[0.2em] uppercase">Protocol</span>
+            <span className="font-black text-lg tracking-tighter">GREENPROOF</span>
+            <span className="text-[9px] text-green-500/60 font-mono font-bold tracking-[0.2em] uppercase">Sovereign Compliance</span>
           </div>
         </div>
-        <div className="flex items-center gap-6 text-sm font-semibold">
+        <div className="hidden md:flex items-center gap-8 text-[11px] font-black uppercase tracking-widest text-green-100/40">
           <Link href="#tech" className="hover:text-green-400 transition-colors">Technology</Link>
           <Link href="#docs" className="hover:text-green-400 transition-colors">Docs</Link>
           <Link href="https://github.com/SH1W4/greenproof-zk-esg" target="_blank" className="hover:text-green-400 transition-colors">GitHub</Link>
@@ -49,313 +56,251 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* 1. Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center px-8 py-24">
-        <div className="absolute inset-0 opacity-20">
-          <Image 
-            src="/assets/branding/hero_banner.png" 
-            alt="GreenProof Protocol" 
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
+      {/* SECTION 1: HERO (Text-First Authority) */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-8 text-center pt-20">
+        <div className="max-w-4xl space-y-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[11px] font-black uppercase tracking-widest mb-6"
+            className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-green-500/5 border border-green-500/10 text-green-500/60 text-[10px] font-black uppercase tracking-[0.3em]"
           >
-            <Zap className="w-4 h-4" />
             Institutional RWA Infrastructure
           </motion.div>
           
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-7xl lg:text-8xl font-black leading-[0.9] tracking-tighter"
+            className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter"
           >
             The Institutional Grade
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">ESG Oracle</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-green-400 to-emerald-700">ESG Oracle</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl text-green-100/60 max-w-3xl mx-auto font-medium leading-relaxed"
+            className="text-xl md:text-2xl text-green-100/40 max-w-2xl mx-auto font-medium leading-relaxed"
           >
-            Synchronizing physical, legal, and ethical reality through Chainlink CRE and ZK-SNARKs. RWA infrastructure for the future.
+            Synchronizing physical, legal, and ethical reality through Chainlink CRE and ZK-SNARKs. RWA infrastructure for the sovereign future.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex items-center justify-center gap-6 pt-8"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-12"
           >
-            <Link href="/login" className="group px-10 py-5 bg-green-500 text-green-950 font-black rounded-2xl flex items-center gap-3 hover:bg-green-400 transition-all hover:scale-105 active:scale-95 shadow-[0_15px_40px_rgba(34,197,94,0.3)]">
+            <Link href="/login" className="group px-10 py-5 bg-green-500 text-green-950 font-black rounded-2xl flex items-center gap-3 hover:bg-green-400 transition-all shadow-[0_20px_50px_rgba(34,197,94,0.15)]">
               Access Protocol
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="#docs" className="px-10 py-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all font-bold">
+            <Link href="#docs" className="px-10 py-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all font-bold text-green-100/60">
               Read Documentation
             </Link>
           </motion.div>
         </div>
+
+        {/* Subtle Decorative Flow */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-20">
+          <div className="w-px h-12 bg-gradient-to-b from-green-500 to-transparent" />
+        </div>
       </section>
 
-      {/* 2. Protocol Positioning */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-20 border-t border-white/5">
-        <div className="text-center space-y-12">
-          <h2 className="text-4xl font-black tracking-tighter uppercase">Powering the Next Generation of RWA</h2>
+      {/* SECTION 2: CINEMATIC PARALLAX (Visual Authority) */}
+      <section className="relative h-[120vh] flex items-center justify-center overflow-hidden border-y border-white/5 bg-black/20">
+        <motion.div 
+          style={{ scale: shieldScale, opacity: shieldOpacity }}
+          className="relative w-full max-w-5xl aspect-square flex items-center justify-center"
+        >
+          {/* Background Glow */}
+          <div className="absolute inset-0 bg-green-500/5 blur-[120px] rounded-full animate-pulse" />
           
-          {/* Metrics Bar */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { label: "Network", value: "Live on Sepolia & Fuji" },
-              { label: "Privacy", value: "ZK-SNARK Verified" },
-              { label: "Orchestration", value: "Chainlink CRE" }
-            ].map((metric, i) => (
-              <div key={i} className="glass-card p-6 rounded-2xl text-center">
-                <div className="text-xs font-black uppercase tracking-widest text-green-400 mb-2">{metric.label}</div>
-                <div className="text-lg font-bold">{metric.value}</div>
-              </div>
-            ))}
-          </div>
+          <Image 
+            src="/assets/concepts/trinity_visualization_master.png" 
+            alt="GreenProof Trinity of Proof" 
+            fill
+            className="object-contain drop-shadow-[0_0_80px_rgba(34,197,94,0.1)]"
+          />
+        </motion.div>
 
-          {/* Partner Logos */}
-          <div className="relative w-full h-16 opacity-70">
-            <Image 
-              src="/assets/branding/icon_grid.png" 
-              alt="Institutional Partners" 
-              fill
-              className="object-contain"
-            />
+        {/* Floating Technical Labels (Optional context in parallax) */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-10% md:left-1/4 p-4 border border-green-500/10 rounded-xl bg-black/40 backdrop-blur-md">
+            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-1">Layer 01</div>
+            <div className="text-xs font-bold uppercase tracking-widest">Physical Integrity</div>
           </div>
-
-          <div className="text-xl text-green-100/40 italic max-w-2xl mx-auto font-mono">
-            <Typewriter 
-              text='"SYNCING REALITY: Physical, Legal, and Ethical Consensus."' 
-              delay={60}
-              className="text-green-400"
-            />
-          </div>
-          
-          {/* Terminal Command Simulation: The Cyber-Nucleus */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, type: "spring", stiffness: 50 }}
-            className="max-w-2xl mx-auto mt-12"
-          >
-            <TerminalCommand 
-              commands={[
-                "greenproof-cli init --network sepolia --identity institutional",
-                "[INFRA] Establishing biocybernetic node connection... DONE",
-                "npx ts-node scripts/terminal-mint.ts",
-                "[ZK] Generating SNARK proof for ESG Compliance > 85%...",
-                "✓ Proof Generated (Groth16) | Time: 0.42s",
-                "[CCIP] Dispatching cross-chain validation to Avalanche Fuji...",
-                "✓ Protocol Consensus Achieved | NFT Minted: 0x3fcf...71b2"
-              ]}
-            />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 3. Trinity Concept */}
-      <section id="tech" className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
-        <div className="space-y-16">
-          <div className="text-center space-y-4">
-            <h2 className="text-5xl font-black tracking-tighter uppercase">The Trinity of Proof</h2>
-            <p className="text-xl text-green-100/40 max-w-2xl mx-auto">
-              Three pillars of objective reality, orchestrated by Chainlink CRE and secured by ZK-SNARKs.
-            </p>
-          </div>
-
-          {/* Trinity Visualization */}
-          <div className="relative w-full max-w-4xl mx-auto aspect-video">
-            <Image 
-              src="/assets/concepts/trinity_visualization_master.png" 
-              alt="Trinity of Proof" 
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          {/* Three Pillars */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: Database, title: "Physical Layer", desc: "Real-world data ingestion via IoT sensors" },
-              { icon: Scale, title: "Juridical Layer", desc: "Compliance verification through legal nodes" },
-              { icon: BrainCircuit, title: "Ethical Layer", desc: "ESG score validation by impact oracles" }
-            ].map((pillar, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                className="glass-card p-8 rounded-2xl space-y-4 text-center"
-              >
-                <div className="w-16 h-16 mx-auto bg-green-500/10 rounded-2xl flex items-center justify-center border border-green-500/20">
-                  <pillar.icon className="w-8 h-8 text-green-400" />
-                </div>
-                <h3 className="text-xl font-black">{pillar.title}</h3>
-                <p className="text-sm text-green-100/40">{pillar.desc}</p>
-              </motion.div>
-            ))}
+          <div className="absolute bottom-1/4 right-10% md:right-1/4 p-4 border border-green-500/10 rounded-xl bg-black/40 backdrop-blur-md">
+            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-1">Layer 03</div>
+            <div className="text-xs font-bold uppercase tracking-widest">Ethical Consensus</div>
           </div>
         </div>
       </section>
 
-      {/* 4. Technical Deep Dive */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
-        <div className="space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl font-black tracking-tighter uppercase">Built on Proven Infrastructure</h2>
-            <p className="text-lg text-green-100/40 max-w-2xl mx-auto">
-              GreenProof's architecture leverages industry-leading protocols for maximum security and interoperability.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="glass-card p-6 rounded-2xl space-y-4">
-              <div className="flex items-center gap-3 text-green-400">
-                <BrainCircuit className="w-5 h-5" />
-                <span className="text-xs font-black uppercase tracking-widest">Protocol Architecture</span>
-              </div>
-              <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10">
-                <Image 
-                  src="/assets/technical/protocol_workflow_architecture.png?v=2" 
-                  alt="Architecture" 
-                  fill
-                  className="object-cover opacity-95 hover:opacity-100 transition-opacity"
-                />
-              </div>
-              <p className="text-xs text-green-100/30">
-                Multi-layered orchestration between IoT sensors, juridical nodes, and impact scoring engines.
-              </p>
-            </div>
-
-            <div className="glass-card p-6 rounded-2xl space-y-4">
-              <div className="flex items-center gap-3 text-green-400">
-                <Lock className="w-5 h-5" />
-                <span className="text-xs font-black uppercase tracking-widest">CRE Master Workflow</span>
-              </div>
-              <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10">
-                <Image 
-                  src="/assets/technical/greenproof_master_infographic.png?v=2" 
-                  alt="Workflow" 
-                  fill
-                  className="object-cover opacity-95 hover:opacity-100 transition-opacity"
-                />
-              </div>
-              <p className="text-xs text-green-100/30">
-                Chainlink CRE orchestration logic for institutional ESG claims verification.
-              </p>
-            </div>
-          </div>
-
-          {/* Tech Stack */}
-          <div className="flex flex-wrap justify-center gap-4 pt-8">
-            {["Chainlink CRE", "CCIP", "ZK-SNARKs", "Solidity", "Rust"].map((tech, i) => (
-              <div key={i} className="px-6 py-3 bg-green-500/10 border border-green-500/20 rounded-xl text-sm font-black uppercase tracking-widest text-green-400">
-                {tech}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Use Cases */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
-        <div className="space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl font-black tracking-tighter uppercase">Transforming ESG Compliance</h2>
-            <p className="text-lg text-green-100/40 max-w-2xl mx-auto">
-              Real-world applications for institutional clients across multiple sectors.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* SECTION 3: THE PROBLEM (The ESG Gap) */}
+      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+        <div className="space-y-8">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[0.9]">
+            The fundamental
+            <br />
+            <span className="text-green-500">ESG Deficit</span>
+          </h2>
+          <p className="text-lg text-green-100/40 leading-relaxed">
+            Existing ESG frameworks suffer from a structural trust gap. Transparency alone does not create integrity when data is easily manipulated and privacy is non-existent.
+          </p>
+          <div className="space-y-6">
             {[
-              { title: "Green Bonds", desc: "Prove ESG ≥ 80% without revealing private data", icon: CheckCircle2 },
-              { title: "Carbon Credits", desc: "Verifiable impact tracking with ZK privacy", icon: Database },
-              { title: "Supply Chain", desc: "Ethical sourcing validation via triple oracle consensus", icon: Scale }
-            ].map((useCase, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                className="glass-card p-8 rounded-2xl space-y-4"
-              >
-                <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center border border-green-500/20">
-                  <useCase.icon className="w-6 h-6 text-green-400" />
-                </div>
-                <h3 className="text-2xl font-black">{useCase.title}</h3>
-                <p className="text-sm text-green-100/40">{useCase.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Documentation Hub */}
-      <section id="docs" className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
-        <div className="space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl font-black tracking-tighter uppercase">Explore the Protocol</h2>
-            <p className="text-lg text-green-100/40 max-w-2xl mx-auto">
-              Comprehensive resources for developers, researchers, and institutional partners.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: FileText, title: "Architecture", desc: "Technical Design", href: "/docs/ARCH.md" },
-              { icon: Code, title: "CRE Judges", desc: "Oracle Configuration", href: "/docs/CRE_JUDGES.md" },
-              { icon: TerminalIcon, title: "Deployment", desc: "Setup Instructions", href: "/docs/DEPLOYMENT.md" },
-              { icon: Github, title: "GitHub", desc: "Open Source Code", href: "https://github.com/SH1W4/greenproof-zk-esg" }
-            ].map((doc, i) => (
-              <Link
-                key={i}
-                href={doc.href}
-                target={doc.href.startsWith('http') ? '_blank' : undefined}
-                className="glass-card p-6 rounded-2xl space-y-4 hover:bg-white/10 transition-all group"
-              >
-                <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center border border-green-500/20 group-hover:bg-green-500/20 transition-colors">
-                  <doc.icon className="w-6 h-6 text-green-400" />
+              { icon: AlertTriangle, title: "Greenwashing", desc: "Unverified claims masking unsustainable operations." },
+              { icon: EyeOff, title: "Data Exposure", desc: "Revealing sensitive industrial data to prove compliance." }
+            ].map((item, i) => (
+              <div key={i} className="flex gap-4 items-start">
+                <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl">
+                  <item.icon className="w-5 h-5 text-red-500" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-black mb-1">{doc.title}</h3>
-                  <p className="text-xs text-green-100/40">{doc.desc}</p>
+                  <h3 className="font-bold uppercase tracking-widest text-sm mb-1">{item.title}</h3>
+                  <p className="text-sm text-green-100/30">{item.desc}</p>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
+        <div className="glass-card p-12 rounded-3xl border-red-500/10">
+          <div className="text-6xl font-black text-red-500/20 mb-4 tracking-tighter">0%</div>
+          <p className="text-xl font-medium text-green-100/60 leading-relaxed">
+            Confidence in traditional self-reported ESG scores without secondary objective validation.
+          </p>
+        </div>
       </section>
 
-      {/* 7. Final CTA */}
-      <section className="relative z-10 py-32 border-t border-white/5">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10" />
-        <div className="relative max-w-4xl mx-auto text-center space-y-8 px-8">
-          <h2 className="text-5xl font-black tracking-tighter">Ready to Verify Compliance?</h2>
-          <p className="text-xl text-green-100/60">
-            Access the GreenProof Protocol dashboard with institutional credentials.
+      {/* SECTION 4: THE SOLUTION (3 Pillars) */}
+      <section id="tech" className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5 text-center">
+        <div className="max-w-3xl mx-auto space-y-6 mb-20">
+          <h2 className="text-4xl font-black tracking-tighter uppercase">The Protocol of Truth</h2>
+          <p className="text-lg text-green-100/40">
+            GreenProof resolves the ESG gap through a three-pillared architectural consensus.
           </p>
-          <div className="flex items-center justify-center gap-6">
-            <Link href="/login" className="group px-12 py-6 bg-green-500 text-green-950 font-black rounded-2xl flex items-center gap-3 hover:bg-green-400 transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(34,197,94,0.4)] text-lg">
-              Access Protocol
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { 
+              icon: Network, 
+              title: "Consensus (2/3)", 
+              desc: "Triple Oracle consensus prevents greenwashing by requiring 2/3 validation nodes to agree." 
+            },
+            { 
+              icon: Lock, 
+              title: "Privacy (ZK)", 
+              desc: "Zero-Knowledge SNARKs prove compliance (ESG ≥ 80%) without revealing underlying data." 
+            },
+            { 
+              icon: Zap, 
+              title: "Portability (CCIP)", 
+              desc: "Institutional certificates are portable across chains via Chainlink CCIP infrastructure." 
+            }
+          ].map((pillar, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ y: -10 }}
+              className="glass-card p-10 rounded-3xl space-y-6 text-left hover:border-green-500/30 transition-all"
+            >
+              <div className="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center border border-green-500/20">
+                <pillar.icon className="w-7 h-7 text-green-400" />
+              </div>
+              <h3 className="text-2xl font-black tracking-tight">{pillar.title}</h3>
+              <p className="text-sm text-green-100/40 leading-relaxed">{pillar.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 5: SYSTEM DIAGRAM (Technical Clarity) */}
+      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+          <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/5 bg-black/40 p-4">
+            <Image 
+              src="/assets/technical/protocol_workflow_architecture.png?v=2" 
+              alt="GreenProof System Architecture" 
+              fill
+              className="object-contain p-8 opacity-90"
+            />
+          </div>
+          <div className="space-y-8">
+            <h2 className="text-4xl font-black tracking-tighter uppercase leading-[0.9]">
+              Institutional
+              <br />
+              <span className="text-green-500">Orchestration</span>
+            </h2>
+            <p className="text-lg text-green-100/40 leading-relaxed">
+              Our architecture leverages Chainlink CRE to orchestrate IoT data, legal audits, and impact metrics into a single source of truth.
+            </p>
+            <div className="text-xl text-green-400 font-mono italic">
+              <Typewriter 
+                text='"SYNCING REALITY: Physical, Legal, and Ethical Consensus."' 
+                delay={60}
+              />
+            </div>
+            <Link href="#docs" className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-green-500 hover:text-green-400 transition-colors">
+              Explore Architecture <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 8. Footer */}
-      <footer className="relative z-10 py-12 border-t border-white/5 bg-black/20">
-        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+      {/* SECTION 6: THE TERMINAL (Under the Hood) */}
+      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-black tracking-tighter uppercase mb-4">Protocol Execution</h2>
+          <p className="text-green-100/40 font-mono text-sm">Real-time ZK-SNARK generation and cross-chain consensus simulation.</p>
+        </div>
+        
+        <div className="max-w-3xl mx-auto">
+          <TerminalCommand 
+            commands={[
+              "greenproof-cli init --network sepolia --identity institutional",
+              "[INFRA] Establishing biocybernetic node connection... DONE",
+              "npx ts-node scripts/terminal-mint.ts",
+              "[ZK] Generating SNARK proof for ESG Compliance > 85%...",
+              "✓ Proof Generated (Groth16) | Time: 0.42s",
+              "[CCIP] Dispatching cross-chain validation to Avalanche Fuji...",
+              "✓ Protocol Consensus Achieved | NFT Minted: 0x3fcf...71b2"
+            ]}
+          />
+        </div>
+      </section>
+
+      {/* SECTION 7: POSITIONING (Protocol, Not Product) */}
+      <section className="relative z-10 py-64 border-t border-white/5 bg-green-500/[0.02]">
+        <div className="max-w-4xl mx-auto text-center space-y-12 px-8">
+          <motion.h2 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-5xl md:text-7xl font-black tracking-tighter leading-none"
+          >
+            NOT A DASHBOARD.
+            <br />
+            NOT A SAAS.
+            <br />
+            <span className="text-green-500">A PROTOCOL.</span>
+          </motion.h2>
+          <p className="text-xl text-green-100/40 max-w-2xl mx-auto font-medium">
+            GreenProof is the settlement layer for objective reality. Build institutional trust upon sovereign infrastructure.
+          </p>
+          <div className="pt-8">
+            <Link href="/login" className="px-12 py-6 bg-green-500 text-green-950 font-black rounded-2xl inline-flex items-center gap-3 hover:bg-green-400 transition-all hover:scale-105 shadow-[0_20px_60px_rgba(34,197,94,0.3)] text-lg">
+              Initialize Protocol
+              <ArrowRight className="w-6 h-6" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER (Söber) */}
+      <footer className="relative z-10 py-20 border-t border-white/5 bg-black/60 backdrop-blur-3xl">
+        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-green-500 rounded-lg">
               <ShieldCheck className="w-5 h-5 text-green-950" />
@@ -366,20 +311,18 @@ export default function LandingPage() {
             </div>
           </div>
           
-          <div className="flex items-center gap-8 text-sm">
-            <Link href="/docs" className="hover:text-green-400 transition-colors">Documentation</Link>
-            <Link href="https://github.com/SH1W4/greenproof-zk-esg" target="_blank" className="hover:text-green-400 transition-colors">GitHub</Link>
-            <Link href="#" className="hover:text-green-400 transition-colors">Twitter</Link>
+          <div className="flex flex-wrap items-center justify-center gap-8 text-[11px] font-black uppercase tracking-[0.2em] text-green-100/30">
+            <Link href="#tech" className="hover:text-green-500 transition-colors">Technology</Link>
+            <Link href="#docs" className="hover:text-green-500 transition-colors">Documentation</Link>
+            <Link href="https://github.com/SH1W4/greenproof-zk-esg" target="_blank" className="hover:text-green-500 transition-colors">GitHub</Link>
+            <Link href="#" className="hover:text-green-400 transition-colors">Twitter (X)</Link>
           </div>
 
-          <div className="text-xs text-green-100/20">
-            © 2026 GreenProof Protocol. All rights reserved.
+          <div className="text-[10px] text-green-100/10 font-mono font-bold uppercase tracking-widest">
+            © 2026 GreenProof · Institutional Consensus
           </div>
         </div>
       </footer>
     </main>
   );
 }
-
-
-
