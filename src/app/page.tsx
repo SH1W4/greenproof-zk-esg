@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { Orb } from "@/components/OrbVisualization";
 import { ProofCertificate } from "@/components/ProofCertificate";
 import { 
@@ -140,6 +141,21 @@ export default function GreenProofDashboard() {
               The Trinity <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">of Proof.</span>
             </motion.h1>
+
+            {/* Icon Grid Integration */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              transition={{ delay: 0.5 }}
+              className="relative w-full h-12 overflow-hidden mask-fade"
+            >
+              <Image 
+                src="/assets/branding/icon_grid.png" 
+                alt="Institutional Partners" 
+                fill
+                className="object-contain grayscale contrast-125"
+              />
+            </motion.div>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -335,7 +351,61 @@ export default function GreenProofDashboard() {
         </div>
       </div>
 
-      <footer className="fixed bottom-0 left-0 right-0 p-10 flex justify-center opacity-20 pointer-events-none">
+      {/* Technical Deep Dive Section (The "Substance") */}
+      <section className="relative z-10 max-w-7xl mx-auto px-8 py-24 space-y-20 border-t border-white/5">
+        <div className="space-y-4 max-w-2xl">
+          <h2 className="text-4xl font-black tracking-tighter uppercase">Technical Deep Dive</h2>
+          <p className="text-green-100/40 leading-relaxed text-lg">
+            GreenProof's architecture is built on three pillars of objective reality, coordinated by Chainlink CRE and secured by ZK-SNARKs.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            className="glass-card p-6 rounded-[2rem] space-y-6 overflow-hidden border border-white/5"
+          >
+            <div className="flex items-center gap-3 text-green-400">
+              <BrainCircuit className="w-5 h-5" />
+              <span className="text-xs font-black uppercase tracking-widest">Protocol Architecture</span>
+            </div>
+            <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black/40">
+              <Image 
+                src="/assets/technical/protocol_workflow_architecture.png" 
+                alt="Architecture" 
+                fill
+                className="object-cover opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </div>
+            <p className="text-xs text-green-100/30 leading-relaxed">
+              Visualize the multi-layered orchestration between IoT sensors, Juridical nodes, and Ethical scoring engines.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            className="glass-card p-6 rounded-[2rem] space-y-6 overflow-hidden border border-white/5"
+          >
+            <div className="flex items-center gap-3 text-green-400">
+              <Cpu className="w-5 h-5" />
+              <span className="text-xs font-black uppercase tracking-widest">CRE Master Workflow</span>
+            </div>
+            <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black/40">
+              <Image 
+                src="/assets/technical/greenproof_master_infographic.png" 
+                alt="Workflow" 
+                fill
+                className="object-cover opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </div>
+            <p className="text-xs text-green-100/30 leading-relaxed">
+              High-density mapping of the Chainlink CRE orchestration logic used to verify institutional ESG claims.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <footer className="relative z-10 py-20 flex justify-center opacity-20 border-t border-white/5 bg-black/5">
           <div className="flex items-center gap-8">
             <span className="text-[9px] font-bold tracking-[0.8em] uppercase">Symmetry</span>
             <span className="text-[9px] font-bold tracking-[0.8em] uppercase">Logic</span>
