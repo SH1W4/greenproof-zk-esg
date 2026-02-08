@@ -9,3 +9,6 @@ _vault/
 .env.test.local
 .env.production.local
 .vercel
+
+# Archive
+scripts/archive/
