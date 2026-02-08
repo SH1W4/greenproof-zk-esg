@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Orb } from "@/components/OrbVisualization";
+import { ProofCertificate } from "@/components/ProofCertificate";
 import { 
   ShieldCheck, 
   Database, 
@@ -15,7 +16,8 @@ import {
   Wifi,
   Scale,
   BrainCircuit,
-  Terminal as TerminalIcon
+  Terminal as TerminalIcon,
+  FileText
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -24,6 +26,7 @@ type Step = "idle" | "consensus" | "zk_proving" | "minting" | "bridging" | "succ
 export default function GreenProofDashboard() {
   const [step, setStep] = useState<Step>("idle");
   const [logs, setLogs] = useState<string[]>([]);
+  const [showCertificate, setShowCertificate] = useState(false);
   const [consensusStates, setConsensusStates] = useState({
     iot: false,
     legal: false,
@@ -272,12 +275,32 @@ export default function GreenProofDashboard() {
                         <ShieldCheck className={step === "success" ? "text-green-950" : "text-green-500"} />
                         <div className={`px-2 py-0.5 rounded text-[8px] font-bold ${step === "success" ? 'bg-green-950 text-green-500' : 'bg-green-500/10 text-green-500'}`}>ZK-CERT</div>
                       </div>
-                      <BoxIcon className={`w-16 h-16 ${step === "success" ? "text-green-950" : "text-white/10"}`} />
+                      <Database className={`w-16 h-16 ${step === "success" ? "text-green-950" : "text-white/10"}`} />
                       <div className="w-full text-center">
                         <div className={`text-[10px] font-black ${step === "success" ? "text-green-950" : "text-green-500"}`}>#GP-4022</div>
                         <div className={`text-[8px] font-bold uppercase tracking-widest ${step === "success" ? "text-green-900/60" : "text-white/20"}`}>Verified Compliance</div>
                       </div>
                    </motion.div>
+
+                   {step === "success" && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex flex-col gap-4 w-full max-w-sm mt-4"
+                    >
+                      <button className="flex items-center justify-center gap-2 px-8 py-4 bg-green-500 hover:bg-green-400 text-green-950 font-bold rounded-2xl transition-all hover:scale-105 shadow-[0_20px_40px_rgba(34,197,94,0.3)]">
+                        View on Sepolia Explorer
+                        <ExternalLink className="w-4 h-4" />
+                      </button>
+                      <button 
+                        onClick={() => setShowCertificate(true)}
+                        className="flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-bold rounded-2xl transition-all border border-white/10"
+                      >
+                        <FileText className="w-4 h-4 text-green-400" />
+                        Institutional Proof Certificate
+                      </button>
+                    </motion.div>
+                  )}
                 </div>
               )}
             </motion.div>
@@ -319,6 +342,13 @@ export default function GreenProofDashboard() {
             <span className="text-[9px] font-bold tracking-[0.8em] uppercase">Sovereignty</span>
           </div>
       </footer>
+
+      {/* Institutional Proof Certificate Modal */}
+      <AnimatePresence>
+        {showCertificate && (
+          <ProofCertificate onClose={() => setShowCertificate(false)} />
+        )}
+      </AnimatePresence>
     </main>
   );
 }

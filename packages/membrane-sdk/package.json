@@ -1,0 +1,23 @@
+{
+  "name": "@greenproof/membrane-sdk",
+  "version": "1.0.0-alpha.1",
+  "description": "Sovereign SDK for Zero-Knowledge ESG Proof Ingestion and Orchestration.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ZK",
+    "ESG",
+    "Chainlink",
+    "CRE",
+    "Privacy"
+  ],
+  "author": "Symbeon Labs (NEO-SH1W4)",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
