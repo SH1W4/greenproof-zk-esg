@@ -150,7 +150,7 @@ export default function GreenProofDashboard() {
               className="relative w-full h-12 overflow-hidden mask-fade"
             >
               <Image 
-                src="/assets/branding/icon_grid.png" 
+                src="/assets/branding/icon_grid.png?v=2" 
                 alt="Institutional Partners" 
                 fill
                 className="object-contain grayscale-[30%] contrast-110"
@@ -371,7 +371,7 @@ export default function GreenProofDashboard() {
             </div>
             <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black/40">
               <Image 
-                src="/assets/technical/protocol_workflow_architecture.png" 
+                src="/assets/technical/protocol_workflow_architecture.png?v=2" 
                 alt="Architecture" 
                 fill
                 className="object-cover opacity-95 hover:opacity-100 transition-opacity"
@@ -392,7 +392,7 @@ export default function GreenProofDashboard() {
             </div>
             <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black/40">
               <Image 
-                src="/assets/technical/greenproof_master_infographic.png" 
+                src="/assets/technical/greenproof_master_infographic.png?v=2" 
                 alt="Workflow" 
                 fill
                 className="object-cover opacity-95 hover:opacity-100 transition-opacity"
