@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "@chainlink/contracts-ccip/src/v0.8/ccip/interfaces/IRouterClient.sol";
-import "@chainlink/contracts-ccip/src/v0.8/ccip/libraries/Client.sol";
+import "@chainlink/contracts-ccip/contracts/interfaces/IRouterClient.sol";
+import "@chainlink/contracts-ccip/contracts/libraries/Client.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
@@ -35,7 +35,7 @@ contract CCIPBridge is Ownable {
             feeToken: address(0) // Pay with native gas for demo ease
         });
 
-        router.ccipSend{msg.value}(destinationChainSelector, message);
+        router.ccipSend{value: msg.value}(destinationChainSelector, message);
     }
 
     receive() external payable {}
