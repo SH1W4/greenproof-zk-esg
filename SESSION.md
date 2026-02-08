@@ -24,6 +24,7 @@ Hoje transformamos o GreenProof de um protótipo técnico em uma solução de in
 ### 1. 🎨 Master UI/UX & Certification
 *   **Estética Premium**: Glassmorphism avançado e paleta "Halcyon Green" para autoridade institucional.
 *   **Visualização 3D Dinâmica**: Orbes adaptativas que reagem em tempo real ao consenso dos oráculos.
+*   **Technical Deep Dive**: Nova seção no dashboard integrando infográficos de alta fidelidade e arquitetura do protocolo.
 *   **Proof Certificate**: Sistema de credenciamento visual verificável (`ProofCertificate.tsx`).
 *   **ZK-Terminal**: Transparência criptográfica ativa, narrando o processamento dos SNARKs.
 
