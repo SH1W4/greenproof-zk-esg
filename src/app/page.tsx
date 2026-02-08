@@ -17,6 +17,7 @@ import {
   Zap,
   CheckCircle2
 } from "lucide-react";
+import { Typewriter, TerminalCommand } from "@/components/Typewriter";
 
 export default function LandingPage() {
   return (
@@ -135,9 +136,30 @@ export default function LandingPage() {
             />
           </div>
 
-          <p className="text-xl text-green-100/40 italic max-w-2xl mx-auto">
-            "The world's first biocybernetic consensus engine."
-          </p>
+          <div className="text-xl text-green-100/40 italic max-w-2xl mx-auto font-mono">
+            <Typewriter 
+              text='"The world\'s first biocybernetic consensus engine."' 
+              delay={80}
+              className="text-green-400"
+            />
+          </div>
+          
+          {/* Terminal Command Simulation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="max-w-2xl mx-auto mt-8"
+          >
+            <TerminalCommand 
+              commands={[
+                "npm install @greenproof/sdk",
+                "greenproof init --network sepolia",
+                "greenproof verify --esg-score 85 --zk-proof",
+                "✓ ESG Compliance Verified | ZK-SNARK Generated"
+              ]}
+            />
+          </motion.div>
         </div>
       </section>
 
@@ -287,9 +309,9 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: FileText, title: "Whitepaper", desc: "Technical Architecture", href: "/docs" },
-              { icon: Code, title: "Developer Docs", desc: "Integration Guides", href: "/docs" },
-              { icon: TerminalIcon, title: "Deployment Manual", desc: "Setup Instructions", href: "/docs/DEPLOYMENT.md" },
+              { icon: FileText, title: "Architecture", desc: "Technical Design", href: "/docs/ARCH.md" },
+              { icon: Code, title: "CRE Judges", desc: "Oracle Configuration", href: "/docs/CRE_JUDGES.md" },
+              { icon: TerminalIcon, title: "Deployment", desc: "Setup Instructions", href: "/docs/DEPLOYMENT.md" },
               { icon: Github, title: "GitHub", desc: "Open Source Code", href: "https://github.com/SH1W4/greenproof-zk-esg" }
             ].map((doc, i) => (
               <Link

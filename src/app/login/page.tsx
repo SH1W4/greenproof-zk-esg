@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ShieldCheck, Lock, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -25,6 +26,17 @@ export default function LoginPage() {
 
   return (
     <main className="min-h-screen bg-[#020c06] text-[#f0fdf4] flex items-center justify-center relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-15">
+        <Image 
+          src="/assets/branding/banner_2.png" 
+          alt="Background" 
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+      
       {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-green-500/5 blur-[160px] rounded-full" />
