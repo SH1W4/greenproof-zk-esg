@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "compile": "ts-node scripts/compile.ts",
+    "deploy": "npm run compile && ts-node scripts/deploy.ts",
+    "deploy:quick": "ts-node scripts/deploy.ts"
   },
   "dependencies": {
     "@react-three/drei": "^9.105.13",
