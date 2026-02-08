@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { 
   ShieldCheck, 
   ArrowRight, 
@@ -24,14 +24,22 @@ import {
 import { Typewriter, TerminalCommand } from "../components/Typewriter";
 
 export default function LandingPage() {
-  const containerRef = useRef(null);
+  const [mounted, setMounted] = useState(false);
+  const containerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
 
-  const shieldScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.2]);
-  const shieldOpacity = useTransform(scrollYProgress, [0.1, 0.25], [0, 1]);
+  const shieldScale = useTransform(scrollYProgress, [0, 0.4], [1, 1.2]);
+  const shieldOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
+
+  if (!mounted) return <div className="min-h-screen bg-[#020c06]" />;
 
   return (
     <main ref={containerRef} className="min-h-screen bg-[#020c06] text-[#f0fdf4] selection:bg-green-500/30">
@@ -128,11 +136,11 @@ export default function LandingPage() {
 
         {/* Floating Technical Labels (Optional context in parallax) */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-10% md:left-1/4 p-4 border border-green-500/10 rounded-xl bg-black/40 backdrop-blur-md">
+          <div className="absolute top-1/4 left-[10%] md:left-1/4 p-4 border border-green-500/10 rounded-xl bg-black/40 backdrop-blur-md">
             <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-1">Layer 01</div>
             <div className="text-xs font-bold uppercase tracking-widest">Physical Integrity</div>
           </div>
-          <div className="absolute bottom-1/4 right-10% md:right-1/4 p-4 border border-green-500/10 rounded-xl bg-black/40 backdrop-blur-md">
+          <div className="absolute bottom-1/4 right-[10%] md:right-1/4 p-4 border border-green-500/10 rounded-xl bg-black/40 backdrop-blur-md">
             <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-1">Layer 03</div>
             <div className="text-xs font-bold uppercase tracking-widest">Ethical Consensus</div>
           </div>

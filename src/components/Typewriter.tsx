@@ -34,7 +34,7 @@ export function Typewriter({ text, delay = 50, className = "" }: TypewriterProps
   return (
     <span className={className}>
       {displayText}
-      <span className="animate-pulse inline-block w-2 H-4 bg-current align-middle ml-1"></span>
+      <span className="animate-pulse inline-block w-2 h-4 bg-current align-middle ml-1"></span>
     </span>
   );
 }
