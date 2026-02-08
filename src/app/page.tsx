@@ -58,7 +58,7 @@ export default function GreenProofDashboard() {
     
     await new Promise(r => setTimeout(r, 1200));
     setConsensusStates(s => ({ ...s, ethical: true }));
-    addLog("Ethical Layer (SEVE): VALIDATED [Score: AI-Integrity]");
+    addLog("Ethical Layer (Impact Oracle): VALIDATED [Score: AI-Integrity]");
 
     await new Promise(r => setTimeout(r, 1000));
     setStep("zk_proving");
@@ -378,7 +378,7 @@ export default function GreenProofDashboard() {
               />
             </div>
             <p className="text-xs text-green-100/30 leading-relaxed">
-              Visualize the multi-layered orchestration between IoT sensors, Juridical nodes, and Ethical scoring engines.
+              Visualize the multi-layered orchestration between IoT sensors, Juridical nodes, and Impact scoring engines.
             </p>
           </motion.div>
 

@@ -63,8 +63,8 @@ export const ProofCertificate: React.FC<ProofCertificateProps> = ({
             <div className="grid grid-cols-3 gap-4">
               {[
                 { label: "Physical (IoT)", icon: ShieldCheck },
-                { label: "Legal (Th3m1s)", icon: Scale },
-                { label: "Ethical (SEVE)", icon: CheckCircle2 }
+                { label: "Juridical Oracle", icon: Scale },
+                { label: "Ethical Oracle", icon: CheckCircle2 }
               ].map((item, i) => (
                 <div key={i} className="flex flex-col items-center gap-2">
                   <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
@@ -89,7 +89,7 @@ export const ProofCertificate: React.FC<ProofCertificateProps> = ({
         <div className="p-8 bg-emerald-950/20 border-t border-white/10 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/20 flex items-center justify-center overflow-hidden">
-               <span className="text-[10px] font-bold text-white/40">TH3M1S</span>
+               <span className="text-[8px] font-bold text-white/40 uppercase">Audit Layer</span>
             </div>
             <div>
               <p className="text-[10px] text-white/40 font-bold uppercase py-0.5">Juridical Integrity Sealed</p>
