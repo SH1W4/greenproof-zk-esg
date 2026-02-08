@@ -145,7 +145,7 @@ export default function GreenProofDashboard() {
             {/* Icon Grid Integration */}
             <motion.div 
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.4 }}
+              animate={{ opacity: 0.7 }}
               transition={{ delay: 0.5 }}
               className="relative w-full h-12 overflow-hidden mask-fade"
             >
@@ -153,7 +153,7 @@ export default function GreenProofDashboard() {
                 src="/assets/branding/icon_grid.png" 
                 alt="Institutional Partners" 
                 fill
-                className="object-contain grayscale contrast-125"
+                className="object-contain grayscale-[30%] contrast-110"
               />
             </motion.div>
             
@@ -374,7 +374,7 @@ export default function GreenProofDashboard() {
                 src="/assets/technical/protocol_workflow_architecture.png" 
                 alt="Architecture" 
                 fill
-                className="object-cover opacity-80 hover:opacity-100 transition-opacity"
+                className="object-cover opacity-95 hover:opacity-100 transition-opacity"
               />
             </div>
             <p className="text-xs text-green-100/30 leading-relaxed">
@@ -395,7 +395,7 @@ export default function GreenProofDashboard() {
                 src="/assets/technical/greenproof_master_infographic.png" 
                 alt="Workflow" 
                 fill
-                className="object-cover opacity-80 hover:opacity-100 transition-opacity"
+                className="object-cover opacity-95 hover:opacity-100 transition-opacity"
               />
             </div>
             <p className="text-xs text-green-100/30 leading-relaxed">
