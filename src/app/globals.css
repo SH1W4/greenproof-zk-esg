@@ -52,3 +52,13 @@ body {
     box-shadow: 0 0 45px rgba(34, 197, 94, 0.2);
   }
 }
+
+/* Utilities */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

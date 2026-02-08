@@ -138,25 +138,28 @@ export default function LandingPage() {
 
           <div className="text-xl text-green-100/40 italic max-w-2xl mx-auto font-mono">
             <Typewriter 
-              text={`"The world's first biocybernetic consensus engine."`} 
-              delay={80}
+              text='"SYNCING REALITY: Physical, Legal, and Ethical Consensus."' 
+              delay={60}
               className="text-green-400"
             />
           </div>
           
-          {/* Terminal Command Simulation */}
+          {/* Terminal Command Simulation: The Cyber-Nucleus */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="max-w-2xl mx-auto mt-8"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, type: "spring", stiffness: 50 }}
+            className="max-w-2xl mx-auto mt-12"
           >
             <TerminalCommand 
               commands={[
-                "npm install @greenproof/sdk",
-                "greenproof init --network sepolia",
-                "greenproof verify --esg-score 85 --zk-proof",
-                "✓ ESG Compliance Verified | ZK-SNARK Generated"
+                "greenproof-cli init --network sepolia --identity institutional",
+                "[INFRA] Establishing biocybernetic node connection... DONE",
+                "npx ts-node scripts/terminal-mint.ts",
+                "[ZK] Generating SNARK proof for ESG Compliance > 85%...",
+                "✓ Proof Generated (Groth16) | Time: 0.42s",
+                "[CCIP] Dispatching cross-chain validation to Avalanche Fuji...",
+                "✓ Protocol Consensus Achieved | NFT Minted: 0x3fcf...71b2"
               ]}
             />
           </motion.div>
