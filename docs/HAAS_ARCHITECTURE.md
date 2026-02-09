@@ -36,7 +36,7 @@ The final layer is the **Immutable Execution Layer**.
 
 - **Consensus**: Receives the signatures from the specialist nodes.
 - **Verification**: Enforces the 2/3 Quorum algebra.
-- **Settlement**: Mints the GreenProof NFT on Sepolia and initiates the CCIP bridge to Fuji.
+- **Settlement**: Mints the GreenProof NFT on Sepolia and initiates the CCIP bridge via the **[greenproof-orchestrator.ts](../cre/greenproof-orchestrator.ts)**.
 
 ---
 

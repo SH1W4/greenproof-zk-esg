@@ -7,8 +7,17 @@
 ---
 
 <p align="center">
-  <img src="docs/assets/branding/hero_banner.png" alt="GreenProof Banner" width="800">
+  <img src="docs/assets/branding/hero_banner_0.png" alt="GreenProof Banner" width="800">
 </p>
+
+## ⚡ TL;DR for Judges
+**GreenProof** lets anyone prove ESG compliance (≥80%) without revealing private data, and bridge that proof to any chain in 1 click—orchestrated by autonomous agents on **Chainlink CRE**.
+
+### 🧪 Demo Notes (Sovereign Disclosure)
+- **ZK Proof Generation**: [REAL] (Circom/snarkjs)
+- **NFT Certification**: [REAL] (Sepolia Testnet)
+- **Cross-Chain Bridge**: [REAL] (CCIP: Sepolia ➔ Fuji)
+- **ESG Data Streams**: [MOCKED] (Telemetry patterns are real, data points are generated for POC)
 
 # 🌿 GREENPROOF: THE PROTOCOL OF TRUTH
 ### **"A Sovereign Integrity Protocol for RWAs, Orchestrated by Autonomous Agents."**
@@ -19,6 +28,13 @@
 [![ZK-SNARK](https://img.shields.io/badge/ZK--SNARK-Circom-green)](https://iden3.io/)
 [![Juridical Seal](https://img.shields.io/badge/Juridical-Sealed%20by%20Th3m1s-blue)](docs/JURIDICAL_SEAL.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+---
+
+## 🛰️ Master Protocol Flow
+```text
+Data (IoT/Legal/Ethical) ➔ Trinity Consensus ➔ ZK Proof (Score ≥ 80) ➔ NFT Mint (Sepolia) ➔ CCIP Bridge (Fuji)
+```
 
 ---
 
