@@ -34,8 +34,8 @@ GreenProof is a decentralized orchestration protocol that solves the **ESG Oracl
 ### 🌌 The Trinity of Proof (Triple Oracle Consensus)
 To ensure absolute integrity, GreenProof ingests data from three independent dimensions of reality before any certification is issued:
 1. **Physical Reality (IoT Sensors):** Real-time environmental signals (carbon, energy, water) captured via Chainlink Functions.
-2. **Juridical Reality (Legal Audit):** Automated compliance check against global regulations (CSRD/GDPR) via our Juridical Audit Engine.
-3. **Ethical Reality (Ethical Logic):** Value-alignment and governance transparency verification via our Ethical Integrity Engine.
+2. **Juridical Reality (Legal Audit):** Automated compliance check against global regulations via the **[Th3m1s Juridical Engine](file:///c:/Users/João/Desktop/PROJETOS/01_CORE_SYSTEMS/th3m1s-core)**.
+3. **Ethical Reality (Ethical Logic):** Value-alignment and governance verification via the **[SEVE Ethical Framework](file:///c:/Users/João/Desktop/PROJETOS/00_ECOSYSTEM_COMERCIAL/SEVE-FRAMEWORK)**.
 
 ---
 

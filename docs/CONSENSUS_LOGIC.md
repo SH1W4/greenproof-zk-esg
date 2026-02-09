@@ -7,8 +7,8 @@ A integridade do protocolo GreenProof repousa sobre a **Trindade da Prova**, um 
 O sistema orquestra três pilares independentes de dados via **Chainlink CRE (Custom Runtime Environment)**:
 
 1.  **Oráculo Físico (IoT/Satélite)**: Ingestão de dados de sensores, telemetria e imagens de satélite para provar a existência e o impacto material (ex: regeneração florestal, redução de CO2).
-2.  **Oráculo Jurídico (Th3m1s Engine)**: Auditoria automatizada de contratos, certidões e conformidade legal, garantindo que o ativo possui lastro jurídico e não possui pendências judiciais.
-3.  **Oráculo Ético (S.E.V.E. Logic)**: Avaliação de indicadores sociais, governança corporativa e conformidade com pactos internacionais (ex: direitos humanos, diversidade).
+2.  **Oráculo Jurídico ([Th3m1s Engine](file:///c:/Users/João/Desktop/PROJETOS/01_CORE_SYSTEMS/th3m1s-core))**: Auditoria automatizada de contratos, certidões e conformidade legal, garantindo que o ativo possui lastro jurídico e não possui pendências judiciais.
+3.  **Oráculo Ético ([S.E.V.E. Framework](file:///c:/Users/João/Desktop/PROJETOS/00_ECOSYSTEM_COMERCIAL/SEVE-FRAMEWORK))**: Avaliação de indicadores sociais, governança corporativa e conformidade com pactos internacionais (ex: direitos humanos, diversidade).
 
 ## ⚖️ Lógica de Consenso 2/3 (Quorum Mínimo)
 
