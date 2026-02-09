@@ -55,9 +55,9 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="hidden md:flex items-center gap-8 text-[11px] font-black uppercase tracking-widest text-green-100/40">
-          <Link href="#tech" className="hover:text-green-400 transition-colors">Technology</Link>
-          <Link href="#docs" className="hover:text-green-400 transition-colors">Docs</Link>
-          <Link href="https://github.com/SH1W4/greenproof-zk-esg" target="_blank" className="hover:text-green-400 transition-colors">GitHub</Link>
+          <Link href="/architecture" className="hover:text-green-400 transition-colors">Architecture</Link>
+          <Link href="/verify" className="hover:text-green-400 transition-colors">Verify</Link>
+          <Link href="/roadmap" className="hover:text-green-400 transition-colors">Roadmap</Link>
           <Link href="/login" className="px-6 py-2.5 bg-green-500 text-green-950 rounded-xl hover:bg-green-400 transition-all font-black shadow-lg shadow-green-500/20">
             Access Protocol
           </Link>
@@ -65,14 +65,24 @@ export default function LandingPage() {
       </nav>
 
       {/* SECTION 1: HERO (Text-First Authority) */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-8 text-center pt-20">
-        <div className="max-w-4xl space-y-8">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-8 text-center pt-20 overflow-hidden">
+        {/* Cinematic Background Visualization */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+           <Image 
+             src="/assets/branding/icon_grid.png" 
+             alt="Background Matrix" 
+             fill 
+             className="object-cover"
+           />
+        </div>
+
+        <div className="max-w-4xl space-y-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-green-500/5 border border-green-500/10 text-green-500/60 text-[10px] font-black uppercase tracking-[0.3em]"
           >
-            Institutional RWA Infrastructure
+            Institutional RWA Infrastructure • Verifiable Integrity
           </motion.div>
           
           <motion.h1
@@ -92,7 +102,7 @@ export default function LandingPage() {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl text-green-100/40 max-w-2xl mx-auto font-medium leading-relaxed"
           >
-            Synchronizing physical, legal, and ethical reality through Chainlink CRE and ZK-SNARKs. RWA infrastructure for the sovereign future.
+            Sovereign validation of Physical, Juridical, and Ethical reality. Powered by Chainlink CRE and ZK-SNARKs.
           </motion.p>
 
           <motion.div
@@ -102,11 +112,11 @@ export default function LandingPage() {
             className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-12"
           >
             <Link href="/login" className="group px-10 py-5 bg-green-500 text-green-950 font-black rounded-2xl flex items-center gap-3 hover:bg-green-400 transition-all shadow-[0_20px_50px_rgba(34,197,94,0.15)]">
-              Access Protocol
+              Launch Protocol Terminal
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="#docs" className="px-10 py-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all font-bold text-green-100/60">
-              Read Documentation
+            <Link href="/architecture" className="px-10 py-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all font-bold text-green-100/60">
+              Technical Deep-Dive
             </Link>
           </motion.div>
         </div>
@@ -127,10 +137,10 @@ export default function LandingPage() {
           <div className="absolute inset-0 bg-green-500/5 blur-[120px] rounded-full animate-pulse" />
           
           <Image 
-            src="/assets/concepts/trinity_visualization_master.png" 
+            src="/assets/concepts/trinity_concept_elite.png" 
             alt="GreenProof Trinity of Proof" 
             fill
-            className="object-contain drop-shadow-[0_0_80px_rgba(34,197,94,0.1)]"
+            className="object-contain drop-shadow-[0_0_80px_rgba(34,197,94,0.15)] scale-110"
           />
         </motion.div>
 

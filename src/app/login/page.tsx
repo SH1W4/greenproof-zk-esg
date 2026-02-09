@@ -27,15 +27,14 @@ export default function LoginPage() {
   return (
     <main className="min-h-screen bg-[#020c06] text-[#f0fdf4] flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 opacity-15">
         <Image 
-          src="/assets/branding/banner_2.png" 
-          alt="Background" 
+          src="/assets/branding/hero_banner_0.png" 
+          alt="Sovereign Gateway" 
           fill
-          className="object-cover"
+          className="object-cover animate-slow-zoom"
           priority
         />
-      </div>
+        <div className="absolute inset-0 bg-[#020c06]/80 backdrop-blur-[2px]" />
       
       {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none">

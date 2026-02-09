@@ -34,7 +34,10 @@ GreenProof is a decentralized protocol for private ESG compliance verification. 
     - **Step D:** Bridge NFT (CCIP) -> Cross-chain RWA portability.
 
 ## Components
-- **Nucleus UI:** Next.js 14 + Framer Motion + 3D Parallax.
+- **Sovereign Membrane 2.0:** Next.js 14 + Framer Motion + 3D Cinematic Parallax.
+    - `/architecture`: High-density technical deep-dive.
+    - `/verify`: Public Truth Explorer for ZK-validation.
+    - `/roadmap`: Visual expansion horizon (RWA & DeSci).
 - **ZK Circuit:** Circom (snarkjs) - Verifies `score >= 80`.
 - **Contracts:** 
     - `GreenProofNFT.sol`: ERC-721 certification on Sepolia.

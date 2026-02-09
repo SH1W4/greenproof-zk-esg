@@ -369,12 +369,12 @@ export default function GreenProofDashboard() {
               <BrainCircuit className="w-5 h-5" />
               <span className="text-xs font-black uppercase tracking-widest">Protocol Architecture</span>
             </div>
-            <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black/40">
+            <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black/40 group">
               <Image 
-                src="/assets/technical/protocol_workflow_architecture.png?v=2" 
+                src="/assets/technical/protocol_workflow_architecture.png" 
                 alt="Architecture" 
                 fill
-                className="object-cover opacity-95 hover:opacity-100 transition-opacity"
+                className="object-contain opacity-95 group-hover:scale-110 transition-transform duration-700"
               />
             </div>
             <p className="text-xs text-green-100/30 leading-relaxed">
@@ -390,12 +390,12 @@ export default function GreenProofDashboard() {
               <Cpu className="w-5 h-5" />
               <span className="text-xs font-black uppercase tracking-widest">CRE Master Workflow</span>
             </div>
-            <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black/40">
+            <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black/40 group">
               <Image 
-                src="/assets/technical/greenproof_master_infographic.png?v=2" 
+                src="/assets/technical/greenproof_master_infographic.png" 
                 alt="Workflow" 
                 fill
-                className="object-cover opacity-95 hover:opacity-100 transition-opacity"
+                className="object-contain opacity-95 group-hover:scale-110 transition-transform duration-700"
               />
             </div>
             <p className="text-xs text-green-100/30 leading-relaxed">
