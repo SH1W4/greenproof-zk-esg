@@ -50,15 +50,15 @@ export default function GreenProofDashboard() {
     
     await new Promise(r => setTimeout(r, 1000));
     setConsensusStates(s => ({ ...s, iot: true }));
-    addLog("Physical Layer (IoT): VALIDATED [Sepolia Node 04]");
+    addLog("Physical Core: VALIDATED [Sepolia Node 04]");
     
     await new Promise(r => setTimeout(r, 800));
     setConsensusStates(s => ({ ...s, legal: true }));
-    addLog("Juridical Layer (Audit): VALIDATED [Hash: 0x72...f93]");
+    addLog("Juridical Core: VALIDATED [Hash: 0x72...f93]");
     
     await new Promise(r => setTimeout(r, 1200));
     setConsensusStates(s => ({ ...s, ethical: true }));
-    addLog("Ethical Layer (Impact Oracle): VALIDATED [Score: AI-Integrity]");
+    addLog("Ethical Core: VALIDATED [Classification: Internal]");
 
     await new Promise(r => setTimeout(r, 1000));
     setStep("zk_proving");
@@ -236,7 +236,7 @@ export default function GreenProofDashboard() {
                     <Orb color="#10b981" active={consensusStates.ethical} speed={1.8} />
                   </div>
                   <div className="text-center space-y-2">
-                    <h4 className="text-sm font-black uppercase tracking-[0.3em] text-green-500">Triple Oracle Consensus</h4>
+                    <h4 className="text-sm font-black uppercase tracking-[0.3em] text-green-500">Trinity Nucleus Consensus</h4>
                     <div className="flex justify-center gap-3">
                        <Scale className={`w-5 h-5 ${consensusStates.iot ? 'text-green-400' : 'text-white/10'}`} />
                        <BrainCircuit className={`w-5 h-5 ${consensusStates.legal ? 'text-green-400' : 'text-white/10'}`} />

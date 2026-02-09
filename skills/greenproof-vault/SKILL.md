@@ -58,6 +58,25 @@ explorer.exe ../greenproof-vault/core_backup
 ```
 
 ---
-> **Status**: OPERACIONAL 🟢
-> **Network**: Sepolia (Testnet) / Fuji (Destination)
-y
+
+## 🤖 Sovereign MAS Governance
+
+O GreenProof opera como um **Sistema Multi-Agente Soberano**. Esta Skill governa a interação e a expansão da nossa inteligência coletiva.
+
+### 👑 GP-Architect (Nível 0)
+O "Cérebro Master" (Chainlink CRE). Ele não apenas executa; ele avalia o consenso entre os agentes e decide o destino final dos dados e ativos.
+
+### 🛡️ Agentes de Campo (Nível 1)
+- **GP-Themis (O Árbitro)**: Valida a realidade jurídica e a integridade estrutural. Herda a lógica do Th3m1s Core.
+- **GP-Seve (O Guardião)**: Garante a simbiose ética e o alinhamento de visão. Herda a lógica do SEVE Framework.
+- **GP-Sentinel (O Observador)**: Capta a telemetria física irreversível via IoT e satélites.
+
+### 🔍 Processo de Absorção & Evolução
+Para que o sistema absorva nova inteligência:
+1. **Identificação**: Determine a nova fronteira de auditoria necessária (ex: Jurídico, Ético).
+2. **Skill Mapping**: Crie uma Skill no repositório progenitor detalhando as capacidades a serem herdadas.
+3. **Internalização**: Clone a Skill para o GreenProof e registre-a como um novo Agente Soberano no `ARCH.md`.
+
+---
+> **Status Integration**: FULLY SYNCHRONIZED 🟢
+> **MAS Hierarchy**: GP-Architect >> [GP-Themis, GP-Seve, GP-Sentinel]

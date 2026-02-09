@@ -18,11 +18,11 @@ import { Workflow, ChainlinkFunctions, CCIP, ZK } from "@chainlink/cre-sdk"; // 
 export async function main(args: any) {
   console.log("--- Starting GreenProof CRE Orchestration ---");
 
-  // 1️⃣ Triple Oracle Consensus (Anti-Greenwashing)
-  // ESG data is ingested from three independent dimensions of reality:
-  // 1. Physical Reality: IoT Sensors (Environmental signals via Functions)
-  // 2. Legal Reality: Th3m1s Juridical Engine (Automated Regulatory Compliance)
-  // 3. Ethical Reality: SEVE Ethical Framework (Alignment & Value Verification)
+  // 1️⃣ Sovereign MAS Consensus (Anti-Greenwashing)
+  // ESG data is ingested from three independent autonomous agents:
+  // 1. GP-Sentinel: Physical Reality (Environmental signals via Functions)
+  // 2. GP-Themis: Legal Reality (Automated Regulatory Compliance)
+  // 3. GP-Seve: Ethical Reality (Alignment & Value Verification)
   const iotData = await ChainlinkFunctions.fetch("https://api.greenproof.io/v1/sensors");
   const juridicalAudit = await ChainlinkFunctions.fetch("https://api.greenproof.io/v1/legal-audit");
   const ethicalAudit = await ChainlinkFunctions.fetch("https://api.greenproof.io/v1/ethical-audit");

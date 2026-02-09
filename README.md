@@ -10,10 +10,10 @@
   <img src="docs/assets/branding/hero_banner.png" alt="GreenProof Banner" width="800">
 </p>
 
-# 🌿 GREENPROOF: THE TRINITY OF PROOF
-### **"Prove ESG ≥ 80% without revealing private data. Bridge it to any chain in 1 click."**
+# 🌿 GREENPROOF: THE PROTOCOL OF TRUTH
+### **"A Sovereign Integrity Protocol for RWAs, Orchestrated by Autonomous Agents."**
 
-> *“GreenProof is the definitive protocol to eliminate greenwashing at the infrastructure level, transforming ESG compliance into a portable, private, and verifiable digital asset.”*
+> *“GreenProof is the definitive settlement layer for objective reality—transforming ESG compliance from a static PDF into a portable, private, and intelligent digital protocol.”*
 
 [![Chainlink](https://img.shields.io/badge/Chainlink-CRE%20%7C%20CCIP%20%7C%20Functions-3382ed?logo=chainlink)](https://chain.link/)
 [![ZK-SNARK](https://img.shields.io/badge/ZK--SNARK-Circom-green)](https://iden3.io/)
@@ -31,11 +31,13 @@ The $2.1 Trillion Green Bond market is facing an integrity crisis. Current ESG r
 ## 🚀 The Solution: GreenProof
 GreenProof is a decentralized orchestration protocol that solves the **ESG Oracle Problem** by combining **Zero-Knowledge Proofs (ZK)** for extreme privacy and **Chainlink Runtime Environment (CRE)** for total decentralization.
 
-### 🌌 The Internalized Trinity (Genesis Core)
-To ensure absolute sovereignty and technical integrity, GreenProof hosts its own specialized processing shards, adapted from the Symbeon ecosystem for monolithic performance:
-1. **Physical Reality (IoT Sensors):** Real-time environmental signals (carbon, energy, water) captured via Chainlink Functions.
-2. **Juridical Reality (GP-Juridical):** Internalized compliance shard of the Th3m1s Protocol, performing automated regulatory audits.
-3. **Ethical Reality (GP-Ethical):** Internalized ethics shard of the SEVE Framework, verifying social alignment and governance values.
+### 🌌 Hierarchical Autonomous Agent Swarm (HAAS)
+The GreenProof Protocol is governed by an autonomous multi-agent hierarchy (HAAS), where specialized intelligences collaborate in a monolithic core using the **[EAP Synchronization Cycle](docs/EAP_CYCLE.md)**:
+1. **GP-Physical (Physical Reality Core):** Real-time environmental signal ingestion.
+2. **GP-Juridical (Juridical Logic Core):** Native legal validator and compliance engine.
+3. **GP-Ethical (Ethical Value Core):** Global governance and value alignment guardian.
+
+**[Explore the HAAS Orchestration Blueprint ➔](docs/HAAS_ARCHITECTURE.md)**
 
 ---
 
@@ -64,8 +66,20 @@ Compared to legacy ESG reporting, GreenProof is:
 
 ---
 
-## 🛡️ Structural Integrity & Juridical Seal
-The GreenProof Protocol has undergone **Autonomous Juridical Structural Validation**. Our "Trinity of Proof" logic has been stress-tested to ensure compliance with global transparency standards, providing the missing link of confidence for institutional capital.
+## 🌎 Beyond ESG: Institutional Expansion
+The GreenProof **Sovereign MAS** is a universal settlement layer for objective truth. Our architecture is currently being adapted for:
+- 📦 **Supply Chain**: Verifying RWA provenance and "Hard Evidence" telemetry.
+- 🏦 **Private Credit**: ZK-Proofs for institutional creditworthiness without data leakage.
+- ⚖️ **IP & Patents**: Verifying the structural integrity of intellectual property.
+
+**[Explore the full Roadmap of Institutional Use Cases ➔](docs/USE_CASES.md)**
+
+---
+
+## 🛡️ Structural Integrity & Selective Disclosure
+The GreenProof Protocol is governed by the **GreenProof Foundation** (a Symbeon Labs Initiative). To protect sovereign intellectual property while maintaining total transparency for evaluators, we operate under the **Sovereign Disclosure Protocol**. 
+
+Our "Trinity of Proof" logic is based on a rigorous **[Mathematical & Algebraic Foundation](docs/MATHEMATICAL_FOUNDATION.md)**, ensuring legal and technical defensibility for institutional capital.
 
 ---
 
@@ -75,8 +89,9 @@ To verify the core protocol orchestration in seconds:
 # 1. Start the project
 npm install && npm run dev
 
-# 2. Run the programmatic CRE workflow (Simulation)
-cd cre && npx chainlink-cre run workflow.ts
+# 2. Run the programmatic Sovereign Sync (Simulation)
+# This script manages the gap between public code and private research
+./scripts/sovereign-sync.sh --verify
 ```
 
 ---
@@ -85,9 +100,10 @@ cd cre && npx chainlink-cre run workflow.ts
 - [x] **Technical:** Full implementation of CRE, CCIP, and ZK-SNARK circuits.
 - [x] **Deployment:** Live on Vercel and Testnets (Sepolia/Fuji).
 - [x] **Verification:** Juridical Stress-Test and Market Benchmarking complete.
-- [ ] **Final Push:** This README is the definitive presentation for the hackathon judges.
+- [x] **Governance:** Institutional Framing as **GreenProof Foundation**.
 
 ---
-**TEAM:** Symbeon Labs  
+**ORGANIZATION:** GreenProof Foundation  
+**CUSTODIAN:** Symbeon Labs  
 **DEVELOPER:** NEO-SH1W4  
-*Designed for the Chainlink Convergence Hackathon 2026. Transforming compliance into an asset.*
+*Designed for the Chainlink Convergence Hackathon 2026. Transforming compliance into a sovereign asset.*

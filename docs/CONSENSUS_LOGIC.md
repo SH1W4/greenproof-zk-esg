@@ -6,9 +6,9 @@ A integridade do protocolo GreenProof repousa sobre a **Trindade da Prova**, um 
 
 O sistema orquestra três pilares independentes de dados via **Chainlink CRE (Custom Runtime Environment)**:
 
-1.  **Oráculo Físico (IoT/Satélite)**: Ingestão de dados de sensores e telemetria para impacto material.
-2.  **Oráculo Jurídico (GP-Juridical)**: Shard internalizado do Protocolo Th3m1s, executando auditoria de conformidade legal nativa.
-3.  **Oráculo Ético (GP-Ethical)**: Shard internalizado do Framework SEVE, avaliando governança e impacto social sob lógica nativa.
+1.  **GP-Physical (Physical Reality Core)**: Ingesting environmental signals via IoT/Satellite.
+2.  **GP-Juridical (Juridical Logic Core)**: Internal arbiter for native legal compliance.
+3.  **GP-Ethical (Ethical Value Core)**: Internal guardian for social impact and governance.
 
 ## ⚖️ Lógica de Consenso 2/3 (Quorum Mínimo)
 

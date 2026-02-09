@@ -137,11 +137,11 @@ export default function LandingPage() {
         {/* Floating Technical Labels (Optional context in parallax) */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-[10%] md:left-1/4 p-4 border border-green-500/10 rounded-xl bg-black/40 backdrop-blur-md">
-            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-1">Layer 01</div>
-            <div className="text-xs font-bold uppercase tracking-widest">Physical Integrity</div>
+            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-1">Core 01</div>
+            <div className="text-xs font-bold uppercase tracking-widest">Physical Reality</div>
           </div>
           <div className="absolute bottom-1/4 right-[10%] md:right-1/4 p-4 border border-green-500/10 rounded-xl bg-black/40 backdrop-blur-md">
-            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-1">Layer 03</div>
+            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-1">Core 03</div>
             <div className="text-xs font-bold uppercase tracking-widest">Ethical Consensus</div>
           </div>
         </div>

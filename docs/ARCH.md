@@ -6,12 +6,12 @@ GreenProof is a decentralized protocol for private ESG compliance verification. 
 ## Flow Diagram
 
 ```text
-       [ IoT Sensors ]   [ LLM ESG Scorer ]   [ 3rd Party Audit ]
+       [ GP-Sentinel ]   [   GP-Themis   ]   [    GP-Seve    ]
                 \               |               /
                  \              |              /
                   v             v             v
-                [    Triple Oracle Consensus     ]
-                [   (Orchestrated by CL CRE)    ]
+                [    Sovereign MAS Consensus    ]
+                [   (Orchestrated by Architect) ]
                                 |
                                 v
                 [     ZK Compute (Prover)       ]
@@ -26,20 +26,20 @@ GreenProof is a decentralized protocol for private ESG compliance verification. 
                 [  (Sepolia -> Fuji Portability) ]
 ```
 
-1. **Trigger:** User initiates verification via Dashboard.
-2. **Orchestration (Chainlink CRE):**
-    - **Step A:** Query 3 Oracles (IoT, LLM, Audit) -> Generate Consensus ESG Score.
-    - **Step B:** Execute ZK-Compute (Circom) -> Prove Score >= 80.
-    - **Step C:** Mint NFT (Sepolia) -> Permanent record of compliance.
-    - **Step D:** Bridge NFT (CCIP) -> Cross-chain portability.
+1. **Trigger:** User initiates local verification via Dashboard or CLI.
+2. **Orchestration (GP-Architect):**
+    - **Step A:** Synchronize autonomous agents (GP-Sentinel, GP-Themis, GP-Seve) -> Generate 2/3 Consensus.
+    - **Step B:** Execute ZK-Compute (Circom) -> Prove Score >= 80 without data leakage.
+    - **Step C:** Mint NFT (Sepolia) -> Immutable proof of compliance.
+    - **Step D:** Bridge NFT (CCIP) -> Cross-chain RWA portability.
 
 ## Components
-- **Frontend:** Next.js 14 + Tailwind + shadcn/ui.
+- **Nucleus UI:** Next.js 14 + Framer Motion + 3D Parallax.
 - **ZK Circuit:** Circom (snarkjs) - Verifies `score >= 80`.
 - **Contracts:** 
     - `GreenProofNFT.sol`: ERC-721 certification on Sepolia.
     - `CCIPBridge.sol`: Reference for bridging credentials.
-- **Workflow:** Chainlink CRE `workflow.yaml`.
+- **Master Agent:** GP-Architect (Chainlink CRE `workflow.ts`).
 
 ## Scope Control & Non-Goals
 - **Mock Data:** All sensor and audit data is mocked for the hackathon version.
