@@ -10,6 +10,8 @@ O GreenProof é subdividido em 4 pilares fundamentais, garantindo a integridade 
 *   **1.2 Integração Chainlink CRE**: Programação da lógica de consenso 2/3 (Física, Jurídica, Ética).
 *   **1.3 Camada Cross-Chain (CCIP)**: Configuração de bridging de credenciais (Sepolia ➔ Fuji).
 *   **1.4 Documentação Técnica**: Elaboração do `ARCH.md` e `CRE_JUDGES.md`.
+*   **1.5 Deploy Automatizado (Phase 46)**: Scripts `scripts/deploy.ts` e automação de verificação de contratos. [CONCLUÍDO]
+*   **1.6 Lógica de Consenso Trinitário**: Documentação técnica do quórum 2/3 (`CONSENSUS_LOGIC.md`). [CONCLUÍDO]
 
 ## 2. 🔐 Pilar Criptografia & Privacidade (ZK-Layer)
 *   **2.1 Circuitos Circom**: Desenvolvimento do circuito `ESGScore.circom` para validação de threshold.
@@ -19,14 +21,15 @@ O GreenProof é subdividido em 4 pilares fundamentais, garantindo a integridade 
 ## 3. 🎨 Pilar Interface & Experiência (Master UI/UX)
 *   **3.1 Dashboard Institucional**: Interface Next.js com Glassmorphism avançado.
 *   **3.2 Camada de Visualização 3D**: Orbes dinâmicas representando o consenso dos oráculos.
-*   **3.3 ZK-Terminal**: Log de execução técnica em tempo real para transparência criptográfica.
+*   **3.3 ZK-Terminal Nucleus**: Re-implementação do terminal com estética CRT e moldura institucional. [CONCLUÍDO]
 *   **3.4 Organização de Ativos**: Padronização semântica e modular de infográficos e branding.
+*   **3.5 Protocol Membrane (Landing Page)**: Re-arquitetura total com foco em autoridade textual e cinematics parallax. [CONCLUÍDO]
 
 ## 4. ⚖️ Pilar Estratégico & Jurídico (Sovereign Vault)
 *   **4.1 Validação Jurídica**: Auditoria autônoma de conformidade e selo Th3m1s.
-*   **4.2 Estratégia de Propriedade Intelectual**: Rascunho da patente `GP-IP-2026-001`.
+*   **4.2 Estratégia de Propriedade Intelectual**: Rascunho da patente `GP-IP-2026-001` e pesquisa de anterioridade (`PATENT_RESEARCH.md`). [CONCLUÍDO]
 *   **4.3 Vault Soberano**: Repositório de inteligência estratégica e análise competitiva.
 *   **4.4 Guia de Submissão**: Plano de voo para o pitch final e documentos de suporte.
 
 ---
-**Status Final da Sessão**: 100% Sincronizado.
+**Status Final da Sessão**: 100% Sincronizado. Re-arquitetura Institucional Operacional.
