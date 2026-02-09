@@ -11,7 +11,7 @@
 </p>
 
 ## ⚡ TL;DR for Judges
-**GreenProof** lets anyone prove ESG compliance (≥80%) without revealing private data, and bridge that proof to any chain in 1 click—orchestrated by autonomous agents on **Chainlink CRE**.
+**GreenProof** is a generic **Threshold Attestation Protocol**. We let anyone prove complex conditions (starting with ESG ≥80%) without revealing private data, and bridge that proof to any chain in 1 click—orchestrated by autonomous agents on **Chainlink CRE**.
 
 ### 🧪 Demo Notes (Sovereign Disclosure)
 - **ZK Proof Generation**: [REAL] (Circom/snarkjs)
@@ -20,9 +20,9 @@
 - **ESG Data Streams**: [MOCKED] (Telemetry patterns are real, data points are generated for POC)
 
 # 🌿 GREENPROOF: THE PROTOCOL OF TRUTH
-### **"A Sovereign Integrity Protocol for RWAs, Orchestrated by Autonomous Agents."**
+### **"A Sovereign Threshold Attestation Protocol for RWAs, Orchestrated by Autonomous Agents."**
 
-> *“GreenProof is the definitive settlement layer for objective reality—transforming ESG compliance from a static PDF into a portable, private, and intelligent digital protocol.”*
+> *“GreenProof is a generic primitive for objective reality—transforming compliance from a static PDF into a portable, private, and intelligent digital protocol. ESG is our first instance; the system is designed to prove any threshold-based truth.”*
 
 [![Chainlink](https://img.shields.io/badge/Chainlink-CRE%20%7C%20CCIP%20%7C%20Functions-3382ed?logo=chainlink)](https://chain.link/)
 [![ZK-SNARK](https://img.shields.io/badge/ZK--SNARK-Circom-green)](https://iden3.io/)
@@ -32,8 +32,14 @@
 ---
 
 ## 🛰️ Master Protocol Flow
-```text
-Data (IoT/Legal/Ethical) ➔ Trinity Consensus ➔ ZK Proof (Score ≥ 80) ➔ NFT Mint (Sepolia) ➔ CCIP Bridge (Fuji)
+```mermaid
+graph LR
+    A[Data Streams] --> B{Trinity Consensus}
+    B -->|Score >= 80| C[ZK-SNARK Proof]
+    C --> D[NFT Mint - Sepolia]
+    D --> E[CCIP Bridge - Fuji]
+    style B fill:#00ff0022,stroke:#00ff00
+    style C fill:#00ff0022,stroke:#00ff00
 ```
 
 ---

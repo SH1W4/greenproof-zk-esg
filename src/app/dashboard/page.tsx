@@ -58,34 +58,34 @@ export default function GreenProofDashboard() {
     
     await new Promise(r => setTimeout(r, 1200));
     setConsensusStates(s => ({ ...s, ethical: true }));
-    addLog("Ethical Core: VALIDATED [Classification: Internal]");
+    addLog("Ethical Core: ALIGNMENT SECURED [Sovereign Anchor]");
 
     await new Promise(r => setTimeout(r, 1000));
     setStep("zk_proving");
-    addLog("Generating ZK-SNARK Membrane...");
+    addLog("Initiating ZK-Membrane Synthesis...");
 
     // Simulate ZK Proving
     await new Promise(r => setTimeout(r, 1000));
-    addLog("Constraint: score >= 80 established.");
+    addLog("Constraint Logic: score >= 80 verified by Circom.");
     await new Promise(r => setTimeout(r, 1000));
-    addLog("Witness generated. Executing groth16.prove()");
+    addLog("Generating Private Witness [groth16]...");
     await new Promise(r => setTimeout(r, 1000));
-    addLog("Proof generated. 256-bit anonymity secured.");
+    addLog("ZK-Proof generated: Anonymity level 100%.");
     
     setStep("minting");
-    addLog("Minting GreenProof-NFT on Sepolia...");
+    addLog("On-Chain Settlement: Minting GreenProof-NFT...");
 
     // Simulate On-chain Minting
     await new Promise(r => setTimeout(r => r, 2000));
-    addLog("NFT Contract: 0x8a1... minted (ID: 4022)");
+    addLog("Sepolia TX Confirmed: NFT #GP-4022 Secured.");
     setStep("bridging");
-    addLog("Cross-chain Bridge: CCIP Transfer Initialized...");
+    addLog("Interoperability Layer: CCIP Bridge Protocol Active...");
 
     // Simulate CCIP Bridging
     await new Promise(r => setTimeout(r, 2000));
-    addLog("Status: Committed to Avalanche Fuji.");
+    addLog("Synchronization: Asset settled on Avalanche Fuji.");
     setStep("success");
-    addLog("PROTOCOL SUCCESS: Trust Decentralized.");
+    addLog("MASTER SUCCESS: The Proof is Sovereign.");
   };
 
   return (
@@ -138,8 +138,8 @@ export default function GreenProofDashboard() {
               transition={{ delay: 0.1 }}
               className="text-6xl lg:text-8xl font-black leading-[0.9] tracking-tighter"
             >
-              The Trinity <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">of Proof.</span>
+              The Sovereign <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Protocol of Truth.</span>
             </motion.h1>
 
             {/* Icon Grid Integration */}
@@ -176,9 +176,10 @@ export default function GreenProofDashboard() {
             {step === "idle" ? (
               <button 
                 onClick={startDemo}
-                className="group px-10 py-5 bg-green-500 text-green-950 font-black rounded-2xl flex items-center gap-3 hover:bg-green-400 transition-all hover:scale-105 active:scale-95 shadow-[0_15px_40px_rgba(34,197,94,0.3)]"
+                className="group px-10 py-5 bg-green-500 text-green-950 font-black rounded-2xl flex items-center gap-3 hover:bg-green-400 transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(34,197,94,0.4)] relative overflow-hidden"
               >
-                Initiate Protocol
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                Execute Sovereign Demo
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </button>
             ) : (
