@@ -7,7 +7,7 @@
 ---
 
 <p align="center">
-  <img src="docs/assets/branding/hero_banner.png" alt="GreenProof Banner" width="800">
+  <img src="docs/assets/branding/hero_banner_0.png" alt="GreenProof Banner" width="800">
 </p>
 
 # 🌿 GREENPROOF: THE PROTOCOL OF TRUTH
