@@ -31,11 +31,11 @@ The $2.1 Trillion Green Bond market is facing an integrity crisis. Current ESG r
 ## 🚀 The Solution: GreenProof
 GreenProof is a decentralized orchestration protocol that solves the **ESG Oracle Problem** by combining **Zero-Knowledge Proofs (ZK)** for extreme privacy and **Chainlink Runtime Environment (CRE)** for total decentralization.
 
-### 🌌 The Trinity of Proof (Triple Oracle Consensus)
-To ensure absolute integrity, GreenProof ingests data from three independent dimensions of reality before any certification is issued:
+### 🌌 The Internalized Trinity (Genesis Core)
+To ensure absolute sovereignty and technical integrity, GreenProof hosts its own specialized processing shards, adapted from the Symbeon ecosystem for monolithic performance:
 1. **Physical Reality (IoT Sensors):** Real-time environmental signals (carbon, energy, water) captured via Chainlink Functions.
-2. **Juridical Reality (Legal Audit):** Automated compliance check against global regulations via the **Th3m1s Juridical Protocol**.
-3. **Ethical Reality (Ethical Logic):** Value-alignment and governance verification via the **SEVE Adaptive Ethical Framework**.
+2. **Juridical Reality (GP-Juridical):** Internalized compliance shard of the Th3m1s Protocol, performing automated regulatory audits.
+3. **Ethical Reality (GP-Ethical):** Internalized ethics shard of the SEVE Framework, verifying social alignment and governance values.
 
 ---
 
