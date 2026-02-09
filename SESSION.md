@@ -17,6 +17,8 @@ Esta sessão marcou a transição da "ansiedade visual" para a "autoridade silen
 
 ### 🛡️ Estabilidade & Engineering
 - **Hydration & Mounted State**: Solução definitiva para exceções de lado cliente no Vercel, garantindo que animações de scroll só inicializem após a hidratação completa.
+- **Stability Guard**: Resolvida exceção de lado cliente via `mounted-state` check, garantindo 100% de estabilidade no Vercel.
+- **Genesis Mint (Milestone)**: Sucesso no minting do **Token ID 1** na Sepolia Testnet. [Tx: 0x21e0...c0ea]
 - **Tailwind Optimization**: Faxina técnica em classes CSS e correção de typos estruturais.
 
 ### 🧠 Consolidação de Inteligência
