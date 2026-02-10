@@ -261,7 +261,7 @@ export default function LandingPage() {
                 delay={60}
               />
             </div>
-            <Link href="#docs" className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-green-500 hover:text-green-400 transition-colors">
+            <Link href="/architecture" className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-green-500 hover:text-green-400 transition-colors">
               Explore Architecture <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -331,9 +331,9 @@ export default function LandingPage() {
           
           <div className="flex flex-wrap items-center justify-center gap-8 text-[11px] font-black uppercase tracking-[0.2em] text-green-100/30">
             <Link href="#tech" className="hover:text-green-500 transition-colors">Technology</Link>
-            <Link href="#docs" className="hover:text-green-500 transition-colors">Documentation</Link>
+            <Link href="/architecture" className="hover:text-green-500 transition-colors">Documentation</Link>
             <Link href="https://github.com/SH1W4/greenproof-zk-esg" target="_blank" className="hover:text-green-500 transition-colors">GitHub</Link>
-            <Link href="#" className="hover:text-green-400 transition-colors">Twitter (X)</Link>
+            <Link href="https://greenproof.vercel.app" target="_blank" className="hover:text-green-400 transition-colors">Live Demo</Link>
           </div>
 
           <div className="text-[10px] text-green-100/10 font-mono font-bold uppercase tracking-widest">

@@ -1,7 +1,7 @@
 # 🏆 CHAINLINK CONVERGENCE 2026
 **Track**: DeFi & Tokenization / Risk & Compliance / CRE & AI  
 **Live Demo**: [greenproof.vercel.app](https://greenproof.vercel.app)  
-**Video Pitch**: [GreenProof: Anti-Greenwashing by Design](https://youtube.com/watch?v=placeholder)  
+**Video Pitch**: Coming soon  
 **Smart Contract**: [Sepolia Explorer (tx)](https://sepolia.etherscan.io/tx/0xe0d518536a83afe148ad1846502b2c9dcaaa3982587b8da480666ed00ef32e4c)  
 
 ---
