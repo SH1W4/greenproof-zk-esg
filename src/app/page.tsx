@@ -45,11 +45,10 @@ export default function LandingPage() {
   const shieldScale = useTransform(sectionScroll, [0, 0.4, 0.6, 1], [0.85, 1, 1, 1.1]);
   const shieldOpacity = useTransform(sectionScroll, [0, 0.15, 0.85, 1], [0, 1, 1, 0]);
 
-  if (!mounted) return <div className="min-h-screen bg-[#020c06]" />;
-
+  // Robust Hydration Strategy: Keep the root tags stable to avoid breaking scroll listeners
   return (
     <main ref={containerRef} className="min-h-screen bg-[#020c06] text-[#f0fdf4] selection:bg-green-500/30">
-      {/* SECTION 0: NAV (Discreet Institutional) */}
+      {/* SECTION 0: NAV (Stable structure for hydration) */}
       <nav className="fixed top-0 inset-x-0 z-[100] border-b border-white/5 px-8 py-5 flex items-center justify-between backdrop-blur-xl bg-[#020c06]/80">
         <div className="flex items-center gap-3">
           <div className="p-2 bg-green-500 rounded-lg shadow-[0_0_20px_rgba(34,197,94,0.2)]">
@@ -61,9 +60,9 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="hidden md:flex items-center gap-8 text-[11px] font-black uppercase tracking-widest text-green-100/40">
-          <Link href="/architecture" className="hover:text-green-400 transition-colors">Architecture</Link>
-          <Link href="/verify" className="hover:text-green-400 transition-colors">Verify</Link>
-          <Link href="/roadmap" className="hover:text-green-400 transition-colors">Roadmap</Link>
+          <Link href="#tech" className="hover:text-green-400 transition-colors">Architecture</Link>
+          <Link href="#docs" className="hover:text-green-400 transition-colors">Verify</Link>
+          <Link href="#roadmap" className="hover:text-green-400 transition-colors">Roadmap</Link>
           <Link href="/login" className="px-6 py-2.5 bg-green-500 text-green-950 rounded-xl hover:bg-green-400 transition-all font-black shadow-lg shadow-green-500/20">
             Access Protocol
           </Link>
