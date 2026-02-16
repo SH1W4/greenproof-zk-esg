@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     description: "Zero-Knowledge ESG Compliance for the RWA Era.",
     images: ["/assets/branding/og-banner.png"],
   },
+  icons: {
+    icon: "/assets/branding/institutional_seal.png",
+    apple: "/assets/branding/institutional_seal.png",
+  },
 };
 
 export default function RootLayout({

@@ -13,8 +13,15 @@ interface ProofCertificateProps {
 export const ProofCertificate: React.FC<ProofCertificateProps> = ({ 
   onClose, 
   verificationId = "GP-2026-ZK-X92",
-  timestamp = new Date().toLocaleString()
+  timestamp: initialTimestamp
 }) => {
+  const [timestamp, setTimestamp] = React.useState(initialTimestamp || "");
+
+  React.useEffect(() => {
+    if (!initialTimestamp) {
+      setTimestamp(new Date().toLocaleString());
+    }
+  }, [initialTimestamp]);
   return (
     <motion.div 
       initial={{ opacity: 0, scale: 0.9 }}

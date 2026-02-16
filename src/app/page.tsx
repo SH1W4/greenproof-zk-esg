@@ -26,24 +26,29 @@ import { Typewriter, TerminalCommand } from "../components/Typewriter";
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
+  const parallaxRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress: globalScroll } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
 
-  const shieldScale = useTransform(scrollYProgress, [0, 0.4], [1, 1.2]);
-  const shieldOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
+  const { scrollYProgress: sectionScroll } = useScroll({
+    target: parallaxRef,
+    offset: ["start end", "end start"]
+  });
 
-  if (!mounted) return <div className="min-h-screen bg-[#020c06]" />;
+  const shieldScale = useTransform(sectionScroll, [0, 0.4, 0.6, 1], [0.85, 1, 1, 1.1]);
+  const shieldOpacity = useTransform(sectionScroll, [0, 0.15, 0.85, 1], [0, 1, 1, 0]);
 
+  // Robust Hydration Strategy: Keep the root tags stable to avoid breaking scroll listeners
   return (
     <main ref={containerRef} className="min-h-screen bg-[#020c06] text-[#f0fdf4] selection:bg-green-500/30">
-      {/* SECTION 0: NAV (Discreet Institutional) */}
+      {/* SECTION 0: NAV (Stable structure for hydration) */}
       <nav className="fixed top-0 inset-x-0 z-[100] border-b border-white/5 px-8 py-5 flex items-center justify-between backdrop-blur-xl bg-[#020c06]/80">
         <div className="flex items-center gap-3">
           <div className="p-2 bg-green-500 rounded-lg shadow-[0_0_20px_rgba(34,197,94,0.2)]">
@@ -55,9 +60,9 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="hidden md:flex items-center gap-8 text-[11px] font-black uppercase tracking-widest text-green-100/40">
-          <Link href="/architecture" className="hover:text-green-400 transition-colors">Architecture</Link>
-          <Link href="/verify" className="hover:text-green-400 transition-colors">Verify</Link>
-          <Link href="/roadmap" className="hover:text-green-400 transition-colors">Roadmap</Link>
+          <Link href="#tech" className="hover:text-green-400 transition-colors">Architecture</Link>
+          <Link href="#docs" className="hover:text-green-400 transition-colors">Verify</Link>
+          <Link href="#roadmap" className="hover:text-green-400 transition-colors">Roadmap</Link>
           <Link href="/login" className="px-6 py-2.5 bg-green-500 text-green-950 rounded-xl hover:bg-green-400 transition-all font-black shadow-lg shadow-green-500/20">
             Access Protocol
           </Link>
@@ -128,33 +133,46 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 2: CINEMATIC PARALLAX (Visual Authority) */}
-      <section className="relative h-[120vh] flex items-center justify-center overflow-hidden border-y border-white/5 bg-black/20">
+      <section ref={parallaxRef} className="relative h-screen flex items-center justify-center overflow-hidden border-y border-white/5 bg-[#020c06]">
         <motion.div 
           style={{ scale: shieldScale, opacity: shieldOpacity }}
           className="relative w-full max-w-5xl aspect-square flex items-center justify-center"
         >
-          {/* Background Glow */}
-          <div className="absolute inset-0 bg-green-500/5 blur-[120px] rounded-full animate-pulse" />
+          {/* Enhanced Background Glow */}
+          <div className="absolute inset-0 bg-green-500/10 blur-[160px] rounded-full animate-pulse" />
           
-          <Image 
-            src="/assets/concepts/trinity_concept_elite.png" 
-            alt="GreenProof Trinity of Proof" 
-            fill
-            className="object-contain drop-shadow-[0_0_80px_rgba(34,197,94,0.15)] scale-110"
-          />
-        </motion.div>
+          <div className="relative w-[85%] h-[85%]">
+            <Image 
+              src="/assets/branding/orbs-shield-banner.jfif" 
+              alt="GreenProof Trinity of Proof" 
+              fill
+              priority
+              unoptimized
+              className="object-contain drop-shadow-[0_0_80px_rgba(34,197,94,0.3)]"
+            />
+          </div>
 
-        {/* Floating Technical Labels (Optional context in parallax) */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-[10%] md:left-1/4 p-4 border border-green-500/10 rounded-xl bg-black/40 backdrop-blur-md">
-            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-1">Core 01</div>
-            <div className="text-xs font-bold uppercase tracking-widest">Physical Reality</div>
+          {/* Integrated Labels - Tightened to the center orbs */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* CORE 01: Physical Reality (Left Orb) */}
+            <div className="absolute top-[50%] left-[32%] -translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/20 rounded-xl bg-black/80 backdrop-blur-2xl shadow-[0_0_30px_rgba(34,197,94,0.1)]">
+              <div className="text-[10px] font-mono text-green-500/40 uppercase font-black mb-0.5 tracking-widest">Core 01</div>
+              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100">Physical Reality</div>
+            </div>
+            
+            {/* CORE 02: Juridical Oracle (Right Orb) */}
+            <div className="absolute top-[50%] right-[32%] translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/20 rounded-xl bg-black/80 backdrop-blur-2xl shadow-[0_0_30px_rgba(34,197,94,0.1)] text-right">
+              <div className="text-[10px] font-mono text-green-500/40 uppercase font-black mb-0.5 tracking-widest">Core 02</div>
+              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100">Juridical Oracle</div>
+            </div>
+
+            {/* CORE 03: Ethical Consensus (Bottom Center Orb) */}
+            <div className="absolute bottom-[22%] left-1/2 -translate-x-1/2 p-3 border border-green-500/20 rounded-xl bg-black/80 backdrop-blur-2xl shadow-[0_0_30px_rgba(34,197,94,0.1)] text-center">
+              <div className="text-[10px] font-mono text-green-500/40 uppercase font-black mb-0.5 tracking-widest">Core 03</div>
+              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100">Ethical Consensus</div>
+            </div>
           </div>
-          <div className="absolute bottom-1/4 right-[10%] md:right-1/4 p-4 border border-green-500/10 rounded-xl bg-black/40 backdrop-blur-md">
-            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-1">Core 03</div>
-            <div className="text-xs font-bold uppercase tracking-widest">Ethical Consensus</div>
-          </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* SECTION 3: THE PROBLEM (The ESG Gap) */}

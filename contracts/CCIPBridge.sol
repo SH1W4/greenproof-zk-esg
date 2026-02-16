@@ -3,30 +3,34 @@ pragma solidity ^0.8.20;
 
 import "@chainlink/contracts-ccip/contracts/interfaces/IRouterClient.sol";
 import "@chainlink/contracts-ccip/contracts/libraries/Client.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
 
 /**
  * @title CCIPBridge
- * @dev Simple reference for CCIP-based bridge for GreenProof.
- * "Bridge it to any chain in 1 click."
+ * @dev Sovereign Bridge for GreenProof Protocol.
+ * Security Audit Fix: Implementing AccessControl and Emergency Withdrawal logic.
  */
-contract CCIPBridge is Ownable {
+contract CCIPBridge is AccessControl {
+    bytes32 public constant BRIDGER_ROLE = keccak256("BRIDGER_ROLE");
     IRouterClient public router;
     address public linkToken;
 
-    constructor(address _router, address _link) Ownable(msg.sender) {
+    constructor(address _router, address _link) {
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(BRIDGER_ROLE, msg.sender);
         router = IRouterClient(_router);
         linkToken = _link;
     }
 
     /**
      * @dev Sends a message to another chain to mint/replicate a GreenProof.
+     * Restricted to authorized BRIDGER_ROLE.
      */
     function bridgeGreenProof(
         uint64 destinationChainSelector,
         address receiver,
         uint256 tokenId
-    ) external payable {
+    ) external payable onlyRole(BRIDGER_ROLE) {
         Client.EVM2AnyMessage memory message = Client.EVM2AnyMessage({
             receiver: abi.encode(receiver),
             data: abi.encode(tokenId),
@@ -36,6 +40,15 @@ contract CCIPBridge is Ownable {
         });
 
         router.ccipSend{value: msg.value}(destinationChainSelector, message);
+    }
+
+    /**
+     * @dev Rescue funds accidentally sent to the contract.
+     */
+    function withdraw(address to) external onlyRole(DEFAULT_ADMIN_ROLE) {
+        uint256 amount = address(this).balance;
+        (bool success, ) = to.call{value: amount}("");
+        require(success, "Withdraw failed");
     }
 
     receive() external payable {}
