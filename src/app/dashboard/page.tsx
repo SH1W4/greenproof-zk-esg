@@ -342,7 +342,7 @@ export default function GreenProofDashboard() {
                 <TerminalIcon className="w-4 h-4 text-green-500" />
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-green-500">Protocol Live Logs</span>
              </div>
-              <div className="space-y-2 font-mono text-[11px] text-green-200/40">
+              <div className="space-y-2 font-mono text-[11px] text-green-200/40" translate="no">
                 {logs.map((log, i) => (
                   <motion.div 
                     key={i} 

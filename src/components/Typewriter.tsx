@@ -32,7 +32,7 @@ export function Typewriter({ text, delay = 50, className = "" }: TypewriterProps
   }, [currentIndex, delay, text]);
 
   return (
-    <span className={className}>
+    <span className={className} translate="no">
       {displayText}
       <span className="animate-pulse inline-block w-2 h-4 bg-current align-middle ml-1"></span>
     </span>
@@ -66,7 +66,7 @@ export function TerminalCommand({ commands, className = "" }: TerminalCommandPro
   }, [currentLineIndex, commands]);
 
   return (
-    <div className={`relative group ${className}`}>
+    <div className={`relative group ${className}`} translate="no">
       {/* Terminal Window Frame */}
       <div className="bg-[#050a06] border border-green-500/30 rounded-xl overflow-hidden shadow-[0_0_50px_rgba(34,197,94,0.1)] backdrop-blur-md">
         {/* Header bar */}
