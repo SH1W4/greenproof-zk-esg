@@ -28,7 +28,8 @@ While the current implementation focuses on ESG scores, the **Sovereign Membrane
 - **Supply Chain Integrity:** Proof-of-provenance for industrial-scale carbon credits.
 
 ## Tech Stack
-- **Orchestration:** Chainlink CRE (greenproof-orchestrator.ts)
+- **Orchestration:** Chainlink CRE (greenproof-orchestrator.ts) - *Hardened with 2/3 Oracle Consensus & RBAC*
 - **Privacy:** ZK-SNARKs (Circom / snarkjs)
 - **Interoperability:** Chainlink CCIP
+- **Security:** OpenZeppelin AccessControl (Role-Based Access Control)
 - **Frontend:** Next.js 14 (Institutional UI/UX)

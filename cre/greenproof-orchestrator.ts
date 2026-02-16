@@ -65,10 +65,11 @@ export async function main(args: any) {
   // 3️⃣ On-Chain Certification (NFT as Credential)
   // A GreenProof NFT is minted on Sepolia,
   // embedding only a cryptographic commitment to the ZK proof.
+  // Security Audit Fix: Calling the correct custom function 'mintGreenProof' restricted to MINTER_ROLE.
   const nftRegistration = await Workflow.eth.sendTransaction({
     to: "0x82F... (GreenProofNFT Address)",
-    function: "safeMint",
-    params: [args.ownerAddress, zkProof.commitment]
+    function: "mintGreenProof",
+    params: [args.ownerAddress, true] // Passing the verification flag validated by the Oracle Consensus
   });
   console.log(`[SUCCESS] GreenProof NFT minted on Sepolia. Hash: ${nftRegistration.hash}`);
 

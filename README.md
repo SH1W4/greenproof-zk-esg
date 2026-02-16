@@ -13,6 +13,9 @@
 ## ⚡ TL;DR for Judges
 **GreenProof** is a generic **Threshold Attestation Protocol**. We let anyone prove complex conditions (starting with ESG ≥80%) without revealing private data, and bridge that proof to any chain in 1 click—orchestrated by autonomous agents on **Chainlink CRE**.
 
+> [!TIP]
+> **👨‍⚖️ FOR JUDGES:** Don't have time to set up? Go to the [Live Dashboard](https://greenproof.vercel.app/dashboard) and click the **"Execute Sovereign Demo"** button for a fully autonomous, visual walkthrough of the protocol's orchestration.
+
 ### 🧪 Demo Notes (Sovereign Disclosure)
 - **ZK Proof Generation**: [REAL] (Circom/snarkjs)
 - **NFT Certification**: [REAL] (Sepolia Testnet)
@@ -20,7 +23,7 @@
 - **ESG Data Streams**: [MOCKED] (Telemetry patterns are real, data points are generated for POC)
 
 # 🌿 GREENPROOF: THE PROTOCOL OF TRUTH
-### **"A Sovereign Threshold Attestation Protocol for RWAs, Orchestrated by Autonomous Agents."**
+### **"Anti-Greenwashing by Design via Chainlink CRE + ZK + Triple Oracle Consensus."**
 
 > *“GreenProof is a generic primitive for objective reality—transforming compliance from a static PDF into a portable, private, and intelligent digital protocol. ESG is our first instance; the system is designed to prove any threshold-based truth.”*
 

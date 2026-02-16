@@ -28,6 +28,7 @@ export default function GreenProofDashboard() {
   const [step, setStep] = useState<Step>("idle");
   const [logs, setLogs] = useState<string[]>([]);
   const [showCertificate, setShowCertificate] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [consensusStates, setConsensusStates] = useState({
     iot: false,
     legal: false,
@@ -41,8 +42,11 @@ export default function GreenProofDashboard() {
   };
 
   useEffect(() => {
+    setMounted(true);
     terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [logs]);
+
+  if (!mounted) return null;
 
   const startDemo = async () => {
     setStep("consensus");
@@ -99,22 +103,26 @@ export default function GreenProofDashboard() {
 
       {/* Institutional Nav */}
       <nav className="relative z-10 border-b border-white/5 px-8 py-5 flex items-center justify-between backdrop-blur-2xl bg-black/10">
-        <div className="flex items-center gap-3">
-          <div className="p-2.5 bg-green-500 rounded-xl shadow-[0_0_15px_rgba(34,197,94,0.4)]">
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="p-2.5 bg-green-500 rounded-xl shadow-[0_0_15px_rgba(34,197,94,0.4)] group-hover:scale-110 transition-transform">
             <ShieldCheck className="w-6 h-6 text-green-950" />
           </div>
           <div className="flex flex-col">
             <span className="font-black text-xl tracking-tighter glow-text">GREENPROOF</span>
             <span className="text-[10px] text-green-500/60 font-mono font-bold tracking-[0.2em] uppercase">Sovereign Compliance</span>
           </div>
-        </div>
+        </Link>
         <div className="flex items-center gap-6 text-sm font-semibold">
           <div className="hidden md:flex items-center gap-2 text-green-400">
              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
              <span>Sepolia Active</span>
           </div>
-          <button className="px-6 py-2.5 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all font-bold">Docs</button>
-          <button className="px-6 py-2.5 bg-green-500 text-green-950 rounded-xl hover:bg-green-400 transition-all font-black shadow-lg shadow-green-500/20">Portal</button>
+           <Link href="/architecture" className="px-6 py-2.5 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all font-bold">
+            Docs
+          </Link>
+          <Link href="/verify" className="px-6 py-2.5 bg-green-500 text-green-950 rounded-xl hover:bg-green-400 transition-all font-black shadow-lg shadow-green-500/20">
+            Portal
+          </Link>
         </div>
       </nav>
 
@@ -142,19 +150,23 @@ export default function GreenProofDashboard() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Protocol of Truth.</span>
             </motion.h1>
 
-            {/* Icon Grid Integration */}
+            {/* Institutional Seal Integration */}
             <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.7 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
-              className="relative w-full h-12 overflow-hidden mask-fade"
+              className="flex justify-start pt-2"
             >
-              <Image 
-                src="/assets/branding/icon_grid.png?v=2" 
-                alt="Institutional Partners" 
-                fill
-                className="object-contain grayscale-[30%] contrast-110"
-              />
+              <div className="relative w-20 h-20 rounded-full border border-green-500/20 bg-green-500/5 p-1 flex items-center justify-center overflow-hidden group shadow-[0_0_20px_rgba(34,197,94,0.1)]">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent animate-pulse" />
+                <Image 
+                  src="/assets/branding/institutional_seal.png" 
+                  alt="GreenProof Institutional Seal" 
+                  width={64}
+                  height={64}
+                  className="object-contain filter contrast-125 brightness-110"
+                />
+              </div>
             </motion.div>
             
             <motion.p 
@@ -355,9 +367,9 @@ export default function GreenProofDashboard() {
       {/* Technical Deep Dive Section (The "Substance") */}
       <section className="relative z-10 max-w-7xl mx-auto px-8 py-24 space-y-20 border-t border-white/5">
         <div className="space-y-4 max-w-2xl">
-          <h2 className="text-4xl font-black tracking-tighter uppercase">Technical Deep Dive</h2>
+          <h2 className="text-4xl font-black tracking-tighter uppercase">Imersão Técnica</h2>
           <p className="text-green-100/40 leading-relaxed text-lg">
-            GreenProof's architecture is built on three pillars of objective reality, coordinated by Chainlink CRE and secured by ZK-SNARKs.
+            A arquitetura do GreenProof baseia-se em três pilares de realidade objetiva, coordenados pelo Chainlink CRE e protegidos por ZK-SNARKs.
           </p>
         </div>
 
@@ -368,18 +380,18 @@ export default function GreenProofDashboard() {
           >
             <div className="flex items-center gap-3 text-green-400">
               <BrainCircuit className="w-5 h-5" />
-              <span className="text-xs font-black uppercase tracking-widest">Protocol Architecture</span>
+              <span className="text-xs font-black uppercase tracking-widest">Arquitetura do Protocolo</span>
             </div>
             <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black/40 group">
               <Image 
-                src="/assets/technical/protocol_workflow_architecture.png" 
-                alt="Architecture" 
+                src="/assets/technical/protocol_architecture_elite.png" 
+                alt="Arquitetura" 
                 fill
                 className="object-contain opacity-95 group-hover:scale-110 transition-transform duration-700"
               />
             </div>
             <p className="text-xs text-green-100/30 leading-relaxed">
-              Visualize the multi-layered orchestration between IoT sensors, Juridical nodes, and Impact scoring engines.
+              Visualize a orquestração em múltiplas camadas entre sensores IoT, nós Jurídicos e motores de pontuação de impacto.
             </p>
           </motion.div>
 
@@ -389,18 +401,18 @@ export default function GreenProofDashboard() {
           >
             <div className="flex items-center gap-3 text-green-400">
               <Cpu className="w-5 h-5" />
-              <span className="text-xs font-black uppercase tracking-widest">CRE Master Workflow</span>
+              <span className="text-xs font-black uppercase tracking-widest">Fluxo de Trabalho Mestre CRE</span>
             </div>
             <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black/40 group">
               <Image 
-                src="/assets/technical/greenproof_master_infographic.png" 
+                src="/assets/technical/cre_workflow_elite.png" 
                 alt="Workflow" 
                 fill
                 className="object-contain opacity-95 group-hover:scale-110 transition-transform duration-700"
               />
             </div>
             <p className="text-xs text-green-100/30 leading-relaxed">
-              High-density mapping of the Chainlink CRE orchestration logic used to verify institutional ESG claims.
+              Mapeamento de alta densidade da lógica de orquestração CRE Chainlink usada para verificar alegações institucionais de ESG.
             </p>
           </motion.div>
         </div>

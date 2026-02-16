@@ -128,31 +128,40 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 2: CINEMATIC PARALLAX (Visual Authority) */}
-      <section className="relative h-[120vh] flex items-center justify-center overflow-hidden border-y border-white/5 bg-black/20">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden border-y border-white/5 bg-black/20">
         <motion.div 
           style={{ scale: shieldScale, opacity: shieldOpacity }}
-          className="relative w-full max-w-5xl aspect-square flex items-center justify-center"
+          className="relative w-full max-w-4xl aspect-square flex items-center justify-center"
         >
           {/* Background Glow */}
           <div className="absolute inset-0 bg-green-500/5 blur-[120px] rounded-full animate-pulse" />
           
           <Image 
-            src="/assets/concepts/trinity_concept_elite.png" 
+            src="/assets/branding/orbs-shield-banner.jfif" 
             alt="GreenProof Trinity of Proof" 
             fill
-            className="object-contain drop-shadow-[0_0_80px_rgba(34,197,94,0.15)] scale-110"
+            className="object-contain drop-shadow-[0_0_100px_rgba(34,197,94,0.15)] scale-75"
           />
         </motion.div>
 
-        {/* Floating Technical Labels (Optional context in parallax) */}
+        {/* Integrated Labels anchored to the specific asset orbs */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-[10%] md:left-1/4 p-4 border border-green-500/10 rounded-xl bg-black/40 backdrop-blur-md">
-            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-1">Core 01</div>
-            <div className="text-xs font-bold uppercase tracking-widest">Physical Reality</div>
+          {/* CORE 01: Physical Reality (Left Orb) */}
+          <div className="absolute top-[52%] left-[28%] p-3 border border-green-500/10 rounded-xl bg-black/60 backdrop-blur-xl">
+            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-0.5">Core 01</div>
+            <div className="text-[11px] font-bold uppercase tracking-widest text-green-100">Physical Reality</div>
           </div>
-          <div className="absolute bottom-1/4 right-[10%] md:right-1/4 p-4 border border-green-500/10 rounded-xl bg-black/40 backdrop-blur-md">
-            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-1">Core 03</div>
-            <div className="text-xs font-bold uppercase tracking-widest">Ethical Consensus</div>
+          
+          {/* CORE 02: Juridical Oracle (Right Orb) */}
+          <div className="absolute top-[52%] right-[28%] p-3 border border-green-500/10 rounded-xl bg-black/60 backdrop-blur-xl">
+            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-0.5">Core 02</div>
+            <div className="text-[11px] font-bold uppercase tracking-widest text-green-100">Juridical Oracle</div>
+          </div>
+
+          {/* CORE 03: Ethical Consensus (Bottom Center Orb) */}
+          <div className="absolute bottom-[20%] left-1/2 -translate-x-1/2 p-3 border border-green-500/10 rounded-xl bg-black/60 backdrop-blur-xl text-center">
+            <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-0.5">Core 03</div>
+            <div className="text-[11px] font-bold uppercase tracking-widest text-green-100">Ethical Consensus</div>
           </div>
         </div>
       </section>
