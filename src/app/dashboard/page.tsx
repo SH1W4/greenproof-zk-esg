@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Orb } from "@/components/OrbVisualization";
 import { ProofCertificate } from "@/components/ProofCertificate";
 import { 
