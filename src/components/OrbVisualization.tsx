@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial, Float } from "@react-three/drei";
 
@@ -11,9 +12,9 @@ interface OrbProps {
 }
 
 export function Orb({ color, speed = 1.5, distort = 0.4, active = false }: OrbProps) {
-  const [mounted, setMounted] = (require('react')).useState(false);
+  const [mounted, setMounted] = useState(false);
   
-  (require('react')).useEffect(() => {
+  useEffect(() => {
     setMounted(true);
   }, []);
 

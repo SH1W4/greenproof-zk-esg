@@ -342,7 +342,7 @@ export default function GreenProofDashboard() {
                 <TerminalIcon className="w-4 h-4 text-green-500" />
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-green-500">Protocol Live Logs</span>
              </div>
-             <div className="space-y-2 font-mono text-[11px] text-green-200/40">
+              <div className="space-y-2 font-mono text-[11px] text-green-200/40">
                 {logs.map((log, i) => (
                   <motion.div 
                     key={i} 
@@ -350,12 +350,12 @@ export default function GreenProofDashboard() {
                     animate={{ opacity: 1, x: 0 }}
                     className={`flex gap-2 ${i === logs.length - 1 ? 'text-green-400 font-bold' : ''}`}
                   >
-                    <span className="opacity-50 tracking-tighter">[{new Date().toLocaleTimeString()}]</span>
+                    <span className="opacity-50 tracking-tighter">[{mounted ? new Date().toLocaleTimeString() : "00:00:00"}]</span>
                     <span>{log}</span>
                   </motion.div>
                 ))}
                 <div ref={terminalEndRef} />
-             </div>
+              </div>
              {logs.length === 0 && (
                <div className="absolute inset-0 flex items-center justify-center opacity-10 font-mono text-xs uppercase tracking-[0.5em]">
                  Awaiting Input
