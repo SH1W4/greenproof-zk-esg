@@ -42,8 +42,8 @@ export default function LandingPage() {
     offset: ["start end", "end start"]
   });
 
-  const shieldScale = useTransform(sectionScroll, [0, 0.5, 1], [0.8, 1, 1.1]);
-  const shieldOpacity = useTransform(sectionScroll, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const shieldScale = useTransform(sectionScroll, [0, 0.4, 0.6, 1], [0.85, 1, 1, 1.1]);
+  const shieldOpacity = useTransform(sectionScroll, [0, 0.15, 0.85, 1], [0, 1, 1, 0]);
 
   if (!mounted) return <div className="min-h-screen bg-[#020c06]" />;
 
@@ -134,39 +134,43 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 2: CINEMATIC PARALLAX (Visual Authority) */}
-      <section ref={parallaxRef} className="relative h-screen flex items-center justify-center overflow-hidden border-y border-white/5 bg-black/20">
+      <section ref={parallaxRef} className="relative h-screen flex items-center justify-center overflow-hidden border-y border-white/5 bg-[#020c06]">
         <motion.div 
           style={{ scale: shieldScale, opacity: shieldOpacity }}
-          className="relative w-full max-w-4xl aspect-square flex items-center justify-center"
+          className="relative w-full max-w-5xl aspect-square flex items-center justify-center"
         >
-          {/* Background Glow */}
-          <div className="absolute inset-0 bg-green-500/5 blur-[120px] rounded-full animate-pulse" />
+          {/* Enhanced Background Glow */}
+          <div className="absolute inset-0 bg-green-500/10 blur-[160px] rounded-full animate-pulse" />
           
-          <Image 
-            src="/assets/branding/orbs-shield-banner.jfif" 
-            alt="GreenProof Trinity of Proof" 
-            fill
-            className="object-contain drop-shadow-[0_0_100px_rgba(34,197,94,0.15)]"
-          />
+          <div className="relative w-[85%] h-[85%]">
+            <Image 
+              src="/assets/branding/orbs-shield-banner.jfif" 
+              alt="GreenProof Trinity of Proof" 
+              fill
+              priority
+              unoptimized
+              className="object-contain drop-shadow-[0_0_80px_rgba(34,197,94,0.3)]"
+            />
+          </div>
 
-          {/* Integrated Labels - Inside the motion div for coesion */}
+          {/* Integrated Labels - Tightened to the center orbs */}
           <div className="absolute inset-0 pointer-events-none">
             {/* CORE 01: Physical Reality (Left Orb) */}
-            <div className="absolute top-[52%] left-[28%] p-3 border border-green-500/10 rounded-xl bg-black/60 backdrop-blur-xl">
-              <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-0.5">Core 01</div>
-              <div className="text-[11px] font-bold uppercase tracking-widest text-green-100">Physical Reality</div>
+            <div className="absolute top-[50%] left-[32%] -translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/20 rounded-xl bg-black/80 backdrop-blur-2xl shadow-[0_0_30px_rgba(34,197,94,0.1)]">
+              <div className="text-[10px] font-mono text-green-500/40 uppercase font-black mb-0.5 tracking-widest">Core 01</div>
+              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100">Physical Reality</div>
             </div>
             
             {/* CORE 02: Juridical Oracle (Right Orb) */}
-            <div className="absolute top-[52%] right-[28%] p-3 border border-green-500/10 rounded-xl bg-black/60 backdrop-blur-xl">
-              <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-0.5">Core 02</div>
-              <div className="text-[11px] font-bold uppercase tracking-widest text-green-100">Juridical Oracle</div>
+            <div className="absolute top-[50%] right-[32%] translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/20 rounded-xl bg-black/80 backdrop-blur-2xl shadow-[0_0_30px_rgba(34,197,94,0.1)] text-right">
+              <div className="text-[10px] font-mono text-green-500/40 uppercase font-black mb-0.5 tracking-widest">Core 02</div>
+              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100">Juridical Oracle</div>
             </div>
 
             {/* CORE 03: Ethical Consensus (Bottom Center Orb) */}
-            <div className="absolute bottom-[20%] left-1/2 -translate-x-1/2 p-3 border border-green-500/10 rounded-xl bg-black/60 backdrop-blur-xl text-center">
-              <div className="text-[10px] font-mono text-green-500/40 uppercase font-bold mb-0.5">Core 03</div>
-              <div className="text-[11px] font-bold uppercase tracking-widest text-green-100">Ethical Consensus</div>
+            <div className="absolute bottom-[22%] left-1/2 -translate-x-1/2 p-3 border border-green-500/20 rounded-xl bg-black/80 backdrop-blur-2xl shadow-[0_0_30px_rgba(34,197,94,0.1)] text-center">
+              <div className="text-[10px] font-mono text-green-500/40 uppercase font-black mb-0.5 tracking-widest">Core 03</div>
+              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100">Ethical Consensus</div>
             </div>
           </div>
         </motion.div>
