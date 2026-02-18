@@ -9,6 +9,8 @@ O sistema orquestra três pilares independentes de dados via **Chainlink CRE (Cu
 1.  **GP-Physical (Physical Reality Core)**: Ingesting environmental signals via IoT/Satellite.
 2.  **GP-Juridical (Juridical Logic Core)**: Internal arbiter for native legal compliance.
 3.  **GP-Ethical (Ethical Value Core)**: Internal guardian for social impact and governance.
+    - **Quantification**: Uses a Weighted Heuristic Matrix (WHM) across Human Rights, Community Impact, and Fair Wage compliance.
+    - **Auditability**: Each score is backed by a signed JSON-LD metadata blob anchored to the GreenProof MAS.
 
 ## ⚖️ Lógica de Consenso 2/3 (Quorum Mínimo)
 

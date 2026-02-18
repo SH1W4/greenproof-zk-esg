@@ -7,6 +7,7 @@ The core of the protocol is the **Consensus Layer**, where three specialized age
 - **GP-Physical**: Real-time telemetry and IoT signals.
 - **GP-Juridical**: Regulatory and legal compliance.
 - **GP-Ethical**: Social impact and value alignment.
+    - **Formula**: $Score_{Ethical} = \sum (Weight_{i} \times Metric_{i})$, where metrics include wage fairness and carbon-offset auditability.
 
 A **2/3 Quorum** is strictly required to reach a protocol-level consensus, ensuring that no single point of failure can compromise the integrity of the ESG claim.
 
