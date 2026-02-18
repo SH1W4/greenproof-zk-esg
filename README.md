@@ -101,10 +101,21 @@ The GreenProof **Sovereign MAS** is a universal settlement layer for objective t
 
 ---
 
-## 🛡️ Structural Integrity & Selective Disclosure
-The GreenProof Protocol is governed by the **GreenProof Foundation** (a Symbeon Labs Initiative). To protect sovereign intellectual property while maintaining total transparency for evaluators, we operate under the **Sovereign Disclosure Protocol**. 
+## ☕ Pilot Study: High-Altitude Coffee Cooperative
+To demonstrate the protocol's real-world impact, we applied GreenProof to a **Sovereign High-Altitude Coffee Cooperative**.
 
-Our "Trinity of Proof" logic is based on a rigorous **[Mathematical & Algebraic Foundation](docs/MATHEMATICAL_FOUNDATION.md)**, ensuring legal and technical defensibility for institutional capital.
+- **Challenge**: The cooperative needs to prove carbon sequestration (Physical), compliance with EU Deforestation Regulations (Juridical), and fair-trade wage distribution (Ethical) to unlock premium pricing.
+- **Solution**: GreenProof CRE orchestrates satellite NDVI data, legal export permits, and payment rails into a **Sovereign ESG Certificate**.
+- **Result**: A single, ZK-verified proof used for global trade without exposing sensitive farmer IDs or precise plot locations.
+
+---
+
+## 🛡️ Structural Integrity & Transparency
+The GreenProof Protocol is governed by the **GreenProof Foundation**. For detailed technical evaluation:
+
+- **[Judge Cheat Sheet ➔](docs/JUDGE_CHEATSHEET.md)**: Instant access to links, hashes, and code.
+- **[Demo Technical Disclosure ➔](docs/DEMO_DISCLOSURE.md)**: Transparency on Production vs. POC simulation.
+- **[Mathematical Foundation ➔](docs/MATHEMATICAL_FOUNDATION.md)**: The algebraic roots of our "Trinity" logic.
 
 ---
 
