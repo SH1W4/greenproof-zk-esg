@@ -21,8 +21,8 @@ This skill allows an agent to manage, extend, and verify the GreenProof protocol
 
 3. **Smart Contract Certification:**
    - **NFT:** `contracts/GreenProofNFT.sol`
-   - **Bridge:** `contracts/CCIPBridge.sol`
-   - **Task:** Ensure the `verificationPassed` boolean is correctly mapped from the CRE workflow output to the `mintGreenProof` function.
+   - **Verifier:** `contracts/Verifier.sol`
+   - **Task:** Ensure the cryptographic proof (a, b, c) and public signals (input) are correctly passed from the CRE workflow to the `mintGreenProof` function.
 
 ## 🚀 Common Workflows
 

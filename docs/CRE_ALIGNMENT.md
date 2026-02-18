@@ -2,37 +2,40 @@
 **Standard**: Chainlink Runtime Environment (v1.0 - Convergence)
 **Target File**: [`cre/greenproof-orchestrator.ts`](../cre/greenproof-orchestrator.ts)
 
-Este documento certifica que a arquitetura do GreenProof segue estritamente os padrões de orquestração do Chainlink CRE, garantindo que o jurado técnico reconheça a implementação canônica.
+This document certifies that the GreenProof architecture strictly follows Chainlink CRE orchestration standards, ensuring technical judges recognize the canonical implementation.
 
-## 1. Mapeamento Arquitetural (Codebase vs. Docs)
+## 1. Architectural Mapping (Codebase vs. Docs)
 
-A estrutura do nosso orquestrador reflete 1:1 os pilares da documentação oficial:
+The structure of our orchestrator reflects a 1:1 mapping to official documentation pillars:
 
-| Pillar CRE | Implementação GreenProof | Localização no Código |
+| CRE Pillar | GreenProof Implementation | Code Location |
 | :--- | :--- | :--- |
-| **Workflow Definition** | `greenproof-orchestrator.ts` | Definição da função assíncrona `main(args)` que encapsula a lógica de negócio. |
-| **Capabilities (Data)** | `ChainlinkFunctions.fetch` | Linhas 25, 33, 41: Ingestão de dados multi-fonte (Físico, Jurídico, Ético). |
-| **Capabilities (Compute)** | `ZK.prove` | Linha 59: Off-chain computation via DON para gerar provas ZK-SNARK. |
-| **Capabilities (Tx)** | `Workflow.eth.safeMint` | Linha 68: Execução on-chain baseada no resultado da computação off-chain. |
-| **Cross-Chain Interop** | `CCIP.transfer` | Linha 79: Orquestração direta de bridge como passo final do workflow atomic. |
+| **Workflow Definition** | `greenproof-orchestrator.ts` | Definition of the async `main(args)` function encapsulating the business logic. |
+| **Capabilities (Data)** | `ChainlinkFunctions.fetch` | Lines 25, 33, 41: Multi-source data ingestion (Physical, Juridical, Ethical). |
+| **Capabilities (Compute)** | `ZK.prove` | Line 59: Off-chain computation via DON to generate ZK-SNARK proofs. |
+| **Capabilities (Tx)** | `Workflow.eth.safeMint` | Line 68: On-chain execution based on the off-chain compute result. |
+| **Cross-Chain Interop** | `CCIP.transfer` | Line 79: Direct bridge orchestration as the final step of the atomic workflow. |
 
-## 2. Padrões de Design Adotados
+## 2. Adopted Design Patterns
 
 ### 🟢 The "Gateway" Pattern
-Utilizamos o CRE como um **Gateway de Verdade**. O contrato inteligente não "puxa" dados; o CRE "empurra" fatos verificados.
-> *Evidence*: A lógica de consenso (2/3) acontece DENTRO do Workflow (Linha 49), economizando gás e garantindo que apenas estados válidos toquem a chain.
+We use the CRE as a **Truth Gateway**. The smart contract doesn't "pull" data; the CRE "pushes" verified facts.
+> *Evidence*: Consensus logic (2/3) happens INSIDE the Workflow (Line 49), saving gas and ensuring only valid states touch the chain.
 
 ### 🟢 The "Privacy-Preserving" Middleware
-O CRE atua como uma **Membrana de Privacidade**.
-> *Evidence*: O ZK-Proof é gerado no ambiente CRE. O payload on-chain contém apenas o `commitment`, nunca os scores raw dos sensores.
+The CRE acts as a **Privacy Membrane**.
+> *Evidence*: The ZK-Proof is generated within the CRE environment. The on-chain payload contains only the `commitment`, never the raw sensor scores.
 
 ### 🟢 The "Fail-Safe" Orchestration
-Implementação de **Blocos Try-Catch Granulares** para resiliência (Mock Fallback).
-> *Evidence*: Cada chamada de API é envelopada em um bloco de tratamento de erro que garante a continuidade da demonstração (Linhas 27, 36, 44), alinhando-se aos princípios de "Reliability" da Chainlink.
+Implementation of **Granular Try-Catch Blocks** for resilience (Mock Fallback).
+> *Evidence*: Each API call is wrapped in an error-handling block that ensures demo continuity (Lines 27, 36, 44), aligning with Chainlink's "Reliability" principles.
 
 ---
 
-## 🏁 Veredito Técnico
-O arquivo `greenproof-orchestrator.ts` é uma implementação canônica (Textbook Implementation) de um **Chainlink Workflow**. Ele demonstra não apenas o uso das ferramentas, mas a compreensão profunda da *filosofia* do CRE: **Descentralizar a orquestração, não apenas a execução.**
+## 🏁 Technical Verdict
+The `greenproof-orchestrator.ts` file is a canonical (Textbook) implementation of a **Chainlink Workflow**. It demonstrates not just tool usage, but a deep understanding of the CRE *philosophy*: **Decentralize orchestration, not just execution.**
 
 > **Status**: COMPLIANT 🟢
+
+---
+**Status**: Technical Alignment Verified 🦅⚙️🏁

@@ -22,6 +22,7 @@ import {
   Network
 } from "lucide-react";
 import { Typewriter, TerminalCommand } from "../components/Typewriter";
+import WorkflowDiagram from "../components/WorkflowDiagram";
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false);
@@ -136,41 +137,49 @@ export default function LandingPage() {
       <section ref={parallaxRef} className="relative h-screen flex items-center justify-center overflow-hidden border-y border-white/5 bg-[#020c06]">
         <motion.div 
           style={{ scale: shieldScale, opacity: shieldOpacity }}
-          className="relative w-full max-w-5xl aspect-square flex items-center justify-center"
+          className="relative w-full max-w-6xl aspect-square flex items-center justify-center"
         >
           {/* Enhanced Background Glow */}
-          <div className="absolute inset-0 bg-green-500/10 blur-[160px] rounded-full animate-pulse" />
+          <div className="absolute inset-0 bg-green-500/10 blur-[180px] rounded-full animate-pulse" />
           
-          <div className="relative w-[85%] h-[85%]">
+          <div className="relative w-[90%] h-[90%] translate-y-4">
             <Image 
-              src="/assets/branding/orbs-shield-banner.jfif" 
-              alt="GreenProof Trinity of Proof" 
+              src="/assets/branding/trinity_orbs_master.png" 
+              alt="GreenProof Trinity of Truth" 
               fill
               priority
-              unoptimized
-              className="object-contain drop-shadow-[0_0_80px_rgba(34,197,94,0.3)]"
+              className="object-contain drop-shadow-[0_0_100px_rgba(34,197,94,0.4)]"
             />
           </div>
 
-          {/* Integrated Labels - Tightened to the center orbs */}
+          {/* Integrated Labels - Fine-tuned to the new master composition */}
           <div className="absolute inset-0 pointer-events-none">
             {/* CORE 01: Physical Reality (Left Orb) */}
-            <div className="absolute top-[50%] left-[32%] -translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/20 rounded-xl bg-black/80 backdrop-blur-2xl shadow-[0_0_30px_rgba(34,197,94,0.1)]">
-              <div className="text-[10px] font-mono text-green-500/40 uppercase font-black mb-0.5 tracking-widest">Core 01</div>
+            <motion.div 
+              style={{ x: useTransform(sectionScroll, [0, 1], [-20, 20]), y: useTransform(sectionScroll, [0, 1], [-10, 10]) }}
+              className="absolute top-[48%] left-[28%] -translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)]"
+            >
+              <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">Core 01</div>
               <div className="text-[11px] font-black uppercase tracking-tighter text-green-100">Physical Reality</div>
-            </div>
+            </motion.div>
             
             {/* CORE 02: Juridical Oracle (Right Orb) */}
-            <div className="absolute top-[50%] right-[32%] translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/20 rounded-xl bg-black/80 backdrop-blur-2xl shadow-[0_0_30px_rgba(34,197,94,0.1)] text-right">
-              <div className="text-[10px] font-mono text-green-500/40 uppercase font-black mb-0.5 tracking-widest">Core 02</div>
+            <motion.div 
+              style={{ x: useTransform(sectionScroll, [0, 1], [20, -20]), y: useTransform(sectionScroll, [0, 1], [-10, 10]) }}
+              className="absolute top-[48%] right-[28%] translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)] text-right"
+            >
+              <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">Core 02</div>
               <div className="text-[11px] font-black uppercase tracking-tighter text-green-100">Juridical Oracle</div>
-            </div>
+            </motion.div>
 
             {/* CORE 03: Ethical Consensus (Bottom Center Orb) */}
-            <div className="absolute bottom-[22%] left-1/2 -translate-x-1/2 p-3 border border-green-500/20 rounded-xl bg-black/80 backdrop-blur-2xl shadow-[0_0_30px_rgba(34,197,94,0.1)] text-center">
-              <div className="text-[10px] font-mono text-green-500/40 uppercase font-black mb-0.5 tracking-widest">Core 03</div>
+            <motion.div 
+              style={{ y: useTransform(sectionScroll, [0, 1], [30, -30]) }}
+              className="absolute bottom-[18%] left-1/2 -translate-x-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)] text-center"
+            >
+              <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">Core 03</div>
               <div className="text-[11px] font-black uppercase tracking-tighter text-green-100">Ethical Consensus</div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </section>
@@ -256,13 +265,8 @@ export default function LandingPage() {
       {/* SECTION 5: SYSTEM DIAGRAM (Technical Clarity) */}
       <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/5 bg-black/40 p-4">
-            <Image 
-              src="/assets/technical/protocol_workflow_architecture.png?v=2" 
-              alt="GreenProof System Architecture" 
-              fill
-              className="object-contain p-8 opacity-90"
-            />
+          <div className="w-full">
+            <WorkflowDiagram />
           </div>
           <div className="space-y-8">
             <h2 className="text-4xl font-black tracking-tighter uppercase leading-[0.9]">

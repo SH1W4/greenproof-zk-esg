@@ -63,13 +63,18 @@ export async function main(args: any) {
   console.log("[SUCCESS] ZK-SNARK Proof generated for threshold transition.");
 
   // 3️⃣ On-Chain Certification (NFT as Credential)
-  // A GreenProof NFT is minted on Sepolia,
-  // embedding only a cryptographic commitment to the ZK proof.
-  // Security Audit Fix: Calling the correct custom function 'mintGreenProof' restricted to MINTER_ROLE.
+  // A GreenProof NFT is minted on Sepolia.
+  // The contract now performs ON-CHAIN ZK-SNARK verification.
   const nftRegistration = await Workflow.eth.sendTransaction({
     to: "0x82F... (GreenProofNFT Address)",
     function: "mintGreenProof",
-    params: [args.ownerAddress, true] // Passing the verification flag validated by the Oracle Consensus
+    params: [
+      args.ownerAddress, 
+      zkProof.a, 
+      zkProof.b, 
+      zkProof.c, 
+      [1] // Public input: isCompliant = true
+    ]
   });
   console.log(`[SUCCESS] GreenProof NFT minted on Sepolia. Hash: ${nftRegistration.hash}`);
 

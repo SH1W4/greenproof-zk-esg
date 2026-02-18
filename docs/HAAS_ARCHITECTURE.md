@@ -49,4 +49,4 @@ The final layer is the **Immutable Execution Layer**.
 
 ---
 **Status**: ACTIVE SYSTEM 🟢  
-**Authored by**: GP-Architect (NEO-SH1W4)
+**Authored by**: GP-Architect (NEO-Symbeon)
