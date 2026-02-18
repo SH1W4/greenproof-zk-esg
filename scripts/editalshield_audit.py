@@ -2,8 +2,13 @@ import sys
 import os
 from pathlib import Path
 
-# Adiciona o diretório do EditalShield ao PYTHONPATH para importar os módulos
-sys.path.append(r"c:\Users\João\Desktop\PROJETOS\01_CORE_SYSTEMS\editalshield\src")
+# Resolve paths dynamically relative to this script's location
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent  # greenproof-platform/
+CORE_SYSTEMS = PROJECT_ROOT.parent  # symbeon-protocol/ or 01_CORE_SYSTEMS/
+
+# Adiciona o diretório do EditalShield ao PYTHONPATH
+sys.path.append(str(CORE_SYSTEMS / "editalshield" / "src"))
 
 try:
     from editalshield.modules.memorial_protector import MemorialProtector
@@ -35,7 +40,7 @@ def run_audit(files_to_audit):
         
         # Gera o relatório em formato MD para o cofre
         audit_filename = f"AUDIT_{os.path.basename(file_path).replace('.', '_')}.md"
-        audit_path = Path(r"c:\Users\João\Desktop\Hackertons\greenproof-zk-esg\docs\audits") / audit_filename
+        audit_path = PROJECT_ROOT / "docs" / "audits" / audit_filename
         audit_path.parent.mkdir(parents=True, exist_ok=True)
         
         with open(audit_path, "w", encoding="utf-8") as af:
@@ -46,8 +51,8 @@ def run_audit(files_to_audit):
 
 if __name__ == "__main__":
     target_files = [
-        r"c:\Users\João\Desktop\Hackertons\greenproof-zk-esg\README.md",
-        r"c:\Users\João\Desktop\Hackertons\greenproof-zk-esg\ARCHITECTURE.md",
-        r"c:\Users\João\Desktop\Hackertons\greenproof-zk-esg\docs\JURIDICAL_SEAL.md"
+        str(PROJECT_ROOT / "README.md"),
+        str(PROJECT_ROOT / "ARCHITECTURE.md"),
+        str(PROJECT_ROOT / "docs" / "JURIDICAL_SEAL.md")
     ]
     run_audit(target_files)
