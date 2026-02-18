@@ -22,6 +22,7 @@ import {
   Network
 } from "lucide-react";
 import { Typewriter, TerminalCommand } from "../components/Typewriter";
+import WorkflowDiagram from "../components/WorkflowDiagram";
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false);
@@ -264,13 +265,8 @@ export default function LandingPage() {
       {/* SECTION 5: SYSTEM DIAGRAM (Technical Clarity) */}
       <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/5 bg-black/40 p-4">
-            <Image 
-              src="/assets/technical/protocol_workflow_architecture.png?v=2" 
-              alt="GreenProof System Architecture" 
-              fill
-              className="object-contain p-8 opacity-90"
-            />
+          <div className="w-full">
+            <WorkflowDiagram />
           </div>
           <div className="space-y-8">
             <h2 className="text-4xl font-black tracking-tighter uppercase leading-[0.9]">
