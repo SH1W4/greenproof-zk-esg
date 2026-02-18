@@ -1,10 +1,10 @@
 {
-  "name": "greenproof-zk-esg",
+  "name": "greenproof-platform",
   "version": "0.1.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/symbeon-labs/greenproof-zk-esg.git"
+    "url": "https://github.com/symbeon-labs/greenproof-platform.git"
   },
   "homepage": "https://greenproof.vercel.app",
   "scripts": {
