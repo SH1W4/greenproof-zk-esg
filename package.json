@@ -2,6 +2,11 @@
   "name": "greenproof-zk-esg",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/symbeon-labs/greenproof-zk-esg.git"
+  },
+  "homepage": "https://greenproof.vercel.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

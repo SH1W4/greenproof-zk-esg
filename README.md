@@ -130,5 +130,5 @@ npm install && npm run dev
 ---
 **ORGANIZATION:** GreenProof Foundation  
 **CUSTODIAN:** Symbeon Labs  
-**DEVELOPER:** NEO-SH1W4  
+**DEVELOPER:** NEO-Symbeon (João)  
 *Designed for the Chainlink Convergence Hackathon 2026. Transforming compliance into a sovereign asset.*
