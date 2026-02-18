@@ -4,24 +4,24 @@
 **Validator**: Th3m1s (Symbeon Legal Node)  
 **Standard**: ISO-14030 (Green Bonds) & ICMA Principles
 
-Este selo atesta que a arquitetura do **GreenProof** foi submetida a uma auditoria jurídica algorítmica para garantir a validade dos seus atestados em jurisdições de Common Law e Civil Law.
+This seal attests that the **GreenProof** architecture has undergone an algorithmic juridical audit to ensure the validity of its attestations across both Common Law and Civil Law jurisdictions.
 
-## 🛡️ Critérios de Validação (The 3 Pillars)
+## 🛡️ Validation Criteria (The 3 Pillars)
 
-### 1. 🔍 Admissibilidade Probatória (Evidence Admissibility)
-O uso de **Chainlink CRE** garante a cadeia de custódia dos dados.
-- **Risco Mitigado**: "Oracle Manipulation Risk"
-- **Solução**: Consenso Trinitário (2/3) impede que um único ponto de falha corrompa a prova.
+### 1. 🔍 Evidence Admissibility
+The use of **Chainlink CRE** ensures the data's chain of custody.
+- **Mitigated Risk**: "Oracle Manipulation Risk"
+- **Solution**: Trinity Consensus (2/3) prevents a single point of failure from corrupting the evidence.
 
-### 2. 🔐 Privacidade Industrial (Trade Secret Protection)
-O uso de **ZK-SNARKs (Circom)** garante que segredos comerciais (telemetria bruta) não sejam expostos publicamente.
-- **Risco Mitigado**: "Information Leakage"
-- **Solução**: O circuito `ESGScore.circom` prova apenas o cumprimento do limiar (`score >= 80`), mantendo os dados de entrada privados (Private Witness).
+### 2. 🔐 Industrial Privacy (Trade Secret Protection)
+The use of **ZK-SNARKs (Circom)** ensures that trade secrets (raw telemetry) are not publicly exposed.
+- **Mitigated Risk**: "Information Leakage"
+- **Solution**: The `ESGScore.circom` circuit proves only threshold compliance (`score >= 80`), keeping input data private (Private Witness).
 
-### 3. 🌐 Neutralidade Jurisdicional (Sovereignty)
-O protocolo é agnóstico em relação à jurisdição física.
-- **Risco Mitigado**: "Cross-Border Regulatory Friction"
-- **Solução**: A liquidação ocorre em camada de consenso descentralizada (Ethereum Sepolia / Avalanche Fuji), tornando o certificado um ativo portável globalmente via CCIP.
+### 3. 🌐 Jurisdictional Neutrality (Sovereignty)
+The protocol is agnostic to physical jurisdiction.
+- **Mitigated Risk**: "Cross-Border Regulatory Friction"
+- **Solution**: Settlement occurs on a decentralized consensus layer (Ethereum Sepolia / Avalanche Fuji), making the certificate a globally portable asset via CCIP.
 
 ---
 
