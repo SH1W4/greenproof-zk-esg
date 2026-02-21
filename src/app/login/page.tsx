@@ -29,7 +29,7 @@ export default function LoginPage() {
     <main className="min-h-screen bg-[#020c06] text-[#f0fdf4] flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
         <Image 
-          src="/assets/branding/hero_banner_0.png" 
+          src="/assets/branding/hero_banner.png" 
           alt="Sovereign Gateway" 
           fill
           className="object-cover animate-slow-zoom"
