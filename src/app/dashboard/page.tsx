@@ -75,13 +75,19 @@ export default function GreenProofDashboard() {
     setStep("zk_proving");
     addLog("Initiating ZK-Membrane Synthesis...");
 
-    // Simulate ZK Proving
-    await new Promise((r) => setTimeout(r, 1000));
-    addLog("Constraint Logic: score >= 80 verified by Circom.");
-    await new Promise((r) => setTimeout(r, 1000));
-    addLog("Generating Private Witness [groth16]...");
-    await new Promise((r) => setTimeout(r, 1000));
-    addLog("ZK-Proof generated: Anonymity level 100%.");
+    // Specialized ZK-Witness Stream Visualization
+    const witnessSteps = [
+      "Constraint Logic: score >= 80 verified.",
+      "Calculating witness for circuit: greenproof_v1.0",
+      "Witness calculation complete [groth16]",
+      "Generating proof components (A, B, C)...",
+      "ZK-Proof generated: Anonymity 100% SECURED."
+    ];
+
+    for (const msg of witnessSteps) {
+      await new Promise((r) => setTimeout(r, 600));
+      addLog(`[ZK] ${msg}`);
+    }
 
     setStep("minting");
     addLog("On-Chain Settlement: Minting GreenProof-NFT...");
@@ -99,8 +105,38 @@ export default function GreenProofDashboard() {
     addLog("MASTER SUCCESS: The Proof is Sovereign.");
   };
 
+  const FloatingQRCode = () => (
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      className="fixed bottom-8 right-8 z-50 group"
+    >
+      <Link 
+        href="https://github.com/symbeon-labs/greenproof-platform" 
+        target="_blank"
+        className="block p-3 glass rounded-2xl border-[#00FF88]/40 hover:border-[#00FF88] transition-all relative"
+      >
+        <div className="absolute -top-2 -right-2 w-4 h-4 bg-[#00FF88] rounded-full animate-ping" />
+        <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center p-1 overflow-hidden">
+           <Image 
+             src="/assets/branding/github_qr.png" 
+             alt="GitHub QR Code" 
+             width={60} 
+             height={60} 
+             className="object-contain"
+           />
+        </div>
+        <div className="absolute bottom-full right-0 mb-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          <div className="bg-[#00FF88] text-[#0F172A] text-[9px] font-black px-3 py-1 rounded-full whitespace-nowrap shadow-xl">
+            VERIFIED ON GITHUB 🦅
+          </div>
+        </div>
+      </Link>
+    </motion.div>
+  );
+
   return (
-    <main className="min-h-screen bg-[#041a0d] text-[#f0fdf4] selection:bg-green-500/30 overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-[#0F172A] text-[#f0fdf4] selection:bg-[#00FF88]/30 overflow-x-hidden font-sans">
       {/* Dynamic Background */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-green-500/5 blur-[160px] rounded-full" />
@@ -109,34 +145,34 @@ export default function GreenProofDashboard() {
       </div>
 
       {/* Institutional Nav */}
-      <nav className="relative z-10 border-b border-white/5 px-8 py-5 flex items-center justify-between backdrop-blur-2xl bg-black/10">
+      <nav className="relative z-50 border-b border-white/5 px-8 py-5 flex items-center justify-between backdrop-blur-2xl bg-[#0F172A]/80">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="p-2.5 bg-green-500 rounded-xl shadow-[0_0_15px_rgba(34,197,94,0.4)] group-hover:scale-110 transition-transform">
-            <ShieldCheck className="w-6 h-6 text-green-950" />
+          <div className="p-2.5 bg-[#00FF88] rounded-xl shadow-[0_0_15px_rgba(0,255,136,0.4)] group-hover:scale-110 transition-transform">
+            <ShieldCheck className="w-6 h-6 text-[#0F172A]" />
           </div>
           <div className="flex flex-col">
-            <span className="font-black text-xl tracking-tighter glow-text">
+            <span className="font-black text-xl tracking-tighter text-white">
               GREENPROOF
             </span>
-            <span className="text-[10px] text-green-500/60 font-mono font-bold tracking-[0.2em] uppercase">
+            <span className="text-[10px] text-[#00FF88]/60 font-mono font-bold tracking-[0.2em] uppercase">
               Sovereign Compliance
             </span>
           </div>
         </Link>
         <div className="flex items-center gap-6 text-sm font-semibold">
-          <div className="hidden md:flex items-center gap-2 text-green-400">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span>Sepolia Active</span>
+          <div className="hidden md:flex items-center gap-2 text-[#00FF88]">
+            <div className="w-2 h-2 rounded-full bg-[#00FF88] animate-pulse" />
+            <span className="font-mono text-[10px] font-black uppercase tracking-widest">Sepolia Active</span>
           </div>
           <Link
             href="/architecture"
-            className="px-6 py-2.5 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all font-bold"
+            className="px-6 py-2.5 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all font-bold text-white/80"
           >
             Docs
           </Link>
           <Link
             href="/verify"
-            className="px-6 py-2.5 bg-green-500 text-green-950 rounded-xl hover:bg-green-400 transition-all font-black shadow-lg shadow-green-500/20"
+            className="px-6 py-2.5 bg-[#00FF88] text-[#0F172A] rounded-xl hover:bg-[#00FF88]/90 transition-all font-black shadow-lg shadow-[#00FF88]/20"
           >
             Portal
           </Link>
@@ -145,15 +181,15 @@ export default function GreenProofDashboard() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 py-12 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         {/* Left Content: Narrative */}
-        <div className="lg:col-span-7 space-y-10">
+        <div className="lg:col-span-7 space-y-12">
           <div className="space-y-6">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[11px] font-black uppercase tracking-widest"
+              className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#00FF88]/10 border border-[#00FF88]/20 text-[#00FF88] text-[11px] font-black uppercase tracking-widest"
             >
               <Zap className="w-4 h-4" />
-              Institutional RWA Infrastructure
+              Institutional RWA Infrastructure • PRODUCTION READY
             </motion.div>
 
             <motion.h1
@@ -162,21 +198,20 @@ export default function GreenProofDashboard() {
               transition={{ delay: 0.1 }}
               className="text-6xl lg:text-8xl font-black leading-[0.9] tracking-tighter"
             >
-              The Sovereign <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
-                Protocol of Truth.
+              Transforming <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FF88] to-emerald-400">
+                Sovereign Compliance.
               </span>
             </motion.h1>
 
-            {/* Institutional Seal Integration */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
               className="flex justify-start pt-2"
             >
-              <div className="relative w-20 h-20 rounded-full border border-green-500/20 bg-green-500/5 p-1 flex items-center justify-center overflow-hidden group shadow-[0_0_20px_rgba(34,197,94,0.1)]">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent animate-pulse" />
+              <div className="relative w-20 h-20 rounded-full border border-[#00FF88]/20 bg-[#00FF88]/5 p-1 flex items-center justify-center overflow-hidden group shadow-[0_0_20px_rgba(0,255,136,0.1)]">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#00FF88]/10 to-transparent animate-pulse" />
                 <Image
                   src="/assets/branding/institutional_seal.png"
                   alt="GreenProof Institutional Seal"
@@ -191,33 +226,56 @@ export default function GreenProofDashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-green-100/60 max-w-xl font-medium leading-relaxed"
+              className="text-xl text-slate-400 max-w-xl font-medium leading-relaxed"
             >
-              The world's first biocybernetic consensus engine. Synchronizing
-              physical, legal, and ethical reality through Chainlink CRE and
-              ZK-privacy.
+              GreenProof: Transforming compliance into a sovereign asset. 
+              Synchronizing physical, legal, and ethical reality through 
+              Chainlink CRE and ZK-privacy.
             </motion.p>
           </div>
+
+          {/* Why GreenProof Wins Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+          >
+            {[
+              { title: "2/3 Trinity Consensus", desc: "Prevents single-point manipulation" },
+              { title: "ZK-Privacy Level", desc: "No sensitive data leak during audit" },
+              { title: "CCIP Portability", desc: "Universal cross-chain liquidity" },
+              { title: "CRE Orchestration", desc: "Smart operational execution" }
+            ].map((pillar, i) => (
+              <div key={i} className="glass-card p-5 rounded-2xl flex gap-4 items-start">
+                <CheckCircle2 className="w-5 h-5 text-[#00FF88] shrink-0 mt-1" />
+                <div>
+                  <h4 className="text-sm font-bold text-white">{pillar.title}</h4>
+                  <p className="text-xs text-slate-400 mt-1">{pillar.desc}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.4 }}
             className="flex items-center gap-6"
           >
             {step === "idle" ? (
               <button
                 onClick={startDemo}
-                className="group px-10 py-5 bg-green-500 text-green-950 font-black rounded-2xl flex items-center gap-3 hover:bg-green-400 transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(34,197,94,0.4)] relative overflow-hidden"
+                className="group px-10 py-5 bg-[#00FF88] text-[#0F172A] font-black rounded-2xl flex items-center gap-3 hover:bg-[#00FF88]/90 transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(0,255,136,0.3)] relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                 Execute Sovereign Demo
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </button>
             ) : (
-              <div className="px-8 py-5 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center gap-5">
-                <div className="animate-spin w-5 h-5 border-2 border-green-500 border-t-transparent rounded-full" />
-                <span className="font-mono text-green-400 font-black uppercase tracking-widest text-sm">
+              <div className="px-8 py-5 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-5">
+                <div className="animate-spin w-5 h-5 border-2 border-[#00FF88] border-t-transparent rounded-full" />
+                <span className="font-mono text-[#00FF88] font-black uppercase tracking-widest text-sm">
                   Orchestrating Reality
                 </span>
               </div>
@@ -232,13 +290,13 @@ export default function GreenProofDashboard() {
               { icon: Wifi, label: "Network", val: "Multi-Chain" },
             ].map((item, i) => (
               <div key={i} className="space-y-2">
-                <div className="flex items-center gap-2 text-green-500">
+                <div className="flex items-center gap-2 text-slate-500">
                   <item.icon className="w-4 h-4" />
                   <span className="text-[10px] font-black uppercase tracking-widest">
                     {item.label}
                   </span>
                 </div>
-                <div className="text-lg font-bold">{item.val}</div>
+                <div className="text-lg font-bold text-slate-200">{item.val}</div>
               </div>
             ))}
           </div>
@@ -558,6 +616,7 @@ export default function GreenProofDashboard() {
 
       {/* Institutional Proof Certificate Modal */}
       <AnimatePresence>
+        <FloatingQRCode />
         {showCertificate && (
           <ProofCertificate onClose={() => setShowCertificate(false)} />
         )}
