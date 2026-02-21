@@ -35,12 +35,12 @@ const AnimatedOrb = ({ position, color }: OrbProps) => {
       onPointerLeave={() => setHovered(false)}
     >
       <Float speed={2} rotationIntensity={1} floatIntensity={1.5}>
-        <Sphere args={[0.6, 64, 64]}>
+        <Sphere args={[0.45, 64, 64]}>
           <MeshDistortMaterial
             color={color}
             speed={1.5}
             distort={0.4}
-            radius={0.6}
+            radius={0.45}
             emissive={color}
             emissiveIntensity={hovered ? 1.2 : 0.6}
             roughness={0}
@@ -55,9 +55,9 @@ const AnimatedOrb = ({ position, color }: OrbProps) => {
 
 function DataConnectors() {
   const positions = useMemo(() => {
-    const p1 = new THREE.Vector3(-1.8, 1, 0);
-    const p2 = new THREE.Vector3(1.8, 1, 0);
-    const p3 = new THREE.Vector3(0, -1.8, 0);
+    const p1 = new THREE.Vector3(-1.4, 0.8, 0);
+    const p2 = new THREE.Vector3(1.4, 0.8, 0);
+    const p3 = new THREE.Vector3(0, -1.4, 0);
     return [p1, p2, p3];
   }, []);
 
@@ -107,16 +107,16 @@ export default function TrinityHero() {
   return (
     <div className="w-full h-full relative group">
       <Canvas dpr={[1, 2]}>
-        <PerspectiveCamera makeDefault position={[0, 0, 8]} fov={35} />
+        <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={30} />
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1.5} />
         <spotLight position={[-10, 10, 20]} angle={0.2} penumbra={1} intensity={3} color="#00FF88" />
         
         <DataConnectors />
         
-        <AnimatedOrb position={[-1.8, 1, 0]} color="#00FF88" />
-        <AnimatedOrb position={[1.8, 1, 0]} color="#00FF88" />
-        <AnimatedOrb position={[0, -1.8, 0]} color="#00FF88" />
+        <AnimatedOrb position={[-1.4, 0.8, 0]} color="#00FF88" />
+        <AnimatedOrb position={[1.4, 0.8, 0]} color="#00FF88" />
+        <AnimatedOrb position={[0, -1.4, 0]} color="#00FF88" />
 
         <ContactShadows 
           position={[0, -4, 0]} 
