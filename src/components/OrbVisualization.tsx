@@ -1,9 +1,7 @@
-"use client";
-
-import { useState, useEffect, useMemo, memo } from "react";
-import { Canvas } from "@react-three/fiber";
+import { useState, useEffect, useMemo, memo, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial, Float, ContactShadows } from "@react-three/drei";
-import { motion } from "framer-motion-3d";
+import * as THREE from "three";
 
 interface OrbProps {
   color: string;
@@ -14,14 +12,20 @@ interface OrbProps {
 
 const AnimatedSphere = memo(({ color, speed, distort, active }: OrbProps) => {
   const [hovered, setHovered] = useState(false);
+  const meshRef = useRef<THREE.Group>(null);
+  
+  // Smoothly lerp scale instead of using framer-motion-3d
+  useFrame((state, delta) => {
+    if (!meshRef.current) return;
+    const targetScale = hovered ? 1.2 : 1;
+    meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
+  });
 
-  const scale = hovered ? 1.2 : 1;
   const emissiveIntensity = active ? 0.8 : hovered ? 0.4 : 0;
 
   return (
-    <motion.group
-      animate={{ scale }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    <group
+      ref={meshRef}
       onPointerEnter={() => setHovered(true)}
       onPointerLeave={() => setHovered(false)}
     >
@@ -40,7 +44,7 @@ const AnimatedSphere = memo(({ color, speed, distort, active }: OrbProps) => {
           />
         </Sphere>
       </Float>
-    </motion.group>
+    </group>
   );
 });
 
