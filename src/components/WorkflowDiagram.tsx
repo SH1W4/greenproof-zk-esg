@@ -56,11 +56,11 @@ export default function WorkflowDiagram() {
         
         {/* Row 1: Ingestion & Processing */}
         <div className="flex items-center justify-between w-[82%]">
-          <DiagramNode icon={Database} label="IoT Ingestion" status="LIVE" delay={0} />
+          <DiagramNode icon={Database} label="INGESTÃO DE IOT" status="VIVER" delay={0} />
           <div className="flex-1 h-px bg-green-500/15 mx-2" />
-          <DiagramNode icon={BrainCircuit} label="AI/LLM Logic" status="PROCESSING" delay={0.2} />
+          <DiagramNode icon={BrainCircuit} label="LÓGICA DE IA/LLM" status="PROCESSAMENTO" delay={0.2} />
           <div className="flex-1 h-px bg-green-500/15 mx-2" />
-          <DiagramNode icon={Lock} label="ZK-Proof Groth16" status="GENERATING" delay={0.4} />
+          <DiagramNode icon={Lock} label="GROTH16 À PROVA DE ZK" status="GERAÇÃO" delay={0.4} />
         </div>
 
         {/* Row 2: Trinity Consensus — anchored to the right, fully contained */}
@@ -69,8 +69,8 @@ export default function WorkflowDiagram() {
             <div className="absolute -inset-4 bg-green-500/20 blur-xl rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity" />
             <DiagramNode 
               icon={ShieldCheck} 
-              label="Trinity Consensus" 
-              status="SYNCED" 
+              label="CONSENSO DA TRINDADE" 
+              status="SINCRONIZADO" 
               highlight 
               delay={0.6} 
             />
@@ -85,15 +85,16 @@ export default function WorkflowDiagram() {
 
         {/* Row 3: Settlement & Distribution */}
         <div className="flex items-center justify-between w-[55%]">
-          <DiagramNode icon={Zap} label="Sovereign NFT Mint" status="FINALIZING" delay={0.8} />
+          <DiagramNode icon={Zap} label="MINT DE NFT SOBERANO" status="FINALIZANDO" delay={0.8} />
           <div className="flex-1 h-px bg-green-500/15 mx-2" />
-          <DiagramNode icon={Share2} label="CCIP Cross-Chain" status="DISPATCHING" delay={1.0} />
+          <DiagramNode icon={Share2} label="CCIP CROSS-CHAIN" status="DESPACHANDO" delay={1.0} />
         </div>
       </div>
 
       {/* Legend */}
-      <div className="absolute bottom-4 left-5 text-[9px] font-mono text-green-500/30 uppercase tracking-[0.2em]">
-        Status: Institutional Orchestration Active
+      <div className="absolute bottom-4 left-5 flex items-center gap-2 text-[9px] font-mono text-green-500/30 uppercase tracking-[0.2em]">
+        <ShieldCheck className="w-3 h-3" />
+        STATUS: ORQUESTRAÇÃO INSTITUCIONAL ATIVA
       </div>
     </div>
   );

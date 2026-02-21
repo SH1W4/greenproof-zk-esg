@@ -270,12 +270,12 @@ export default function LandingPage() {
           </div>
           <div className="space-y-8">
             <h2 className="text-4xl font-black tracking-tighter uppercase leading-[0.9]">
-              Institutional
+              Orquestração
               <br />
-              <span className="text-green-500">Orchestration</span>
+              <span className="text-green-500">Institucional</span>
             </h2>
             <p className="text-lg text-green-100/40 leading-relaxed">
-              Our architecture leverages Chainlink CRE to orchestrate IoT data, legal audits, and impact metrics into a single source of truth.
+              Nossa arquitetura utiliza o Chainlink CRE para orquestrar dados de IoT, auditorias legais e métricas de impacto em uma única fonte de verdade.
             </p>
             <div className="text-xl text-green-400 font-mono italic">
               <Typewriter 
@@ -283,8 +283,8 @@ export default function LandingPage() {
                 delay={60}
               />
             </div>
-            <Link href="#docs" className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-green-500 hover:text-green-400 transition-colors">
-              Explore Architecture <ArrowRight className="w-4 h-4" />
+            <Link href="/architecture" className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-green-500 hover:text-green-400 transition-colors">
+              Explore a Arquitetura <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
