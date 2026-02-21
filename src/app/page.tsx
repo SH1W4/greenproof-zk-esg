@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { Typewriter, TerminalCommand } from "../components/Typewriter";
 import WorkflowDiagram from "../components/WorkflowDiagram";
+import TrinityHero from "../components/TrinityHero";
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false);
@@ -142,14 +143,8 @@ export default function LandingPage() {
           {/* Enhanced Background Glow */}
           <div className="absolute inset-0 bg-green-500/10 blur-[180px] rounded-full animate-pulse" />
           
-          <div className="relative w-[90%] h-[90%] translate-y-4">
-            <Image 
-              src="/assets/branding/trinity_orbs_master.png" 
-              alt="GreenProof Trinity of Truth" 
-              fill
-              priority
-              className="object-contain drop-shadow-[0_0_100px_rgba(34,197,94,0.4)]"
-            />
+          <div className="relative w-full h-full">
+            <TrinityHero />
           </div>
 
           {/* Integrated Labels - Fine-tuned to the new master composition */}
