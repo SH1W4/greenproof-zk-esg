@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo, useState } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { 
   Sphere, 
@@ -15,17 +15,14 @@ import * as THREE from "three";
 interface OrbProps {
   position: [number, number, number];
   color: string;
-  label: string;
-  delay?: number;
 }
 
-function AnimatedOrb({ position, color, label }: OrbProps) {
+const AnimatedOrb = ({ position, color }: OrbProps) => {
   const meshRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
 
-  useFrame((state) => {
+  useFrame(() => {
     if (!meshRef.current) return;
-    const t = state.clock.getElapsedTime();
     const targetScale = hovered ? 1.4 : 1.2;
     meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
   });
@@ -54,20 +51,18 @@ function AnimatedOrb({ position, color, label }: OrbProps) {
       </Float>
     </group>
   );
-}
+};
 
 function DataConnectors() {
   const positions = useMemo(() => {
-    // Inverted Triangle vertices to match landing page layout
-    const p1 = new THREE.Vector3(-1.8, 1, 0); // Top-Left (Physical)
-    const p2 = new THREE.Vector3(1.8, 1, 0);  // Top-Right (Juridical)
-    const p3 = new THREE.Vector3(0, -1.8, 0); // Bottom (Ethical)
+    const p1 = new THREE.Vector3(-1.8, 1, 0);
+    const p2 = new THREE.Vector3(1.8, 1, 0);
+    const p3 = new THREE.Vector3(0, -1.8, 0);
     return [p1, p2, p3];
   }, []);
 
   return (
     <group>
-      {/* Dynamic Connections with glow */}
       <Line 
         points={[positions[0], positions[1]]} 
         color="#00FF88" 
@@ -90,7 +85,6 @@ function DataConnectors() {
         opacity={0.4} 
       />
       
-      {/* Central Pulsing Nexus Particle */}
       <Float speed={8} rotationIntensity={0} floatIntensity={1}>
         <mesh position={[0, -0.1, 0]}>
           <sphereGeometry args={[0.15, 32, 32]} />
@@ -102,9 +96,17 @@ function DataConnectors() {
 }
 
 export default function TrinityHero() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <div className="w-full h-full relative group">
-      <Canvas alpha dpr={[1, 2]}>
+      <Canvas dpr={[1, 2]}>
         <PerspectiveCamera makeDefault position={[0, 0, 8]} fov={35} />
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1.5} />
@@ -112,9 +114,9 @@ export default function TrinityHero() {
         
         <DataConnectors />
         
-        <AnimatedOrb position={[-1.8, 1, 0]} color="#00FF88" label="Physical" />
-        <AnimatedOrb position={[1.8, 1, 0]} color="#00FF88" label="Juridical" />
-        <AnimatedOrb position={[0, -1.8, 0]} color="#00FF88" label="Ethical" />
+        <AnimatedOrb position={[-1.8, 1, 0]} color="#00FF88" />
+        <AnimatedOrb position={[1.8, 1, 0]} color="#00FF88" />
+        <AnimatedOrb position={[0, -1.8, 0]} color="#00FF88" />
 
         <ContactShadows 
           position={[0, -4, 0]} 
