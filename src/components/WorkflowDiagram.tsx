@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { 
   Database, 
@@ -12,6 +13,16 @@ import {
 } from "lucide-react";
 
 export default function WorkflowDiagram() {
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <div className="relative w-full aspect-[16/10] bg-[#05150a]/40 border border-green-500/10 rounded-3xl" />;
+  }
+
   return (
     <div className="relative w-full aspect-[16/10] bg-[#05150a]/40 border border-green-500/10 rounded-3xl overflow-hidden p-8 backdrop-blur-2xl">
       {/* Dynamic Techno Grid */}
@@ -35,34 +46,34 @@ export default function WorkflowDiagram() {
         {/* Connections from Inputs to CRE (Center) */}
         {/* Nucleo I -> CRE */}
         <motion.path d="M 180,120 L 400,250" stroke="#22c55e" strokeOpacity="0.2" strokeWidth="1" fill="none" />
-        <motion.circle r="3" fill="#22c55e">
+        <circle r="3" fill="#22c55e">
           <animateMotion dur="3s" repeatCount="Infinity" path="M 180,120 L 400,250" />
-        </motion.circle>
+        </circle>
 
         {/* Nucleo II -> CRE */}
         <motion.path d="M 180,250 L 400,250" stroke="#22c55e" strokeOpacity="0.2" strokeWidth="1" fill="none" />
-        <motion.circle r="3" fill="#22c55e">
+        <circle r="3" fill="#22c55e">
           <animateMotion dur="2.5s" repeatCount="Infinity" path="M 180,250 L 400,250" />
-        </motion.circle>
+        </circle>
 
         {/* Nucleo III -> CRE */}
         <motion.path d="M 180,380 L 400,250" stroke="#22c55e" strokeOpacity="0.2" strokeWidth="1" fill="none" />
-        <motion.circle r="3" fill="#22c55e">
+        <circle r="3" fill="#22c55e">
           <animateMotion dur="4s" repeatCount="Infinity" path="M 180,380 L 400,250" />
-        </motion.circle>
+        </circle>
 
         {/* CRE -> Outputs */}
         {/* CRE -> NFT */}
         <motion.path d="M 400,250 L 620,180" stroke="#22c55e" strokeOpacity="0.2" strokeWidth="1" fill="none" />
-        <motion.circle r="3" fill="#22c55e">
+        <circle r="3" fill="#22c55e">
           <animateMotion dur="2s" repeatCount="Infinity" path="M 400,250 L 620,180" />
-        </motion.circle>
+        </circle>
 
         {/* CRE -> CCIP */}
         <motion.path d="M 400,250 L 620,320" stroke="#22c55e" strokeOpacity="0.2" strokeWidth="1" fill="none" />
-        <motion.circle r="3" fill="#22c55e">
+        <circle r="3" fill="#22c55e">
           <animateMotion dur="3.5s" repeatCount="Infinity" path="M 400,250 L 620,320" />
-        </motion.circle>
+        </circle>
       </svg>
 
       <div className="relative h-full w-full flex items-center justify-between">
