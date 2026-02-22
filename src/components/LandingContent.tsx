@@ -34,11 +34,6 @@ export default function LandingContent() {
     setMounted(true);
   }, []);
 
-  const { scrollYProgress: globalScroll } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
   const { scrollYProgress: sectionScroll } = useScroll({
     target: parallaxRef,
     offset: ["start end", "end start"]
@@ -47,7 +42,6 @@ export default function LandingContent() {
   const shieldScale = useTransform(sectionScroll, [0, 0.4, 0.6, 1], [0.85, 1, 1, 1.1]);
   const shieldOpacity = useTransform(sectionScroll, [0, 0.15, 0.85, 1], [0, 1, 1, 0]);
 
-  // Hook stabilization: move nuclear offsets to top-level
   const n1X = useTransform(sectionScroll, [0, 1], [-10, 10]);
   const n1Y = useTransform(sectionScroll, [0, 1], [-5, 5]);
   const n2X = useTransform(sectionScroll, [0, 1], [10, -10]);
@@ -60,7 +54,7 @@ export default function LandingContent() {
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-4 border-green-500/10 border-t-green-500 rounded-full animate-spin" />
           <div className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.3em]">
-            Initializing Reality...
+            Syncing Reality...
           </div>
         </div>
       </main>
@@ -98,6 +92,7 @@ export default function LandingContent() {
              alt="Background Matrix" 
              fill 
              className="object-cover"
+             priority
            />
         </div>
 
@@ -140,14 +135,7 @@ export default function LandingContent() {
               Launch Protocol Terminal
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="/architecture" className="px-10 py-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all font-bold text-green-100/60">
-              Technical Deep-Dive
-            </Link>
           </motion.div>
-        </div>
-
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-20">
-          <div className="w-px h-12 bg-gradient-to-b from-green-500 to-transparent" />
         </div>
       </section>
 
@@ -191,84 +179,6 @@ export default function LandingContent() {
         </motion.div>
       </section>
 
-      {/* SECTION 3: THE PROBLEM */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-        <div className="space-y-8">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[0.9]">
-            The fundamental
-            <br />
-            <span className="text-green-500">ESG Deficit</span>
-          </h2>
-          <p className="text-lg text-green-100/40 leading-relaxed">
-            Existing ESG frameworks suffer from a structural trust gap. Transparency alone does not create integrity when data is easily manipulated and privacy is non-existent.
-          </p>
-          <div className="space-y-6">
-            {[
-              { icon: AlertTriangle, title: "Greenwashing", desc: "Unverified claims masking unsustainable operations." },
-              { icon: EyeOff, title: "Data Exposure", desc: "Revealing sensitive industrial data to prove compliance." }
-            ].map((item, i) => (
-              <div key={i} className="flex gap-4 items-start">
-                <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl">
-                  <item.icon className="w-5 h-5 text-red-500" />
-                </div>
-                <div>
-                  <h3 className="font-bold uppercase tracking-widest text-sm mb-1">{item.title}</h3>
-                  <p className="text-sm text-green-100/30">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="glass-card p-12 rounded-3xl border-red-500/10">
-          <div className="text-6xl font-black text-red-500/20 mb-4 tracking-tighter">0%</div>
-          <p className="text-xl font-medium text-green-100/60 leading-relaxed">
-            Confidence in traditional self-reported ESG scores without secondary objective validation.
-          </p>
-        </div>
-      </section>
-
-      {/* SECTION 4: THE SOLUTION */}
-      <section id="tech" className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5 text-center">
-        <div className="max-w-3xl mx-auto space-y-6 mb-20">
-          <h2 className="text-4xl font-black tracking-tighter uppercase">The Protocol of Truth</h2>
-          <p className="text-lg text-green-100/40">
-            GreenProof resolves the ESG gap through a three-pillared architectural consensus.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { 
-              icon: Network, 
-              title: "Consensus (2/3)", 
-              desc: "Triple Oracle consensus prevents greenwashing by requiring 2/3 validation nodes to agree." 
-            },
-            { 
-              icon: Lock, 
-              title: "Privacy (ZK)", 
-              desc: "Zero-Knowledge SNARKs prove compliance (ESG ≥ 80%) without revealing underlying data." 
-            },
-            { 
-              icon: Zap, 
-              title: "Portability (CCIP)", 
-              desc: "Institutional certificates are portable across chains via Chainlink CCIP infrastructure." 
-            }
-          ].map((pillar, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -10 }}
-              className="glass-card p-10 rounded-3xl space-y-6 text-left hover:border-green-500/30 transition-all"
-            >
-              <div className="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center border border-green-500/20">
-                <pillar.icon className="w-7 h-7 text-green-400" />
-              </div>
-              <h3 className="text-2xl font-black tracking-tight">{pillar.title}</h3>
-              <p className="text-sm text-green-100/40 leading-relaxed">{pillar.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
       {/* SECTION 5: SYSTEM DIAGRAM */}
       <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
@@ -299,11 +209,6 @@ export default function LandingContent() {
 
       {/* SECTION 6: THE TERMINAL */}
       <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-black tracking-tighter uppercase mb-4">Protocol Execution</h2>
-          <p className="text-green-100/40 font-mono text-sm">Real-time ZK-SNARK generation and cross-chain consensus simulation.</p>
-        </div>
-        
         <div className="max-w-3xl mx-auto">
           <TerminalCommand 
             commands={[
@@ -316,32 +221,6 @@ export default function LandingContent() {
               "✓ Protocol Consensus Achieved | NFT Minted: 0x3fcf...71b2"
             ]}
           />
-        </div>
-      </section>
-
-      {/* SECTION 7: POSITIONING */}
-      <section className="relative z-10 py-64 border-t border-white/5 bg-green-500/[0.02]">
-        <div className="max-w-4xl mx-auto text-center space-y-12 px-8">
-          <motion.h2 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-5xl md:text-7xl font-black tracking-tighter leading-none"
-          >
-            NOT A DASHBOARD.
-            <br />
-            NOT A SAAS.
-            <br />
-            <span className="text-green-500">A PROTOCOL.</span>
-          </motion.h2>
-          <p className="text-xl text-green-100/40 max-w-2xl mx-auto font-medium">
-            GreenProof is the settlement layer for objective reality. Build institutional trust upon sovereign infrastructure.
-          </p>
-          <div className="pt-8">
-            <Link href="/login" className="px-12 py-6 bg-green-500 text-green-950 font-black rounded-2xl inline-flex items-center gap-3 hover:bg-green-400 transition-all hover:scale-105 shadow-[0_20px_60px_rgba(34,197,94,0.3)] text-lg">
-              Initialize Protocol
-              <ArrowRight className="w-6 h-6" />
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -362,7 +241,6 @@ export default function LandingContent() {
             <Link href="#tech" className="hover:text-green-500 transition-colors">Technology</Link>
             <Link href="#docs" className="hover:text-green-500 transition-colors">Documentation</Link>
             <Link href="https://github.com/SH1W4/greenproof-zk-esg" target="_blank" className="hover:text-green-500 transition-colors">GitHub</Link>
-            <Link href="#" className="hover:text-green-400 transition-colors">Twitter (X)</Link>
           </div>
 
           <div className="text-[10px] text-green-100/10 font-mono font-bold uppercase tracking-widest">
