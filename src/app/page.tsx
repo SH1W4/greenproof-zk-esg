@@ -67,12 +67,19 @@ export default function LandingPage() {
       {/* SECTION 1: HERO (Text-First Authority) */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-8 text-center pt-20 overflow-hidden">
         {/* Cinematic Background Visualization */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0 pointer-events-none">
+           <Image 
+             src="/assets/branding/hero_top_bg.svg" 
+             alt="GreenProof background glow" 
+             fill 
+             className="object-cover opacity-70"
+             priority
+           />
            <Image 
              src="/assets/branding/icon_grid.png" 
              alt="Background Matrix" 
              fill 
-             className="object-cover"
+             className="object-cover opacity-[0.05]"
            />
         </div>
 
