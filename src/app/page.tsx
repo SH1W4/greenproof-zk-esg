@@ -151,29 +151,29 @@ export default function LandingPage() {
           <div className="absolute inset-0 pointer-events-none">
             {/* CORE 01: Physical Reality (Left Orb) */}
             <motion.div 
-              style={{ x: useTransform(sectionScroll, [0, 1], [-12, 12]), y: useTransform(sectionScroll, [0, 1], [-6, 6]) }}
-              className="absolute top-[46%] left-[36%] -translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)]"
+              style={{ x: useTransform(sectionScroll, [0, 1], [-10, 10]), y: useTransform(sectionScroll, [0, 1], [-5, 5]) }}
+              className="absolute top-[46%] left-[30%] -translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)]"
             >
-              <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">NÚCLEO 01</div>
-              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100">Realidade Física</div>
+              <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">NÚCLEO I</div>
+              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100 whitespace-nowrap">Prova Física (IoT)</div>
             </motion.div>
             
             {/* CORE 02: Juridical Oracle (Right Orb) */}
             <motion.div 
-              style={{ x: useTransform(sectionScroll, [0, 1], [12, -12]), y: useTransform(sectionScroll, [0, 1], [-6, 6]) }}
-              className="absolute top-[46%] right-[36%] translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)] text-right"
+              style={{ x: useTransform(sectionScroll, [0, 1], [10, -10]), y: useTransform(sectionScroll, [0, 1], [-5, 5]) }}
+              className="absolute top-[46%] right-[30%] translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)] text-right"
             >
-              <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">NÚCLEO 02</div>
-              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100">Oráculo Jurídico</div>
+              <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">NÚCLEO II</div>
+              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100 whitespace-nowrap">Oráculo Jurídico (IA)</div>
             </motion.div>
 
             {/* CORE 03: Ethical Consensus (Bottom Center Orb) */}
             <motion.div 
               style={{ y: useTransform(sectionScroll, [0, 1], [15, -15]) }}
-              className="absolute bottom-[26%] left-1/2 -translate-x-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)] text-center"
+              className="absolute bottom-[20%] left-1/2 -translate-x-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)] text-center"
             >
-              <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">NÚCLEO 03</div>
-              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100">Consenso Ético</div>
+              <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">NÚCLEO III</div>
+              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100 whitespace-nowrap">Protocolo Ético (ZK)</div>
             </motion.div>
           </div>
         </motion.div>
