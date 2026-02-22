@@ -10,8 +10,13 @@ interface TypewriterProps {
 }
 
 export function Typewriter({ text, delay = 50, className = "" }: TypewriterProps) {
+  const [mounted, setMounted] = useState(false);
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (currentIndex < text.length) {
@@ -31,6 +36,8 @@ export function Typewriter({ text, delay = 50, className = "" }: TypewriterProps
     }
   }, [currentIndex, delay, text]);
 
+  if (!mounted) return <span className={className} translate="no">{text}</span>;
+
   return (
     <span className={className} translate="no">
       {displayText}
@@ -45,9 +52,14 @@ interface TerminalCommandProps {
 }
 
 export function TerminalCommand({ commands, className = "" }: TerminalCommandProps) {
+  const [mounted, setMounted] = useState(false);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [lines, setLines] = useState<string[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (currentLineIndex < commands.length) {
@@ -64,6 +76,8 @@ export function TerminalCommand({ commands, className = "" }: TerminalCommandPro
       return () => clearTimeout(resetTimeout);
     }
   }, [currentLineIndex, commands]);
+
+  if (!mounted) return null;
 
   return (
     <div className={`relative group ${className}`} translate="no">
