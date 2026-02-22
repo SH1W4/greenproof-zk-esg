@@ -1,11 +1,10 @@
-# 🛡️ GreenProof Protocol
-
 [![Chainlink Convergence 2026](https://img.shields.io/badge/Hackathon-Chainlink_Convergence_2026-blue)](https://chain.link/hackathon)
-[![Deployed](https://img.shields.io/badge/Deployed-Sepolia-blue)](https://sepolia.etherscan.io)
-[![CCIP](https://img.shields.io/badge/Bridge-Avalanche_Fuji-orange)](https://fuji.explorer.avax.network)
+[![Sepolia](https://img.shields.io/badge/Deployed-Sepolia-363636?logo=ethereum)](https://sepolia.etherscan.io)
+[![CCIP](https://img.shields.io/badge/Bridge-Avalanche_Fuji-orange?logo=avax)](https://fuji.explorer.avax.network)
+[![Chainlink](https://img.shields.io/badge/Built%20with-Chainlink-3399FF?logo=chainlink)](https://chain.link)
 
 ## 🌐 Live Dashboard
-👉 [greenproof.vercel.app](https://greenproof.vercel.app/dashboard)
+👉 [greenproof-platform.vercel.app](https://greenproof-platform.vercel.app/dashboard)
 
 ## 🎯 The Problem
 The $2.1 trillion Green Bond market suffers from systemic greenwashing. Traditional ESG reporting relies on self-reported data with no cryptographic verification, leading to capital paralysis and lack of trust.
@@ -45,4 +44,5 @@ npm run dev
 This is a sovereign protocol. Core development happens in the private Knowledge Vault. Public contributions are welcome for UI/UX improvements and documentation.
 
 ## 📜 License
-Proprietary — Symbeon Labs 2026
+Sovereign Protocol — Core IP protected under pending patent GP-IP-2026-001. 
+Execution layer released under MIT for hackathon transparency.

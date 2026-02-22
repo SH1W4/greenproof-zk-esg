@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/symbeon-labs/greenproof-platform.git"
   },
-  "homepage": "https://greenproof.vercel.app",
+  "homepage": "https://greenproof-platform.vercel.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
