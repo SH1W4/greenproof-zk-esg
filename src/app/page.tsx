@@ -47,6 +47,13 @@ export default function LandingPage() {
   const shieldScale = useTransform(sectionScroll, [0, 0.4, 0.6, 1], [0.85, 1, 1, 1.1]);
   const shieldOpacity = useTransform(sectionScroll, [0, 0.15, 0.85, 1], [0, 1, 1, 0]);
 
+  // Hook stabilization: move nuclear offsets to top-level
+  const n1X = useTransform(sectionScroll, [0, 1], [-10, 10]);
+  const n1Y = useTransform(sectionScroll, [0, 1], [-5, 5]);
+  const n2X = useTransform(sectionScroll, [0, 1], [10, -10]);
+  const n2Y = useTransform(sectionScroll, [0, 1], [-5, 5]);
+  const n3Y = useTransform(sectionScroll, [0, 1], [15, -15]);
+
   // Robust Hydration Strategy: Keep the root tags stable to avoid breaking scroll listeners
   return (
     <main ref={containerRef} className="min-h-screen bg-[#020c06] text-[#f0fdf4] selection:bg-green-500/30">
@@ -151,7 +158,7 @@ export default function LandingPage() {
           <div className="absolute inset-0 pointer-events-none">
             {/* CORE 01: Physical Reality (Left Orb) */}
             <motion.div 
-              style={{ x: useTransform(sectionScroll, [0, 1], [-10, 10]), y: useTransform(sectionScroll, [0, 1], [-5, 5]) }}
+              style={{ x: n1X, y: n1Y }}
               className="absolute top-[46%] left-[30%] -translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)]"
             >
               <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">NÚCLEO I</div>
@@ -160,7 +167,7 @@ export default function LandingPage() {
             
             {/* CORE 02: Juridical Oracle (Right Orb) */}
             <motion.div 
-              style={{ x: useTransform(sectionScroll, [0, 1], [10, -10]), y: useTransform(sectionScroll, [0, 1], [-5, 5]) }}
+              style={{ x: n2X, y: n2Y }}
               className="absolute top-[46%] right-[30%] translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)] text-right"
             >
               <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">NÚCLEO II</div>
@@ -169,7 +176,7 @@ export default function LandingPage() {
 
             {/* CORE 03: Ethical Consensus (Bottom Center Orb) */}
             <motion.div 
-              style={{ y: useTransform(sectionScroll, [0, 1], [15, -15]) }}
+              style={{ y: n3Y }}
               className="absolute bottom-[20%] left-1/2 -translate-x-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)] text-center"
             >
               <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">NÚCLEO III</div>
