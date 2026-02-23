@@ -23,7 +23,6 @@ import {
 } from "lucide-react";
 import { Typewriter, TerminalCommand } from "./Typewriter";
 import WorkflowDiagram from "./WorkflowDiagram";
-import TrinityHero from "./TrinityHero";
 
 export default function LandingContent() {
   const [mounted, setMounted] = useState(false);
@@ -147,8 +146,15 @@ export default function LandingContent() {
         >
           <div className="absolute inset-0 bg-green-500/10 blur-[180px] rounded-full animate-pulse" />
           
-          <div className="relative w-full h-full">
-            <TrinityHero />
+          <div className="relative w-full h-full flex items-center justify-center">
+            <Image 
+              src="/assets/recovered/trinity_nuclei_cinematic_master_png_1770656847818.png" 
+              alt="Trinity Nuclei Cinematic" 
+              width={1200}
+              height={1200}
+              className="object-contain"
+              priority
+            />
           </div>
 
           <div className="absolute inset-0 pointer-events-none">
