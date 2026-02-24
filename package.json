@@ -1,6 +1,6 @@
 {
   "name": "greenproof-platform",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -12,6 +12,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
     "compile": "ts-node scripts/compile.ts",
     "deploy": "npm run compile && ts-node scripts/deploy.ts",
     "deploy:quick": "ts-node scripts/deploy.ts"
@@ -32,19 +35,25 @@
   "devDependencies": {
     "@chainlink/contracts-ccip": "^1.6.4",
     "@openzeppelin/contracts": "^5.4.0",
+    "@playwright/test": "^1.58.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/three": "^0.164.0",
+    "@vitejs/plugin-react": "^5.1.4",
     "autoprefixer": "^10.4.19",
     "dotenv": "^17.2.4",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "ethers": "^6.16.0",
+    "jsdom": "^28.1.0",
     "postcss": "^8",
     "solc": "^0.8.33",
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.0.18"
   }
 }
