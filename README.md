@@ -4,6 +4,7 @@
 **Video Pitch**: Coming soon  
 **Smart Contract**: [Sepolia Explorer (tx)](https://sepolia.etherscan.io/tx/0xe0d518536a83afe148ad1846502b2c9dcaaa3982587b8da480666ed00ef32e4c)  
 **Evaluator Audit**: [Readiness Checklist](docs/EVALUATOR_READINESS_AUDIT.md)  
+**Master Audit**: [Institutional Integrity Report](docs/MASTER_AUDIT_SUMMARY.md)  
 
 [![Chainlink Convergence 2026](https://img.shields.io/badge/Hackathon-Chainlink_Convergence_2026-blue)](https://chain.link/hackathon)
 [![Sepolia](https://img.shields.io/badge/Deployed-Sepolia-363636?logo=ethereum)](https://sepolia.etherscan.io)
