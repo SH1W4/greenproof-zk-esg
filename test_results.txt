@@ -1,0 +1,79 @@
+
+> greenproof-platform@0.1.0 test
+> vitest run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90mC:/Users/Jo├úo/Desktop/PROJETOS/01_CORE_SYSTEMS/symbeon-protocol/greenproof-platform[39m
+
+ [31mÔØ»[39m src/components/Typewriter.test.tsx [2m([22m[2m2 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[32m 269[2mms[22m[39m
+[31m     [31m├ù[31m renders the initial text when not mounted (SSR fallback)[39m[32m 254[2mms[22m[39m
+[31m     [31m├ù[31m renders with custom className[39m[32m 11[2mms[22m[39m
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 2 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+
+ FAIL  src/components/Typewriter.test.tsx > Typewriter Component > renders the initial text when not mounted (SSR fallback)
+TestingLibraryElementError: Unable to find an element with the text: Hello World. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <span
+      class=""
+      translate="no"
+    >
+      <span
+        class="animate-pulse inline-block w-2 h-4 bg-current align-middle ml-1"
+      />
+    </span>
+  </div>
+</body>
+ ÔØ» Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ÔØ» src/components/Typewriter.test.tsx:8:28
+      6|   it('renders the initial text when not mounted (SSR fallback)', () =>ÔÇª
+      7|     render(<Typewriter text="Hello World" />)
+      8|     const element = screen.getByText('Hello World')
+       |                            ^
+      9|     expect(element).toBeInTheDocument()
+     10|   })
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/2]ÔÄ»
+
+ FAIL  src/components/Typewriter.test.tsx > Typewriter Component > renders with custom className
+TestingLibraryElementError: Unable to find an element with the text: Hello. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <span
+      class="custom-class"
+      translate="no"
+    >
+      <span
+        class="animate-pulse inline-block w-2 h-4 bg-current align-middle ml-1"
+      />
+    </span>
+  </div>
+</body>
+ ÔØ» Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ÔØ» src/components/Typewriter.test.tsx:14:28
+     12|   it('renders with custom className', () => {
+     13|     render(<Typewriter text="Hello" className="custom-class" />)
+     14|     const element = screen.getByText('Hello')
+       |                            ^
+     15|     expect(element).toHaveClass('custom-class')
+     16|   })
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[2/2]ÔÄ»
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[90m (2)[39m
+[2m   Start at [22m 22:21:28
+[2m   Duration [22m 16.41s[2m (transform 282ms, setup 2.11s, import 2.06s, tests 269ms, environment 11.27s)[22m
+
