@@ -15,3 +15,10 @@ scripts/archive/
 
 # build info
 *.tsbuildinfo
+
+# test artifacts
+playwright-report/
+test-results/
+e2e_results*.txt
+e2e_title_result.txt
+*.log
