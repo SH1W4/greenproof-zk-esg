@@ -10,9 +10,18 @@
 [![Sepolia](https://img.shields.io/badge/Deployed-Sepolia-363636?logo=ethereum)](https://sepolia.etherscan.io)
 [![CCIP](https://img.shields.io/badge/Bridge-Avalanche_Fuji-orange?logo=avax)](https://fuji.explorer.avax.network)
 [![Chainlink](https://img.shields.io/badge/Built%20with-Chainlink-3399FF?logo=chainlink)](https://chain.link)
+[![Demo](https://img.shields.io/badge/Demo-Live-brightgreen)](https://greenproof-platform.vercel.app)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## 🌐 Live Dashboard
 👉 [greenproof-platform.vercel.app](https://greenproof-platform.vercel.app/dashboard)
+
+## 🎬 Quick Demo for Judges (90 seconds)
+1. **Open**: [greenproof-platform.vercel.app](https://greenproof-platform.vercel.app/dashboard)
+2. **Click**: "Execute Sovereign Demo" (Instant interaction, no login required).
+3. **Watch**: Trinity Consensus in action (2/3 approval simulation).
+4. **Verify**: Check the **ZKWitnessStream** for ZK-SNARK generation.
+5. **Explore**: See the Cross-chain bridge to Avalanche Fuji status.
 
 ## 🎯 The Problem
 The $2.1 trillion Green Bond market suffers from systemic greenwashing. Traditional ESG reporting relies on self-reported data with no cryptographic verification, leading to capital paralysis and lack of trust.
