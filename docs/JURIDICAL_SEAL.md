@@ -25,4 +25,13 @@ The protocol is agnostic to physical jurisdiction.
 
 ---
 
+## 👨‍⚖️ Information for Evaluators
+- **Protocol objective**: prove ESG threshold compliance (`score >= 80`) with privacy preservation.
+- **Method**: Triple-oracle consensus (Physical + Juridical + Ethical) followed by ZK threshold proof.
+- **Judge-oriented summary**: [Judge Cheat Sheet](./JUDGE_CHEATSHEET.md)
+- **Architecture deep dive**: [HAAS Architecture](./HAAS_ARCHITECTURE.md)
+- **Technical workflow**: [Protocol Workflow](./TECHNICAL_WORKFLOW.md)
+
+---
+
 > *"Code is Law, but Context is King."* — **Th3m1s Logic Core**

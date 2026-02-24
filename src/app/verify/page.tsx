@@ -186,7 +186,12 @@ export default function VerifyPage() {
                      <Lock className="w-3 h-3" />
                      <span className="text-[10px] font-mono leading-none">ZK-SNARK Proof: 0x8a92...f7e1</span>
                    </div>
-                   <Link href="#" className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-green-400 hover:text-green-300 transition-colors">
+                   <Link
+                     href="https://sepolia.etherscan.io/tx/0xe0d518536a83afe148ad1846502b2c9dcaaa3982587b8da480666ed00ef32e4c"
+                     target="_blank"
+                     rel="noreferrer"
+                     className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-green-400 hover:text-green-300 transition-colors"
+                   >
                      View on Explorer <ExternalLink className="w-3 h-3" />
                    </Link>
                 </div>
