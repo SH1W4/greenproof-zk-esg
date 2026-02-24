@@ -111,7 +111,7 @@ export default function VerifyPage() {
           </form>
           
           <p className="text-center mt-6 text-[10px] text-green-100/20 font-mono font-bold uppercase tracking-widest">
-            Don't have a code? try: <span className="text-green-500/40">GP-TRINITY-DEMO</span>
+            Don&apos;t have a code? try: <span className="text-green-500/40">GP-TRINITY-DEMO</span>
           </p>
         </section>
 
