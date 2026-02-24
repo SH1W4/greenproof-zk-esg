@@ -10,8 +10,13 @@ interface TypewriterProps {
 }
 
 export function Typewriter({ text, delay = 50, className = "" }: TypewriterProps) {
+  const [mounted, setMounted] = useState(false);
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (currentIndex < text.length) {
@@ -31,8 +36,10 @@ export function Typewriter({ text, delay = 50, className = "" }: TypewriterProps
     }
   }, [currentIndex, delay, text]);
 
+  if (!mounted) return <span className={className} translate="no">{text}</span>;
+
   return (
-    <span className={className}>
+    <span className={className} translate="no">
       {displayText}
       <span className="animate-pulse inline-block w-2 h-4 bg-current align-middle ml-1"></span>
     </span>
@@ -45,9 +52,14 @@ interface TerminalCommandProps {
 }
 
 export function TerminalCommand({ commands, className = "" }: TerminalCommandProps) {
+  const [mounted, setMounted] = useState(false);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [lines, setLines] = useState<string[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (currentLineIndex < commands.length) {
@@ -65,8 +77,10 @@ export function TerminalCommand({ commands, className = "" }: TerminalCommandPro
     }
   }, [currentLineIndex, commands]);
 
+  if (!mounted) return null;
+
   return (
-    <div className={`relative group ${className}`}>
+    <div className={`relative group ${className}`} translate="no">
       {/* Terminal Window Frame */}
       <div className="bg-[#050a06] border border-green-500/30 rounded-xl overflow-hidden shadow-[0_0_50px_rgba(34,197,94,0.1)] backdrop-blur-md">
         {/* Header bar */}

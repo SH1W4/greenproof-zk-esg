@@ -4,61 +4,69 @@
 
 @layer base {
   :root {
-    --background: #020c06; /* Deeper Black-Green */
-    --foreground: #f0fdf4;
-    --accent: #22c55e;
-    --accent-glow: rgba(34, 197, 94, 0.25); /* More subtle glow */
-    --glass-bg: rgba(6, 46, 22, 0.4); /* More transparent */
-    --glass-border: rgba(34, 197, 94, 0.15);
+    --background: #0f172a; /* Deep Institutional Blue */
+    --foreground: #f8fafc;
+    --accent: #00ff88; /* Sovereign Neon Green */
+    --accent-glow: rgba(0, 255, 136, 0.3);
+    --glass-bg: rgba(15, 23, 42, 0.6);
+    --glass-border: rgba(0, 255, 136, 0.2);
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
-  letter-spacing: -0.015em; /* Tighter Swiss tracking */
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* Premium Glass Effect (Frosted) */
+/* Biocybernetic Scanline Effect */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.01),
+      rgba(0, 255, 0, 0.01),
+      rgba(0, 0, 255, 0.01)
+    );
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.3;
+}
+
+/* Premium Three-Layer Glass */
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(24px) saturate(160%); /* Deeper blur */
+  backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid var(--glass-border);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8), inset 0 0 20px var(--accent-glow);
 }
 
 .glass-card {
-  background: linear-gradient(135deg, rgba(6, 46, 22, 0.4), rgba(4, 26, 13, 0.8));
-  backdrop-filter: blur(32px); /* High fidelity blur */
-  border: 1px solid rgba(255, 255, 255, 0.08); /* Crisper border */
-  box-shadow: inset 0 0 40px rgba(34, 197, 94, 0.03);
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.8),
+    rgba(2, 6, 23, 0.95)
+  );
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 255, 136, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    inset 0 0 40px rgba(0, 255, 136, 0.02);
+  position: relative;
+  overflow: hidden;
 }
 
-.glow-text {
-  text-shadow: 0 0 30px var(--accent-glow);
+.glass-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  opacity: 0.05;
+  pointer-events: none;
 }
-
-.animate-glow {
-  animation: glow 6s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    box-shadow: 0 0 15px rgba(34, 197, 94, 0.05);
-  }
-  to {
-    box-shadow: 0 0 45px rgba(34, 197, 94, 0.2);
-  }
-}
-
-/* Utilities */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-

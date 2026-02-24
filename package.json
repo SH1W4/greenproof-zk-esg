@@ -1,7 +1,12 @@
 {
-  "name": "greenproof-zk-esg",
+  "name": "greenproof-platform",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/symbeon-labs/greenproof-platform.git"
+  },
+  "homepage": "https://greenproof-platform.vercel.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,7 +21,7 @@
     "@react-three/fiber": "^8.16.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.1.7",
+    "framer-motion": "^12.34.3",
     "lucide-react": "^0.378.0",
     "next": "14.2.3",
     "react": "^18",

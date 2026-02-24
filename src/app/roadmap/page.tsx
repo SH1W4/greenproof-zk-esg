@@ -125,7 +125,7 @@ export default function RoadmapPage() {
             <div className="space-y-4">
               <h2 className="text-4xl font-black tracking-tighter uppercase">Protocol Synergy</h2>
               <p className="text-green-100/40">
-                GreenProof is the "Truth Engine" designed to feed the entire Symbeon Ecosystem.
+                GreenProof is the &quot;Truth Engine&quot; designed to feed the entire Symbeon Ecosystem.
               </p>
             </div>
             

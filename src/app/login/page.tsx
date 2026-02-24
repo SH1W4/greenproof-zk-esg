@@ -17,6 +17,7 @@ export default function LoginPage() {
     
     // Hardcoded credentials for hackathon demo
     if (email === "admin@greenproof.io" && password === "trinity2026") {
+      document.cookie = "greenproof_auth=authenticated; path=/";
       localStorage.setItem("greenproof_auth", "authenticated");
       router.push("/dashboard");
     } else {
@@ -28,7 +29,7 @@ export default function LoginPage() {
     <main className="min-h-screen bg-[#020c06] text-[#f0fdf4] flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
         <Image 
-          src="/assets/branding/hero_banner_0.png" 
+          src="/assets/branding/hero_banner.png" 
           alt="Sovereign Gateway" 
           fill
           className="object-cover animate-slow-zoom"
@@ -107,6 +108,24 @@ export default function LoginPage() {
             >
               Access Protocol
               <ArrowRight className="w-5 h-5" />
+            </button>
+            
+            <button
+              type="button"
+              onClick={() => {
+                const creds = { email: "admin@greenproof.io", password: "trinity2026" };
+                setEmail(creds.email);
+                setPassword(creds.password);
+                document.cookie = "greenproof_auth=authenticated; path=/";
+                localStorage.setItem("greenproof_auth", "authenticated");
+                setTimeout(() => {
+                   router.push("/dashboard");
+                }, 100);
+              }}
+              className="w-full mt-4 px-6 py-2 bg-white/5 text-green-400/60 font-mono text-xs rounded-lg hover:bg-white/10 hover:text-green-400 transition-all flex items-center justify-center gap-2 border border-dashed border-white/10"
+            >
+              <Lock className="w-3 h-3" />
+              JUDGE FAST-TRACK (AUTO-LOGIN)
             </button>
           </form>
 

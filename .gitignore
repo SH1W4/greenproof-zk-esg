@@ -12,3 +12,6 @@ _vault/
 
 # Archive
 scripts/archive/
+
+# build info
+*.tsbuildinfo

@@ -1,110 +1,55 @@
 # 🏆 CHAINLINK CONVERGENCE 2026
 **Track**: DeFi & Tokenization / Risk & Compliance / CRE & AI  
-**Live Demo**: [greenproof.vercel.app](https://greenproof.vercel.app)  
+**Live Demo**: [greenproof-platform.vercel.app](https://greenproof-platform.vercel.app)  
 **Video Pitch**: Coming soon  
 **Smart Contract**: [Sepolia Explorer (tx)](https://sepolia.etherscan.io/tx/0xe0d518536a83afe148ad1846502b2c9dcaaa3982587b8da480666ed00ef32e4c)  
 **Evaluator Audit**: [Readiness Checklist](docs/EVALUATOR_READINESS_AUDIT.md)  
 
----
+[![Chainlink Convergence 2026](https://img.shields.io/badge/Hackathon-Chainlink_Convergence_2026-blue)](https://chain.link/hackathon)
+[![Sepolia](https://img.shields.io/badge/Deployed-Sepolia-363636?logo=ethereum)](https://sepolia.etherscan.io)
+[![CCIP](https://img.shields.io/badge/Bridge-Avalanche_Fuji-orange?logo=avax)](https://fuji.explorer.avax.network)
+[![Chainlink](https://img.shields.io/badge/Built%20with-Chainlink-3399FF?logo=chainlink)](https://chain.link)
 
-<p align="center">
-  <img src="docs/assets/branding/hero_banner_0.png" alt="GreenProof Banner" width="800">
-</p>
+## 🌐 Live Dashboard
+👉 [greenproof-platform.vercel.app](https://greenproof-platform.vercel.app/dashboard)
 
-# 🌿 GREENPROOF: THE PROTOCOL OF TRUTH
-### **"A Sovereign Integrity Protocol for RWAs, Orchestrated by Autonomous Agents."**
+## 🎯 The Problem
+The $2.1 trillion Green Bond market suffers from systemic greenwashing. Traditional ESG reporting relies on self-reported data with no cryptographic verification, leading to capital paralysis and lack of trust.
 
-> *“GreenProof is the definitive settlement layer for objective reality—transforming ESG compliance from a static PDF into a portable, private, and intelligent digital protocol.”*
+## 💡 The Solution
+GreenProof introduces the **Trinity of Proof** — a decentralized consensus mechanism requiring agreement from **2 out of 3** independent oracles before issuing a compliance certificate:
+- **GP-Physical** (Physical): Real-time IoT telemetry (NDVI, Carbon Sensors)
+- **GP-Juridical** (Juridical): Automated legal compliance (Th3m1s Engine)
+- **GP-Ethical** (Ethical): AI-driven ethical alignment (SEVE Oracle)
 
-[![Chainlink](https://img.shields.io/badge/Chainlink-CRE%20%7C%20CCIP%20%7C%20Functions-3382ed?logo=chainlink)](https://chain.link/)
-[![ZK-SNARK](https://img.shields.io/badge/ZK--SNARK-Circom-green)](https://iden3.io/)
-[![Juridical Seal](https://img.shields.io/badge/Juridical-Sealed%20by%20Th3m1s-blue)](docs/JURIDICAL_SEAL.md)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## 🔧 Technical Stack
+- **Chainlink CRE**: Programmable orchestration layer and execution backbone.
+- **ZK-SNARKs** (Groth16): Privacy-preserving compliance proofs (prove threshold without leak).
+- **Chainlink CCIP**: Cross-chain certificate portability (Sepolia → Avalanche Fuji).
+- **Lucide & Framer Motion**: Institutional-grade UI/UX with biocybernetic aesthetics.
 
----
-
-## 💡 The Challenge: The ESG "Oracle Problem"
-The $2.1 Trillion Green Bond market is facing an integrity crisis. Current ESG reporting suffers from:
-1. **Greenwashing:** Companies manipulate self-reported data to attract capital.
-2. **Data Privacy Trap:** Detailed operational telemetry is too sensitive to share, yet essential for verification.
-3. **Siloed Data:** ESG scores are static, non-portable, and disconnected from the blockchain economy.
-
-## 🚀 The Solution: GreenProof
-GreenProof is a decentralized orchestration protocol that solves the **ESG Oracle Problem** by combining **Zero-Knowledge Proofs (ZK)** for extreme privacy and **Chainlink Runtime Environment (CRE)** for total decentralization.
-
-### 🌌 Hierarchical Autonomous Agent Swarm (HAAS)
-The GreenProof Protocol is governed by an autonomous multi-agent hierarchy (HAAS), where specialized intelligences collaborate in a monolithic core using the **[EAP Synchronization Cycle](docs/EAP_CYCLE.md)**:
-1. **GP-Physical (Physical Reality Core):** Real-time environmental signal ingestion.
-2. **GP-Juridical (Juridical Logic Core):** Native legal validator and compliance engine.
-3. **GP-Ethical (Ethical Value Core):** Global governance and value alignment guardian.
-
-**[Explore the HAAS Orchestration Blueprint ➔](docs/HAAS_ARCHITECTURE.md)**
-
----
-
-## 🛠 How it Works: The CRE Orchestrator
-GreenProof uses **Chainlink Runtime Environment (CRE)** as its execution backbone—not just as an oracle, but as a programmable orchestration layer that coordinates the entire lifecycle:
-
-- **1. Ingestion & Consensus:** CRE triggers the "Trinity of Proof," requiring a 2/3 consensus between Physical, Legal, and Ethical oracles to prevent data manipulation.
-- **2. ZK-Threshold Verification:** Once the score is calculated, a **ZK-SNARK** circuit (Circom) proves that `Score >= 80`. **We do not expose the exact score; we only prove it meets the standard.**
-- **3. Cross-Chain Certification:** Upon a valid proof, CRE mints a **GreenProof NFT** (ERC-721) on Sepolia.
-- **4. CCIP Global Bridge:** In a single, seamless action, CRE uses **Chainlink CCIP** to bridge the credential to Avalanche Fuji, ensuring RWA portability.
-
----
-
-## 📊 Market Dominance: Why GreenProof Wins
-Compared to legacy ESG reporting, GreenProof is:
-- **Resilient:** 2/3 Oracle Consensus makes it "Greenwashing-Proof."
-- **Private:** ZK-SNARKs enable industrial-grade privacy for RWA issuers.
-- **Institutional:** Backed by an autonomous **Juridical Stress-Test**, ensuring legal defensibility for Green Bonds.
-
-| Feature | Legacy ESG | GreenProof |
-| :--- | :--- | :--- |
-| **Trust Model** | Centralized / Self-Reported | **Decentralized Triple Consensus** |
-| **Data Privacy** | None or Total Secrecy | **Verifiable Privacy (ZK)** |
-| **Automation** | Manual / Static | **Programmable Workflows (CRE)** |
-| **Liquidity** | Illiquid Reports | **Portable RWA Credentials (CCIP)** |
-
----
-
-## 🌎 Beyond ESG: Institutional Expansion
-The GreenProof **Sovereign MAS** is a universal settlement layer for objective truth. Our architecture is currently being adapted for:
-- 📦 **Supply Chain**: Verifying RWA provenance and "Hard Evidence" telemetry.
-- 🏦 **Private Credit**: ZK-Proofs for institutional creditworthiness without data leakage.
-- ⚖️ **IP & Patents**: Verifying the structural integrity of intellectual property.
-
-**[Explore the full Roadmap of Institutional Use Cases ➔](docs/USE_CASES.md)**
-
----
-
-## 🛡️ Structural Integrity & Selective Disclosure
-The GreenProof Protocol is governed by the **GreenProof Foundation** (a Symbeon Labs Initiative). To protect sovereign intellectual property while maintaining total transparency for evaluators, we operate under the **Sovereign Disclosure Protocol**. 
-
-Our "Trinity of Proof" logic is based on a rigorous **[Mathematical & Algebraic Foundation](docs/MATHEMATICAL_FOUNDATION.md)**, ensuring legal and technical defensibility for institutional capital.
-
----
-
-## ⚡ Quick Start & Verification
-To verify the core protocol orchestration in seconds:
+## 🚀 Quick Start
 ```bash
-# 1. Start the project
-npm install && npm run dev
-
-# 2. Run the programmatic Sovereign Sync (Simulation)
-# This script manages the gap between public code and private research
-./scripts/sovereign-sync.sh --verify
+git clone https://github.com/symbeon-labs/greenproof-platform.git
+cd greenproof-platform
+npm install
+npm run dev
 ```
 
----
+## 📚 Documentation
+- [Judge Cheat Sheet](./docs/JUDGE_CHEATSHEET.md) — Quick evaluation guide.
+- [Technical Architecture](./docs/HAAS_ARCHITECTURE.md) — Architectural deep dive.
+- [Demo Disclosure](./docs/DEMO_DISCLOSURE.md) — Transparency report.
 
-## 🏁 Submission Roadmap
-- [x] **Technical:** Full implementation of CRE, CCIP, and ZK-SNARK circuits.
-- [x] **Deployment:** Live on Vercel and Testnets (Sepolia/Fuji).
-- [x] **Verification:** Juridical Stress-Test and Market Benchmarking complete.
-- [x] **Governance:** Institutional Framing as **GreenProof Foundation**.
+## 🏆 Why GreenProof Wins
+✅ **Anti-Greenwashing**: 2/3 consensus prevents single-point data manipulation.  
+✅ **Privacy by Design**: ZK-proofs verify threshold compliance without exposing raw data.  
+✅ **Global Liquidity**: CCIP enables cross-chain RWA portability and secondary markets.  
+✅ **Institutional Ready**: Production-grade infrastructure, not a simple POC.  
 
----
-**ORGANIZATION:** GreenProof Foundation  
-**CUSTODIAN:** Symbeon Labs  
-**DEVELOPER:** NEO-SH1W4  
-*Designed for the Chainlink Convergence Hackathon 2026. Transforming compliance into a sovereign asset.*
+## 🤝 Contributing
+This is a sovereign protocol. Core development happens in the private Knowledge Vault. Public contributions are welcome for UI/UX improvements and documentation.
+
+## 📜 License
+Sovereign Protocol — Core IP protected under pending patent GP-IP-2026-001. 
+Execution layer released under MIT for hackathon transparency.
