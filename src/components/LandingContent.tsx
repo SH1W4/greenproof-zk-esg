@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
@@ -47,21 +47,25 @@ export default function LandingContent() {
   const n2Y = useTransform(sectionScroll, [0, 1], [-5, 5]);
   const n3Y = useTransform(sectionScroll, [0, 1], [15, -15]);
 
-  if (!mounted) {
-    return (
-      <main className="min-h-screen bg-[#020c06] flex items-center justify-center">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 border-4 border-green-500/10 border-t-green-500 rounded-full animate-spin" />
-          <div className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.3em]">
-            Syncing Reality...
-          </div>
-        </div>
-      </main>
-    );
-  }
-
   return (
-    <main ref={containerRef} className="min-h-screen bg-[#020c06] text-[#f0fdf4] selection:bg-green-500/30">
+    <main ref={containerRef} className="relative min-h-screen bg-[#020c06] text-[#f0fdf4] selection:bg-green-500/30">
+      {/* SECTION 0: HYDRATION OVERLAY */}
+      <AnimatePresence>
+        {!mounted && (
+          <motion.div 
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[1000] bg-[#020c06] flex items-center justify-center"
+          >
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-12 h-12 border-4 border-green-500/10 border-t-green-500 rounded-full animate-spin" />
+              <div className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.3em]">
+                Syncing Reality...
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* SECTION 0: NAV */}
       <nav className="fixed top-0 inset-x-0 z-[100] border-b border-white/5 px-8 py-5 flex items-center justify-between backdrop-blur-xl bg-[#020c06]/80">
         <div className="flex items-center gap-3">
