@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShieldCheck, Calendar, Hash, Scale, CheckCircle2, Download, X } from "lucide-react";
 
@@ -94,13 +95,20 @@ export const ProofCertificate: React.FC<ProofCertificateProps> = ({
 
         {/* Certificate Footer */}
         <div className="p-8 bg-emerald-950/20 border-t border-white/10 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/20 flex items-center justify-center overflow-hidden">
-               <span className="text-[8px] font-bold text-white/40 uppercase">Audit Layer</span>
+          <div className="flex items-center gap-4">
+            <div className="relative w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden group/qr cursor-pointer hover:border-emerald-500/30 transition-all">
+               <Image 
+                 src="/assets/branding/github_qr.png" 
+                 alt="Protocol QR Audit" 
+                 fill 
+                 className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/10 to-transparent opacity-50" />
             </div>
             <div>
-              <p className="text-[10px] text-white/40 font-bold uppercase py-0.5">Juridical Integrity Sealed</p>
-              <p className="text-[8px] text-emerald-500 uppercase tracking-widest">Protocol Version v1.0.4-Convergence</p>
+              <p className="text-[10px] text-white/40 font-bold uppercase py-0.5 tracking-widest">Sovereign Audit Linked</p>
+              <p className="text-[11px] text-emerald-400 font-bold uppercase tracking-wider">GP-ZK-VERIFIER-V1.04</p>
+              <p className="text-[8px] text-white/20 uppercase tracking-[0.2em] mt-1 font-mono">Consensus Proof 2026</p>
             </div>
           </div>
           
