@@ -1,11 +1,11 @@
-# 🛡️ Institutional Audit Report: GreenProof Protocol
+# Institutional Audit Report: GreenProof Protocol
 **Auditor Engine**: EditalShield v0.3.0 (Powered by th3m1s-core)
 **Date**: 2026-02-16
 **Status**: ⚖️ JURIDICAL COMPLIANCE SEAL ISSUED
 
 ---
 
-## 📊 Audit Executive Summary
+## Audit Executive Summary
 The GreenProof Protocol documentation has undergone a rigorous automated audit via the **EditalShield** engine to evaluate IP exposure risk and technical density.
 
 ### Key Metrics
@@ -22,13 +22,13 @@ The GreenProof Protocol documentation has undergone a rigorous automated audit v
 
 ---
 
-## ⚖️ Juridical Verdict
+## Juridical Verdict
 The EditalShield engine has issued a **WARNING - Significant IP exposure risk** based on Technical Density. 
 
 > [!NOTE]
 > In the context of the **Chainlink Convergence 2026**, this "Risk" is interpreted as **High Evaluation Value**. The density confirms that the project is not a simple POC, but a mature infrastructure proposal. The IP remains protected as long as the ZK-Circuit specifics and Orchestrator Private Keys remain in the **Private Vault**.
 
-## 🛡️ Compliance Seal
+## Compliance Seal
 **[ SEAL: GREENPROOF-INSTITUTIONAL-TRUST-2026 ]**
 *Certified safe for public competition. IP secured within the Sovereign Membrane.*
 

@@ -1,10 +1,10 @@
-# 🚀 GreenProof Deployment Guide
+# GreenProof Deployment Guide
 
 **Complete deployment instructions for the GreenProof Protocol and Dashboard.**
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before deploying, ensure you have:
 
@@ -19,7 +19,7 @@ Before deploying, ensure you have:
 
 ---
 
-## ⚡ One-Click Deployment
+## One-Click Deployment
 
 ### Step 1: Clone and Install
 
@@ -120,7 +120,7 @@ Or simply push to GitHub and Vercel will auto-deploy if connected.
 
 ---
 
-## 🛠️ Advanced Deployment Options
+## Advanced Deployment Options
 
 ### Deploy Without Recompiling
 
@@ -150,7 +150,7 @@ forge verify-contract <CONTRACT_ADDRESS> GreenProofNFT --chain sepolia
 
 ---
 
-## 🔗 Chainlink CRE Execution
+## Chainlink CRE Execution
 
 To run the Chainlink Compute Runtime Environment (CRE) workflow locally:
 
@@ -160,7 +160,7 @@ npx chainlink-cre run cre/workflow.ts --args '{"ownerAddress": "0x..."}'
 
 ---
 
-## 📁 Deployment Artifacts
+## Deployment Artifacts
 
 All deployment information is saved to `deployments/sepolia-{timestamp}.json`:
 
@@ -182,7 +182,7 @@ All deployment information is saved to `deployments/sepolia-{timestamp}.json`:
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### "Artifact not found" Error
 
@@ -202,7 +202,7 @@ All deployment information is saved to `deployments/sepolia-{timestamp}.json`:
 
 ---
 
-## 🎯 Quick Reference
+## Quick Reference
 
 | Command | Description |
 |---------|-------------|
@@ -215,7 +215,7 @@ All deployment information is saved to `deployments/sepolia-{timestamp}.json`:
 
 ---
 
-## 🏁 Post-Deployment Checklist
+## Post-Deployment Checklist
 
 - [ ] Contracts deployed to Sepolia
 - [ ] Contract addresses added to `.env`

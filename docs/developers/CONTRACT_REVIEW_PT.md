@@ -1,10 +1,10 @@
-# 🛡️ Revisão Técnica: Contratos Inteligentes GreenProof
+# Reviso Tcnica: Contratos Inteligentes GreenProof
 
 Esta revisão analisa a segurança, arquitetura e integração dos contratos inteligentes (`GreenProofNFT.sol`, `CCIPBridge.sol`, `Verifier.sol`) frente aos requisitos do hackathon Chainlink.
 
 ---
 
-## 🏗️ Análise por Contrato
+## Anlise por Contrato
 
 ### 1. [GreenProofNFT.sol](contracts/GreenProofNFT.sol)
 O coração do protocolo, responsável por emitir as certificações ESG.
@@ -31,7 +31,7 @@ Contrato de verificação Groth16 (Mock/Placeholder para a demo).
 
 ---
 
-## 🔍 Conclusão da Revisão
+## Concluso da Reviso
 
 Os contratos seguem as **melhores práticas de segurança** da indústria (OpenZeppelin) e demonstram uma integração sofisticada com o ecossistema Chainlink (CRE + CCIP).
 

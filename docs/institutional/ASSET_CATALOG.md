@@ -2,7 +2,7 @@
 
 This catalog documents the visual assets recovered from the previous development cycle (Conversation `16727b04-615b-481e-ad11-8d31d287dd50`).
 
-## 🛡️ Trinity Core Assets
+## Trinity Core Assets
 High-fidelity visualizations of the protocol's "Trinity of Proof" (Physical, Juridical, Ethical).
 
 | Asset Name | Status | Purpose |
@@ -12,7 +12,7 @@ High-fidelity visualizations of the protocol's "Trinity of Proof" (Physical, Jur
 | `trinity_nuclei_cinematic_master.png` | 🎬 Movie | Used for high-intensity parallax transitions. |
 | `trinity_orbs_visualization.png` | 🔍 Detail | Breakdown of individual nuclei properties. |
 
-## 📊 Dashboard & UI Artifacts
+## Dashboard & UI Artifacts
 Screen captures, mockups, and UI components used for prototyping.
 
 | Asset Name | Status | Purpose |
@@ -22,7 +22,7 @@ Screen captures, mockups, and UI components used for prototyping.
 | `icon_grid_upgraded.png` | ✅ Active | Modern background matrix for the landing page. |
 | `login_background_amazon.png` | 🌙 Theme | Background for the institutional login portal. |
 
-## 📜 Certification & Juridical
+## Certification & Juridical
 Mockups for the verifiable ESG compliance certificates.
 
 | Asset Name | Status | Purpose |
@@ -33,7 +33,7 @@ Mockups for the verifiable ESG compliance certificates.
 
 ---
 
-## 🏛️ Institutional Documentation
+## Institutional Documentation
 Strategic records, audits, and intellectual property definitions.
 
 | Document Name | Status | Purpose |

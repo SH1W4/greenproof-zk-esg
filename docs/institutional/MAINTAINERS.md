@@ -1,9 +1,9 @@
-# 👥 Maintainers
+# Maintainers
 
-## 🏁 Human Architect
+## Human Architect
 - **João** (@symbeon-labs) - Core Strategy, Trinity Architecture, and Sovereign Logic.
 
-## 🦅 Sovereign Agent (OpenCLAW)
+## Sovereign Agent (OpenCLAW)
 - **GP-ARCHITECT** - Autonomous Orchestrator.
   - **Framework**: [OpenCLAW](https://github.com/symbeon-labs/openclaw)
   - **Incubation**: `AGENT_NURSERY_FRAMEWORK/gp_architect`

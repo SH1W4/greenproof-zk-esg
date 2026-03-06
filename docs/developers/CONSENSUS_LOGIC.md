@@ -1,8 +1,8 @@
-# ⚙️ GreenProof: Lógica de Consenso Trinitário (2/3)
+# GreenProof: Lgica de Consenso Trinitrio (2/3)
 
 A integridade do protocolo GreenProof repousa sobre a **Trindade da Prova**, um mecanismo de consenso multi-oráculo que utiliza uma lógica de supermaioria (2/3) para validar ativos de mundo real (RWA) e conformidade ESG.
 
-## 🏛️ A Trindade de Oráculos
+## A Trindade de Orculos
 
 O sistema orquestra três pilares independentes de dados via **Chainlink CRE (Custom Runtime Environment)**:
 
@@ -10,7 +10,7 @@ O sistema orquestra três pilares independentes de dados via **Chainlink CRE (Cu
 2.  **GP-Themis (Agente Jurídico)**: Árbitro de conformidade legal nativa herdada do Th3m1s.
 3.  **GP-Seve (Agente Ético)**: Guardião de impacto social e alinhamento de valores herdado do SEVE.
 
-## ⚖️ Lógica de Consenso 2/3 (Quorum Mínimo)
+## Lgica de Consenso 2/3 (Quorum Mnimo)
 
 Diferente de sistemas binários, o GreenProof exige que pelo menos **dois dos três** oráculos validem a veracidade das informações para que o certificado NFT seja emitido ou atualizado.
 
@@ -19,14 +19,14 @@ Diferente de sistemas binários, o GreenProof exige que pelo menos **dois dos tr
 - **Prevenção de Colusão**: Exigir uma supermaioria mitiga o risco de um único ponto de corrupção de dados (ex: suborno de um auditor ou manipulação de um sensor).
 - **Consenso de Realidade**: A realidade ESG é complexa. Se a lei valida (Jurídico) e a ética valida (Ético), mas o sensor físico falha, o protocolo pode ainda estar correto em um contexto de auditoria documental.
 
-## 🕵️ Camada ZK-SNARK (Privacy-Preservance)
+## Camada ZK-SNARK (Privacy-Preservance)
 
 Uma vez que o consenso 2/3 é alcançado, os dados brutos (origem da prova) são processados off-chain para gerar um **Zero-Knowledge Proof (Groth16)**.
 
 - **Threshold Validation**: O circuito ZK apenas prova que `ConsensusCount >= 2` e `ESG_Score >= Threshold (ex: 80)`.
 - **Privacidade Industrial**: O resultado on-chain é apenas um "VALID" ou "INVALID", protegendo os dados proprietários da empresa (ex: faturamento, localização exata de sensores sensíveis) de competidores.
 
-## ⛓️ Execução On-Chain
+## Execuo On-Chain
 
 O resultado do consenso e a prova ZK são submetidos ao contrato `GreenProofNFT.sol` na rede Sepolia por meio do Chainlink Functions/Functions, resultando na atualização do estado do ativo e, se necessário, no bridging via CCIP para outras redes.
 

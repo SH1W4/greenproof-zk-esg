@@ -1,4 +1,4 @@
-# 📐 The Mathematical Foundation of Truth: GreenProof (GP-MAS)
+# The Mathematical Foundation of Truth: GreenProof (GP-MAS)
 
 GreenProof is not merely a set of rules; it is a formal algebraic system designed to verify **Objective Reality** through computational consensus and cryptographic privacy.
 
@@ -62,7 +62,7 @@ Where:
 
 ---
 
-## 🏁 Summary: The Equation of Sovereignty
+## Summary: The Equation of Sovereignty
 $$\text{GreenProof} = \underbrace{\text{Quorum}(2/3)}_{\text{Consensus}} + \underbrace{\text{ZK}(S \ge T)}_{\text{Privacy}} + \underbrace{\text{CCIP}(\vec{V})}_{\text{Portability}}$$
 
 This mathematical framework ensures that **Truth is a function of collaborative observation**, not a single point of failure.
