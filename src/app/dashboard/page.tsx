@@ -43,6 +43,7 @@ export default function GreenProofDashboard() {
     legal: false,
     ethical: false,
   });
+  const [ccipEnabled, setCcipEnabled] = useState(true);
 
   const terminalEndRef = useRef<HTMLDivElement>(null);
 
@@ -270,17 +271,37 @@ export default function GreenProofDashboard() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
-            className="flex items-center gap-6"
+            className="flex flex-col sm:flex-row items-center gap-6"
           >
             {step === "idle" ? (
-              <button
-                onClick={startDemo}
-                className="group px-10 py-5 bg-[#00FF88] text-[#0F172A] font-black rounded-2xl flex items-center gap-3 hover:bg-[#00FF88]/90 transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(0,255,136,0.3)] relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                Execute Sovereign Demo
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </button>
+              <div className="flex flex-col gap-4 w-full sm:w-auto">
+                <button
+                  onClick={startDemo}
+                  className="group px-10 py-5 bg-[#00FF88] text-[#0F172A] font-black rounded-2xl flex items-center gap-3 hover:bg-[#00FF88]/90 transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(0,255,136,0.3)] relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                  Execute Sovereign Demo
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </button>
+                
+                {/* CCIP Strategic Toggle */}
+                <div className="flex items-center justify-between gap-4 px-6 py-3 bg-white/5 border border-white/10 rounded-2xl">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-8 h-4 rounded-full transition-colors relative ${ccipEnabled ? 'bg-[#00FF88]/40' : 'bg-white/10'}`} 
+                         onClick={() => setCcipEnabled(!ccipEnabled)}
+                         style={{ cursor: 'pointer' }}>
+                      <motion.div 
+                        animate={{ x: ccipEnabled ? 16 : 0 }}
+                        className={`absolute top-0.5 left-0.5 w-3 h-3 rounded-full ${ccipEnabled ? 'bg-[#00FF88]' : 'bg-slate-500'}`}
+                      />
+                    </div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">CCIP Cross-Chain Issuance</span>
+                  </div>
+                  <span className={`text-[9px] font-black uppercase ${ccipEnabled ? 'text-[#00FF88]' : 'text-slate-600'}`}>
+                    {ccipEnabled ? 'Sovereign Sync On' : 'Local Node Only'}
+                  </span>
+                </div>
+              </div>
             ) : (
               <div className="px-8 py-5 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-5">
                 <div className="animate-spin w-5 h-5 border-2 border-[#00FF88] border-t-transparent rounded-full" />
@@ -621,35 +642,34 @@ export default function GreenProofDashboard() {
           <div className="glass-card rounded-[2rem] p-6 space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-green-500">Last Proof On-Chain</span>
+                <div className="w-2 h-2 rounded-full bg-[#00FF88] animate-pulse" />
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#00FF88]">Agnostic Deployments</span>
               </div>
-              <span className="text-[9px] font-mono text-slate-600">Sepolia · Block #7,291,034</span>
+              <span className="text-[9px] font-mono text-slate-600">CCIP Enabled ✓</span>
             </div>
-            <div className="grid grid-cols-2 gap-3 font-mono text-[10px]">
-              <div className="space-y-1">
-                <div className="text-slate-600 uppercase tracking-widest text-[9px]">TX Hash</div>
-                <div className="text-slate-300 truncate">0xe0d518...ef32e4c</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-slate-600 uppercase tracking-widest text-[9px]">NFT ID</div>
-                <div className="text-green-400 font-black">#GP-4022</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-slate-600 uppercase tracking-widest text-[9px]">Oracle Network</div>
-                <div className="text-slate-300">GreenProof Trinity</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-slate-600 uppercase tracking-widest text-[9px]">Status</div>
-                <div className="text-green-400 font-black">SOVEREIGN ✓</div>
-              </div>
+            <div className="space-y-3">
+              {[
+                { network: "Sepolia", tx: "0xe0d5...2e4c", url: "https://sepolia.etherscan.io/tx/0xe0d518536a83afe148ad1846502b2c9dcaaa3982587b8da480666ed00ef32e4c" },
+                { network: "Arbitrum", tx: "Verified (Agnostic)", url: "https://sepolia-explorer.arbitrum.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54" },
+                { network: "Avalanche", tx: "Verified (Agnostic)", url: "https://testnet.snowtrace.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54" }
+              ].map((deploy, i) => (
+                <div key={i} className="flex items-center justify-between font-mono text-[9px]">
+                  <div className="flex items-center gap-2">
+                    <div className="w-1 h-1 rounded-full bg-slate-700" />
+                    <span className="text-slate-500 font-bold uppercase">{deploy.network}</span>
+                  </div>
+                  <Link href={deploy.url} target="_blank" className="text-slate-400 hover:text-[#00FF88] transition-colors">
+                    {deploy.tx}
+                  </Link>
+                </div>
+              ))}
             </div>
             <a
-              href="https://sepolia.etherscan.io/tx/0xe0d518536a83afe148ad1846502b2c9dcaaa3982587b8da480666ed00ef32e4c"
+              href="https://ccip.chain.link/"
               target="_blank" rel="noreferrer"
-              className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-green-500/60 hover:text-green-400 transition-colors"
+              className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#00FF88]/60 hover:text-[#00FF88] transition-colors"
             >
-              View on Etherscan <ExternalLink className="w-3 h-3" />
+              Monitor CCIP Execution <ExternalLink className="w-3 h-3" />
             </a>
           </div>
         </div>

@@ -70,11 +70,14 @@ We implement a **Groth16 circuit** (`circom/ESGScore.circom`) that cryptographic
 ### ⚡ CRE Orchestration (The Automation Engine)
 The `cre/greenproof-orchestrator.ts` uses **Chainlink Runtime Environment** to execute the full compliance lifecycle — oracle aggregation, ZK proof trigger, and on-chain minting — autonomously and in a verifiable sequence.
 
-### 🌐 CCIP Interoperability (The Liquidity Layer)
-ESG-certified NFTs minted on **Sepolia** are immediately bridged to **Avalanche Fuji** via `contracts/CCIPBridge.sol`, unlocking cross-chain secondary market liquidity for green assets.
+### CCIP Interoperability (The Agnostic Liquidity Layer)
+GreenProof is architecturally **Chain-Agnostic**. Once the Triple Oracle Consensus and ZK-Proof are validated off-chain, the issuer chooses the network with the highest liquidity. Utilizing **Chainlink CCIP**, we enable native issuance and synchronization of ESG credentials across:
+- **Ethereum Sepolia** (Institutional Settlement)
+- **Arbitrum Sepolia** (High-Performance Layer)
+- **Avalanche Fuji Testnet** (RWA Subnet Liquidity)
 
-### 🦅 OpenCLAW Agent (The Sovereign Brain)
-The protocol is navigated by a **Sovereign AI Agent** (OpenCLAW) that executes the Trust Handshake, validates quorum, triggers ZK proofs, and monitors on-chain state — all with local LLM support for zero-cost, data-sovereign operation.
+### 🦅 GP-Architect + OpenCLAW (The Sovereign Brain)
+The protocol is navigated by **GP-Architect**, a specialized AI agent built on the **OpenCLAW** framework. This is a key architectural innovation: it allows for **Autonomous Protocol Orchestration** without reliance on centralized AI clouds. GP-Architect executes the Trust Handshake, validates the Trinity quorum, and triggers ZK proofs locally — ensuring that data sovereignty and operational logic remain under the user's physical control.
 
 ### 🏛️ Institutional Maturity
 150+ commits over 28 days. Full CI/CD. Playwright E2E tests. Vercel production. RBAC on all contracts. This is not a POC — it is a **deployable institutional framework**.
@@ -141,6 +144,17 @@ graph TD
 | CCIP Bridge Active | `contracts/CCIPBridge.sol` (Verified) |
 | CI/CD Passing | [GitHub Actions Badge](https://github.com/symbeon-labs/greenproof-platform/actions) |
 | RBAC Hardened | OpenZeppelin AccessControl in all contracts |
+
+---
+
+## Smart Contract Deployments
+
+| Network | Contract Type | Explorer Link |
+|:---|:---|:---|
+| **Ethereum Sepolia** | GreenProof Core | [0x3fcf...6B54](https://sepolia.etherscan.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54) |
+| **Arbitrum Sepolia** | GreenProof Core | [0x3fcf...6B54](https://sepolia-explorer.arbitrum.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54) |
+| **Avalanche Fuji** | GreenProof Core | [0x3fcf...6B54](https://testnet.snowtrace.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54) |
+| **Chainlink CCIP** | Infrastructure | [CCIP Explorer](https://ccip.chain.link/) |
 
 ---
 

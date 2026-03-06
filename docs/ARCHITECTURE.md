@@ -44,6 +44,10 @@ These adapters allow the protocol to be **engine-agnostic**, enabling the integr
 
 ---
 
-### Sovereign Orchestration (MCP)
+### Sovereign Orchestration (GP-Architect + OpenCLAW)
 
-Integration between these layers is managed through the **Model Context Protocol (MCP)**, allowing autonomous agents to verify state and trigger attestations across the modular stack in a zero-trust environment.
+Integration between these layers is managed through the **Model Context Protocol (MCP)** and orchestrated by **GP-Architect**. Built on the **OpenCLAW** standard, this agentic layer represents a significant innovation in decentralized governance:
+
+1.  **Local Intelligence**: GP-Architect runs on local LLMs (via Ollama/OpenCLAW), ensuring that the logic governing the Trinity Consensus is never exposed to third-party AI providers.
+2.  **Autonomous Handshake**: The agent performs a "Sovereign Handshake" to verify the integrity of Physical, Juridical, and Ethical oracles before triggering the ZK-circuit.
+3.  **Zero-Trust Execution**: By combining MCP tools with sovereign agentic frameworks, GreenProof moves beyond simple "smart contracts" into **Autonomous Protocol Governance**.
