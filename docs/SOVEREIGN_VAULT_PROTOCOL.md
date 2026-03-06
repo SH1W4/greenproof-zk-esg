@@ -11,7 +11,8 @@ Estes arquivos contêm o "segredo industrial" e a lógica fundamental do protoco
 Documentos que validam a segurança e a legalidade do projeto.
 - **`docs/JURIDICAL_AUDIT_TH3M1S.md`**: Auditoria profunda do motor Th3m1s.
 - **`docs/CONTRACT_REVIEW_PT.md`**: Revisão técnica de segurança dos Smart Contracts.
-- **`docs/MASTER_AUDIT_SUMMARY.md`**: Relatório mestre de integridade institucional.
+- **MASTER_AUDIT_SUMMARY.md**: Relatório mestre de integridade institucional.
+- **`docs/archive/agent_skills/greenproof-orchestrator/resources/GP-ARCHITECT-, Plataforma GreenProof com OpenCLAW e a Pilha da Chainlink.pdf`**: A peça técnica final e guia mestre do ecossistema.
 
 ## 🏛️ Alinhamento de Governança
 A "Constituição" do projeto dentro do ecossistema.
