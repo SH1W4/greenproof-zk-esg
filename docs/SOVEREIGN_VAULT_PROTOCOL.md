@@ -13,6 +13,7 @@ Documentos que validam a segurança e a legalidade do projeto.
 - **`docs/CONTRACT_REVIEW_PT.md`**: Revisão técnica de segurança dos Smart Contracts.
 - **MASTER_AUDIT_SUMMARY.md**: Relatório mestre de integridade institucional.
 - **`docs/archive/agent_skills/greenproof-orchestrator/resources/GP-ARCHITECT-, Plataforma GreenProof com OpenCLAW e a Pilha da Chainlink.pdf`**: A peça técnica final e guia mestre do ecossistema.
+- **`docs/archive/agent_skills/greenproof-orchestrator/NEXUS_AGENT_HANDSHAKE.md`**: O protocolo de cooperação agente-nexus que selou esta sessão.
 
 ## 🏛️ Alinhamento de Governança
 A "Constituição" do projeto dentro do ecossistema.
