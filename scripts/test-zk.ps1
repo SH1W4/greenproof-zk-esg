@@ -10,10 +10,11 @@ $testCase = @(
 
 Write-Host "🛡️ Initiating ZK-Circuit Integrity Audit..." -ForegroundColor Cyan
 
-# Ensure snarkjs is installed
+# Ensure snarkjs is available (check global or npx)
+$snarkjsCmd = "snarkjs"
 if (!(Get-Command snarkjs -ErrorAction SilentlyContinue)) {
-    Write-Host "❌ snarkjs not found. Please run: npm install -g snarkjs" -ForegroundColor Red
-    exit
+    Write-Host "⚠️ Global snarkjs not found. Using npx snarkjs..." -ForegroundColor Yellow
+    $snarkjsCmd = "npx snarkjs"
 }
 
 $circomPath = "circom/ESGScore.circom"
@@ -23,7 +24,8 @@ Write-Host "⚙️ Compiling Circuit..."
 # Note: This assumes circom is in Path. If not, we skip compilation and used pre-compiled if available.
 if (Get-Command circom -ErrorAction SilentlyContinue) {
     circom $circomPath --wasm --r1cs -o circom/
-} else {
+}
+else {
     Write-Host "⚠️ 'circom' compiler not found. Skipping compilation, attempting to run tests on existing wasm..." -ForegroundColor Yellow
 }
 
@@ -42,7 +44,7 @@ foreach ($test in $testCase) {
         node circom/ESGScore_js/generate_witness.js $wasmPath circom/input.json circom/witness.wtns
         
         # Read witness (using snarkjs to export to json to verify result)
-        snarkjs wtns export json circom/witness.wtns circom/witness.json
+        Invoke-Expression "$snarkjsCmd wtns export json circom/witness.wtns circom/witness.json"
         $witness = Get-Content circom/witness.json | ConvertFrom-Json
         
         # The output 'isCompliant' is typically at index 1 in this simple circuit
@@ -50,10 +52,12 @@ foreach ($test in $testCase) {
 
         if ($result -eq $expected) {
             Write-Host " ✅ SUCCESS" -ForegroundColor Green
-        } else {
+        }
+        else {
             Write-Host " ❌ FAILED (Got $result, expected $expected)" -ForegroundColor Red
         }
-    } catch {
+    }
+    catch {
         Write-Host " ❌ ERROR during execution" -ForegroundColor Red
     }
 }

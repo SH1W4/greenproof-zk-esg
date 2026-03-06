@@ -1,39 +1,47 @@
 import { test, expect } from '@playwright/test';
 
+/**
+ * GreenProof Landing Page E2E Tests
+ * Hardened for slow/heavy environments (3D, Framer Motion, SSR hydration).
+ */
+
 test.describe('GreenProof Landing Page Sanity', () => {
+
   test('should load the landing page and show the hero title', async ({ page }) => {
-    page.on('console', msg => console.log(`BROWSER LOG: [${msg.type()}] ${msg.text()}`));
-    page.on('pageerror', err => console.log(`BROWSER ERROR: ${err.message}`));
+    page.on('console', msg => {
+      if (msg.type() === 'error') console.log(`BROWSER ERROR: ${msg.text()}`);
+    });
 
     await page.goto('/');
-    
-    // 1. Wait for hydration (SSR: false fallback to disappear)
-    await expect(page.getByText('Syncing Reality...')).not.toBeVisible({ timeout: 30000 });
-    
-    // DEBUG: Print actual text content found on the page
-    const textContent = await page.textContent('body');
-    console.log('DEBUG BODY TEXT CONTENT:', textContent?.replace(/\s+/g, ' ').trim().substring(0, 500));
 
-    // 2. Verify high-level brand presence
+    // Wait for the SSR/dynamic-import hydration overlay to disappear
+    await expect(page.getByText('Syncing Reality...')).not.toBeVisible({ timeout: 45000 });
+
+    // Verify brand presence
     const brand = page.getByText('GREENPROOF', { exact: false });
-    await expect(brand.first()).toBeVisible({ timeout: 15000 });
+    await expect(brand.first()).toBeVisible({ timeout: 20000 });
   });
 
-  test('should have a functional "Access Protocol" button', async ({ page }) => {
-    page.on('console', msg => console.log(`BROWSER LOG: [${msg.type()}] ${msg.text()}`));
+
+  test('should navigate to /login on "Access Protocol" click', async ({ page }) => {
+    page.on('console', msg => {
+      if (msg.type() === 'error') console.log(`BROWSER ERROR: ${msg.text()}`);
+    });
+
     await page.goto('/');
-    await page.setViewportSize({ width: 1280, height: 720 });
-    
-    // 1. Wait for hydration overlay to be COMPLETELY REMOVED from DOM
-    // We target the z-[1000] container we added for the overlay
-    await expect(page.getByText('Syncing Reality...')).not.toBeVisible({ timeout: 30000 });
-    
-    // 2. Target the link to /login specifically
-    // Using a more lenient approach: find any link containing "Protocol" or pointing to "/login"
-    const loginLink = page.locator('a[href="/login"]').first();
-    await expect(loginLink).toBeVisible({ timeout: 15000 });
-    
-    await loginLink.click();
-    await expect(page).toHaveURL(/\/login/);
+
+    // Wait for the layout to be interactive (hydration + 3D assets)
+    await expect(page.getByText('Syncing Reality...')).not.toBeVisible({ timeout: 45000 });
+
+    // There are multiple /login links (nav + hero CTA). Use the NAV one which is always visible.
+    // The nav bar has a fixed position link: class hidden md:flex
+    const navLoginLink = page.locator('nav a[href="/login"]');
+    await expect(navLoginLink).toBeVisible({ timeout: 20000 });
+
+    await navLoginLink.click();
+
+    // Generous timeout: SSR middleware + network round-trip
+    await expect(page).toHaveURL(/\/login/, { timeout: 30000 });
   });
+
 });

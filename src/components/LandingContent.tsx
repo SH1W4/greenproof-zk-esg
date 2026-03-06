@@ -152,39 +152,13 @@ export default function LandingContent() {
           
           <div className="relative w-full h-full flex items-center justify-center">
             <Image 
-              src="/assets/recovered/trinity_nuclei_cinematic_master_png_1770656847818.png" 
+              src="/assets/branding/trinity_cinematic_final.png" 
               alt="Trinity Nuclei Cinematic" 
               width={1200}
               height={1200}
               className="object-contain"
               priority
             />
-          </div>
-
-          <div className="absolute inset-0 pointer-events-none">
-            <motion.div 
-              style={{ x: n1X, y: n1Y }}
-              className="absolute top-[46%] left-[30%] -translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)]"
-            >
-              <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">NÚCLEO I</div>
-              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100 whitespace-nowrap">Prova Física (IoT)</div>
-            </motion.div>
-            
-            <motion.div 
-              style={{ x: n2X, y: n2Y }}
-              className="absolute top-[46%] right-[30%] translate-x-1/2 -translate-y-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)] text-right"
-            >
-              <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">NÚCLEO II</div>
-              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100 whitespace-nowrap">Oráculo Jurídico (IA)</div>
-            </motion.div>
-
-            <motion.div 
-              style={{ y: n3Y }}
-              className="absolute bottom-[20%] left-1/2 -translate-x-1/2 p-3 border border-green-500/30 rounded-xl bg-black/90 backdrop-blur-3xl shadow-[0_0_40px_rgba(34,197,94,0.15)] text-center"
-            >
-              <div className="text-[10px] font-mono text-green-500/50 uppercase font-black mb-0.5 tracking-widest">NÚCLEO III</div>
-              <div className="text-[11px] font-black uppercase tracking-tighter text-green-100 whitespace-nowrap">Protocolo Ético (ZK)</div>
-            </motion.div>
           </div>
         </motion.div>
       </section>

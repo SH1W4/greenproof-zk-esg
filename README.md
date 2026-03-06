@@ -16,6 +16,14 @@
 ## 🌐 Live Dashboard
 👉 [greenproof-platform.vercel.app](https://greenproof-platform.vercel.app/dashboard)
 
+## ⏱️ 2-Minute Hackathon Judge Experience
+1. **Explore Architecture**: Navigate to [/architecture](https://greenproof-platform.vercel.app/architecture) to see the Trinity Consensus flow.
+2. **Execute Demo**: On the [Dashboard](https://greenproof-platform.vercel.app/dashboard), click "Execute Sovereign Demo".
+3. **Verify Proof**: In the [Verify](https://greenproof-platform.vercel.app/verify) portal, enter `GP-TRINITY-DEMO` to see the ZK-Proof result.
+4. **On-Chain Audit**: Click "View on Explorer" to trace the Sepolia transaction.
+
+---
+
 ## 🎬 Quick Demo for Judges (90 seconds)
 1. **Open**: [greenproof-platform.vercel.app](https://greenproof-platform.vercel.app/dashboard)
 2. **Click**: "Execute Sovereign Demo" (Instant interaction, no login required).
