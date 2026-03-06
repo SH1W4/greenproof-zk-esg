@@ -16,6 +16,7 @@
     "test:watch": "vitest",
     "test:zk": "node scripts/test-zk-logic.mjs",
     "test:e2e": "playwright test",
+    "agent:pilot": "node scripts/gp-architect-pilot.mjs",
     "compile": "ts-node scripts/compile.ts",
     "deploy": "npm run compile && ts-node scripts/deploy.ts",
     "deploy:quick": "ts-node scripts/deploy.ts",
