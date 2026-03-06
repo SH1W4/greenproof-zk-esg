@@ -22,11 +22,12 @@ Watch our submission video to see the full "Sovereign Proof" lifecycle:
 Follow these steps for an instant evaluation:
 1. Visit the [Live Dashboard](https://greenproof-platform.vercel.app/dashboard).
 2. Click **"Execute Sovereign Demo"**.
-3. Observe the **ZKWitnessStream** in the terminal simulating proof generation.
+3. Observe the **ZKWitnessStream** in the terminal simulating proof generation. 
+   *(Note: For environments without `circom`, use our verified [Logic Audit Tool](../scripts/test-zk-logic.mjs) via `npm run test:zk`).*
 4. Verify the **Success State**: NFT Minted + CCIP Synchronization confirmed.
 
 ## 📊 Verification Paths
-- **Sepolia Tx**: [0x892d...5be4](https://sepolia.etherscan.io/tx/0x892d8705c671f43783817d4fe57d332e173901ec3c9b0f5c75ac283e85be4)
+- **Sepolia Tx**: [0xe0d5...2e4c](https://sepolia.etherscan.io/tx/0xe0d518536a83afe148ad1846502b2c9dcaaa3982587b8da480666ed00ef32e4c)
 - **CCIP Explorer**: Verify status on [CCIP Explorer](https://ccip.chain.link/).
 - **ZK Proof**: Generated proofs are logged in the browser console during the demo.
 
