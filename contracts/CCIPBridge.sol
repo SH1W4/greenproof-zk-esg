@@ -10,11 +10,26 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
  * @dev Sovereign Bridge for GreenProof Protocol.
  * Security Audit Fix: Implementing AccessControl and Emergency Withdrawal logic.
  */
+/**
+ * @title CCIPBridge
+ * @notice Sovereign Cross-chain Bridge for GreenProof Protocol.
+ * @dev Utilizes Chainlink CCIP to synchronize ESG credentials across chains.
+ */
 contract CCIPBridge is AccessControl {
+    /// @notice Role authorized to trigger bridge operations
     bytes32 public constant BRIDGER_ROLE = keccak256("BRIDGER_ROLE");
+    
+    /// @notice The Chainlink CCIP Router contract
     IRouterClient public router;
+    
+    /// @notice The LINK token address on the current chain
     address public linkToken;
 
+    /**
+     * @notice Initializes the CCIP Bridge contract.
+     * @param _router CCIP Router address.
+     * @param _link LINK token address.
+     */
     constructor(address _router, address _link) {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(BRIDGER_ROLE, msg.sender);
@@ -23,8 +38,11 @@ contract CCIPBridge is AccessControl {
     }
 
     /**
-     * @dev Sends a message to another chain to mint/replicate a GreenProof.
-     * Restricted to authorized BRIDGER_ROLE.
+     * @notice Dispatches a cross-chain proof verification request.
+     * @dev Only accounts with BRIDGER_ROLE can execute this.
+     * @param destinationChainSelector The target chain selector (Chainlink standard).
+     * @param receiver The receiving contract on the target chain.
+     * @param tokenId The GreenProof NFT ID to synchronize.
      */
     function bridgeGreenProof(
         uint64 destinationChainSelector,
@@ -43,7 +61,9 @@ contract CCIPBridge is AccessControl {
     }
 
     /**
-     * @dev Rescue funds accidentally sent to the contract.
+     * @notice Emergency withdrawal of native funds.
+     * @dev Restricted to DEFAULT_ADMIN_ROLE.
+     * @param to Recipient address.
      */
     function withdraw(address to) external onlyRole(DEFAULT_ADMIN_ROLE) {
         uint256 amount = address(this).balance;
@@ -51,5 +71,6 @@ contract CCIPBridge is AccessControl {
         require(success, "Withdraw failed");
     }
 
+    /// @notice Enabling the contract to receive native gas (for CCIP fees)
     receive() external payable {}
 }
