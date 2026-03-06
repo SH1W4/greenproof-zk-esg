@@ -64,6 +64,20 @@ By natively integrating **Chainlink CCIP**, GreenProof ensures that an ESG-compl
 ### 3. Institutional Maturity
 This isn't a POC. It's a **Sovereign Framework**. Complete with [HAAS Architecture](docs/HAAS_ARCHITECTURE.md), [Patent Disclosures](docs/DEMO_DISCLOSURE.md), and a specialized [Judge Cheat Sheet](docs/JUDGE_CHEATSHEET.md).
 
+### 4. Unit Economics & Sustainability
+- **Zero-Barrier Entry**: Optimized for **OpenCLAW Sovereign Agents** running on Ollama (Local) or Free-Tier Cloud LLMs (Kimi K2.5).
+- **Scalable Infrastructure**: Protocol Opex estimated at **<$10/month** for institutional monitoring.
+- **Privacy First**: Local execution ensures zero data-leakage for sensitive ESG telemetry.  
+👉 [Full Operational Efficiency Report](docs/OPERATIONAL_EFFICIENCY.md)
+
+---
+
+### 🦅 OpenCLAW Agent Orchestration
+The protocol is navigated by an **OpenCLAW Sovereign Agent** managing:
+- **Trust Handshake**: Real-time validation of node integrity.
+- **Auto-Quorum**: Autonomous trigger of the Groth16 Prover via **Chainlink CRE**.
+- **Sovereign Settlement**: Zero-trust execution of the compliance lifecycle.
+
 ---
 
 ## 🗂️ Engineering Stack
@@ -78,6 +92,17 @@ This isn't a POC. It's a **Sovereign Framework**. Complete with [HAAS Architectu
 ## 📜 License & IP
 Core Protocol protected under pending patent **GP-IP-2026-001**.  
 Execution layer released under **MIT** for hackathon transparency.
+
+---
+
+## 📚 Resources & Institutional
+- **[Technical Architecture](docs/ARCHITECTURE.md)** — Deep dive into the Trinity-HAAS engine.
+- **[Sovereign MCP](mcp/server.ts)** — AI Orchestration layer for autonomous agents.
+- **[Institutional UI V2](src/app/v2/dashboard/page.tsx)** — Premium Dashboard for RWA management.
+- **[Contribution Guidelines](docs/institutional/CONTRIBUTING.md)** — Join the Symbeon Labs movement.
+- **[Maintainers](docs/institutional/MAINTAINERS.md)** — The architects behind the protocol.
+- **[Citation Bundle](docs/institutional/CITATION.cff)** — Academic and institutional referencing.
+- **[Sovereign Vault Protocol](docs/SOVEREIGN_VAULT_PROTOCOL.md)** — Internal asset protection rules.
 
 ---
 *Built with ❤️ by Symbeon Labs for the Decentralized Future.*
