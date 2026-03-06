@@ -80,8 +80,17 @@ npm run dev
 - [Demo Disclosure](./docs/DEMO_DISCLOSURE.md) — Transparency report.
 
 ## 🏆 Why GreenProof Wins
-✅ **Anti-Greenwashing**: 2/3 consensus prevents single-point data manipulation.  
-✅ **Privacy by Design**: ZK-proofs verify threshold compliance without exposing raw data.  
+✅ **Anti-Greenwashing**: 2/3 consensus prevents single-point data manipulation.
+### 🕵️ ZK-SNARK Layer (Privacy Preservation)
+The ZK circuit only proves that the consensus threshold (≥ 80%) was met without revealing the raw data pillars.
+
+### 🦅 OpenCLAW Agent Orchestration
+The protocol's "Architect" is an **OpenCLAW Sovereign Agent**. It manages the end-to-end lifecycle of a GreenProof:
+- **Trust Handshake**: Validates the environment and oracle integrity.
+- **Auto-Quorum**: Automatically triggers the Groth16 Prover upon reaching a 2/3 consensus.
+- **Sovereign Execution**: Operates via **Chainlink CRE** to ensure zero-trust execution.
+
+---
 ✅ **Global Liquidity**: CCIP enables cross-chain RWA portability and secondary markets.  
 ✅ **Institutional Ready**: Production-grade infrastructure, not a simple POC.  
 
