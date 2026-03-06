@@ -22,3 +22,10 @@ test-results/
 e2e_results*.txt
 e2e_title_result.txt
 *.log
+
+# Internal agent artifacts
+docs/archive/
+
+# Compiled contract ABIs (generated)
+contracts/artifacts/
+
