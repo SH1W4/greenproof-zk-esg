@@ -9,10 +9,9 @@ import {
   ChevronRight, 
   Bell, 
   Search, 
-  Hub, 
   Copy,
   PlusCircle,
-  ShieldIcon
+  Shield
 } from 'lucide-react';
 
 const integrations = [
@@ -147,7 +146,7 @@ export default function V2SettingsPage() {
         <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-6">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
-              <ShieldIcon className="text-[#17cf36] size-5" />
+              <Shield className="text-[#17cf36] size-5" />
               <h4 className="font-bold text-slate-100">System Permissions</h4>
             </div>
             <button className="text-[#17cf36] text-xs font-bold hover:underline">Team Settings</button>
