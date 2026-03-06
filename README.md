@@ -9,10 +9,12 @@
 **Master Audit**: [Institutional Integrity Report](docs/MASTER_AUDIT_SUMMARY.md) ([Veredito PT](docs/VEREDITO_JUIZES_PT.md))  
 
 [![Chainlink Convergence 2026](https://img.shields.io/badge/Hackathon-Chainlink_Convergence_2026-blue)](https://chain.link/hackathon)
+[![Sepolia](https://img.shields.io/badge/Deployed-Sepolia-363636?logo=ethereum)](https://sepolia.etherscan.io)
+[![CCIP](https://img.shields.io/badge/Bridge-Avalanche_Fuji-orange?logo=avax)](https://fuji.explorer.avax.network)
+[![CI](https://github.com/symbeon-labs/greenproof-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/symbeon-labs/greenproof-platform/actions)
+[![Chainlink](https://img.shields.io/badge/Built%20with-Chainlink-3399FF?logo=chainlink)](https://chain.link)
+[![Demo](https://img.shields.io/badge/Demo-Live-brightgreen)](https://greenproof-platform.vercel.app)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Commit Activity](https://img.shields.io/github/commit-activity/m/symbeon-labs/greenproof-platform)](https://github.com/symbeon-labs/greenproof-platform)
-[![Repo Size](https://img.shields.io/github/repo-size/symbeon-labs/greenproof-platform)](https://github.com/symbeon-labs/greenproof-platform)
-[![Technical Quality](https://img.shields.io/badge/Quality-Institutional--Grade-emerald)](docs/JUDGE_CHEATSHEET.md)
 
 ## 📊 Quick Judge Evaluation (5-Min Track)
 
@@ -21,7 +23,7 @@
 | **Technical Execution** | 119+ commits, CI/CD, 100% Green E2E Tests | [Readiness Audit](docs/EVALUATOR_READINESS_AUDIT.md) |
 | **ZK Privacy** | Groth16 Implementation (ESG Standard Verification) | [Circom Logic](circom/ESGScore.circom) |
 | **Trust Logic** | Trinity Consensus (2/3 Oracles via CRE) | [Architecture](docs/HAAS_ARCHITECTURE.md) |
-| **Cross-chain** | CCIP Integration (Sepolia → Avalanche) | [CCIP Bridge](contracts/CCIPBridge.sol) |
+| **Cross-chain** | CCIP Integration (Sepolia → Avalanche Fuji) | [CCIP Bridge](contracts/CCIPBridge.sol) |
 | **Maturity** | Academic Citation, Master Audit, Legal Seal | [Master Audit](docs/MASTER_AUDIT_SUMMARY.md) |
 
 ---
@@ -36,18 +38,18 @@
 
 ## ⏱️ 2-Minute Hackathon Judge Experience
 1. **Explore Architecture**: Navigate to [/architecture](https://greenproof-platform.vercel.app/architecture) to see the Trinity Consensus flow.
-2. **Execute Demo**: On the [Dashboard](https://greenproof-platform.vercel.app/dashboard), click "Execute Sovereign Demo".
+2. **Execute Demo**: On the [Dashboard](https://greenproof-platform.vercel.app/dashboard), click **"Execute Sovereign Demo"**.
 3. **Verify Proof**: In the [Verify](https://greenproof-platform.vercel.app/verify) portal, enter `GP-TRINITY-DEMO` to see the ZK-Proof result.
 4. **On-Chain Audit**: Click "View on Explorer" to trace the Sepolia transaction.
 
 ---
 
-## 🎬 Quick Demo for Judges (90 seconds)
-1. **Open**: [greenproof-platform.vercel.app](https://greenproof-platform.vercel.app/dashboard)
-2. **Click**: "Execute Sovereign Demo" (Instant interaction, no login required).
-3. **Watch**: Trinity Consensus in action (2/3 approval simulation).
-4. **Verify**: Check the **ZKWitnessStream** for ZK-SNARK generation.
-5. **Explore**: See the Cross-chain bridge to Avalanche Fuji status.
+## 🎬 Quick Demo Script (90 seconds)
+1. **Open**: [Dashboard](https://greenproof-platform.vercel.app/dashboard)
+2. **Action**: Click **"Execute Sovereign Demo"** (No login required).
+3. **Observe**: Watch the Trinity Consensus (2/3 quorum) and the **ZKWitnessStream** in the live terminal.
+4. **Result**: Observe the ZK-Certified NFT issuance and the CCIP bridge to Avalanche Fuji.
+5. **Verify**: Enter the generated ID in the [Verify Portal](https://greenproof-platform.vercel.app/verify).
 
 ## 🎯 The Problem
 The $2.1 trillion Green Bond market suffers from systemic greenwashing. Traditional ESG reporting relies on self-reported data with no cryptographic verification, leading to capital paralysis and lack of trust.
