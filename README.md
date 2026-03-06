@@ -76,6 +76,11 @@ npm run dev
 
 ## 📚 Documentation
 - [Judge Cheat Sheet](./docs/JUDGE_CHEATSHEET.md) — Quick evaluation guide.
+- [x] [Institutional UI V2](src/app/v2/dashboard/page.tsx) - Premium Dashboard for RWA management.
+- [x] [Data Schema](docs/DATA_SCHEMA.md) - Documentation of Physical, Juridical, and Ethical validation metrics.
+- [x] [Strategic Use Cases](docs/USE_CASES.md) - Real-world applications for the Trinity Consensus.
+- [x] [UI/UX Specification (V2)](docs/DESIGN_SPEC_V2.md) - Deep dive into requested aesthetics and design system.
+- [x] [Sovereign Handshake](docs/NEXUS_AGENT_HANDSHAKE.md) - Formal protocol for agentic orchestration.
 - [Technical Architecture](./docs/HAAS_ARCHITECTURE.md) — Architectural deep dive.
 - [Demo Disclosure](./docs/DEMO_DISCLOSURE.md) — Transparency report.
 

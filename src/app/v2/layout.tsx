@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import V2Sidebar from '@/components/v2/V2Sidebar';
 import V2Header from '@/components/v2/V2Header';
