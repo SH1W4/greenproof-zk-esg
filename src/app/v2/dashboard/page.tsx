@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import MetricCard from '@/components/v2/MetricCard';
 import { 
