@@ -19,7 +19,8 @@ import {
   CheckCircle2,
   AlertTriangle,
   EyeOff,
-  Network
+  Network,
+  BadgeCheck
 } from "lucide-react";
 import { Typewriter, TerminalCommand } from "./Typewriter";
 import WorkflowDiagram from "./WorkflowDiagram";
@@ -137,6 +138,10 @@ export default function LandingContent() {
             <Link href="/login" className="group px-10 py-5 bg-green-500 text-green-950 font-black rounded-2xl flex items-center gap-3 hover:bg-green-400 transition-all shadow-[0_20px_50px_rgba(34,197,94,0.15)]">
               Launch Protocol Terminal
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link href="/v2/dashboard" className="group px-10 py-5 bg-[#1a2e21] text-green-100 font-black rounded-2xl flex items-center gap-3 hover:bg-[#244730] transition-all border border-green-500/20 shadow-[0_20px_50px_rgba(34,197,94,0.05)]">
+              Institutional Portal (V2)
+              <BadgeCheck className="w-6 h-6 text-green-500" />
             </Link>
           </motion.div>
         </div>
