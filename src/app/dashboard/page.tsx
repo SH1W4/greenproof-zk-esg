@@ -171,6 +171,13 @@ export default function GreenProofDashboard() {
             Docs
           </Link>
           <Link
+            href="/v2/dashboard"
+            className="px-6 py-2.5 bg-green-500/10 border border-[#00FF88]/40 text-[#00FF88] rounded-xl hover:bg-[#00FF88]/20 transition-all font-black flex items-center gap-2"
+          >
+            Institutional V2
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <Link
             href="/verify"
             className="px-6 py-2.5 bg-[#00FF88] text-[#0F172A] rounded-xl hover:bg-[#00FF88]/90 transition-all font-black shadow-lg shadow-[#00FF88]/20"
           >
