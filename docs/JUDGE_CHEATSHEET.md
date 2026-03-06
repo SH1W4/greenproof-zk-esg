@@ -32,7 +32,7 @@ Follow these steps for an instant evaluation:
 - **ZK Proof**: Generated proofs are logged in the browser console during the demo.
 
 ## 💡 Why This Matters
-GreenProof solves the **Privacy-Transparency Dilemma** in ESG reporting. We prove compliance without exposing sensitive industrial data — a breakthrough for institutional RWA adoption.
+GreenProof solves the **Privacy-Transparency Dilemma** for Institutional RWAs. By starting with **ESG**, we prove that compliance can be verified without exposing sensitive industrial or legal data — providing the definitive trust layer for the next trillion dollars of tokenized assets.
 
 ---
 *Designed for Chainlink Convergence 2026. Transforming compliance into a sovereign asset.*

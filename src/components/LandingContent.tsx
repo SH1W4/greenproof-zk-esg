@@ -238,12 +238,12 @@ export default function LandingContent() {
         <div className="max-w-3xl mx-auto">
           <TerminalCommand 
             commands={[
-              "greenproof-cli init --network sepolia --identity institutional",
+              "greenproof-cli init --sector universal --identity institutional",
               "[INFRA] Establishing biocybernetic node connection... DONE",
-              "npx ts-node scripts/terminal-mint.ts",
-              "[ZK] Generating SNARK proof for ESG Compliance > 85%...",
+              "npx ts-node scripts/terminal-mint.ts --use-case esg-flagship",
+              "[ZK] Generating SNARK proof for Multi-Pillar Compliance > 85%...",
               "✓ Proof Generated (Groth16) | Time: 0.42s",
-              "[CCIP] Dispatching cross-chain validation to Avalanche Fuji...",
+              "[CCIP] Dispatching cross-chain RWA validation to Avalanche Fuji...",
               "✓ Protocol Consensus Achieved | NFT Minted: 0x3fcf...71b2"
             ]}
           />
