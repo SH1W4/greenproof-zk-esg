@@ -1,3 +1,5 @@
+![GreenProof Banner](public/assets/branding/trinity_cinematic_final.png)
+
 # 🏆 CHAINLINK CONVERGENCE 2026
 **Track**: DeFi & Tokenization / Risk & Compliance / CRE & AI  
 **Live Demo**: [greenproof-platform.vercel.app](https://greenproof-platform.vercel.app)  
