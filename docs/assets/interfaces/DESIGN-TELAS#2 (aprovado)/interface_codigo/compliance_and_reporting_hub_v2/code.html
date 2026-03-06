@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreenProof - Compliance and Reporting Hub (V2)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf54",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#0a120c",
+                        "surface-dark": "#16251b",
+                        "border-dark": "#243a2b",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-border-dark flex flex-col bg-background-light dark:bg-background-dark hidden lg:flex">
+<div class="p-6 flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">eco</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">GreenProof</h2>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined text-fill">verified_user</span>
+<span class="text-sm font-medium">Compliance Hub</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="text-sm font-medium">Frameworks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined">data_exploration</span>
+<span class="text-sm font-medium">Data Audit</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="text-sm font-medium">Reporting</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-border-dark">
+<div class="flex items-center gap-3 p-2">
+<div class="size-10 rounded-full bg-surface-dark flex items-center justify-center border border-border-dark overflow-hidden">
+<img alt="User Profile" data-alt="Corporate professional user profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcSeIXAsjqji51diM2sZtvbRAKP7WI8k0Jno_o1QD-R1I1wk6LbiN1v6ZWV7WeiaonX3PXgRNtIFLYwv6dgkNocSP7Z7vYhc1FmgceKPJTArHMznOGEg5rRwWQadYRfEuyyVGwSCzWFET_0GeXifHuq-mcv6yStrKIow0IVpfasKaeTYN7K6w1Xq7HdPmE6ijSoWHNDL-Eh8CxnmlqQ8XNkfgq91FPbNWArTkcyyA9_T5zKBxT0qETNxruvLKLZjcOadhWCWM2yZg"/>
+</div>
+<div class="flex flex-col overflow-hidden">
+<p class="text-xs font-bold truncate">Institutional Admin</p>
+<p class="text-[10px] text-slate-500">Tier 1 ESG Fund</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-screen overflow-y-auto">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-border-dark flex items-center justify-between px-8 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full bg-slate-100 dark:bg-surface-dark border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary placeholder:text-slate-500" placeholder="Search compliance standards..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-background-dark rounded-lg text-sm font-bold hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-sm">description</span>
+                        Generate Report
+                    </button>
+<button class="p-2 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<div class="p-8 space-y-8">
+<!-- Title Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-1">
+<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100">Compliance &amp; Regulatory Reporting</h1>
+<p class="text-slate-500 dark:text-slate-400">Manage institutional ESG reporting standards and data readiness for fiscal year 2024.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 border border-slate-200 dark:border-border-dark rounded-lg text-sm font-semibold hover:bg-slate-50 dark:hover:bg-surface-dark transition-colors">
+                            Manage Frameworks
+                        </button>
+<button class="px-4 py-2 bg-slate-200 dark:bg-surface-dark rounded-lg text-sm font-semibold hover:brightness-125 transition-colors">
+                            Export All Data
+                        </button>
+</div>
+</div>
+<!-- Readiness Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Readiness Card SFDR -->
+<div class="p-6 rounded-xl border border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark flex flex-col items-center text-center space-y-4">
+<div class="relative size-24">
+<svg class="size-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-800" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="40" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="text-xl font-bold">84%</span>
+</div>
+</div>
+<div class="space-y-1">
+<h3 class="font-bold">SFDR Article 8/9</h3>
+<p class="text-xs text-slate-500">PAI data collection in progress</p>
+</div>
+</div>
+<!-- Readiness Card TCFD -->
+<div class="p-6 rounded-xl border border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark flex flex-col items-center text-center space-y-4">
+<div class="relative size-24">
+<svg class="size-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-800" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="12" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="text-xl font-bold">95%</span>
+</div>
+</div>
+<div class="space-y-1">
+<h3 class="font-bold">TCFD Disclosure</h3>
+<p class="text-xs text-slate-500">Risk assessments verified</p>
+</div>
+</div>
+<!-- Readiness Card SASB -->
+<div class="p-6 rounded-xl border border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark flex flex-col items-center text-center space-y-4">
+<div class="relative size-24">
+<svg class="size-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-800" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-yellow-500" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="100" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="text-xl font-bold">60%</span>
+</div>
+</div>
+<div class="space-y-1">
+<h3 class="font-bold">SASB Standards</h3>
+<p class="text-xs text-slate-500">Financial sector metrics missing</p>
+</div>
+</div>
+<!-- Readiness Card EU Taxonomy -->
+<div class="p-6 rounded-xl border border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark flex flex-col items-center text-center space-y-4">
+<div class="relative size-24">
+<svg class="size-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-800" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-red-500" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="180" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="text-xl font-bold">28%</span>
+</div>
+</div>
+<div class="space-y-1">
+<h3 class="font-bold">EU Taxonomy</h3>
+<p class="text-xs text-slate-500">Alignment screening required</p>
+</div>
+</div>
+</div>
+<!-- Recent Reports & Task List -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Recent Reports -->
+<div class="xl:col-span-2 space-y-4">
+<h2 class="text-xl font-bold">Recent Compliance Reports</h2>
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark overflow-hidden">
+<table class="w-full text-left text-sm">
+<thead class="bg-slate-50 dark:bg-background-dark/50 text-slate-500">
+<tr>
+<th class="px-6 py-3 font-semibold uppercase tracking-wider">Report Name</th>
+<th class="px-6 py-3 font-semibold uppercase tracking-wider">Standard</th>
+<th class="px-6 py-3 font-semibold uppercase tracking-wider">Generated Date</th>
+<th class="px-6 py-3 font-semibold uppercase tracking-wider">Status</th>
+<th class="px-6 py-3 font-semibold uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-border-dark">
+<tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium">Q4 ESG Portfolio Summary</td>
+<td class="px-6 py-4 text-slate-500">TCFD / SFDR</td>
+<td class="px-6 py-4 text-slate-500">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
+<span class="size-1.5 rounded-full bg-primary"></span>
+                                                Ready
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium">Annual Principle Adverse Impacts</td>
+<td class="px-6 py-4 text-slate-500">SFDR PAI</td>
+<td class="px-6 py-4 text-slate-500">Oct 20, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
+<span class="size-1.5 rounded-full bg-primary"></span>
+                                                Ready
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium">SASB Disclosure - Asset Management</td>
+<td class="px-6 py-4 text-slate-500">SASB</td>
+<td class="px-6 py-4 text-slate-500">Oct 12, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-500 text-xs font-medium">
+<span class="size-1.5 rounded-full bg-amber-500"></span>
+                                                Archive
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium">Custom GRI Framework Report</td>
+<td class="px-6 py-4 text-slate-500">GRI</td>
+<td class="px-6 py-4 text-slate-500">Sep 28, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
+<span class="size-1.5 rounded-full bg-primary"></span>
+                                                Ready
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="px-6 py-4 border-t border-slate-100 dark:border-border-dark flex justify-center">
+<button class="text-xs font-bold text-slate-500 hover:text-primary uppercase tracking-widest">View All Historical Reports</button>
+</div>
+</div>
+</div>
+<!-- Critical Tasks Sidebar -->
+<div class="space-y-4">
+<h2 class="text-xl font-bold">Data Gaps</h2>
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark p-6 space-y-6">
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="size-8 rounded bg-red-500/10 text-red-500 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">priority_high</span>
+</div>
+<div class="space-y-1">
+<p class="text-sm font-bold">Scope 3 Emissions Missing</p>
+<p class="text-xs text-slate-500">Required for TCFD 2024 compliance. 12 assets pending response.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-8 rounded bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">warning</span>
+</div>
+<div class="space-y-1">
+<p class="text-sm font-bold">SASB Multi-unit Retail</p>
+<p class="text-xs text-slate-500">Data quality flag on energy intensity metrics for Portfolio A.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-8 rounded bg-slate-500/10 text-slate-500 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">schedule</span>
+</div>
+<div class="space-y-1">
+<p class="text-sm font-bold">EU Taxonomy Alignment</p>
+<p class="text-xs text-slate-500">Scheduled automated screening for new real estate acquisitions.</p>
+</div>
+</div>
+</div>
+<button class="w-full py-3 bg-primary/20 text-primary border border-primary/30 rounded-lg text-sm font-bold hover:bg-primary/30 transition-colors">
+                                Launch Data Auditor
+                            </button>
+</div>
+<!-- Mini Stats -->
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark">
+<p class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Asset Coverage</p>
+<p class="text-2xl font-black text-primary">92%</p>
+</div>
+<div class="p-4 bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark">
+<p class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Audit Pass Rate</p>
+<p class="text-2xl font-black text-primary">99.1%</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

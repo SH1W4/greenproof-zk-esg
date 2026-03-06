@@ -27,4 +27,4 @@ A lógica de consenso **2/3** (Físico/Jurídico/Ético) neutraliza falhas de or
 
 > *"O GreenProof não apenas resolve o Greenwashing; ele o torna matematicamente impossível."*
 
-Para o relatório completo, consulte o **[Relatório de Auditoria Mestre - Perspectiva dos Juízes](file:///c:/Users/João/Desktop/PROJETOS/01_CORE_SYSTEMS/symbeon-protocol/knowledge-vault/AUDITORIA_MESTRE_JUIZES_PT.md)** no Knowledge Vault.
+Para o relatório completo, consulte o **[Relatório de Auditoria Mestre - Perspectiva dos Juízes]** no Knowledge Vault.

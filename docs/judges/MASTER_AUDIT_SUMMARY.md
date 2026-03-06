@@ -12,18 +12,18 @@ The protocol demonstrates 100% compliance with the **Trinity of Integrity** stan
 ### 1. Physical Integrity (IoT/Sensor)
 - **Status**: ✅ **Verified**
 - **Evidence**: 100% correlation between physical telemetry and on-chain Proofs (IDs #1-#4).
-- **Core Proof**: [Chain of Custody](file:///c:/Users/João/Desktop/PROJETOS/01_CORE_SYSTEMS/symbeon-protocol/knowledge-vault/SABER_SOBERANO/portugues/CHAIN_OF_CUSTODY_PT.md)
+- **Core Proof**: [Chain of Custody]
 
 ### 2. Juridical Integrity (Legal/ISO)
 - **Status**: ✅ **Verified**
 - **Standards**: ISO-14030 & ICMA Principles.
 - **Validator**: Th3m1s Legal Node (Symbeon).
-- **Core Proof**: [Juridical Seal](file:///c:/Users/João/Desktop/PROJETOS/01_CORE_SYSTEMS/symbeon-protocol/knowledge-vault/SABER_SOBERANO/portugues/JURIDICAL_SEAL_PT.md)
+- **Core Proof**: [Juridical Seal]
 
 ### 3. Ethical Integrity (ZK/Social)
 - **Status**: ✅ **Verified**
 - **Method**: ZK-SNARKs (Groth16) proving threshold compliance without compromising IP.
-- **Core Proof**: [Consensus Logic](file:///c:/Users/João/Desktop/PROJETOS/01_CORE_SYSTEMS/symbeon-protocol/knowledge-vault/SABER_SOBERANO/portugues/CONSENSUS_LOGIC_PT.md)
+- **Core Proof**: [Consensus Logic]
 
 ---
 
@@ -33,4 +33,4 @@ The protocol demonstrates 100% compliance with the **Trinity of Integrity** stan
 - **Production Hydration**: Optimized for Vercel stability.
 
 ---
-For the full institutional report, visit the **[Master Audit Report](file:///c:/Users/João/Desktop/PROJETOS/01_CORE_SYSTEMS/symbeon-protocol/knowledge-vault/MASTER_AUDIT_REPORT.md)** in the Knowledge Vault.
+For the full institutional report, visit the **[Master Audit Report]** in the Knowledge Vault.

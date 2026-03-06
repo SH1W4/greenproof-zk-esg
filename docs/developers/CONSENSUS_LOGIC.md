@@ -28,10 +28,21 @@ Once the 2/3 consensus is reached, raw data (the source of truth) is processed o
 - **Threshold Validation**: The ZK circuit only proves that `ConsensusCount >= 2` and `ESG_Score >= Threshold (e.g., 80)`.
 - **Industrial Privacy**: The on-chain result is only "VALID" or "INVALID," protecting the company's proprietary data (e.g., revenue, exact location of sensitive sensors) from competitors.
 
-## ⛓️ On-Chain Execution
+## 🦅 The Role of the Architect (GP-ARCHITECT)
 
-The consensus result and the ZK proof are submitted to the `GreenProofNFT.sol` contract on the Sepolia network via Chainlink Functions, resulting in the asset state update and, if necessary, bridging via CCIP to other networks.
+The Architect is not a fourth data source; it is the **Orchestration Layer** (running via Agentic Logic + Chainlink CRE). It acts as the "Maestro" of the Trinity, ensuring that the 2/3 quorum is not just reached, but cryptographically validated.
+
+### 📊 Evolution of Consensus: Before vs. After
+
+| Feature | **Traditional Oracle Flow (Before)** | **Architected Trinity (After)** |
+|:---|:---|:---|
+| **Coordination** | Manual triggers or rigid, linear scripts. | Autonomous orchestration via **Chainlink CRE**. |
+| **Quorum Control** | Often accepts any data, checking logic on-chain (expensive). | Validates **2/3 supermajority off-chain** before submisson. |
+| **Privacy Data** | Raw data often leaks during the ingestion phase. | **ZK-SNARKs** mask all raw data off-chain JIT. |
+| **Failure Handling** | One failing source can stall the entire pipeline. | Architect automatically adapts to any 2/3 combination. |
+| **Auditability** | Found only in transaction logs. | Complete **Truth Trail** in the Æ-Vault (Nexus Handshake). |
 
 ---
 **Status**: Protocol Documented & Validated  
 **Authored by**: GreenProof Architect 🦅⚙️🏁
+**NEXUS Verified**: `v1.0.0-hackathon` 🛡️

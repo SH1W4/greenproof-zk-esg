@@ -15,7 +15,7 @@ ssh custodian@greenproof.foundation -i ~/.ssh/sovereign_key
 ### 2. Information Retrieval Rules
 - **READ-ONLY**: Agents may read the full patent disclosure to understand architectural requirements.
 - **SANITIZED-WRITE**: Agents may only push to the public repository documents that have been passed through the `scripts/sovereign-sync.sh` filter.
-- **NO-LINK-LEAK**: Absolutely no local file paths (`file:///C:/Users/...`) from the Vault are to be placed in public documentation or code comments.
+- **NO-LINK-LEAK**: Absolutely no internal local file paths from the Vault are to be placed in public documentation or code comments.
 
 ### 3. Identity Verification
 The GreenProof Foundation identifies agents by their **Sovereign Signature**.

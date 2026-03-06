@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mint RWA Token - GreenProof</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf54",
+                        "forest": "#1a3d24",
+                        "forest-light": "#2d5a3a",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .form-select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-white/10 px-8 py-4 bg-background-dark">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+<h2 class="text-xl font-bold tracking-tight uppercase">GreenProof</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium opacity-60 hover:opacity-100 transition-opacity" href="#">Dashboard</a>
+<a class="text-sm font-medium opacity-100" href="#">Assets</a>
+<a class="text-sm font-medium opacity-60 hover:opacity-100 transition-opacity" href="#">ESG Reports</a>
+<a class="text-sm font-medium opacity-60 hover:opacity-100 transition-opacity" href="#">Governance</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xl">search</span>
+<input class="bg-white/5 border-white/10 rounded-lg pl-10 pr-4 py-2 text-sm w-64 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Search Assets..." type="text"/>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-black text-sm font-bold py-2 px-6 rounded-lg transition-colors">
+                    Connect Wallet
+                </button>
+<div class="w-10 h-10 rounded-full bg-forest flex items-center justify-center border border-white/10 overflow-hidden">
+<img alt="User Profile" data-alt="Institutional user profile minimalist avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYPgN24H3eP9AS81lqKc4c2VOEwrQ2OcJywsK8_-k61aY9PqL6HzPSt1jgvi0F0SCJbg15P5xsrwrqaPWsb5KDfB5Clg8t9rg6ku1KDrZW-8vZnhppY-wMRimLmUd74t_buduXu0LmMwVaHu8ABPH1xVx0mHB542NLERavp673uq_q3vr_Oe4psegpnQ29BOTsFVt-5wHLFnXANbVz-cZj_IVIGQZGDVCpLbEgFPiMx7M0LfQPFJ-Feaoc2NApnoOU6qIcQQR1Zdc"/>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col max-w-7xl mx-auto w-full px-8 py-12">
+<div class="mb-10">
+<h1 class="text-4xl font-extrabold tracking-tight mb-2">Mint RWA Token</h1>
+<p class="text-slate-400 text-lg">Secure institutional ESG-linked asset tokenization pipeline.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<!-- Left Column: Tokenization Form -->
+<section class="space-y-8">
+<div class="space-y-6">
+<h3 class="text-xl font-semibold border-l-4 border-primary pl-4">Tokenization Form</h3>
+<div class="space-y-4">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-300">Verification ID</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-slate-100 focus:ring-1 focus:ring-primary outline-none" placeholder="Enter institutional ESG verification ID" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-300">RWA Asset Class</label>
+<select class="form-select w-full bg-white/5 border border-white/10 rounded-lg p-4 text-slate-100 focus:ring-1 focus:ring-primary outline-none">
+<option disabled="" selected="" value="">Select asset class</option>
+<option value="carbon">Carbon Credits</option>
+<option value="realestate">Green Real Estate</option>
+<option value="energy">Renewable Energy Infrastructure</option>
+<option value="agriculture">Sustainable Agriculture</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-300">Asset Metadata</label>
+<textarea class="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-slate-100 focus:ring-1 focus:ring-primary outline-none resize-none" placeholder="Detailed asset specifications and ESG impact data..." rows="4"></textarea>
+</div>
+<div class="flex items-center justify-between p-4 bg-white/5 border border-white/10 rounded-lg">
+<div class="flex flex-col">
+<span class="font-medium text-slate-200">CCIP Cross-Chain Issuance</span>
+<span class="text-xs text-slate-500">Enable liquidity across supported EVM networks</span>
+</div>
+<button class="w-12 h-6 bg-forest rounded-full relative transition-colors border border-white/20">
+<div class="absolute right-1 top-1 w-4 h-4 bg-primary rounded-full"></div>
+</button>
+</div>
+</div>
+</div>
+<button class="w-full bg-forest hover:bg-forest-light text-slate-100 font-bold py-5 px-8 rounded-lg uppercase tracking-widest text-sm transition-all border border-primary/20 shadow-xl shadow-primary/5">
+                        MINT RWA TOKEN WITH ESG PROOF
+                    </button>
+</section>
+<!-- Right Column: RWA Token Preview -->
+<section class="sticky top-12">
+<h3 class="text-xl font-semibold mb-6 opacity-60">RWA Token Preview</h3>
+<div class="aspect-[4/5] max-w-md mx-auto w-full bg-[#0a0a0a] border border-white/10 rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden group">
+<!-- Background Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #17cf54 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="relative z-10 flex flex-col items-center text-center mt-12">
+<div class="w-24 h-24 rounded-full bg-forest/30 border border-primary/30 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-5xl">shield_with_heart</span>
+</div>
+<span class="text-primary text-xs font-bold tracking-[0.3em] uppercase mb-2">Institutional Asset</span>
+<h4 class="text-3xl font-light text-slate-100 mb-8">Renewable Infrastructure</h4>
+<div class="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-8"></div>
+<div class="flex flex-col items-center">
+<span class="text-slate-500 text-xs uppercase tracking-widest mb-1">Proved ESG Score</span>
+<div class="text-5xl font-bold text-slate-100 flex items-baseline gap-1">
+                                    92<span class="text-xl font-medium text-primary">%</span>
+</div>
+</div>
+</div>
+<div class="relative z-10 flex flex-col gap-4 mt-auto">
+<div class="flex justify-between items-center px-4 py-3 bg-white/5 rounded-lg border border-white/5">
+<div class="flex flex-col items-start">
+<span class="text-[10px] text-slate-500 uppercase tracking-tighter">Issuance Date</span>
+<span class="text-xs font-medium uppercase">OCT 24, 2023</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] text-slate-500 uppercase tracking-tighter">Status</span>
+<span class="text-xs font-medium text-primary uppercase">Active</span>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2 py-3 px-4 bg-primary text-black rounded-lg">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="text-[10px] font-black uppercase tracking-[0.2em]">Verified by GreenProof</span>
+</div>
+</div>
+</div>
+<div class="mt-8 p-6 border border-white/10 rounded-xl bg-white/5 flex items-start gap-4 max-w-md mx-auto">
+<span class="material-symbols-outlined text-primary">info</span>
+<div>
+<p class="text-sm font-semibold text-slate-200">Legal Compliance</p>
+<p class="text-xs text-slate-400 mt-1 leading-relaxed">This RWA token is compliant with ERC-3643 standards for institutional asset management and regulatory reporting requirements.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer Footer -->
+<footer class="border-t border-white/10 px-8 py-8 mt-20 bg-background-dark">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 opacity-40">
+<span class="material-symbols-outlined text-lg">verified_user</span>
+<span class="text-xs font-bold uppercase tracking-widest">GreenProof Infrastructure</span>
+</div>
+<div class="flex gap-8">
+<a class="text-xs text-slate-500 hover:text-slate-300 transition-colors" href="#">Documentation</a>
+<a class="text-xs text-slate-500 hover:text-slate-300 transition-colors" href="#">Legal Framework</a>
+<a class="text-xs text-slate-500 hover:text-slate-300 transition-colors" href="#">API Status</a>
+</div>
+<div class="text-[10px] text-slate-600 font-medium">
+                    © 2023 GREENPROOF PROTOCOL. ALL RIGHTS RESERVED.
+                </div>
+</div>
+</footer>
+</div>
+</body></html>
