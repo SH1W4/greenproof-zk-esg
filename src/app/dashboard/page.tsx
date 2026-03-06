@@ -20,6 +20,8 @@ import {
   BrainCircuit,
   Terminal as TerminalIcon,
   FileText,
+  Network,
+  BadgeCheck,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
