@@ -95,14 +95,17 @@ Execution layer released under **MIT** for hackathon transparency.
 
 ---
 
-## 📚 Resources & Institutional
-- **[Technical Architecture](docs/ARCHITECTURE.md)** — Deep dive into the Trinity-HAAS engine.
-- **[Sovereign MCP](mcp/server.ts)** — AI Orchestration layer for autonomous agents.
-- **[Institutional UI V2](src/app/v2/dashboard/page.tsx)** — Premium Dashboard for RWA management.
-- **[Contribution Guidelines](docs/institutional/CONTRIBUTING.md)** — Join the Symbeon Labs movement.
-- **[Maintainers](docs/institutional/MAINTAINERS.md)** — The architects behind the protocol.
-- **[Citation Bundle](docs/institutional/CITATION.cff)** — Academic and institutional referencing.
-- **[Sovereign Vault Protocol](docs/SOVEREIGN_VAULT_PROTOCOL.md)** — Internal asset protection rules.
+## 🧭 Project Onboarding Hub
+*Select your track to begin:*
+
+### 🏆 [Judges & Evaluators](docs/judges/START_HERE.md)
+*The 5-minute evaluation track. Cheat sheets, audits, and pitch materials.*
+
+### 🛠️ [Developers & Architects](docs/developers/START_HERE.md)
+*Deep-dive into the Trinity engine, ZK-circuits, and deployment guides.*
+
+### 🏛️ [Institutions & Partners](docs/institutional/START_HERE.md)
+*Strategic roadmap, operational efficiency, and legal compliance.*
 
 ---
 *Built with ❤️ by Symbeon Labs for the Decentralized Future.*
