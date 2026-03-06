@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# 🦅 GREENPROOF
+# GREENPROOF
 ### *Sovereign RWA Protocol — The Definitive Truth-Layer for ESG Finance*
 
 **🏆 CHAINLINK CONVERGENCE 2026**  
@@ -18,13 +18,13 @@
 
 ---
 
-## 👁️ TL;DR (30 seconds)
+## TL;DR (30 seconds)
 
 > GreenProof makes **Greenwashing mathematically impossible** by replacing trust-based ESG auditing with cryptographic proof. Three oracles (Physical, Legal, Ethical) reach a **2/3 sovereign consensus**, a **Groth16 ZK-circuit** generates an anonymous compliance certificate, and a **Chainlink CCIP bridge** makes it portable across chains — all in a single automated workflow.
 
 ---
 
-## ⏱️ 2-Minute Judge Experience
+## 2-Minute Judge Experience
 
 | Step | Action | Link |
 |:---:|:---|:---|
@@ -35,7 +35,7 @@
 
 ---
 
-## 🎯 The Problem: $2.1T Locked by Trust
+## The Problem: $2.1T Locked by Trust
 
 The global Green Bond market is paralyzed by **Greenwashing**. ESG auditing is slow, manual, and corruption-prone. Asset managers cannot act on data they cannot verify. The result: capital does not flow to where it is needed most.
 
@@ -43,7 +43,7 @@ The global Green Bond market is paralyzed by **Greenwashing**. ESG auditing is s
 
 ---
 
-## 💡 The Solution: Trinity of Proof
+## The Solution: Trinity of Proof
 
 A modular, cryptographic consensus engine with three nuclei, unified by **Chainlink CRE**:
 
@@ -62,7 +62,7 @@ A modular, cryptographic consensus engine with three nuclei, unified by **Chainl
 
 ---
 
-## 🏆 Why We Win
+## Why We Win
 
 ### 🔐 ZK-Privacy (The 10.0 Differentiator)
 We implement a **Groth16 circuit** (`circom/ESGScore.circom`) that cryptographically proves `score ≥ 80%` **without exposing any industrial telemetry**. This resolves the core privacy paradox of institutional ESG adoption.
@@ -81,7 +81,7 @@ The protocol is navigated by a **Sovereign AI Agent** (OpenCLAW) that executes t
 
 ---
 
-## 🗂️ Architecture at a Glance
+## Architecture at a Glance
 
 ```
 greenproof-platform/
@@ -104,7 +104,7 @@ greenproof-platform/
 
 ---
 
-## 📐 Protocol Lifecycle
+## Protocol Lifecycle
 
 ```mermaid
 graph TD
@@ -120,7 +120,7 @@ graph TD
 
 ---
 
-## 💰 Unit Economics
+## Unit Economics
 
 | Scenario | Monthly Cost | Best For |
 |:---|:---|:---|
@@ -132,7 +132,7 @@ graph TD
 
 ---
 
-## 🔬 Quick Proof Points
+## Quick Proof Points
 
 | Claim | Evidence |
 |:---|:---|
@@ -144,7 +144,7 @@ graph TD
 
 ---
 
-## 🧭 Onboarding Hub
+## Onboarding Hub
 
 > [!NOTE]
 > Select your track to explore the protocol at your depth:
@@ -157,7 +157,7 @@ graph TD
 
 ---
 
-## 📜 License & IP
+## License & IP
 
 Core Protocol IP protected under pending patent **GP-IP-2026-001** (Symbeon Labs).  
 Execution layer released under **[MIT](LICENSE)** for full hackathon transparency.

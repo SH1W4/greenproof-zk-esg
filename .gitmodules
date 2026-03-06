@@ -1,3 +1,6 @@
 [submodule "engines/th3m1s"]
 	path = engines/th3m1s
 	url = https://github.com/th3m1s-core/juridical-innovation-agent.git
+[submodule "engines/seve"]
+	path = engines/seve
+	url = https://github.com/symbeon-labs/seve-framework.git
