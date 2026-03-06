@@ -33,7 +33,8 @@
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.3.0",
-    "three": "^0.164.1"
+    "three": "^0.164.1",
+    "@modelcontextprotocol/sdk": "^1.0.1"
   },
   "devDependencies": {
     "@chainlink/contracts-ccip": "^1.6.4",
