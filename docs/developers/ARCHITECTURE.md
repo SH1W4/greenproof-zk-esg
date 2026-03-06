@@ -1,35 +1,48 @@
-# Protocol Architecture: The Sovereign Membrane
+# System Architecture: GreenProof
 
-## Institutional Overview
-GreenProof is not just an application; it is a **Decentralized Settlement Layer** for the $2.1T Green Bond market. By orchestrating off-chain compute (Zero-Knowledge) and multi-oracle data streams, it transforms ESG compliance into an institutional-grade, portable digital asset.
+## Overview
+GreenProof is a decentralized protocol for private ESG compliance verification. It uses Chainlink CRE as the central nervous system, orchestrating off-chain compute (ZK) and data (Oracles) to produce on-chain trust.
 
-## The Trinity-HAAS Stack
-The protocol’s core is built on **Chainlink Runtime Environment (CRE)**, which serves as the "Sovereign Brain" orchestrating three primary nuclei:
+## Flow Diagram
 
-1. **GP-Physical (Sensory Nucleus):** Telemetric ingestion from IoT gateways and satellite imagery.
-2. **GP-Juridical (Arbiter Nucleus):** Validation of audit trails and legal compliance frameworks.
-3. **GP-Ethical (Value Nucleus):** Global alignment with ESG standards and impact goals.
-
-## Master Lifecycle Flow
-```mermaid
-graph TD
-    A[Data Ingestion] --> B{Trinity Consensus}
-    B -->|2/3 Consensus| C[ZK-SNARK Computation]
-    B -->|Failure| D[Rejection Log]
-    C -->|Valid| E[Sepolia: NFT Certification]
-    E --> F[CCIP: Cross-Chain Settlement]
-    F --> G[RWA Portability Fuji]
+```text
+       [ GP-Sentinel ]   [   GP-Themis   ]   [    GP-Seve    ]
+                \               |               /
+                 \              |              /
+                  v             v             v
+                [    Sovereign MAS Consensus    ]
+                [   (Orchestrated by Architect) ]
+                                |
+                                v
+                [     ZK Compute (Prover)       ]
+                [    "Does Score Pass ≥ 80?"    ]
+                                |
+                                v
+                [   On-Chain Verification &     ]
+                [    GreenProof NFT Minting     ]
+                                |
+                                v
+                [    Chainlink CCIP Bridge      ]
+                [  (Sepolia -> Fuji Portability) ]
 ```
 
-## Architectural Scaling: RWA & Green Bonds
-While the current implementation focuses on ESG scores, the **Sovereign Membrane** is designed for generic truth settlement:
-- **Fractionalized Green Bonds:** Automated interest rates based on real-time ESG performance proofs.
-- **DeSci Integration:** Verifiable proof-of-work for environmental research grants.
-- **Supply Chain Integrity:** Proof-of-provenance for industrial-scale carbon credits.
+1. **Trigger:** User initiates local verification via Dashboard or CLI.
+2. **Orchestration (GP-Architect):**
+    - **Step A:** Synchronize autonomous agents (GP-Sentinel, GP-Themis, GP-Seve) -> Generate 2/3 Consensus.
+    - **Step B:** Execute ZK-Compute (Circom) -> Prove Score >= 80 without data leakage.
+    - **Step C:** Mint NFT (Sepolia) -> Immutable proof of compliance.
+    - **Step D:** Bridge NFT (CCIP) -> Cross-chain RWA portability.
 
-## Tech Stack
-- **Orchestration:** Chainlink CRE (greenproof-orchestrator.ts) - *Hardened with 2/3 Oracle Consensus & RBAC*
-- **Privacy:** ZK-SNARKs (Circom / snarkjs)
-- **Interoperability:** Chainlink CCIP
-- **Security:** OpenZeppelin AccessControl (Role-Based Access Control)
-- **Frontend:** Next.js 14 (Institutional UI/UX)
+## Components
+- **Nucleus UI:** Next.js 14 + Framer Motion + 3D Parallax.
+- **ZK Circuit:** Circom (snarkjs) - Verifies `score >= 80`.
+- **Contracts:** 
+    - `GreenProofNFT.sol`: ERC-721 certification on Sepolia.
+    - `CCIPBridge.sol`: Reference for bridging credentials.
+- **Master Agent:** GP-Architect (Chainlink CRE `workflow.ts`).
+
+## Scope Control & Non-Goals
+- **Mock Data:** All sensor and audit data is mocked for the hackathon version.
+- **Production Scale:** The ZK trusted setup and proof generation are localized/mocked for demo speed (8-10s flow).
+- **Audit:** Smart contracts are for demonstration only and not audited for production value.
+- **Identity:** Assumes single-entity verification (Address = Company).

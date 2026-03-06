@@ -1,48 +1,34 @@
-# ⚙️ GreenProof: Trinity Consensus Logic (2/3)
+# ⚙️ GreenProof: Lógica de Consenso Trinitário (2/3)
 
-The integrity of the GreenProof protocol rests on the **Trinity of Proof**, a multi-oracle consensus mechanism that utilizes supermajority logic (2/3) to validate Real World Assets (RWA) and ESG compliance.
+A integridade do protocolo GreenProof repousa sobre a **Trindade da Prova**, um mecanismo de consenso multi-oráculo que utiliza uma lógica de supermaioria (2/3) para validar ativos de mundo real (RWA) e conformidade ESG.
 
-## 🏛️ The Trinity of Oracles
+## 🏛️ A Trindade de Oráculos
 
-The system orchestrates three independent data pillars via **Chainlink CRE (Custom Runtime Environment)**:
+O sistema orquestra três pilares independentes de dados via **Chainlink CRE (Custom Runtime Environment)**:
 
-1.  **GP-Physical (Physical Reality Core)**: Ingesting environmental signals via IoT/Satellite.
-2.  **GP-Juridical (Juridical Logic Core)**: Internal arbiter for native legal compliance.
-3.  **GP-Ethical (Ethical Value Core)**: Internal guardian for social impact and governance.
-    - **Quantification**: Uses a Weighted Heuristic Matrix (WHM) across Human Rights, Community Impact, and Fair Wage compliance.
-    - **Auditability**: Each score is backed by a signed JSON-LD metadata blob anchored to the GreenProof MAS.
+1.  **GP-Sentinel (Agente Físico)**: Ingestão de sinais ambientais irreversíveis via IoT/Satélite.
+2.  **GP-Themis (Agente Jurídico)**: Árbitro de conformidade legal nativa herdada do Th3m1s.
+3.  **GP-Seve (Agente Ético)**: Guardião de impacto social e alinhamento de valores herdado do SEVE.
 
-## ⚖️ 2/3 Consensus Logic (Minimum Quorum)
+## ⚖️ Lógica de Consenso 2/3 (Quorum Mínimo)
 
-Unlike binary systems, GreenProof requires at least **two out of the three** oracles to validate the truth of the information before the NFT certificate is issued or updated.
+Diferente de sistemas binários, o GreenProof exige que pelo menos **dois dos três** oráculos validem a veracidade das informações para que o certificado NFT seja emitido ou atualizado.
 
-### Why 2/3?
-- **Fault Tolerance**: If a physical sensor fails or a juridical oracle is offline for maintenance, the protocol can still operate and issue proofs based on the other two pillars.
-- **Collusion Prevention**: Requiring a supermajority mitigates the risk of a single point of data corruption (e.g., bribing an auditor or manipulating a sensor).
-- **Reality Consensus**: ESG reality is complex. If the law validates (Juridical) and ethics validate (Ethical), but the physical sensor fails, the protocol may still be correct in a documentary audit context.
+### Por que 2/3?
+- **Resiliência a Falhas (Fault Tolerance)**: Se um sensor físico falhar ou um oráculo jurídico estiver offline por manutenção, o protocolo ainda pode operar e emitir provas baseadas nos outros dois pilares.
+- **Prevenção de Colusão**: Exigir uma supermaioria mitiga o risco de um único ponto de corrupção de dados (ex: suborno de um auditor ou manipulação de um sensor).
+- **Consenso de Realidade**: A realidade ESG é complexa. Se a lei valida (Jurídico) e a ética valida (Ético), mas o sensor físico falha, o protocolo pode ainda estar correto em um contexto de auditoria documental.
 
-## 🕵️ ZK-SNARK Layer (Privacy Preservation)
+## 🕵️ Camada ZK-SNARK (Privacy-Preservance)
 
-Once the 2/3 consensus is reached, raw data (the source of truth) is processed off-chain to generate a **Zero-Knowledge Proof (Groth16)**.
+Uma vez que o consenso 2/3 é alcançado, os dados brutos (origem da prova) são processados off-chain para gerar um **Zero-Knowledge Proof (Groth16)**.
 
-- **Threshold Validation**: The ZK circuit only proves that `ConsensusCount >= 2` and `ESG_Score >= Threshold (e.g., 80)`.
-- **Industrial Privacy**: The on-chain result is only "VALID" or "INVALID," protecting the company's proprietary data (e.g., revenue, exact location of sensitive sensors) from competitors.
+- **Threshold Validation**: O circuito ZK apenas prova que `ConsensusCount >= 2` e `ESG_Score >= Threshold (ex: 80)`.
+- **Privacidade Industrial**: O resultado on-chain é apenas um "VALID" ou "INVALID", protegendo os dados proprietários da empresa (ex: faturamento, localização exata de sensores sensíveis) de competidores.
 
-## 🦅 The Role of the Architect (GP-ARCHITECT)
+## ⛓️ Execução On-Chain
 
-The Architect is not a fourth data source; it is the **Orchestration Layer** (running via Agentic Logic + Chainlink CRE). It acts as the "Maestro" of the Trinity, ensuring that the 2/3 quorum is not just reached, but cryptographically validated.
-
-### 📊 Evolution of Consensus: Before vs. After
-
-| Feature | **Traditional Oracle Flow (Before)** | **Architected Trinity (After)** |
-|:---|:---|:---|
-| **Coordination** | Manual triggers or rigid, linear scripts. | Autonomous orchestration via **Chainlink CRE**. |
-| **Quorum Control** | Often accepts any data, checking logic on-chain (expensive). | Validates **2/3 supermajority off-chain** before submisson. |
-| **Privacy Data** | Raw data often leaks during the ingestion phase. | **ZK-SNARKs** mask all raw data off-chain JIT. |
-| **Failure Handling** | One failing source can stall the entire pipeline. | Architect automatically adapts to any 2/3 combination. |
-| **Auditability** | Found only in transaction logs. | Complete **Truth Trail** in the Æ-Vault (Nexus Handshake). |
+O resultado do consenso e a prova ZK são submetidos ao contrato `GreenProofNFT.sol` na rede Sepolia por meio do Chainlink Functions/Functions, resultando na atualização do estado do ativo e, se necessário, no bridging via CCIP para outras redes.
 
 ---
-**Status**: Protocol Documented & Validated  
-**Authored by**: GreenProof Architect 🦅⚙️🏁
-**NEXUS Verified**: `v1.0.0-hackathon` 🛡️
+> **Status**: Protocolo Documentado & Validado.

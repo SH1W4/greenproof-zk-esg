@@ -103,7 +103,7 @@ export default function LandingContent() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-green-500/5 border border-green-500/10 text-green-500/60 text-[10px] font-black uppercase tracking-[0.3em]"
           >
-            Universal Trust Infrastructure • Multi-Sector Integrity
+            Proof-of-Reality Infrastructure • Chainlink Convergence 2026 🏆
           </motion.div>
           
           <motion.h1
@@ -136,6 +136,32 @@ export default function LandingContent() {
               Launch Protocol Terminal
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Link>
+          </motion.div>
+
+          {/* 5-Step Flow Strip — GPT Suggestion #1 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="flex items-center justify-center gap-2 pt-10 flex-wrap"
+          >
+            {[
+              { label: "Real World Data", icon: "🛰️" },
+              { label: "Trinity Consensus", icon: "⚡" },
+              { label: "ZK Proof", icon: "🔐" },
+              { label: "On-chain Certificate", icon: "🏛️" },
+              { label: "Tokenized RWA", icon: "🌐" },
+            ].map((step, i, arr) => (
+              <div key={i} className="flex items-center gap-2">
+                <div className="flex flex-col items-center gap-1 px-3 py-2 rounded-xl bg-white/[0.03] border border-white/5 backdrop-blur-sm">
+                  <span className="text-base">{step.icon}</span>
+                  <span className="text-[9px] font-black font-mono text-green-500/50 uppercase tracking-widest whitespace-nowrap">{step.label}</span>
+                </div>
+                {i < arr.length - 1 && (
+                  <span className="text-green-500/20 font-black">→</span>
+                )}
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>

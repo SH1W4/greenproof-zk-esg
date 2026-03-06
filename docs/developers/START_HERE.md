@@ -11,7 +11,7 @@ Welcome, Architect. This directory contains the technical blueprints, mathematic
 ## 🔨 Implementation & Deployment
 - **[Deployment Guide](DEPLOYMENT.md)** — Step-by-step instructions for Sepolia and Avalanche Fuji.
 - **[Data Schema](DATA_SCHEMA.md)** — Protocol-level data definitions and telemetry mapping.
-- **[ZK-SNARK Circuit](ESGScore.circom)** — The Circom implementation of the compliance membrane.
+- **[ZK-SNARK Circuit](../../circom/ESGScore.circom)** — The Circom implementation of the compliance membrane.
 
 ## 🛡️ Security & Audits
 - **[Contract Review](CONTRACT_REVIEW_PT.md)** — In-depth analysis of Solidity security.

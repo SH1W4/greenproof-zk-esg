@@ -1,6 +1,6 @@
-# 🧠 GreenProof HAAS: Orchestrating the Trinity of Truth
+# 🧠 GreenProof HAAS: Hierarchical Autonomous Agent Swarm
 
-The GreenProof Protocol is anchored by the **Trinity of Cores** (Sentinel, Themis, Seve). The **HAAS (Hierarchical Autonomous Agent Swarm)** is the sophisticated intelligence layer that empowers, orchestrates, and scales this trinity into a sovereign ecosystem.
+The GreenProof Protocol is powered by **HAAS**—a sophisticated multi-agent architecture where strategic intelligence, specialized analysis, and immutable execution are decoupled into a hierarchical swarm.
 
 ---
 
@@ -13,22 +13,22 @@ At the apex of the swarm sits the **Trinity AI Agent**, acting as a Model Contex
     - **Intelligence Hook**: Inherits high-performance logic from the **Rust Engines** (`ecosystem-degov`, `sage_x_rust_module`).
     - **Dynamic Provisioning**: Maps user/institutional demands into a swarm of sub-tasks.
 
-## 🛡️ 2. The Trinity of Cores: Specialist EAP Swarm
-Below the strategic core, the three fundamental specialist pillars operate in parallel using the **Exploration -> Analysis -> Proof (EAP)** cycle. These cores are the engine of truth for the protocol.
+## 🛡️ 2. Specialist Swarm: The EAP Specialist Nodes
+Below the core, specialized agents operate in parallel following the **Exploration -> Analysis -> Proof (EAP)** pipeline.
 
-### GP-Physical (Physical Reality Core)
+### GP-Sentinel (Physical Node)
 - **E**: Explores RWA telemetry via IoT/Satellite signals (Chainlink Functions).
 - **A**: Analyzes signal integrity and cross-references with oracle benchmarks.
 - **P**: Signs a cryptographically verifiable proof of physical state ($S_{physical}$).
 
-### GP-Juridical (Juridical Logic Core)
+### GP-Themis (Juridical Node)
 - **E**: Explores legal metadata, tax registries, and regulatory frameworks.
 - **A**: Analyzes structural compliance using the `ESGService` (Rust engine).
 - **P**: Signs a juridical oracle verdict ($S_{juridical}$).
 
-### GP-Ethical (Ethical Value Core)
+### GP-Seve (Ethical Node)
 - **E**: Explores governance documents and social impact history.
-- **A**: Analyzes ethical alignment based on the internal DNA.
+- **A**: Analyzes ethical alignment based on the SEVE Framework DNA.
 - **P**: Signs an ethical alignment proof ($S_{ethical}$).
 
 ## 🌐 3. Execution Membrane: Chainlink CRE
@@ -36,7 +36,7 @@ The final layer is the **Immutable Execution Layer**.
 
 - **Consensus**: Receives the signatures from the specialist nodes.
 - **Verification**: Enforces the 2/3 Quorum algebra.
-- **Settlement**: Mints the GreenProof NFT on Sepolia and initiates the CCIP bridge via the **[greenproof-orchestrator.ts](../cre/greenproof-orchestrator.ts)**.
+- **Settlement**: Mints the GreenProof NFT on Sepolia and initiates the CCIP bridge to Fuji.
 
 ---
 
@@ -49,4 +49,4 @@ The final layer is the **Immutable Execution Layer**.
 
 ---
 **Status**: ACTIVE SYSTEM 🟢  
-**Authored by**: GP-Architect (NEO-Symbeon)
+**Authored by**: GP-Architect (NEO-SH1W4)

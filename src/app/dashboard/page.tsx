@@ -289,6 +289,78 @@ export default function GreenProofDashboard() {
             )}
           </motion.div>
 
+          {/* Persistent Proof Panels — GPT Suggestions #2 & #3 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-10 border-t border-white/5">
+            {/* Trinity Consensus Monitor */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 }}
+              className="glass-card p-6 rounded-[2rem] border border-white/10 space-y-4 bg-white/[0.02]"
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Network className="w-4 h-4 text-[#00FF88]" />
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#00FF88]">Consensus Monitor</span>
+                </div>
+                <div className="flex gap-1">
+                  <div className="w-1 h-1 rounded-full bg-[#00FF88] animate-pulse" />
+                  <div className="w-1 h-1 rounded-full bg-[#00FF88] animate-pulse delay-75" />
+                  <div className="w-1 h-1 rounded-full bg-[#00FF88] animate-pulse delay-150" />
+                </div>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { name: "GP-Physical (IoT)", status: "Active", val: "200ms" },
+                  { name: "GP-Juridical (Legal)", status: "Verified", val: "0x72...f93" },
+                  { name: "GP-Ethical (Impact)", status: "Aligned", val: "Verified" }
+                ].map((node, i) => (
+                  <div key={i} className="flex items-center justify-between text-xs">
+                    <span className="text-slate-500 font-medium">{node.name}</span>
+                    <span className="text-[#00FF88] font-bold font-mono">{node.val}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="pt-2 border-t border-white/5 flex items-center justify-between">
+                <span className="text-[9px] font-black text-slate-600 uppercase">Quorum State</span>
+                <span className="px-2 py-0.5 rounded-full bg-[#00FF88]/10 text-[#00FF88] text-[9px] font-black">2/3 REACHED</span>
+              </div>
+            </motion.div>
+
+            {/* Sovereign Audit Trail */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6 }}
+              className="glass-card p-6 rounded-[2rem] border border-white/10 space-y-4 bg-white/[0.02]"
+            >
+              <div className="flex items-center gap-2">
+                <BadgeCheck className="w-4 h-4 text-sky-400" />
+                <span className="text-[10px] font-black uppercase tracking-widest text-sky-400">Sovereign Audit Trail</span>
+              </div>
+              <div className="space-y-2">
+                <div className="space-y-1">
+                  <div className="text-[9px] text-slate-500 font-bold uppercase">Sepolia TX Record</div>
+                  <Link 
+                    href="https://sepolia.etherscan.io/tx/0xe0d518536a83afe148ad1846502b2c9dcaaa3982587b8da480666ed00ef32e4c"
+                    target="_blank"
+                    className="text-[11px] font-mono text-slate-300 hover:text-[#00FF88] transition-colors truncate block"
+                  >
+                    0xe0d518...ef32e4c
+                  </Link>
+                </div>
+                <div className="space-y-1">
+                  <div className="text-[9px] text-slate-500 font-bold uppercase">ZK Proof ID</div>
+                  <div className="text-[11px] font-mono text-slate-300">zk_groth16_GP_2026_01</div>
+                </div>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-sky-500/10 border border-sky-500/20">
+                <div className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                <span className="text-[9px] font-black text-sky-400 uppercase tracking-widest">Publicly Verifiable</span>
+              </div>
+            </motion.div>
+          </div>
+
           {/* Institutional Tech Stack */}
           <div className="grid grid-cols-3 gap-8 pt-10 border-t border-white/5">
             {[
