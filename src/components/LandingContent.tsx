@@ -90,14 +90,11 @@ export default function LandingContent() {
 
       {/* SECTION 1: HERO */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-8 text-center pt-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-           <Image 
-             src="/assets/branding/icon_grid.png" 
-             alt="Background Matrix" 
-             fill 
-             className="object-cover"
-             priority
-           />
+        {/* Background Sophistication Layer */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-green-500/10 blur-[120px] rounded-full" />
+          <div className="absolute bottom-[20%] right-[-5%] w-[30%] h-[30%] bg-emerald-500/5 blur-[100px] rounded-full" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#020c06_100%)] opacity-60" />
         </div>
 
         <div className="max-w-4xl space-y-8 relative z-10">
@@ -148,24 +145,64 @@ export default function LandingContent() {
       </section>
 
       {/* SECTION 2: CINEMATIC PARALLAX */}
+      {/* SECTION 2: SOPHISTICATED CONSENSUS CORE */}
       <section ref={parallaxRef} className="relative h-screen flex items-center justify-center overflow-hidden border-y border-white/5 bg-[#020c06]">
         <motion.div 
           style={{ scale: shieldScale, opacity: shieldOpacity }}
-          className="relative w-full max-w-6xl aspect-square flex items-center justify-center"
+          className="relative w-full max-w-4xl aspect-video flex items-center justify-center"
         >
-          <div className="absolute inset-0 bg-green-500/10 blur-[180px] rounded-full animate-pulse" />
+          {/* Central Glow */}
+          <div className="absolute inset-0 bg-green-500/5 blur-[140px] rounded-full scale-75 animate-pulse" />
           
+          {/* Abstract Consensus Geometry */}
           <div className="relative w-full h-full flex items-center justify-center">
-            <Image 
-              src="/assets/branding/trinity_cinematic_final.png" 
-              alt="Trinity Nuclei Cinematic" 
-              width={1200}
-              height={1200}
-              className="object-contain"
-              priority
+            {/* Inner Ring */}
+            <motion.div 
+              animate={{ rotate: 360 }}
+              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              className="absolute w-[300px] h-[300px] border border-green-500/10 rounded-full flex items-center justify-center"
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_15px_#17cf54]" />
+            </motion.div>
+
+            {/* Middle Ring */}
+            <motion.div 
+              animate={{ rotate: -360 }}
+              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+              className="absolute w-[450px] h-[450px] border border-green-500/5 rounded-full"
+            >
+              <div className="absolute bottom-0 right-1/2 translate-x-1/2 w-1 h-1 bg-green-400/40 rounded-full" />
+            </motion.div>
+
+            {/* Outer Ring */}
+            <motion.div 
+              animate={{ rotate: 360 }}
+              transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+              className="absolute w-[600px] h-[600px] border border-green-500/5 rounded-full border-dashed"
             />
+
+            {/* Core Shield */}
+            <div className="relative z-10 p-12 rounded-full bg-green-500/[0.02] border border-green-500/10 backdrop-blur-3xl shadow-[0_0_100px_rgba(34,197,94,0.05)]">
+              <ShieldCheck className="w-24 h-24 text-green-500/80" />
+            </div>
           </div>
         </motion.div>
+
+        {/* Floating Data Labels */}
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div 
+            style={{ x: n1X, y: n1Y }}
+            className="absolute top-[30%] left-[20%] px-4 py-2 bg-black/40 border border-white/5 rounded-lg backdrop-blur-md"
+          >
+            <span className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.2em]">Data Pillar: Physical</span>
+          </motion.div>
+          <motion.div 
+            style={{ x: n2X, y: n2Y }}
+            className="absolute bottom-[30%] right-[20%] px-4 py-2 bg-black/40 border border-white/5 rounded-lg backdrop-blur-md"
+          >
+            <span className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.2em]">Data Pillar: Juridical</span>
+          </motion.div>
+        </div>
       </section>
 
       {/* SECTION 5: SYSTEM DIAGRAM */}
