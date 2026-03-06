@@ -103,7 +103,7 @@ export default function LandingContent() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-green-500/5 border border-green-500/10 text-green-500/60 text-[10px] font-black uppercase tracking-[0.3em]"
           >
-            Institutional RWA Infrastructure • Verifiable Integrity
+            Universal Trust Infrastructure • Multi-Sector Integrity
           </motion.div>
           
           <motion.h1
@@ -112,9 +112,9 @@ export default function LandingContent() {
             transition={{ delay: 0.1 }}
             className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter"
           >
-            The Institutional Grade
+            The Universal Protocol for
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-green-400 to-emerald-700">ESG Oracle</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-green-400 to-emerald-700">Digital Trust</span>
           </motion.h1>
 
           <motion.p
@@ -123,7 +123,7 @@ export default function LandingContent() {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl text-green-100/40 max-w-2xl mx-auto font-medium leading-relaxed"
           >
-            Sovereign validation of Physical, Juridical, and Ethical reality. Powered by Chainlink CRE and ZK-SNARKs.
+            Sovereign validation of Physical, Juridical, and Ethical reality. A modular framework starting with ESG, built for global RWA orchestration.
           </motion.p>
 
           <motion.div
@@ -218,7 +218,7 @@ export default function LandingContent() {
               <span className="text-green-500">Institucional</span>
             </h2>
             <p className="text-lg text-green-100/40 leading-relaxed">
-              Nossa arquitetura utiliza o Chainlink CRE para orquestrar dados de IoT, auditorias legais e métricas de impacto em uma única fonte de verdade.
+              O GreenProof nasceu para resolver o greenwashing, mas nossa arquitetura de **Consenso Trinitário** foi desenhada para qualquer setor que exija prova de realidade inquestionável. Do ESG ao Supply Chain Industrial.
             </p>
             <div className="text-xl text-green-400 font-mono italic">
               <Typewriter 
