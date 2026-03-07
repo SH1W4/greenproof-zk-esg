@@ -20,6 +20,18 @@
 
 ---
 
+> [!NOTE]
+> **🏆 Judge Quick Summary** — Demo time: **60 seconds**
+>
+> GreenProof is a decentralized compliance oracle for real-world assets. It uses a
+> **Trinity Consensus model** (Physical, Legal, Ethical) to generate a cryptographic
+> ESG compliance proof, minted as an on-chain certificate and bridged across chains
+> via **Chainlink CCIP**.
+>
+> — [Live Demo ↗](https://greenproof-platform.vercel.app/dashboard) | [Cheat Sheet ↗](docs/judges/JUDGE_CHEATSHEET.md)
+
+---
+
 ## TL;DR (30 seconds)
 
 > GreenProof makes **Greenwashing mathematically impossible** by replacing trust-based ESG auditing with cryptographic proof. Three oracles (Physical, Legal, Ethical) reach a **2/3 sovereign consensus**, a **Groth16 ZK-circuit** generates an anonymous compliance certificate, and a **Chainlink CCIP bridge** makes it portable across chains — all in a single automated workflow.
@@ -177,6 +189,24 @@ graph TD
 | 🏆 **Judges** | Evaluators needing the full picture in 5 minutes | [Start Here →](docs/judges/START_HERE.md) |
 | 🛠️ **Developers** | Engineers & architects integrating the protocol | [Start Here →](docs/developers/START_HERE.md) |
 | 🏛️ **Institutions** | Partners, investors & legal teams | [Start Here →](docs/institutional/START_HERE.md) |
+
+---
+
+## Security Roadmap
+
+GreenProof is architected for institutional-grade security. Phase 1 (current) implements RBAC, Pausable emergency stops, and ReentrancyGuard. The following are in active development for the production release:
+
+| Milestone | Status |
+|:---|:---:|
+| Slither static analysis | 🔜 Phase 2 |
+| Mythril symbolic execution | 🔜 Phase 2 |
+| Foundry fuzz test suite | 🔜 Phase 2 |
+| CCIP fee estimation module | ✅ Added |
+| Production BN254 Groth16 verifier | 🔜 Phase 2 |
+| Formal verification (Certora) | 🔜 Phase 3 |
+| External security audit | 🔜 Phase 3 |
+
+> *The current Verifier is a structured integration point. Production BN254 pairing scheduled for next release.*
 
 ---
 
