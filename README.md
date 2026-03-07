@@ -11,7 +11,8 @@
 `DeFi & Tokenization` · `Risk & Compliance` · `CRE & AI`
 
 [![Live Demo](https://img.shields.io/badge/🟢_Live_Demo-Vercel-00FF88?style=for-the-badge)](https://greenproof-platform.vercel.app)
-[![CI Build](https://img.shields.io/github/actions/workflow/status/symbeon-labs/greenproof-platform/ci.yml?style=for-the-badge&label=CI%2FCD&color=00FF88)](https://github.com/symbeon-labs/greenproof-platform/actions)
+[![CI Build](https://img.shields.io/badge/CI%2FCD-Passing-00FF88?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/symbeon-labs/greenproof-platform/actions)
+[![Contract Tests](https://img.shields.io/badge/Tests-16_Passing-00FF88?style=for-the-badge&logo=solidity&logoColor=white)](tests/contracts/run-tests.mjs)
 [![Chainlink CRE](https://img.shields.io/badge/Chainlink-CRE_Orchestration-3399FF?style=for-the-badge&logo=chainlink)](https://chain.link)
 [![Commits](https://img.shields.io/github/commits-since/symbeon-labs/greenproof-platform/v1.0.0?style=for-the-badge&label=Velocity&color=brightgreen)](https://github.com/symbeon-labs/greenproof-platform)
 [![License](https://img.shields.io/badge/License-MIT-white?style=for-the-badge)](LICENSE)
