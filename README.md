@@ -5,6 +5,8 @@
 # GREENPROOF
 ### *Sovereign RWA Protocol — The Definitive Truth-Layer for ESG Finance*
 
+> **GreenProof is a decentralized compliance oracle that converts real-world signals into cryptographically verifiable financial assets.**
+
 **🏆 CHAINLINK CONVERGENCE 2026**  
 `DeFi & Tokenization` · `Risk & Compliance` · `CRE & AI`
 
@@ -48,10 +50,17 @@ The global Green Bond market is paralyzed by **Greenwashing**. ESG auditing is s
 A modular, cryptographic consensus engine with three nuclei, unified by **Chainlink CRE**:
 
 ```
-[IoT / Satellite Data]   ──┐
-[Legal Audit (Th3m1s)]   ──┼──▶ 2/3 Quorum ──▶ ZK-SNARK ──▶ NFT-Cert ──▶ CCIP Bridge
-[Ethical AI (SEVE)]      ──┘     Consensus      Groth16      Sepolia       Avalanche
-   GP-Physical              GP-Juridical       GP-Ethical
+Real World Signals
+      ↓
+Trinity Consensus (GP-Physical/Juridical/Ethical)
+      ↓
+Cryptographic Proof (ZK-SNARK Groth16)
+      ↓
+On-Chain Certificate (NFT-Cert)
+      ↓
+Tokenized Asset (RWA Integration)
+      ↓
+Cross-Chain Liquidity (Chainlink CCIP)
 ```
 
 | Nucleus | Technology | Guarantees |
