@@ -64,6 +64,7 @@ contract CCIPBridge is AccessControl, Pausable {
     /**
      * @notice Dispatches a cross-chain proof verification request.
      * @dev Only accounts with BRIDGER_ROLE can execute. Contract must not be paused.
+     *      Requires msg.value >= estimated CCIP fee.
      * @param destinationChainSelector The target chain selector (Chainlink standard).
      * @param receiver                 The receiving contract on the target chain.
      * @param tokenId                  The GreenProof NFT ID to synchronize.
@@ -73,15 +74,28 @@ contract CCIPBridge is AccessControl, Pausable {
         address receiver,
         uint256 tokenId
     ) external payable onlyRole(BRIDGER_ROLE) whenNotPaused {
+        // 1. Prepare CCIP Message
         Client.EVM2AnyMessage memory message = Client.EVM2AnyMessage({
             receiver: abi.encode(receiver),
             data: abi.encode(tokenId),
             tokenAmounts: new Client.EVMTokenAmount[](0),
             extraArgs: Client._argsToBytes(Client.EVMExtraArgsV1({gasLimit: 200_000})),
-            feeToken: address(0) // Pay with native gas
+            feeToken: address(0) // Pay with native gas (ETH/MATIC/AVAX)
         });
 
-        bytes32 messageId = router.ccipSend{value: msg.value}(destinationChainSelector, message);
+        // 2. Fee Validation
+        uint256 fee = router.getFee(destinationChainSelector, message);
+        require(msg.value >= fee, "CCIPBridge: Insufficient fee for cross-chain transfer");
+
+        // 3. Dispatch via Router
+        bytes32 messageId = router.ccipSend{value: fee}(destinationChainSelector, message);
+
+        // 4. Return excess fee to sender
+        uint256 excess = msg.value - fee;
+        if (excess > 0) {
+            (bool success, ) = msg.sender.call{value: excess}("");
+            require(success, "CCIPBridge: Failed to return excess fee");
+        }
 
         emit BridgeDispatched(destinationChainSelector, receiver, tokenId, messageId);
     }

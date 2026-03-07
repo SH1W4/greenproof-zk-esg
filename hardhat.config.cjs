@@ -1,7 +1,8 @@
 require("@nomicfoundation/hardhat-ethers");
 require("@nomicfoundation/hardhat-chai-matchers");
+require("@typechain/hardhat");
 
-/** @type {import('hardhat/config').HardhatUserConfig} */
+/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: {
     version: "0.8.20",

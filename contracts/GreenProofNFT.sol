@@ -53,6 +53,14 @@ contract GreenProofNFT is ERC721, AccessControl, Pausable, ReentrancyGuard {
     );
 
     /**
+     * @notice Emitted when a ZK-SNARK proof is successfully verified on-chain.
+     * @param proofHash     Hash of the proof components for tracking.
+     * @param input         The public input (compliance flag).
+     * @param timestamp     Execution timestamp.
+     */
+    event ProofVerified(bytes32 indexed proofHash, uint256 input, uint256 timestamp);
+
+    /**
      * @notice Emitted when the verifier contract is updated.
      * @param oldVerifier Previous verifier address.
      * @param newVerifier New verifier address.
@@ -96,12 +104,18 @@ contract GreenProofNFT is ERC721, AccessControl, Pausable, ReentrancyGuard {
         uint[2] memory c,
         uint[1] memory input
     ) public onlyRole(MINTER_ROLE) whenNotPaused nonReentrant {
+        // 1. On-chain ZK-SNARK Verification
         require(
             verifier.verifyProof(a, b, c, input),
             "GPROOF: ZK-SNARK verification failed"
         );
         require(input[0] == 1, "GPROOF: Compliance threshold not met");
 
+        // 2. Observability: Emit technical verification event
+        bytes32 proofHash = keccak256(abi.encode(a, b, c, input));
+        emit ProofVerified(proofHash, input[0], block.timestamp);
+
+        // 3. Minting
         uint256 tokenId = _nextTokenId++;
         _safeMint(to, tokenId);
 

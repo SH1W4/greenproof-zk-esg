@@ -10,7 +10,7 @@
 **🏆 CHAINLINK CONVERGENCE 2026**  
 `DeFi & Tokenization` · `Risk & Compliance` · `CRE & AI`
 
-[![Live Demo](https://img.shields.io/badge/🟢_Live_Demo-Vercel-00FF88?style=for-the-badge)](https://greenproof-platform.vercel.app)
+[![Live Demo](https://img.shields.io/badge/🟢_Live_Demo-Vercel-00FF88?style=for-the-badge)](https://greenproof.vercel.app)
 [![CI Build](https://img.shields.io/badge/CI%2FCD-Passing-00FF88?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/symbeon-labs/greenproof-platform/actions)
 [![Contract Tests](https://img.shields.io/badge/Tests-16_Passing-00FF88?style=for-the-badge&logo=solidity&logoColor=white)](tests/contracts/run-tests.mjs)
 [![Privacy](https://img.shields.io/badge/ZK--SNARKs-Groth16-3399FF?style=for-the-badge&logo=shieldcheck&logoColor=white)](src/components/CircuitPreview.tsx)
@@ -38,7 +38,7 @@ Real-World Signals → Trinity Consensus → ZK Proof → On-Chain Certificate �
 - On-chain certificate **NFT mint** on Ethereum Sepolia
 - **Cross-chain portability** via Chainlink CCIP to Arbitrum Sepolia
 
-— [Live Demo ↗](https://greenproof-platform.vercel.app/dashboard) | [Cheat Sheet ↗](docs/judges/JUDGE_CHEATSHEET.md)
+— [Live Demo ↗](https://greenproof.vercel.app/dashboard) | [Cheat Sheet ↗](docs/judges/JUDGE_CHEATSHEET.md)
 
 ---
 
@@ -53,7 +53,7 @@ GreenProof is strategically positioned to qualify for **multiple sponsor prize t
 | 🔵 **Chainlink — Best Use of Functions** | Off-chain ESG signal ingestion via Chainlink Functions | [`cre/greenproof-orchestrator.ts`](cre/greenproof-orchestrator.ts) |
 | 🟠 **Arbitrum — Best Protocol on Arbitrum** | Full stack deployed on Arbitrum Sepolia (NFT + Verifier + Bridge) | [Arbiscan ↗](https://sepolia.arbiscan.io/address/0x024BD05B6bE89e64024174Ce8980fca2F36C361a) |
 | 🔴 **Avalanche — Best Use of Fuji** | Infrastructure staged on Fuji with 25 LINK pre-funded | [Snowtrace ↗](https://testnet.snowtrace.io/address/0x863de15091DfE5C044Dc1bD54f85210B6Bb6DA76) |
-| 🟢 **DeFi & Tokenization Track** | RWA compliance certificates as tradeable on-chain assets | [Live Demo ↗](https://greenproof-platform.vercel.app) |
+| 🟢 **DeFi & Tokenization Track** | RWA compliance certificates as tradeable on-chain assets | [Live Demo ↗](https://greenproof.vercel.app) |
 | 🏛️ **Risk & Compliance Track** | ZK-proof ESG oracle — directly solving institutional compliance | [`circom/ESGScore.circom`](circom/ESGScore.circom) |
 
 > **Multi-chain deployment is a core feature, not a bonus.** Each network serves a specific role: Ethereum Sepolia (institutional settlement), Arbitrum Sepolia (high-performance execution), Avalanche Fuji (RWA subnet liquidity).
@@ -103,10 +103,10 @@ Validate the entire protocol in under 2 minutes:
 
 | Step | Action | Evidence |
 |:---:|:---|:---|
-| 1 | Open **Live Dashboard** | [greenproof-platform.vercel.app/dashboard](https://greenproof-platform.vercel.app/dashboard) |
+| 1 | Open **Live Dashboard** | [greenproof-platform.vercel.app/dashboard](https://greenproof.vercel.app/dashboard) |
 | 2 | Click **"Execute Sovereign Demo"** | Triggers the CRE-orchestrated 2/3 Quorum |
 | 3 | Observe the **Trinity consensus event** in the terminal | Live log stream on dashboard |
-| 4 | Verify the **ZK certificate** at `/verify` | [/verify ↗](https://greenproof-platform.vercel.app/verify) |
+| 4 | Verify the **ZK certificate** at `/verify` | [/verify ↗](https://greenproof.vercel.app/verify) |
 | 5 | Confirm **on-chain truth** on Sepolia Explorer | [NFT Contract ↗](https://sepolia.etherscan.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54) |
 
 ---
@@ -279,6 +279,6 @@ Execution layer released under **[MIT](LICENSE)** for full hackathon transparenc
 
 *Built with ❤️ and sovereign intelligence by **[Symbeon Labs](https://github.com/symbeon-labs)** for the Decentralized Future.*
 
-**[Live Demo](https://greenproof-platform.vercel.app)** · **[Architecture](docs/developers/ARCHITECTURE.md)** · **[Judge Cheat Sheet](docs/judges/JUDGE_CHEATSHEET.md)**
+**[Live Demo](https://greenproof.vercel.app)** · **[Architecture](docs/developers/ARCHITECTURE.md)** · **[Judge Cheat Sheet](docs/judges/JUDGE_CHEATSHEET.md)**
 
 </div>
