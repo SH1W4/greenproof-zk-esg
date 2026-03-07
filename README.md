@@ -40,6 +40,24 @@ Real-World Signals → Trinity Consensus → ZK Proof → On-Chain Certificate �
 
 ---
 
+## 🎯 Sponsor Prize Tracks
+
+GreenProof is strategically positioned to qualify for **multiple sponsor prize tracks** simultaneously through its multi-chain sovereign architecture:
+
+| Sponsor Track | Qualification | Evidence |
+|:---|:---|:---|
+| 🔵 **Chainlink — Best Use of CRE** | Trinity Consensus fully orchestrated by Chainlink CRE | [`cre/greenproof-orchestrator.ts`](cre/greenproof-orchestrator.ts) |
+| 🔵 **Chainlink — Best Use of CCIP** | Cross-chain bridge deployed, `BridgeDispatched` event on-chain | [Arbiscan ↗](https://sepolia.arbiscan.io/address/0x0220496F006f8aC2f4628A0752bB25a013eDC656) |
+| 🔵 **Chainlink — Best Use of Functions** | Off-chain ESG signal ingestion via Chainlink Functions | [`cre/greenproof-orchestrator.ts`](cre/greenproof-orchestrator.ts) |
+| 🟠 **Arbitrum — Best Protocol on Arbitrum** | Full stack deployed on Arbitrum Sepolia (NFT + Verifier + Bridge) | [Arbiscan ↗](https://sepolia.arbiscan.io/address/0x024BD05B6bE89e64024174Ce8980fca2F36C361a) |
+| 🔴 **Avalanche — Best Use of Fuji** | Infrastructure staged on Fuji with 25 LINK pre-funded | [Snowtrace ↗](https://testnet.snowtrace.io/address/0x863de15091DfE5C044Dc1bD54f85210B6Bb6DA76) |
+| 🟢 **DeFi & Tokenization Track** | RWA compliance certificates as tradeable on-chain assets | [Live Demo ↗](https://greenproof-platform.vercel.app) |
+| 🏛️ **Risk & Compliance Track** | ZK-proof ESG oracle — directly solving institutional compliance | [`circom/ESGScore.circom`](circom/ESGScore.circom) |
+
+> **Multi-chain deployment is a core feature, not a bonus.** Each network serves a specific role: Ethereum Sepolia (institutional settlement), Arbitrum Sepolia (high-performance execution), Avalanche Fuji (RWA subnet liquidity).
+
+---
+
 ## Protocol Overview
 
 GreenProof is a **decentralized compliance oracle protocol** for Real-World Assets.
