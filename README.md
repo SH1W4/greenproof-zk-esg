@@ -3,9 +3,9 @@
 <div align="center">
 
 # GREENPROOF
-### *Sovereign RWA Protocol — The Definitive Truth-Layer for ESG Finance*
+### Decentralized Compliance Oracle for Real-World Assets
 
-> **GreenProof is a decentralized compliance oracle that converts real-world signals into cryptographically verifiable financial assets.**
+> **Greenwashing becomes mathematically impossible.**
 
 **🏆 CHAINLINK CONVERGENCE 2026**  
 `DeFi & Tokenization` · `Risk & Compliance` · `CRE & AI`
@@ -20,60 +20,77 @@
 
 ---
 
-> [!NOTE]
-> **🏆 Judge Quick Summary** — Demo time: **60 seconds**
->
-> GreenProof is a decentralized compliance oracle for real-world assets. It uses a
-> **Trinity Consensus model** (Physical, Legal, Ethical) to generate a cryptographic
-> ESG compliance proof, minted as an on-chain certificate and bridged across chains
-> via **Chainlink CCIP**.
->
-> — [Live Demo ↗](https://greenproof-platform.vercel.app/dashboard) | [Cheat Sheet ↗](docs/judges/JUDGE_CHEATSHEET.md)
+## 🏆 Judge Snapshot (15 seconds)
+
+GreenProof is a **Decentralized Compliance Oracle for Real-World Assets**.
+
+It replaces manual ESG auditing with a **cryptographic verification pipeline**:
+
+```
+Real-World Signals → Trinity Consensus → ZK Proof → On-Chain Certificate → Cross-Chain RWA
+```
+
+**What you will see in the demo:**
+- Oracle consensus (Physical, Legal, Ethical) via **Chainlink CRE**
+- **Groth16 ZK-proof** of ESG compliance (without exposing sensitive data)
+- On-chain certificate **NFT mint** on Ethereum Sepolia
+- **Cross-chain portability** via Chainlink CCIP to Arbitrum Sepolia
+
+— [Live Demo ↗](https://greenproof-platform.vercel.app/dashboard) | [Cheat Sheet ↗](docs/judges/JUDGE_CHEATSHEET.md)
 
 ---
 
 ## TL;DR (30 seconds)
 
-> GreenProof makes **Greenwashing mathematically impossible** by replacing trust-based ESG auditing with cryptographic proof. Three oracles (Physical, Legal, Ethical) reach a **2/3 sovereign consensus**, a **Groth16 ZK-circuit** generates an anonymous compliance certificate, and a **Chainlink CCIP bridge** makes it portable across chains — all in a single automated workflow.
+GreenProof makes **greenwashing mathematically impossible**.
+
+Instead of trusting ESG reports, the protocol generates **cryptographic compliance proofs**:
+
+1. Three independent oracles (Physical, Legal, Ethical) reach a **2/3 consensus**
+2. A **Groth16 ZK-circuit** proves ESG compliance without revealing sensitive data
+3. A **certificate NFT** is minted on-chain as a verifiable credential
+4. The asset moves across chains using **Chainlink CCIP**
 
 ---
 
-## 2-Minute Judge Experience
+## Why This Matters
 
-| Step | Action | Link |
+The global green bond market exceeds **$2.1 trillion**, yet ESG compliance is still based on trust. Asset managers cannot act on data they cannot verify.
+
+GreenProof transforms ESG verification into **cryptographic proof**, enabling capital to flow toward truly compliant assets — not just compliant-looking ones.
+
+---
+
+## What Judges Should Verify
+
+Validate the entire protocol in under 2 minutes:
+
+| Step | Action | Evidence |
 |:---:|:---|:---|
-| 1 | Open the **Live Dashboard** | [greenproof-platform.vercel.app/dashboard](https://greenproof-platform.vercel.app/dashboard) |
+| 1 | Open **Live Dashboard** | [greenproof-platform.vercel.app/dashboard](https://greenproof-platform.vercel.app/dashboard) |
 | 2 | Click **"Execute Sovereign Demo"** | Triggers the CRE-orchestrated 2/3 Quorum |
-| 3 | **Verify the Proof** with the generated Certificate ID | [/verify](https://greenproof-platform.vercel.app/verify) |
-| 4 | Confirm **On-Chain Truth** on Etherscan | [Sepolia TX →](https://sepolia.etherscan.io/tx/0xe0d518536a83afe148ad1846502b2c9dcaaa3982587b8da480666ed00ef32e4c) |
+| 3 | Observe the **Trinity consensus event** in the terminal | Live log stream on dashboard |
+| 4 | Verify the **ZK certificate** at `/verify` | [/verify ↗](https://greenproof-platform.vercel.app/verify) |
+| 5 | Confirm **on-chain truth** on Sepolia Explorer | [NFT Contract ↗](https://sepolia.etherscan.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54) |
 
 ---
 
-## The Problem: $2.1T Locked by Trust
+## Chainlink Stack Usage
 
-The global Green Bond market is paralyzed by **Greenwashing**. ESG auditing is slow, manual, and corruption-prone. Asset managers cannot act on data they cannot verify. The result: capital does not flow to where it is needed most.
+GreenProof integrates multiple Chainlink technologies as core infrastructure:
 
-**GreenProof replaces trust with proof.**
+| Technology | Role in Protocol |
+|:---|:---|
+| **Chainlink CRE** | Orchestrates the full Trinity Oracle consensus pipeline |
+| **Chainlink Functions** | Fetches and aggregates off-chain ESG signals |
+| **Chainlink CCIP** | Cross-chain certificate portability (Sepolia → Arbitrum) |
+| **Chainlink Data Feeds** | Verifiable real-world data ingestion for GP-Physical |
 
 ---
 
 ## The Solution: Trinity of Proof
 
-A modular, cryptographic consensus engine with three nuclei, unified by **Chainlink CRE**:
-
-```
-Real World Signals
-      ↓
-Trinity Consensus (GP-Physical/Juridical/Ethical)
-      ↓
-Cryptographic Proof (ZK-SNARK Groth16)
-      ↓
-On-Chain Certificate (NFT-Cert)
-      ↓
-Tokenized Asset (RWA Integration)
-      ↓
-Cross-Chain Liquidity (Chainlink CCIP)
-```
+A modular, cryptographic consensus engine with three independent nuclei:
 
 | Nucleus | Technology | Guarantees |
 |:---|:---|:---|
@@ -83,25 +100,38 @@ Cross-Chain Liquidity (Chainlink CCIP)
 
 ---
 
-## Why We Win
+## Why GreenProof Wins
 
-### 🔐 ZK-Privacy (The 10.0 Differentiator)
+### 🔐 Privacy-Preserving ESG (ZK-Proofs)
 We implement a **Groth16 circuit** (`circom/ESGScore.circom`) that cryptographically proves `score ≥ 80%` **without exposing any industrial telemetry**. This resolves the core privacy paradox of institutional ESG adoption.
 
-### ⚡ CRE Orchestration (The Automation Engine)
+### ⚡ Autonomous Compliance Engine (CRE)
 The `cre/greenproof-orchestrator.ts` uses **Chainlink Runtime Environment** to execute the full compliance lifecycle — oracle aggregation, ZK proof trigger, and on-chain minting — autonomously and in a verifiable sequence.
 
-### CCIP Interoperability (The Agnostic Liquidity Layer)
-GreenProof is architecturally **Chain-Agnostic**. Once the Triple Oracle Consensus and ZK-Proof are validated off-chain, the issuer chooses the network with the highest liquidity. Utilizing **Chainlink CCIP**, we enable native issuance and synchronization of ESG credentials across:
-- **Ethereum Sepolia** (Institutional Settlement)
-- **Arbitrum Sepolia** (High-Performance Layer)
-- **Avalanche Fuji Testnet** (RWA Subnet Liquidity)
+### 🌉 Cross-Chain RWA Credentials (CCIP)
+GreenProof is architecturally **chain-agnostic**. Once the Triple Oracle Consensus and ZK-Proof are validated, the issuer chooses their settlement network. CCIP enables native issuance across:
+- **Ethereum Sepolia** — Institutional settlement layer
+- **Arbitrum Sepolia** — High-performance execution layer
+- **Avalanche Fuji** — RWA subnet (staged, 25 LINK pre-funded)
 
-### 🦅 GP-Architect + OpenCLAW (The Sovereign Brain)
-The protocol is navigated by **GP-Architect**, a specialized AI agent built on the **OpenCLAW** framework. This is a key architectural innovation: it allows for **Autonomous Protocol Orchestration** without reliance on centralized AI clouds. GP-Architect executes the Trust Handshake, validates the Trinity quorum, and triggers ZK proofs locally — ensuring that data sovereignty and operational logic remain under the user's physical control.
+### � Sovereign AI Orchestration (GP-Architect)
+The protocol is navigated by **GP-Architect**, a specialized AI agent operating on the **OpenCLAW** framework. This enables **Autonomous Protocol Orchestration** without reliance on centralized AI clouds — data sovereignty remains under the operator's physical control.
 
 ### 🏛️ Institutional Maturity
-150+ commits over 28 days. Full CI/CD. Playwright E2E tests. Vercel production. RBAC on all contracts. This is not a POC — it is a **deployable institutional framework**.
+150+ commits · Full CI/CD · Playwright E2E · Vercel production · RBAC + Pausable + ReentrancyGuard. This is not a POC — it is a **deployable institutional framework**.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|:---|:---|
+| **Oracles** | Chainlink CRE & Functions |
+| **Privacy** | Groth16 ZK-SNARKs (Circom + SnarkJS) |
+| **Transport** | Chainlink CCIP |
+| **Contracts** | Solidity + OpenZeppelin (RBAC, Pausable, ReentrancyGuard) |
+| **Frontend** | Next.js 14, Framer Motion, Three.js |
+| **Testing** | Vitest + Playwright |
 
 ---
 
@@ -118,14 +148,6 @@ greenproof-platform/
 └── 📚 docs/             ← Onboarding Hub (judges / developers / institutional)
 ```
 
-**Full Stack:**
-- **Orchestration**: Chainlink CRE & Functions
-- **Privacy**: Circom, Snarkjs (Groth16)
-- **Transport**: Chainlink CCIP
-- **Security**: OpenZeppelin RBAC
-- **Frontend**: Next.js 14, Framer Motion, Three.js
-- **Quality**: Vitest, Playwright, ESLint
-
 ---
 
 ## Protocol Lifecycle
@@ -138,21 +160,9 @@ graph TD
     B -->|2 of 3 Validated| E[🔐 ZK-SNARK Groth16]
     B -->|Quorum Failed| F[❌ Greenwashing Blocked]
     E -->|Proof Valid| G[🏛️ NFT Minted - Sepolia]
-    G --> H[🌉 CCIP Bridge — Avalanche]
+    G --> H[🌉 CCIP Bridge — Arbitrum]
     H --> I[✅ Sovereign ESG Asset]
 ```
-
----
-
-## Unit Economics
-
-| Scenario | Monthly Cost | Best For |
-|:---|:---|:---|
-| **Local Sovereign** (Ollama) | **$0** | Privacy-first operators |
-| **Cloud Free-Tier** (Kimi K2.5) | **$0** | Demo & hackathon |
-| **Institutional Scale** | **< $10** | Enterprise monitoring |
-
-> [Full Operational Efficiency Report →](docs/institutional/OPERATIONAL_EFFICIENCY.md)
 
 ---
 
@@ -160,22 +170,22 @@ graph TD
 
 | Claim | Evidence |
 |:---|:---|
-| ZK-SNARKs Working | `circom/ESGScore.circom` + `scripts/test-zk.ps1` |
-| Live Multi-Chain | Sepolia & Arbitrum [Verified] |
-| CCIP Bridge Active | `0x0220...C656` [Arbiscan](https://sepolia.arbiscan.io/address/0x0220496F006f8aC2f4628A0752bB25a013eDC656) |
-| CI/CD Passing | [GitHub Actions Badge](https://github.com/symbeon-labs/greenproof-platform/actions) |
-| RBAC Hardened | OpenZeppelin AccessControl in all contracts |
+| ZK-SNARKs Working | `circom/ESGScore.circom` + `npm run test:zk` |
+| Live Multi-Chain | Sepolia & Arbitrum Sepolia [Verified] |
+| CCIP Bridge Active | [`0x0220...C656`](https://sepolia.arbiscan.io/address/0x0220496F006f8aC2f4628A0752bB25a013eDC656) |
+| CI/CD Passing | [GitHub Actions ↗](https://github.com/symbeon-labs/greenproof-platform/actions) |
+| RBAC + Pausable | OpenZeppelin AccessControl & Pausable in all contracts |
 
 ---
 
 ## Smart Contract Deployments
 
-| Network | Contract Type | Explorer Link |
+| Network | Contract | Explorer |
 |:---|:---|:---|
-| **Ethereum Sepolia** | GreenProof (NFT) | [0x3fcf...6B54](https://sepolia.etherscan.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54) |
-| **Arbitrum Sepolia** | GreenProof (NFT) | [0x024B...361a](https://sepolia.arbiscan.io/address/0x024BD05B6bE89e64024174Ce8980fca2F36C361a) |
-| **Avalanche Fuji** | GreenProof (NFT) | [Staged (25 LINK Delivered)](https://testnet.snowtrace.io/address/0x863de15091DfE5C044Dc1bD54f85210B6Bb6DA76) |
-| **Chainlink CCIP** | Infrastructure | [CCIP Explorer](https://ccip.chain.link/) |
+| **Ethereum Sepolia** | GreenProofNFT | [0x3fcf...6B54](https://sepolia.etherscan.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54) |
+| **Arbitrum Sepolia** | GreenProofNFT | [0x024B...361a](https://sepolia.arbiscan.io/address/0x024BD05B6bE89e64024174Ce8980fca2F36C361a) |
+| **Avalanche Fuji** | Infrastructure (Staged) | [25 LINK pre-funded](https://testnet.snowtrace.io/address/0x863de15091DfE5C044Dc1bD54f85210B6Bb6DA76) |
+| **Chainlink CCIP** | Cross-chain relay | [CCIP Explorer](https://ccip.chain.link/) |
 
 ---
 
@@ -194,14 +204,15 @@ graph TD
 
 ## Security Roadmap
 
-GreenProof is architected for institutional-grade security. Phase 1 (current) implements RBAC, Pausable emergency stops, and ReentrancyGuard. The following are in active development for the production release:
+Phase 1 (current) implements RBAC, Pausable emergency stops, and ReentrancyGuard across all contracts. The following are in active development for the production release:
 
 | Milestone | Status |
 |:---|:---:|
+| CCIP fee estimation module | ✅ Implemented |
+| Pausable + ReentrancyGuard | ✅ Implemented |
 | Slither static analysis | 🔜 Phase 2 |
 | Mythril symbolic execution | 🔜 Phase 2 |
 | Foundry fuzz test suite | 🔜 Phase 2 |
-| CCIP fee estimation module | ✅ Added |
 | Production BN254 Groth16 verifier | 🔜 Phase 2 |
 | Formal verification (Certora) | 🔜 Phase 3 |
 | External security audit | 🔜 Phase 3 |
