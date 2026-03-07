@@ -140,8 +140,8 @@ graph TD
 | Claim | Evidence |
 |:---|:---|
 | ZK-SNARKs Working | `circom/ESGScore.circom` + `scripts/test-zk.ps1` |
-| Live On-Chain | [Sepolia NFT #GP-4](https://sepolia.etherscan.io/tx/0xe0d518536a83afe148ad1846502b2c9dcaaa3982587b8da480666ed00ef32e4c) |
-| CCIP Bridge Active | `contracts/CCIPBridge.sol` (Verified) |
+| Live Multi-Chain | Sepolia & Arbitrum [Verified] |
+| CCIP Bridge Active | `0x0220...C656` [Arbiscan](https://sepolia.arbiscan.io/address/0x0220496F006f8aC2f4628A0752bB25a013eDC656) |
 | CI/CD Passing | [GitHub Actions Badge](https://github.com/symbeon-labs/greenproof-platform/actions) |
 | RBAC Hardened | OpenZeppelin AccessControl in all contracts |
 
@@ -151,9 +151,9 @@ graph TD
 
 | Network | Contract Type | Explorer Link |
 |:---|:---|:---|
-| **Ethereum Sepolia** | GreenProof Core | [0x3fcf...6B54](https://sepolia.etherscan.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54) |
-| **Arbitrum Sepolia** | GreenProof Core | [0x3fcf...6B54](https://sepolia-explorer.arbitrum.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54) |
-| **Avalanche Fuji** | GreenProof Core | [0x3fcf...6B54](https://testnet.snowtrace.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54) |
+| **Ethereum Sepolia** | GreenProof (NFT) | [0x3fcf...6B54](https://sepolia.etherscan.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54) |
+| **Arbitrum Sepolia** | GreenProof (NFT) | [0x024B...361a](https://sepolia.arbiscan.io/address/0x024BD05B6bE89e64024174Ce8980fca2F36C361a) |
+| **Avalanche Fuji** | GreenProof (NFT) | [Staged (25 LINK Delivered)](https://testnet.snowtrace.io/address/0x863de15091DfE5C044Dc1bD54f85210B6Bb6DA76) |
 | **Chainlink CCIP** | Infrastructure | [CCIP Explorer](https://ccip.chain.link/) |
 
 ---

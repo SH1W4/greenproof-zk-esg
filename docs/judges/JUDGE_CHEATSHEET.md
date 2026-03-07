@@ -27,8 +27,8 @@ Follow these steps for an instant evaluation:
 4. Verify the **Success State**: NFT Minted + CCIP Synchronization confirmed.
 
 ## Verification Paths
-- **Ethereum Sepolia**: [0xe0d5...2e4c](https://sepolia.etherscan.io/tx/0xe0d518536a83afe148ad1846502b2c9dcaaa3982587b8da480666ed00ef32e4c)
-- **Arbitrum Sepolia**: [Verified Contract](https://sepolia-explorer.arbitrum.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54)
+- **Ethereum Sepolia**: [Verified Contract](https://sepolia.etherscan.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54)
+- **Arbitrum Sepolia**: [Verified NFT](https://sepolia.arbiscan.io/address/0x024BD05B6bE89e64024174Ce8980fca2F36C361a) | [Verifier](https://sepolia.arbiscan.io/address/0xB0a0250331e479dBb3bd9e4447040d292215642e)
 - **Avalanche Fuji**: [Verified Contract](https://testnet.snowtrace.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54)
 - **CCIP Explorer**: [Real-time Status](https://ccip.chain.link/)
 - **ZK Proof**: Generated proofs are logged in the browser console during the demo.
