@@ -17,6 +17,7 @@ import Navbar from "@/components/Navbar";
 import ProtocolDiagram from "@/components/ProtocolDiagram";
 import CircuitPreview from "@/components/CircuitPreview";
 import ArchitectLayer from "@/components/ArchitectLayer";
+import ConsensusMonitor from "@/components/ConsensusMonitor";
 
 export default function ArchitecturePage() {
   return (
@@ -66,7 +67,7 @@ export default function ArchitecturePage() {
               { 
                 step: "01",
                 title: "Reality Ingestion", 
-                desc: "GP-Physical nodes ingest raw telematic pulses from encrypted IoT gateways and satellite feeds." 
+                desc: "GP-Physical nodes ingest raw telematic pulses from IoT gateways, while Juridical and Ethical nuclei stream compliance metadata via specialized lib/engines adapters." 
               },
               { 
                 step: "02",
@@ -127,6 +128,22 @@ export default function ArchitecturePage() {
             </div>
           </div>
           <CircuitPreview />
+        </section>
+
+        {/* Real-time Orchestration HUD */}
+        <section className="space-y-12">
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-green-500/10 border border-green-500/20 rounded-2xl text-green-400">
+              <Zap className="w-6 h-6" />
+            </div>
+            <h2 className="text-2xl font-black uppercase tracking-widest">Real-time Ingestion Mastery</h2>
+          </div>
+          <div className="space-y-6">
+            <p className="text-green-100/40 max-w-2xl leading-relaxed font-medium">
+              This HUD visualizes the live data flow from objective reality through the GP-Architect HAAS Orchestrator, culminating in decentralized ZK-Settlement.
+            </p>
+            <ConsensusMonitor />
+          </div>
         </section>
 
         {/* The Trinity Nuclei Deep Dive */}
