@@ -1,133 +1,177 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { 
   ShieldCheck, 
-  ArrowLeft, 
-  Cpu, 
-  Network, 
-  Database, 
-  Zap, 
-  Scale, 
-  BrainCircuit, 
+  Workflow,
   Lock,
-  Workflow
+  Zap,
+  Scale,
+  BrainCircuit,
+  Cpu,
+  Network
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
+import ProtocolDiagram from "@/components/ProtocolDiagram";
+import CircuitPreview from "@/components/CircuitPreview";
 
 export default function ArchitecturePage() {
   return (
     <main className="min-h-screen bg-[#020c06] text-[#f0fdf4] selection:bg-green-500/30">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto px-8 pt-32 pb-24 space-y-24">
+      <div className="max-w-7xl mx-auto px-8 pt-32 pb-24 space-y-32">
         {/* Header */}
-        <section className="space-y-6">
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-green-500/5 border border-green-500/10 text-green-500/60 text-[10px] font-black uppercase tracking-[0.3em]">
-            Technical Documentation
+        <section className="space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-green-500/5 border border-green-500/10 text-green-500/60 text-[10px] font-black uppercase tracking-[0.3em]"
+          >
+            Technical Documentation v3.1.0
+          </motion.div>
+          <div className="space-y-4">
+            <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none">
+              PROTOCOL <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-b from-green-400 to-emerald-700 underline decoration-green-500/20 underline-offset-8">ARCHITECTURE</span>
+            </h1>
+            <p className="text-xl text-green-100/40 max-w-2xl leading-relaxed font-medium">
+              Exploring the Hierarchical Autonomous Agent Swarm (HAAS) and the Trinity of Proof consensus mechanism.
+            </p>
           </div>
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none">
-            PROTOCOL <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-green-400 to-emerald-700 underline decoration-green-500/20 underline-offset-8">ARCHITECTURE</span>
-          </h1>
-          <p className="text-xl text-green-100/40 max-w-2xl leading-relaxed font-medium">
-            Exploring the Hierarchical Autonomous Agent Swarm (HAAS) and the Trinity of Proof consensus mechanism.
-          </p>
         </section>
 
-        {/* The Master Diagram */}
-        <section className="relative group">
-          <div className="absolute inset-0 bg-green-500/5 blur-[120px] rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
-          <div className="relative glass-card rounded-[3rem] p-8 md:p-12 border border-white/10 overflow-hidden shadow-2xl">
-            <div className="flex items-center gap-4 mb-8">
+        {/* The Master Diagram - Now Living SVG */}
+        <section className="relative group space-y-12">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
               <div className="p-3 bg-green-500/10 border border-green-500/20 rounded-2xl text-green-400">
                 <Workflow className="w-6 h-6" />
               </div>
-              <h2 className="text-2xl font-black uppercase tracking-widest">CRE Master Workflow</h2>
+              <h2 className="text-2xl font-black uppercase tracking-widest">Protocol Flow Engine</h2>
             </div>
-            <div className="relative aspect-[21/9] w-full rounded-2xl overflow-hidden border border-white/5 bg-black/40">
-              <Image 
-                src="/assets/technical/protocol_workflow_architecture.png" 
-                alt="HAAS Master Architecture" 
-                fill
-                className="object-contain p-8 opacity-90 group-hover:opacity-100 transition-opacity"
-              />
+            <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/5 rounded-xl">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+              <span className="text-[10px] font-mono text-white/40 uppercase font-bold tracking-widest">Live Consensus Simulation</span>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <div className="space-y-4">
-                <h3 className="text-lg font-black uppercase text-green-400 tracking-tighter">I. Ingestion Layer</h3>
+          </div>
+          
+          <ProtocolDiagram />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              { 
+                step: "01",
+                title: "Reality Ingestion", 
+                desc: "GP-Physical nodes ingest raw telematic pulses from encrypted IoT gateways and satellite feeds." 
+              },
+              { 
+                step: "02",
+                title: "Cognitive Audit", 
+                desc: "GP-Juridical and GP-Ethical nuclei perform dual-agent verification using vectorized rule engines." 
+              },
+              { 
+                step: "03",
+                title: "ZK-Settlement", 
+                desc: "Results are hashed into private signals and sent to the Groth16 circuit for irreversible on-chain proof." 
+              }
+            ].map((item, i) => (
+              <div key={i} className="space-y-4">
+                <div className="text-[10px] font-black text-green-500/40 font-mono tracking-widest">STAGE_{item.step}</div>
+                <h3 className="text-lg font-black uppercase text-green-100 tracking-tighter">{item.title}</h3>
                 <p className="text-sm text-green-100/30 leading-relaxed font-medium">
-                  Autonomous sensors and satellite telemetry (GP-Physical) stream raw integrity signals directly to the CRE backbone.
+                  {item.desc}
                 </p>
               </div>
-              <div className="space-y-4">
-                <h3 className="text-lg font-black uppercase text-green-400 tracking-tighter">II. Cognitive Swarm</h3>
-                <p className="text-sm text-green-100/30 leading-relaxed font-medium">
-                  Specialized nuclei (GP-Juridical & GP-Ethical) perform parallel audits, leveraging the Internalized Rust Rule Engines.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-lg font-black uppercase text-green-400 tracking-tighter">III. Settlement Layer</h3>
-                <p className="text-sm text-green-100/30 leading-relaxed font-medium">
-                  Consensus results are committed to Circom ZK circuits, triggering cross-chain NFT issuance via Sepolia-Fuji Bridge.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
-        {/* The Trinity Nuclei Deep Dive */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "GP-Physical",
-              subtitle: "Reality Perception",
-              icon: Zap,
-              desc: "Ingests irreversible data from IoT sensors, satellite imagery, and on-site telemetric gateways.",
-              tech: "Chainlink Functions"
-            },
-            {
-              title: "GP-Juridical",
-              subtitle: "Rule Enforcement",
-              icon: Scale,
-              desc: "Analyzes tax metadata, regulatory compliance, and legal frameworks via AI-NLP internal audits.",
-              tech: "Rust Rule Engine"
-            },
-            {
-              title: "GP-Ethical",
-              subtitle: "Impact Oracle",
-              icon: BrainCircuit,
-              desc: "Evaluates governance metrics, social impact alignment, and ethical consensus scores.",
-              tech: "Sovereign MAS"
-            }
-          ].map((core, i) => (
-            <motion.div 
-              key={i}
-              whileHover={{ y: -10 }}
-              className="glass p-8 rounded-[2rem] border border-white/5 space-y-6 relative group"
-            >
-              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                <core.icon className="w-24 h-24" />
+        {/* ZK Specification Section */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <div className="p-3 bg-white/5 border border-white/10 rounded-2xl w-fit">
+                <Lock className="w-6 h-6 text-green-400" />
               </div>
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl w-fit">
-                <core.icon className="w-6 h-6 text-green-400" />
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-2xl font-black tracking-tighter uppercase">{core.title}</h3>
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-green-500/60">{core.subtitle}</p>
-              </div>
-              <p className="text-sm text-green-100/30 leading-relaxed font-medium">
-                {core.desc}
+              <h2 className="text-4xl font-black tracking-tighter uppercase">ZK-Privacy Layer</h2>
+              <p className="text-lg text-green-100/40 leading-relaxed font-medium">
+                Our Circom-based circuits ensure that while compliance is publicly verifiable, the underlying sensitive corporate data remains encrypted and private.
               </p>
-              <div className="pt-4 flex items-center gap-2">
-                <Cpu className="w-3 h-3 text-green-400/40" />
-                <span className="text-[10px] font-mono text-green-400/40 uppercase font-bold">{core.tech}</span>
-              </div>
-            </motion.div>
-          ))}
+            </div>
+            <div className="space-y-6">
+              {[
+                { label: "Circuit Type", value: "Groth16 ZK-SNARK" },
+                { label: "Complexity", value: "Level 4 Integrity Check" },
+                { label: "Gas Efficiency", value: "Optimized O(1) Verification" }
+              ].map((spec, i) => (
+                <div key={i} className="flex items-center justify-between border-b border-white/5 pb-4">
+                  <span className="text-xs font-black uppercase tracking-widest text-white/30">{spec.label}</span>
+                  <span className="text-sm font-mono text-green-400 font-bold">{spec.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <CircuitPreview />
+        </section>
+
+        {/* The Trinity Nuclei Deep Dive */}
+        <section className="space-y-12">
+          <div className="text-center space-y-4">
+             <h2 className="text-3xl font-black uppercase tracking-widest">Consensus Nuclei</h2>
+             <p className="text-green-100/20 text-sm max-w-lg mx-auto uppercase tracking-widest font-bold">The Three Pillars of Objective Truth</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "GP-Physical",
+                subtitle: "Telemetric Audit",
+                icon: Zap,
+                desc: "Ingests irreversible data from IoT sensors and satellite imagery via secure Chainlink Functions.",
+                tech: "TELEMETRY_NUCLEUS",
+                color: "group-hover:text-amber-400"
+              },
+              {
+                title: "GP-Juridical",
+                subtitle: "Legislative Audit",
+                icon: Scale,
+                desc: "Analyzes regulatory compliance and tax metadata via specialized AI rule-engine nuclei.",
+                tech: "REGULATORY_NUCLEUS",
+                color: "group-hover:text-blue-400"
+              },
+              {
+                title: "GP-Ethical",
+                subtitle: "Governance Audit",
+                icon: BrainCircuit,
+                desc: "Evaluates ESG impact scores and institutional alignment via Sovereign MAS consensus.",
+                tech: "SOVEREIGN_NUCLEUS",
+                color: "group-hover:text-purple-400"
+              }
+            ].map((core, i) => (
+              <motion.div 
+                key={i}
+                whileHover={{ y: -10 }}
+                className="glass p-8 rounded-[2rem] border border-white/5 space-y-6 relative group bg-white/2"
+              >
+                <div className={`p-4 bg-white/5 border border-white/10 rounded-2xl w-fit transition-colors ${core.color}`}>
+                  <core.icon className="w-6 h-6" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-black tracking-tighter uppercase">{core.title}</h3>
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-green-500/60">{core.subtitle}</p>
+                </div>
+                <p className="text-sm text-green-100/30 leading-relaxed font-medium">
+                  {core.desc}
+                </p>
+                <div className="pt-4 flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                  <span className="text-[10px] font-mono text-green-400/40 uppercase font-bold">{core.tech}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </section>
 
         {/* CCIP & Interoperability Section */}
