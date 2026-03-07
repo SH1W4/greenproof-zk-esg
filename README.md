@@ -3,9 +3,9 @@
 <div align="center">
 
 # GREENPROOF
-### Decentralized Compliance Oracle for Real-World Assets
+### $2.1T Green Bonds Need Cryptographic Truth
 
-> **Greenwashing becomes mathematically impossible.**
+> **Mathematical Proof > Manual Audits. Greenwashing Ends Here.**
 
 **🏆 CHAINLINK CONVERGENCE 2026**  
 `DeFi & Tokenization` · `Risk & Compliance` · `CRE & AI`
@@ -153,6 +153,15 @@ The protocol is navigated by **GP-Architect**, a specialized AI agent operating 
 
 ### 🏛️ Institutional Maturity
 150+ commits · Full CI/CD · Playwright E2E · Vercel production · RBAC + Pausable + ReentrancyGuard. This is not a POC — it is a **deployable institutional framework**.
+
+### 📊 Competitive Advantage
+
+| Competitor | GreenProof Advantage |
+|:-----------|:--------------------|
+| **DREx 2023** | Transparency only → **Privacy + Verifiability** |
+| **Energy Web** | Energy certificates only → **Any RWA asset class** |
+| **Manual ESG Audit** | $80K / 60 days → **$500 / 45 seconds** |
+| **Single-Chain Protocols** | Siloed liquidity → **CCIP Sovereign Multi-Chain** |
 
 ---
 
