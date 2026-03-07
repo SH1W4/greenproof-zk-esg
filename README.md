@@ -40,6 +40,22 @@ Real-World Signals → Trinity Consensus → ZK Proof → On-Chain Certificate �
 
 ---
 
+## Protocol Overview
+
+GreenProof is a **decentralized compliance oracle protocol** for Real-World Assets.
+
+It replaces traditional ESG auditing with a cryptographic verification pipeline:
+
+```
+Real-World Signals
+  → Trinity Oracle Consensus  (Physical · Legal · Ethical)
+  → Zero-Knowledge Proof      (Groth16, privacy-preserving)
+  → On-Chain Certificate      (NFT, immutable & verifiable)
+  → Cross-Chain RWA Liquidity (Chainlink CCIP)
+```
+
+---
+
 ## TL;DR (30 seconds)
 
 GreenProof makes **greenwashing mathematically impossible**.
