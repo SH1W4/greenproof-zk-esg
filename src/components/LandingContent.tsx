@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { Typewriter, TerminalCommand } from "./Typewriter";
 import WorkflowDiagram from "./WorkflowDiagram";
+import Navbar from "./Navbar";
 
 export default function LandingContent() {
   const [mounted, setMounted] = useState(false);
@@ -67,26 +68,7 @@ export default function LandingContent() {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* SECTION 0: NAV */}
-      <nav className="fixed top-0 inset-x-0 z-[100] border-b border-white/5 px-8 py-5 flex items-center justify-between backdrop-blur-xl bg-[#020c06]/80">
-        <div className="flex items-center gap-3">
-          <div className="p-2 bg-green-500 rounded-lg shadow-[0_0_20px_rgba(34,197,94,0.2)]">
-            <ShieldCheck className="w-5 h-5 text-green-950" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-black text-lg tracking-tighter">GREENPROOF</span>
-            <span className="text-[9px] text-green-500/60 font-mono font-bold tracking-[0.2em] uppercase">Sovereign Compliance</span>
-          </div>
-        </div>
-        <div className="hidden md:flex items-center gap-8 text-[11px] font-black uppercase tracking-widest text-green-100/40">
-          <Link href="#tech" className="hover:text-green-400 transition-colors">Architecture</Link>
-          <Link href="#docs" className="hover:text-green-400 transition-colors">Verify</Link>
-          <Link href="#roadmap" className="hover:text-green-400 transition-colors">Roadmap</Link>
-          <Link href="/login" className="px-6 py-2.5 bg-green-500 text-green-950 rounded-xl hover:bg-green-400 transition-all font-black shadow-lg shadow-green-500/20">
-            Access Protocol
-          </Link>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* SECTION 1: HERO */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-8 text-center pt-20 overflow-hidden">

@@ -16,22 +16,12 @@ import {
   Workflow
 } from "lucide-react";
 
+import Navbar from "@/components/Navbar";
+
 export default function ArchitecturePage() {
   return (
     <main className="min-h-screen bg-[#020c06] text-[#f0fdf4] selection:bg-green-500/30">
-      {/* Navigation */}
-      <nav className="fixed top-0 inset-x-0 z-[100] border-b border-white/5 px-8 py-5 flex items-center justify-between backdrop-blur-xl bg-[#020c06]/80">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="p-2 bg-green-500 rounded-lg group-hover:scale-110 transition-transform">
-            <ShieldCheck className="w-5 h-5 text-green-950" />
-          </div>
-          <span className="font-black text-lg tracking-tighter">GREENPROOF</span>
-        </Link>
-        <Link href="/" className="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-green-100/40 hover:text-green-400 transition-colors">
-          <ArrowLeft className="w-4 h-4" />
-          Back to Protocol
-        </Link>
-      </nav>
+      <Navbar />
 
       <div className="max-w-7xl mx-auto px-8 pt-32 pb-24 space-y-24">
         {/* Header */}
