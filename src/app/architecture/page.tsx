@@ -16,6 +16,7 @@ import {
 import Navbar from "@/components/Navbar";
 import ProtocolDiagram from "@/components/ProtocolDiagram";
 import CircuitPreview from "@/components/CircuitPreview";
+import ArchitectLayer from "@/components/ArchitectLayer";
 
 export default function ArchitecturePage() {
   return (
@@ -30,7 +31,7 @@ export default function ArchitecturePage() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-green-500/5 border border-green-500/10 text-green-500/60 text-[10px] font-black uppercase tracking-[0.3em]"
           >
-            Technical Documentation v3.1.0
+            Technical Documentation v3.1.1
           </motion.div>
           <div className="space-y-4">
             <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none">
@@ -87,6 +88,17 @@ export default function ArchitecturePage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Agentic Intelligence Layer (GP-Architect) */}
+        <section className="space-y-12">
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-white/5 border border-white/10 rounded-2xl">
+              <BrainCircuit className="w-6 h-6 text-green-400" />
+            </div>
+            <h2 className="text-2xl font-black uppercase tracking-widest text-green-100">Agentic Intelligence Layer</h2>
+          </div>
+          <ArchitectLayer />
         </section>
 
         {/* ZK Specification Section */}
