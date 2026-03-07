@@ -218,6 +218,7 @@ graph TD
 | CCIP Bridge Active | [`0x0220...C656`](https://sepolia.arbiscan.io/address/0x0220496F006f8aC2f4628A0752bB25a013eDC656) |
 | CI/CD Passing | [GitHub Actions ↗](https://github.com/symbeon-labs/greenproof-platform/actions) |
 | RBAC + Pausable | OpenZeppelin AccessControl & Pausable in all contracts |
+| **Contract Test Suite** | [`npm run test:contracts`](tests/contracts/run-tests.mjs) — 16 tests, all green |
 
 ---
 
@@ -253,6 +254,7 @@ Phase 1 (current) implements RBAC, Pausable emergency stops, and ReentrancyGuard
 |:---|:---:|
 | CCIP fee estimation module | ✅ Implemented |
 | Pausable + ReentrancyGuard | ✅ Implemented |
+| Contract test suite (16 tests) | ✅ Implemented |
 | Slither static analysis | 🔜 Phase 2 |
 | Mythril symbolic execution | 🔜 Phase 2 |
 | Foundry fuzz test suite | 🔜 Phase 2 |
