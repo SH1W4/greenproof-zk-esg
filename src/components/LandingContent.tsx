@@ -120,30 +120,35 @@ export default function LandingContent() {
             </Link>
           </motion.div>
 
-          {/* 5-Step Flow Strip — GPT Suggestion #1 */}
+          {/* SECTION 1.5: PROFESSIONAL WORKFLOW STRIP */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex items-center justify-center gap-2 pt-10 flex-wrap"
+            className="w-full max-w-5xl mx-auto pt-16"
           >
-            {[
-              { label: "Real World Data", icon: "🛰️" },
-              { label: "Trinity Consensus", icon: "⚡" },
-              { label: "ZK Proof", icon: "🔐" },
-              { label: "On-chain Certificate", icon: "🏛️" },
-              { label: "Tokenized RWA", icon: "🌐" },
-            ].map((step, i, arr) => (
-              <div key={i} className="flex items-center gap-2">
-                <div className="flex flex-col items-center gap-1 px-3 py-2 rounded-xl bg-white/[0.03] border border-white/5 backdrop-blur-sm">
-                  <span className="text-base">{step.icon}</span>
-                  <span className="text-[9px] font-black font-mono text-green-500/50 uppercase tracking-widest whitespace-nowrap">{step.label}</span>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+              {[
+                { label: "Perception", sub: "Satellite & Sensors", icon: "📡", color: "from-blue-500/20" },
+                { label: "Consensus", sub: "Trinity Protocol", icon: "⚖️", color: "from-green-500/20" },
+                { label: "Privacy", sub: "Groth16 ZK-SNARK", icon: "🔐", color: "from-purple-500/20" },
+                { label: "Settlement", sub: "On-Chain Mint", icon: "🏛️", color: "from-emerald-500/20" },
+                { label: "Economy", sub: "Tokenized RWA", icon: "🌐", color: "from-cyan-500/20" },
+              ].map((step, i) => (
+                <div key={i} className="group relative">
+                  <div className={`h-full p-6 rounded-2xl bg-gradient-to-b ${step.color} to-transparent border border-white/5 backdrop-blur-sm transition-all hover:border-green-500/30 hover:bg-white/[0.05]`}>
+                    <div className="text-3xl mb-3">{step.icon}</div>
+                    <div className="text-[10px] font-black font-mono text-green-500 uppercase tracking-widest mb-1">{step.label}</div>
+                    <div className="text-[11px] text-white/30 font-medium leading-tight">{step.sub}</div>
+                  </div>
+                  {i < 4 && (
+                    <div className="hidden md:block absolute top-1/2 -right-2 -translate-y-1/2 z-20">
+                      <ArrowRight className="w-4 h-4 text-white/10" />
+                    </div>
+                  )}
                 </div>
-                {i < arr.length - 1 && (
-                  <span className="text-green-500/20 font-black">→</span>
-                )}
-              </div>
-            ))}
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -210,16 +215,68 @@ export default function LandingContent() {
         <div className="absolute inset-0 pointer-events-none">
           <motion.div 
             style={{ x: n1X, y: n1Y }}
-            className="absolute top-[30%] left-[20%] px-4 py-2 bg-black/40 border border-white/5 rounded-lg backdrop-blur-md"
+            className="absolute top-[30%] left-[20%] px-4 py-2 bg-black/40 border border-white/10 rounded-lg backdrop-blur-md shadow-2xl"
           >
-            <span className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.2em]">Data Pillar: Physical</span>
+            <div className="flex items-center gap-2 mb-1">
+              <Database className="w-3 h-3 text-blue-400" />
+              <span className="text-[10px] font-black font-mono text-blue-400 uppercase tracking-[0.2em]">Pillar 01</span>
+            </div>
+            <div className="text-xs font-bold text-white/80">Physical Reality</div>
+            <div className="text-[9px] text-white/30 font-mono mt-1">Satellite Telemetry + IoT</div>
           </motion.div>
+
           <motion.div 
             style={{ x: n2X, y: n2Y }}
-            className="absolute bottom-[30%] right-[20%] px-4 py-2 bg-black/40 border border-white/5 rounded-lg backdrop-blur-md"
+            className="absolute bottom-[30%] right-[20%] px-4 py-2 bg-black/40 border border-white/10 rounded-lg backdrop-blur-md shadow-2xl"
           >
-            <span className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.2em]">Data Pillar: Juridical</span>
+            <div className="flex items-center gap-2 mb-1">
+              <Scale className="w-3 h-3 text-green-400" />
+              <span className="text-[10px] font-black font-mono text-green-400 uppercase tracking-[0.2em]">Pillar 02</span>
+            </div>
+            <div className="text-xs font-bold text-white/80">Juridical Compliance</div>
+            <div className="text-[9px] text-white/30 font-mono mt-1">NLP Audit + Regulatory Logic</div>
           </motion.div>
+
+          <motion.div 
+            style={{ y: n3Y }}
+            className="absolute top-[20%] right-[30%] px-4 py-2 bg-black/40 border border-white/10 rounded-lg backdrop-blur-md shadow-2xl"
+          >
+            <div className="flex items-center gap-2 mb-1">
+              <BrainCircuit className="w-3 h-3 text-purple-400" />
+              <span className="text-[10px] font-black font-mono text-purple-400 uppercase tracking-[0.2em]">Pillar 03</span>
+            </div>
+            <div className="text-xs font-bold text-white/80">Ethical Integrity</div>
+            <div className="text-[9px] text-white/30 font-mono mt-1">Social Impact + ESG Metrics</div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* NEW SECTION: INSTITUTIONAL MISSION */}
+      <section className="relative z-10 py-32 px-8 bg-[#020c06]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+            <div className="space-y-6">
+              <div className="w-12 h-1 px-0 bg-green-500" />
+              <h3 className="text-3xl font-black uppercase tracking-tighter">The Sovereign Witness Framework</h3>
+              <p className="text-green-100/40 leading-relaxed">
+                GreenProof is not just an ESG dashboard. It is a **Sovereign Witness Framework** (SWF) designed to anchor physical truth onto the blockchain. By utilizing Agentic Orchestration and ZK-Privacy, we eliminate the need for centralized trust.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <div className="w-12 h-1 px-0 bg-green-500/30" />
+              <h3 className="text-3xl font-black uppercase tracking-tighter">Mathematical Immutability</h3>
+              <p className="text-green-100/40 leading-relaxed">
+                Every claim validated by GreenProof results in a **Groth16 Snark Proof**. This means that compliance is proven by mathematics, not by self-reported spreadsheets or corruptible human audits.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <div className="w-12 h-1 px-0 bg-green-500/30" />
+              <h3 className="text-3xl font-black uppercase tracking-tighter">Institutional Liquidity</h3>
+              <p className="text-green-100/40 leading-relaxed">
+                Our protocol enables RWA institutional portability. Via **Chainlink CCIP**, a verified green asset on Sepolia becomes a trusted financial instrument across the entire global interoperable landscape.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
