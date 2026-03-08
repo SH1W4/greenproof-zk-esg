@@ -214,19 +214,19 @@ export default function LandingContent() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { 
-                title: "Equação de Soberania", 
-                desc: "Lógica: Σ (Truth[P, J, E]) ≥ 0.66", 
-                detail: "Mínimo de 2/3 de consenso entre oráculos ontologicamente disjuntos para persistência de estado." 
+                title: "Sovereignty Equation", 
+                desc: "Logic: Σ (Truth[P, J, E]) ≥ 0.66", 
+                detail: "Minimum 2/3 consensus between ontologically disjoint oracles for state persistence." 
               },
               { 
-                title: "Membrana ZK", 
+                title: "ZK Membrane", 
                 desc: "Groth16 Snark Proving", 
-                detail: "Ponto-a-ponto privado. O dado bruto morre no agente; apenas o atestado matemático vive na chain." 
+                detail: "Private point-to-point. Raw data dies at the agent; only the mathematical attestation lives on-chain." 
               },
               { 
-                title: "Interoperabilidade CCIP", 
-                desc: "Liquidação Global de RWA", 
-                detail: "Ativos validados tornam-se líquidos em qualquer chain suportada pelo framework Chainlink." 
+                title: "CCIP Interoperability", 
+                desc: "Global RWA Settlement", 
+                detail: "Validated assets become liquid across any chain supported by the Chainlink framework." 
               }
             ].map((item, i) => (
               <div key={i} className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm group hover:border-green-500/20 transition-all">
@@ -245,23 +245,23 @@ export default function LandingContent() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Testemunho Soberano",
-                desc: "Ancoragem da verdade física usando agentes de percepção descentralizados.",
-                details: "O framework SWF utiliza telemetria satelital e sensores IoT validados via Chainlink Functions para garantir que o 'Mundo Real' não possa ser falsificado.",
+                title: "Sovereign Witness",
+                desc: "Anchor physical truth using decentralized perception agents.",
+                details: "The SWF framework utilizes satellite telemetry and IoT sensors validated via Chainlink Functions to ensure the 'Real World' cannot be forged.",
                 img: "/assets/vault/concepts/witness_perception.png",
                 color: "green"
               },
               {
-                title: "Prova Matemática",
-                desc: "Conformidade provada por código, não por reputação.",
-                details: "Substituímos auditorias humanas subjetivas por circuitos aritméticos ZK-SNARK. O certificado on-chain é o resultado de um cálculo matemático inquestionável.",
+                title: "Mathematical Proof",
+                desc: "Compliance proven by code, not by reputation.",
+                details: "Replace subjective human audits with ZK-SNARK arithmetic circuits. The on-chain certificate is the result of an unquestionable mathematical computation.",
                 img: "/assets/vault/concepts/mathematical_lock.png",
                 color: "blue"
               },
               {
-                title: "Liquidez Institucional",
-                desc: "Confiança interoperável para ativos globais de alto valor.",
-                details: "Via CCIP, transformamos conformidade local em liquidez global. O 'Proof-of-Reality' viaja pelas chains com a mesma segurança do protocolo Chainlink.",
+                title: "Institutional Liquidity",
+                desc: "Interoperable trust for global high-value assets.",
+                details: "Via CCIP, we transform local compliance into global liquidity. 'Proof-of-Reality' travels across chains with the same security as the Chainlink protocol.",
                 img: "/assets/vault/concepts/liquidity_bridge.png",
                 color: "emerald"
               }
@@ -355,35 +355,35 @@ export default function LandingContent() {
             </div>
             
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
-              Sincronia
+              Absolute
               <br />
-              Absoluta da
+              Reality
               <br />
-              <span className="text-green-500">Realidade.</span>
+              <span className="text-green-500">Sync.</span>
             </h2>
 
             <p className="text-xl md:text-2xl text-green-100/40 leading-relaxed font-medium">
-              O GreenProof transcende dashboards. Nossa arquitetura de **Consenso Trinitário** foi desenhada para setores que exigem prova de realidade inquestionável. Do ESG institucional à rastreabilidade de ativos soberanos high-value.
+              GreenProof transcends dashboards. Our **Trinity Consensus** architecture was designed for sectors demanding unquestionable proof of reality. From institutional ESG to high-value sovereign asset traceability.
             </p>
 
             <div className="flex flex-col md:flex-row gap-12 pt-8">
               <div className="space-y-2">
-                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Latência de Prova</div>
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Proof Latency</div>
                 <div className="text-3xl font-black font-mono">0.42s</div>
               </div>
               <div className="space-y-2">
-                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Integridade ZK</div>
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">ZK Integrity</div>
                 <div className="text-3xl font-black font-mono">100.00%</div>
               </div>
               <div className="space-y-2">
-                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Ponte Inter-Chain</div>
-                <div className="text-3xl font-black font-mono">ATIVA</div>
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Inter-Chain Bridge</div>
+                <div className="text-3xl font-black font-mono">ACTIVE</div>
               </div>
             </div>
 
             <div className="pt-10">
               <Link href="/architecture" className="group inline-flex items-center gap-4 bg-green-500 text-green-950 px-8 py-4 rounded-full text-sm font-black uppercase tracking-widest hover:bg-green-400 transition-all shadow-[0_0_40px_rgba(34,197,94,0.2)]">
-                Explore a Arquitetura <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                Explore Architecture <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
@@ -396,13 +396,13 @@ export default function LandingContent() {
           <TerminalCommand 
             commands={[
               "greenproof-cli vault sync --v3.1.10 --sovereign",
-              "[VAULT] Conexão ao Knowledge-Nexus estabelecida.",
-              "npx ts-node consensus/gp-proof-engine.ts --audit-mode juridica",
-              "[TH3M1S] Analisando conformidade regulatória... ✓ 100% OK",
-              "[ZK] Gerando Prova Snippet (Groth16 Snark) para RWA-001...",
-              "✓ Prova SNARK Verificada | Verificador: GP-SENTINEL",
-              "[CCIP] Enviando Atestado Soberano para Ethereum Mainnet...",
-              "✓ Transação Confirmada | Prova Imutável em Ledger Soberano."
+              "[VAULT] Connection to Knowledge-Nexus secured.",
+              "npx ts-node consensus/gp-proof-engine.ts --audit-mode juridical",
+              "[TH3M1S] Analyzing regulatory compliance... ✓ 100% OK",
+              "[ZK] Generating Snippet Proof (Groth16 Snark) for RWA-001...",
+              "✓ SNARK Proof Verified | Verifier: GP-SENTINEL",
+              "[CCIP] Pushing Sovereign Attestation to Ethereum Mainnet...",
+              "✓ Transaction Confirmed | Proof Immutable on Sovereign Ledger."
             ]}
           />
         </div>
