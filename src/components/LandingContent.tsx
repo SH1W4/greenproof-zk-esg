@@ -126,7 +126,7 @@ export default function LandingContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="w-full max-w-5xl mx-auto pt-16"
+            className="w-full max-w-5xl mx-auto pt-8"
           >
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
               {[
@@ -205,10 +205,10 @@ export default function LandingContent() {
       </section>
 
       {/* NEW SECTION: THE TRINITY CONSENSUS TECHNICALS */}
-      <section className="relative z-10 py-32 px-8 border-b border-white/5">
+      <section className="relative z-10 py-20 px-8 border-b border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-          <BadgeCheck className="w-12 h-12 text-green-500/20 mb-6" />
-          <h2 className="text-5xl font-black uppercase tracking-tighter mb-12">
+          <BadgeCheck className="w-10 h-10 text-green-500/20 mb-4" />
+          <h2 className="text-4xl font-black uppercase tracking-tighter mb-8">
             The <span className="text-green-500">Trinity</span> Consensus
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -240,7 +240,7 @@ export default function LandingContent() {
       </section>
 
       {/* INTERACTIVE MISSION CARDS */}
-      <section className="relative z-10 py-32 px-8 bg-[#020c06]">
+      <section className="relative z-10 py-20 px-8 bg-[#020c06]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -336,7 +336,7 @@ export default function LandingContent() {
       </section>
 
       {/* SECTION 5: INSTITUTIONAL ORCHESTRATION (Immersive) */}
-      <section className="relative z-10 py-48 border-t border-white/5 overflow-hidden">
+      <section className="relative z-10 py-24 border-t border-white/5 overflow-hidden">
         {/* Atmospheric Orbs Background */}
         <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 opacity-20 pointer-events-none blur-3xl scale-150">
           <Image 
@@ -371,10 +371,10 @@ export default function LandingContent() {
               GreenProof transcends dashboards. Orchestrated by the **GP-Architect**, our **Trinity Consensus** framework provides unquestionable proof of reality for institutional ESG and high-value sovereign asset traceability.
             </p>
 
-            <div className="flex flex-col md:flex-row gap-12 pt-8">
-              <div className="space-y-2">
+            <div className="flex flex-col md:flex-row gap-8 pt-4">
+              <div className="space-y-1">
                 <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Proof Latency</div>
-                <div className="text-3xl font-black font-mono">0.42s</div>
+                <div className="text-2xl font-black font-mono">0.42s</div>
               </div>
               <div className="space-y-2">
                 <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">ZK Integrity</div>
@@ -396,18 +396,19 @@ export default function LandingContent() {
       </section>
 
       {/* SECTION 6: THE TERMINAL */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
+      <section className="relative z-10 max-w-7xl mx-auto px-8 py-20 border-t border-white/5">
         <div className="max-w-3xl mx-auto">
           <TerminalCommand 
             commands={[
+              "greenproof-cli init --identity institutional --v3.1.10",
+              "[INFRA] Establishing Sovereign Node connection... Done.",
               "gp-architect --mode orchestrate --v3.1.10 --sovereign",
-              "[GP-ARCHITECT] Loading Sovereign DNA & Identity Soul... Done.",
+              "[GP-ARCHITECT] Loading Sovereign DNA & Identity Soul...",
               "npx ts-node consensus/gp-proof-engine.ts --target trinity",
-              "[GP-ARCHITECT] Orchestrating Truth Pillars (P, J, E)...",
-              "[TH3M1S] Juridical Audit Verified | [ZK] Snark Proof Generated.",
-              "✓ Consensus Σ ≥ 0.66 Achieved | Verifier: GP-SENTINEL",
-              "[CCIP] Dispatching Cross-Chain Attestation to Ethereum...",
-              "✓ Transaction finalized. Sovereign Reality Synchronized."
+              "[GP-ARCHITECT] Orchestrating Pillars: [Witness, Math, Liquidity]",
+              "✓ Consensus achieved Σ ≥ 0.66 (SNARK Proof Verified)",
+              "[CCIP] Finalizing Cross-Chain Attestation on Ethereum.",
+              "✓ Reality Synchronized. Sovereign Asset Vault Locked."
             ]}
           />
         </div>
