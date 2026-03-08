@@ -106,7 +106,7 @@ export default function LandingContent() {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl text-green-100/40 max-w-2xl mx-auto font-medium leading-relaxed"
           >
-            Sovereign validation of Physical, Juridical, and Ethical reality. A modular framework starting with ESG, built for global RWA orchestration.
+            Sovereign validation of Physical, Juridical, and Ethical reality. Orchestrated by GP-Architect, built for global RWA orchestration.
           </motion.p>
 
           <motion.div
