@@ -28,6 +28,7 @@ import Navbar from "./Navbar";
 
 export default function LandingContent() {
   const [mounted, setMounted] = useState(false);
+  const [selectedCard, setSelectedCard] = useState<number | null>(null);
   const containerRef = useRef<HTMLElement>(null);
   const parallaxRef = useRef<HTMLElement>(null);
 
@@ -265,9 +266,17 @@ export default function LandingContent() {
                 color: "emerald"
               }
             ].map((card, i) => (
-              <div key={i} className="group relative overflow-hidden rounded-[40px] border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-500 flex flex-col cursor-pointer">
+              <div 
+                key={i} 
+                onClick={() => setSelectedCard(selectedCard === i ? null : i)}
+                className={`group relative overflow-hidden rounded-[40px] border transition-all duration-500 flex flex-col cursor-pointer ${
+                  selectedCard === i ? 'border-green-500/40 bg-white/[0.05] ring-1 ring-green-500/20' : 'border-white/5 bg-white/[0.01] hover:bg-white/[0.03]'
+                }`}
+              >
                 {/* Interactive Image Container */}
-                <div className="relative h-64 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                <div className={`relative h-64 overflow-hidden transition-all duration-700 ${
+                  selectedCard === i ? 'grayscale-0 scale-105' : 'grayscale group-hover:grayscale-0'
+                }`}>
                   <Image 
                     src={card.img} 
                     alt={card.title} 
@@ -275,26 +284,49 @@ export default function LandingContent() {
                     className="object-cover transition-transform duration-700 group-hover:scale-110" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#020c06] to-transparent opacity-60" />
+                  
+                  {/* Info Badge */}
+                  <div className="absolute top-6 right-6 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-[9px] font-bold uppercase tracking-widest text-white/60">
+                    {selectedCard === i ? "Active Protocol" : "Click to Inspect"}
+                  </div>
                 </div>
                 
                 {/* Content */}
                 <div className="p-8 space-y-4 relative">
                   <div className={`w-8 h-1 bg-${card.color}-500 mb-4`} />
                   <h3 className="text-2xl font-black uppercase tracking-tighter">{card.title}</h3>
-                  <p className="text-green-100/40 text-sm leading-relaxed group-hover:hidden">{card.desc}</p>
                   
-                  {/* Detailed Info (Visible on Hover/Interaction) */}
-                  <motion.div 
-                    initial={{ opacity: 0, y: 10 }}
-                    whileHover={{ opacity: 1, y: 0 }}
-                    className="hidden group-hover:block text-xs text-green-500/80 leading-relaxed font-medium"
-                  >
-                    {card.details}
-                  </motion.div>
+                  <AnimatePresence mode="wait">
+                    {selectedCard === i ? (
+                      <motion.div
+                        key="details"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="text-sm text-green-400/90 leading-relaxed font-medium bg-green-500/5 p-4 rounded-2xl border border-green-500/10"
+                      >
+                        {card.details}
+                        <div className="mt-4 pt-4 border-t border-green-500/10 grid grid-cols-2 gap-4 text-[10px] uppercase font-black text-green-500/40">
+                          <div>Latency: 0.4s</div>
+                          <div>Integrity: 100%</div>
+                        </div>
+                      </motion.div>
+                    ) : (
+                      <motion.p
+                        key="desc"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="text-green-100/40 text-sm leading-relaxed"
+                      >
+                        {card.desc}
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
 
                   <div className="pt-4 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-green-500/40">
-                    <span>Explore Protocol</span>
-                    <ArrowRight className="w-3 h-3" />
+                    <span>{selectedCard === i ? "Close Protocol" : "Explore Protocol"}</span>
+                    <ArrowRight className={`w-3 h-3 transition-transform ${selectedCard === i ? 'rotate-90' : ''}`} />
                   </div>
                 </div>
               </div>
