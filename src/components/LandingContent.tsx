@@ -184,9 +184,9 @@ export default function LandingContent() {
               />
             ))}
 
-            {/* Core Shield (Abstract Icon instead of large image) */}
-            <div className="relative z-10 p-16 rounded-full bg-green-500/[0.01] border border-green-500/10 backdrop-blur-3xl shadow-[0_0_80px_rgba(34,197,94,0.05)]">
-              <ShieldCheck className="w-16 h-16 text-green-500/60" />
+            {/* Central Professional Workflow Diagram */}
+            <div className="relative z-10 w-full max-w-2xl transform scale-110">
+               <WorkflowDiagram />
             </div>
           </div>
         </motion.div>
@@ -335,12 +335,26 @@ export default function LandingContent() {
         </div>
       </section>
 
-      {/* SECTION 5: SYSTEM DIAGRAM (Refined) */}
+      {/* SECTION 5: INSTITUTIONAL ORCHESTRATION (with 3D Orbs) */}
       <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <div className="w-full">
-            <div className="relative p-1 rounded-[40px] bg-gradient-to-b from-green-500/10 to-transparent border border-white/10">
-               <WorkflowDiagram />
+            <div className="relative p-8 rounded-[40px] bg-gradient-to-b from-green-500/5 to-transparent border border-white/10 flex items-center justify-center">
+              <motion.div
+                animate={{ 
+                  scale: [1, 1.05, 1],
+                  filter: ["brightness(1) contrast(1.2)", "brightness(1.5) contrast(1.5)", "brightness(1) contrast(1.2)"]
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="relative w-[380px] h-[380px]"
+              >
+                <Image 
+                  src="/assets/vault/concepts/trinity_orbs_3d.png" 
+                  alt="Trinity of Proof" 
+                  fill
+                  className="object-contain drop-shadow-[0_0_40px_rgba(34,197,94,0.3)]"
+                />
+              </motion.div>
             </div>
           </div>
           <div className="space-y-8">
