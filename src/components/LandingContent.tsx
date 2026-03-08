@@ -214,7 +214,42 @@ export default function LandingContent() {
         </div>
       </section>
 
-      {/* SECTION 3: CONSENSUS CORE (Diagram) */}
+      {/* SECTION 3: THE TRINITY CONSENSUS TECHNICALS */}
+      <section className="relative z-10 py-20 px-8 border-b border-white/5">
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+          <BadgeCheck className="w-10 h-10 text-green-500/20 mb-4" />
+          <h2 className="text-4xl font-black uppercase tracking-tighter mb-8">
+            The <span className="text-green-500">Trinity</span> Consensus
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { 
+                title: "Sovereignty Equation", 
+                desc: "Logic: Σ (Truth[P, J, E]) ≥ 0.66", 
+                detail: "Minimum 2/3 consensus between ontologically disjoint oracles for state persistence." 
+              },
+              { 
+                title: "ZK Membrane", 
+                desc: "Groth16 Snark Proving", 
+                detail: "Private point-to-point. Raw data dies at the agent; only the mathematical attestation lives on-chain." 
+              },
+              { 
+                title: "CCIP Interoperability", 
+                desc: "Global RWA Settlement", 
+                detail: "Validated assets become liquid across any chain supported by the Chainlink framework." 
+              }
+            ].map((item, i) => (
+              <div key={i} className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm group hover:border-green-500/20 transition-all">
+                <div className="text-green-500 font-mono text-[10px] font-black uppercase tracking-[0.3em] mb-4">{item.title}</div>
+                <div className="text-xl font-bold mb-4">{item.desc}</div>
+                <div className="text-sm text-white/30 leading-relaxed">{item.detail}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4: CONSENSUS CORE (Diagram) */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden border-b border-white/5 bg-[#020c06]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#17cf540a_0%,_transparent_70%)]" />
         
@@ -256,41 +291,6 @@ export default function LandingContent() {
              <span className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.3em] group-hover:text-green-400 transition-colors">Juridical Validation</span>
              <div className="w-1 h-1 bg-green-500 rounded-full shadow-[0_0_10px_#17cf54]" />
           </motion.div>
-        </div>
-      </section>
-
-      {/* NEW SECTION: THE TRINITY CONSENSUS TECHNICALS */}
-      <section className="relative z-10 py-20 px-8 border-b border-white/5">
-        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-          <BadgeCheck className="w-10 h-10 text-green-500/20 mb-4" />
-          <h2 className="text-4xl font-black uppercase tracking-tighter mb-8">
-            The <span className="text-green-500">Trinity</span> Consensus
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { 
-                title: "Sovereignty Equation", 
-                desc: "Logic: Σ (Truth[P, J, E]) ≥ 0.66", 
-                detail: "Minimum 2/3 consensus between ontologically disjoint oracles for state persistence." 
-              },
-              { 
-                title: "ZK Membrane", 
-                desc: "Groth16 Snark Proving", 
-                detail: "Private point-to-point. Raw data dies at the agent; only the mathematical attestation lives on-chain." 
-              },
-              { 
-                title: "CCIP Interoperability", 
-                desc: "Global RWA Settlement", 
-                detail: "Validated assets become liquid across any chain supported by the Chainlink framework." 
-              }
-            ].map((item, i) => (
-              <div key={i} className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm group hover:border-green-500/20 transition-all">
-                <div className="text-green-500 font-mono text-[10px] font-black uppercase tracking-[0.3em] mb-4">{item.title}</div>
-                <div className="text-xl font-bold mb-4">{item.desc}</div>
-                <div className="text-sm text-white/30 leading-relaxed">{item.detail}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
