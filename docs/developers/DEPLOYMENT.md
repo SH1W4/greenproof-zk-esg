@@ -24,8 +24,8 @@ Before deploying, ensure you have:
 ### Step 1: Clone and Install
 
 ```bash
-git clone https://github.com/SH1W4/greenproof-zk-esg
-cd greenproof-zk-esg
+git clone https://github.com/symbeon-labs/greenproof-platform
+cd greenproof-platform
 npm install
 ```
 
@@ -229,5 +229,5 @@ All deployment information is saved to `deployments/sepolia-{timestamp}.json`:
 **🌿 GreenProof Protocol is now live!**
 
 View your deployment:
-- **Dashboard:** https://greenproof-zk-esg.vercel.app
+- **Dashboard:** https://greenproof.vercel.app
 - **Etherscan:** https://sepolia.etherscan.io/address/{YOUR_CONTRACT_ADDRESS}

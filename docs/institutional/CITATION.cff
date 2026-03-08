@@ -7,7 +7,7 @@ authors:
 title: "GreenProof Protocol: Sovereign Threshold Attestation for Institutional RWAs"
 version: 1.0.0
 date-released: 2026-02-15
-url: "https://github.com/th3m1s-core/greenproof-zk-esg"
+url: "https://github.com/symbeon-labs/greenproof-platform"
 keywords:
   - "Chainlink CRE"
   - "Zero-Knowledge Proofs"
