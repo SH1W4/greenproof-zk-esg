@@ -154,20 +154,77 @@ export default function LandingContent() {
         </div>
       </section>
 
-      {/* SECTION 2: SOPHISTICATED CONSENSUS CORE (Refined) */}
-      <section ref={parallaxRef} className="relative h-screen flex items-center justify-center overflow-hidden border-y border-white/5 bg-[#020c06]">
-        {/* Background Atmosphere */}
+      {/* SECTION 2: INSTITUTIONAL ORCHESTRATION (Immersive) */}
+      <section className="relative z-10 py-24 border-b border-white/5 overflow-hidden">
+        {/* Atmospheric Orbs Background */}
+        <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 opacity-20 pointer-events-none blur-3xl scale-150">
+          <Image 
+            src="/assets/vault/concepts/orbs_3d.webp" 
+            alt="Institutional Logic" 
+            width={1200}
+            height={1200}
+            className="animate-pulse"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 relative z-20">
+          <div className="max-w-3xl space-y-10">
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-[10px] font-bold uppercase tracking-widest text-green-400">
+                <ShieldCheck className="w-3 h-3" /> Institutional Authority
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] font-bold uppercase tracking-widest text-blue-400">
+                <BrainCircuit className="w-3 h-3" /> Autonomous Orchestration Active
+              </div>
+            </div>
+            
+            <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
+              Absolute
+              <br />
+              Reality
+              <br />
+              <span className="text-green-500">Sync.</span>
+            </h2>
+
+            <p className="text-xl md:text-2xl text-green-100/40 leading-relaxed font-medium">
+              GreenProof transcends dashboards. Orchestrated by the **GP-Architect**, our **Trinity Consensus** framework provides unquestionable proof of reality for institutional ESG and high-value sovereign asset traceability.
+            </p>
+
+            <div className="flex flex-col md:flex-row gap-8 pt-4">
+              <div className="space-y-1">
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Proof Latency</div>
+                <div className="text-2xl font-black font-mono">0.42s</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">ZK Integrity</div>
+                <div className="text-3xl font-black font-mono">100.00%</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Inter-Chain Bridge</div>
+                <div className="text-3xl font-black font-mono">ACTIVE</div>
+              </div>
+            </div>
+
+            <div className="pt-10">
+              <Link href="/architecture" className="group inline-flex items-center gap-4 bg-green-500 text-green-950 px-8 py-4 rounded-full text-sm font-black uppercase tracking-widest hover:bg-green-400 transition-all shadow-[0_0_40px_rgba(34,197,94,0.2)]">
+                Explore Architecture <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3: CONSENSUS CORE (Diagram) */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden border-b border-white/5 bg-[#020c06]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#17cf540a_0%,_transparent_70%)]" />
         
         <motion.div 
           style={{ scale: shieldScale, opacity: shieldOpacity }}
           className="relative w-full max-w-4xl aspect-video flex items-center justify-center"
         >
-          {/* Central Atmospheric Glow */}
           <div className="absolute inset-0 bg-green-500/5 blur-[160px] rounded-full scale-90 animate-pulse" />
           
           <div className="relative w-full h-full flex items-center justify-center">
-            {/* Pulsing Geometry Rings */}
             {[300, 450, 650].map((size, i) => (
               <motion.div 
                 key={i}
@@ -184,14 +241,12 @@ export default function LandingContent() {
               />
             ))}
 
-            {/* Central Professional Workflow Diagram */}
             <div className="relative z-10 w-full max-w-2xl transform scale-110">
                <WorkflowDiagram />
             </div>
           </div>
         </motion.div>
 
-        {/* Minimal Floating Labels */}
         <div className="absolute inset-0 pointer-events-none">
           <motion.div style={{ x: n1X, y: n1Y }} className="absolute top-[25%] left-[25%] flex items-center gap-2 group">
              <div className="w-1 h-1 bg-green-500 rounded-full shadow-[0_0_10px_#17cf54]" />
@@ -334,67 +389,6 @@ export default function LandingContent() {
           </div>
         </div>
       </section>
-
-      {/* SECTION 5: INSTITUTIONAL ORCHESTRATION (Immersive) */}
-      <section className="relative z-10 py-24 border-t border-white/5 overflow-hidden">
-        {/* Atmospheric Orbs Background */}
-        <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 opacity-20 pointer-events-none blur-3xl scale-150">
-          <Image 
-            src="/assets/vault/concepts/trinity_orbs_3d.png" 
-            alt="Atmospheric Orbs" 
-            width={800}
-            height={800}
-            className="object-contain"
-          />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-8 relative z-20">
-          <div className="max-w-3xl space-y-10">
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-[10px] font-bold uppercase tracking-widest text-green-400">
-                <ShieldCheck className="w-3 h-3" /> Institutional Authority
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] font-bold uppercase tracking-widest text-blue-400">
-                <BrainCircuit className="w-3 h-3" /> Autonomous Orchestration Active
-              </div>
-            </div>
-            
-            <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
-              Absolute
-              <br />
-              Reality
-              <br />
-              <span className="text-green-500">Sync.</span>
-            </h2>
-
-            <p className="text-xl md:text-2xl text-green-100/40 leading-relaxed font-medium">
-              GreenProof transcends dashboards. Orchestrated by the **GP-Architect**, our **Trinity Consensus** framework provides unquestionable proof of reality for institutional ESG and high-value sovereign asset traceability.
-            </p>
-
-            <div className="flex flex-col md:flex-row gap-8 pt-4">
-              <div className="space-y-1">
-                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Proof Latency</div>
-                <div className="text-2xl font-black font-mono">0.42s</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">ZK Integrity</div>
-                <div className="text-3xl font-black font-mono">100.00%</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Inter-Chain Bridge</div>
-                <div className="text-3xl font-black font-mono">ACTIVE</div>
-              </div>
-            </div>
-
-            <div className="pt-10">
-              <Link href="/architecture" className="group inline-flex items-center gap-4 bg-green-500 text-green-950 px-8 py-4 rounded-full text-sm font-black uppercase tracking-widest hover:bg-green-400 transition-all shadow-[0_0_40px_rgba(34,197,94,0.2)]">
-                Explore Architecture <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SECTION 6: THE TERMINAL */}
       <section className="relative z-10 max-w-7xl mx-auto px-8 py-20 border-t border-white/5">
         <div className="max-w-3xl mx-auto">
