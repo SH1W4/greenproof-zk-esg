@@ -173,11 +173,11 @@ export default function LandingContent() {
                 key={i}
                 animate={{ 
                   rotate: i % 2 === 0 ? 360 : -360,
-                  borderOpacity: [0.05, 0.15, 0.05]
+                  opacity: [0.3, 0.6, 0.3]
                 }}
                 transition={{ 
                   rotate: { duration: 40 + i * 20, repeat: Infinity, ease: "linear" },
-                  borderOpacity: { duration: 4, repeat: Infinity }
+                  opacity: { duration: 4, repeat: Infinity }
                 }}
                 style={{ width: size, height: size }}
                 className="absolute border border-green-500/10 rounded-full"
