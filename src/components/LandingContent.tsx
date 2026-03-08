@@ -335,46 +335,57 @@ export default function LandingContent() {
         </div>
       </section>
 
-      {/* SECTION 5: INSTITUTIONAL ORCHESTRATION (with 3D Orbs) */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div className="w-full">
-            <div className="relative p-8 rounded-[40px] bg-gradient-to-b from-green-500/5 to-transparent border border-white/10 flex items-center justify-center">
-              <motion.div
-                animate={{ 
-                  scale: [1, 1.05, 1],
-                  filter: ["brightness(1) contrast(1.2)", "brightness(1.5) contrast(1.5)", "brightness(1) contrast(1.2)"]
-                }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="relative w-[380px] h-[380px]"
-              >
-                <Image 
-                  src="/assets/vault/concepts/trinity_orbs_3d.png" 
-                  alt="Trinity of Proof" 
-                  fill
-                  className="object-contain drop-shadow-[0_0_40px_rgba(34,197,94,0.3)]"
-                />
-              </motion.div>
+      {/* SECTION 5: INSTITUTIONAL ORCHESTRATION (Immersive) */}
+      <section className="relative z-10 py-48 border-t border-white/5 overflow-hidden">
+        {/* Atmospheric Orbs Background */}
+        <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 opacity-20 pointer-events-none blur-3xl scale-150">
+          <Image 
+            src="/assets/vault/concepts/trinity_orbs_3d.png" 
+            alt="Atmospheric Orbs" 
+            width={800}
+            height={800}
+            className="object-contain"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 relative z-20">
+          <div className="max-w-3xl space-y-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-[10px] font-bold uppercase tracking-widest text-green-400">
+              <ShieldCheck className="w-3 h-3" /> Institutional Authority
             </div>
-          </div>
-          <div className="space-y-8">
-            <h2 className="text-4xl font-black tracking-tighter uppercase leading-[0.9]">
-              Orquestração
+            
+            <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
+              Sincronia
               <br />
-              <span className="text-green-500">Institucional</span>
+              Absoluta da
+              <br />
+              <span className="text-green-500">Realidade.</span>
             </h2>
-            <p className="text-lg text-green-100/40 leading-relaxed">
-              O GreenProof nasceu para resolver o greenwashing, mas nossa arquitetura de **Consenso Trinitário** foi desenhada para qualquer setor que exija prova de realidade inquestionável. Do ESG ao Supply Chain Industrial.
+
+            <p className="text-xl md:text-2xl text-green-100/40 leading-relaxed font-medium">
+              O GreenProof transcende dashboards. Nossa arquitetura de **Consenso Trinitário** foi desenhada para setores que exigem prova de realidade inquestionável. Do ESG institucional à rastreabilidade de ativos soberanos high-value.
             </p>
-            <div className="text-xl text-green-400 font-mono italic">
-              <Typewriter 
-                text='"SYNCING REALITY: Physical, Legal, and Ethical Consensus."' 
-                delay={60}
-              />
+
+            <div className="flex flex-col md:flex-row gap-12 pt-8">
+              <div className="space-y-2">
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Latência de Prova</div>
+                <div className="text-3xl font-black font-mono">0.42s</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Integridade ZK</div>
+                <div className="text-3xl font-black font-mono">100.00%</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Inter-Chain Bridge</div>
+                <div className="text-3xl font-black font-mono">ACTIVE</div>
+              </div>
             </div>
-            <Link href="/architecture" className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-green-500 hover:text-green-400 transition-colors">
-              Explore a Arquitetura <ArrowRight className="w-4 h-4" />
-            </Link>
+
+            <div className="pt-10">
+              <Link href="/architecture" className="group inline-flex items-center gap-4 bg-green-500 text-green-950 px-8 py-4 rounded-full text-sm font-black uppercase tracking-widest hover:bg-green-400 transition-all shadow-[0_0_40px_rgba(34,197,94,0.2)]">
+                Explore a Arquitetura <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -384,13 +395,14 @@ export default function LandingContent() {
         <div className="max-w-3xl mx-auto">
           <TerminalCommand 
             commands={[
-              "greenproof-cli init --sector universal --identity institutional",
-              "[INFRA] Establishing biocybernetic node connection... DONE",
-              "npx ts-node scripts/terminal-mint.ts --use-case esg-flagship",
-              "[ZK] Generating SNARK proof for Multi-Pillar Compliance > 85%...",
-              "✓ Proof Generated (Groth16) | Time: 0.42s",
-              "[CCIP] Dispatching cross-chain RWA validation to Avalanche Fuji...",
-              "✓ Protocol Consensus Achieved | NFT Minted: 0x3fcf...71b2"
+              "greenproof-cli vault sync --v3.1.10 --sovereign",
+              "[VAULT] Connection to Knowledge-Nexus secured.",
+              "npx ts-node consensus/gp-proof-engine.ts --audit-mode juridical",
+              "[TH3M1S] Analyzing regulatory compliance... ✓ 100% OK",
+              "[ZK] Generating Snippet Proof (Groth16 Snark) for RWA-001...",
+              "✓ SNARK Proof Verified | Verifier: GP-SENTINEL",
+              "[CCIP] Pushing Sovereign Attestation to Ethereum Mainnet...",
+              "✓ Transaction Confirmed | Proof Immutable on Sovereign Ledger."
             ]}
           />
         </div>
