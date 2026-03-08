@@ -94,12 +94,13 @@ export default function PortfolioOverview() {
             <button className="px-3 py-1 rounded-md bg-black text-slate-400 text-xs font-bold border border-[#1a2e21] opacity-50 cursor-not-allowed">1Y</button>
           </div>
         </div>
-        <div className="flex-1 flex flex-col items-center justify-center p-10 text-center">
-            <div className="text-[#17cf54]/20 mb-4">
+        <div className="flex-1 flex flex-col items-center justify-center p-10 text-center relative overflow-hidden">
+            <div className="scanner-line opacity-10" />
+            <div className="text-[#17cf54]/20 mb-4 animate-pulse">
               <BarChart3 size={64} />
             </div>
             <p className="text-slate-400 font-bold">No data points detected</p>
-            <p className="text-slate-600 text-xs mt-2 max-w-xs">Start a consensus operation to populate your institutional ESG performance chart.</p>
+            <p className="text-slate-600 text-xs mt-2 max-w-xs uppercase tracking-widest font-mono">Scanning Node for Institutional Consensus...</p>
         </div>
       </div>
 

@@ -62,7 +62,7 @@ export default function RoadmapPage() {
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-blue-400 to-emerald-700 underline decoration-blue-500/20 underline-offset-8">HORIZON</span>
           </h1>
           <p className="text-xl text-blue-100/40 max-w-2xl leading-relaxed font-medium">
-            Mapeando a trajetória do GreenProof de um validador ESG para a camada base da economia de integridade RWA.
+            Mapping out the GreenProof progression from ESG validator to the base layer of the RWA integrity economy.
           </p>
         </section>
 

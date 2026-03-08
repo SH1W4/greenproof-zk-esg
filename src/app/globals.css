@@ -4,12 +4,12 @@
 
 @layer base {
   :root {
-    --background: #0f172a; /* Deep Institutional Blue */
+    --background: #020c06; /* Deep Institutional Dark Green */
     --foreground: #f8fafc;
-    --accent: #00ff88; /* Sovereign Neon Green */
-    --accent-glow: rgba(0, 255, 136, 0.3);
-    --glass-bg: rgba(15, 23, 42, 0.6);
-    --glass-border: rgba(0, 255, 136, 0.2);
+    --accent: #17cf54; /* Sovereign Green */
+    --accent-glow: rgba(23, 207, 84, 0.3);
+    --glass-bg: rgba(2, 12, 6, 0.6);
+    --glass-border: rgba(23, 207, 84, 0.2);
   }
 }
 
@@ -30,14 +30,44 @@ body::before {
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
     linear-gradient(
       90deg,
-      rgba(255, 0, 0, 0.01),
-      rgba(0, 255, 0, 0.01),
-      rgba(0, 0, 255, 0.01)
+      rgba(23, 207, 84, 0.02),
+      rgba(23, 207, 84, 0.01),
+      rgba(23, 207, 84, 0.02)
     );
   background-size: 100% 4px, 3px 100%;
   pointer-events: none;
   z-index: 100;
-  opacity: 0.3;
+  opacity: 0.4;
+}
+
+/* Institutional Scanner Line */
+.scanner-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 15px var(--accent);
+  z-index: 50;
+  pointer-events: none;
+  animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+  from {
+    top: 0%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  to {
+    top: 100%;
+    opacity: 0;
+  }
 }
 
 /* Premium Three-Layer Glass */
@@ -49,15 +79,11 @@ body::before {
 }
 
 .glass-card {
-  background: linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.8),
-    rgba(2, 6, 23, 0.95)
-  );
+  background: linear-gradient(135deg, rgba(2, 12, 6, 0.8), rgba(0, 0, 0, 0.95));
   backdrop-filter: blur(24px);
-  border: 1px solid rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(23, 207, 84, 0.1);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
-    inset 0 0 40px rgba(0, 255, 136, 0.02);
+    inset 0 0 40px rgba(23, 207, 84, 0.02);
   position: relative;
   overflow: hidden;
 }

@@ -72,7 +72,8 @@ export default function LandingContent() {
       <Navbar />
 
       {/* SECTION 1: HERO */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-8 text-center pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-8 text-center pt-20 overflow-hidden border-b border-white/5">
+        <div className="scanner-line opacity-20" />
         {/* Background Sophistication Layer */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-green-500/10 blur-[120px] rounded-full" />
@@ -120,12 +121,11 @@ export default function LandingContent() {
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
-
         </div>
       </section>
 
       {/* SECTION 2: INSTITUTIONAL ORCHESTRATION (Immersive) */}
-      <section className="relative z-10 py-24 border-b border-white/5 overflow-hidden">
+      <section className="relative z-10 py-16 border-b border-white/5 overflow-hidden bg-[#020c06]">
         {/* Atmospheric Orbs Background */}
         <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 opacity-20 pointer-events-none blur-3xl scale-150">
           <Image 
@@ -180,114 +180,6 @@ export default function LandingContent() {
                 Explore Architecture <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 3: THE TRINITY CONSENSUS TECHNICALS */}
-      <section className="relative z-10 py-20 px-8 border-b border-white/5">
-        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-          <BadgeCheck className="w-10 h-10 text-green-500/20 mb-4" />
-          <h2 className="text-4xl font-black uppercase tracking-tighter mb-8">
-            The <span className="text-green-500">Trinity</span> Consensus
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { 
-                title: "Sovereignty Equation", 
-                desc: "Logic: Σ (Truth[P, J, E]) ≥ 0.66", 
-                detail: "Minimum 2/3 consensus between ontologically disjoint oracles for state persistence." 
-              },
-              { 
-                title: "ZK Membrane", 
-                desc: "Groth16 Snark Proving", 
-                detail: "Private point-to-point. Raw data dies at the agent; only the mathematical attestation lives on-chain." 
-              },
-              { 
-                title: "CCIP Interoperability", 
-                desc: "Global RWA Settlement", 
-                detail: "Validated assets become liquid across any chain supported by the Chainlink framework." 
-              }
-            ].map((item, i) => (
-              <div key={i} className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm group hover:border-green-500/20 transition-all">
-                <div className="text-green-500 font-mono text-[10px] font-black uppercase tracking-[0.3em] mb-4">{item.title}</div>
-                <div className="text-xl font-bold mb-4">{item.desc}</div>
-                <div className="text-sm text-white/30 leading-relaxed">{item.detail}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4: CONSENSUS CORE (Diagram) */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden border-b border-white/5 bg-[#020c06]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#17cf540a_0%,_transparent_70%)]" />
-        
-        <motion.div 
-          style={{ scale: shieldScale, opacity: shieldOpacity }}
-          className="relative w-full max-w-4xl aspect-video flex items-center justify-center"
-        >
-          <div className="absolute inset-0 bg-green-500/5 blur-[160px] rounded-full scale-90 animate-pulse" />
-          
-          <div className="relative w-full h-full flex items-center justify-center">
-            {[300, 450, 650].map((size, i) => (
-              <motion.div 
-                key={i}
-                animate={{ 
-                  rotate: i % 2 === 0 ? 360 : -360,
-                  opacity: [0.3, 0.6, 0.3]
-                }}
-                transition={{ 
-                  rotate: { duration: 40 + i * 20, repeat: Infinity, ease: "linear" },
-                  opacity: { duration: 4, repeat: Infinity }
-                }}
-                style={{ width: size, height: size }}
-                className="absolute border border-green-500/10 rounded-full"
-              />
-            ))}
-
-            <div className="relative z-10 w-full max-w-2xl transform scale-110">
-               <WorkflowDiagram />
-            </div>
-          </div>
-        </motion.div>
-
-        <div className="absolute inset-0 pointer-events-none">
-          <motion.div style={{ x: n1X, y: n1Y }} className="absolute top-[25%] left-[25%] flex items-center gap-2 group">
-             <div className="w-1 h-1 bg-green-500 rounded-full shadow-[0_0_10px_#17cf54]" />
-             <span className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.3em] group-hover:text-green-400 transition-colors">Physical Input</span>
-          </motion.div>
-          <motion.div style={{ x: n2X, y: n2Y }} className="absolute bottom-[25%] right-[25%] flex items-center gap-2 group">
-             <span className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.3em] group-hover:text-green-400 transition-colors">Juridical Validation</span>
-             <div className="w-1 h-1 bg-green-500 rounded-full shadow-[0_0_10px_#17cf54]" />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* SECTION 5: WORKFLOW SUMMARY STRIP */}
-      <section className="relative z-10 py-16 px-8 bg-[#020c06] border-b border-white/5">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
-            {[
-              { label: "Perception", sub: "Satellite & Sensors", icon: "📡", color: "from-blue-500/20" },
-              { label: "Consensus", sub: "Trinity Protocol", icon: "⚖️", color: "from-green-500/20" },
-              { label: "Privacy", sub: "Groth16 ZK-SNARK", icon: "🔐", color: "from-purple-500/20" },
-              { label: "Settlement", sub: "On-Chain Mint", icon: "🏛️", color: "from-emerald-500/20" },
-              { label: "Economy", sub: "Tokenized RWA", icon: "🌐", color: "from-cyan-500/20" },
-            ].map((step, i) => (
-              <div key={i} className="group relative">
-                <div className={`h-full p-6 rounded-2xl bg-gradient-to-b ${step.color} to-transparent border border-white/5 backdrop-blur-sm transition-all hover:border-green-500/30 hover:bg-white/[0.05]`}>
-                  <div className="text-3xl mb-3">{step.icon}</div>
-                  <div className="text-[10px] font-black font-mono text-green-500 uppercase tracking-widest mb-1">{step.label}</div>
-                  <div className="text-[11px] text-white/30 font-medium leading-tight">{step.sub}</div>
-                </div>
-                {i < 4 && (
-                  <div className="hidden md:block absolute top-1/2 -right-2 -translate-y-1/2 z-20">
-                    <ArrowRight className="w-4 h-4 text-white/10" />
-                  </div>
-                )}
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -387,6 +279,115 @@ export default function LandingContent() {
           </div>
         </div>
       </section>
+
+      {/* SECTION 3: THE TRINITY CONSENSUS TECHNICALS */}
+      <section className="relative z-10 py-20 px-8 border-b border-white/5">
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+          <BadgeCheck className="w-10 h-10 text-green-500/20 mb-4" />
+          <h2 className="text-4xl font-black uppercase tracking-tighter mb-8">
+            The <span className="text-green-500">Trinity</span> Consensus
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { 
+                title: "Sovereignty Equation", 
+                desc: "Logic: Σ (Truth[P, J, E]) ≥ 0.66", 
+                detail: "Minimum 2/3 consensus between ontologically disjoint oracles for state persistence." 
+              },
+              { 
+                title: "ZK Membrane", 
+                desc: "Groth16 Snark Proving", 
+                detail: "Private point-to-point. Raw data dies at the agent; only the mathematical attestation lives on-chain." 
+              },
+              { 
+                title: "CCIP Interoperability", 
+                desc: "Global RWA Settlement", 
+                detail: "Validated assets become liquid across any chain supported by the Chainlink framework." 
+              }
+            ].map((item, i) => (
+              <div key={i} className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm group hover:border-green-500/20 transition-all">
+                <div className="text-green-500 font-mono text-[10px] font-black uppercase tracking-[0.3em] mb-4">{item.title}</div>
+                <div className="text-xl font-bold mb-4">{item.desc}</div>
+                <div className="text-sm text-white/30 leading-relaxed">{item.detail}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4: CONSENSUS CORE (Diagram) */}
+      <section ref={parallaxRef} className="relative h-screen flex items-center justify-center overflow-hidden border-b border-white/5 bg-[#020c06]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#17cf540a_0%,_transparent_70%)]" />
+        
+        <motion.div 
+          style={{ scale: shieldScale, opacity: shieldOpacity }}
+          className="relative w-full max-w-4xl aspect-video flex items-center justify-center"
+        >
+          <div className="absolute inset-0 bg-green-500/5 blur-[160px] rounded-full scale-90 animate-pulse" />
+          
+          <div className="relative w-full h-full flex items-center justify-center">
+            {[300, 450, 650].map((size, i) => (
+              <motion.div 
+                key={i}
+                animate={{ 
+                  rotate: i % 2 === 0 ? 360 : -360,
+                  opacity: [0.3, 0.6, 0.3]
+                }}
+                transition={{ 
+                  rotate: { duration: 40 + i * 20, repeat: Infinity, ease: "linear" },
+                  opacity: { duration: 4, repeat: Infinity }
+                }}
+                style={{ width: size, height: size }}
+                className="absolute border border-green-500/10 rounded-full"
+              />
+            ))}
+
+            <div className="relative z-10 w-full max-w-2xl transform scale-110">
+               <WorkflowDiagram />
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div style={{ x: n1X, y: n1Y }} className="absolute top-[25%] left-[25%] flex items-center gap-2 group">
+             <div className="w-1 h-1 bg-green-500 rounded-full shadow-[0_0_10px_#17cf54]" />
+             <span className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.3em] group-hover:text-green-400 transition-colors">Physical Input</span>
+          </motion.div>
+          <motion.div style={{ x: n2X, y: n2Y }} className="absolute bottom-[25%] right-[25%] flex items-center gap-2 group">
+             <span className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.3em] group-hover:text-green-400 transition-colors">Juridical Validation</span>
+             <div className="w-1 h-1 bg-green-500 rounded-full shadow-[0_0_10px_#17cf54]" />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 5: WORKFLOW SUMMARY STRIP */}
+      <section className="relative z-10 py-16 px-8 bg-[#020c06] border-b border-white/5">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+            {[
+              { label: "Perception", sub: "Satellite & Sensors", icon: "📡", color: "from-blue-500/20" },
+              { label: "Consensus", sub: "Trinity Protocol", icon: "⚖️", color: "from-green-500/20" },
+              { label: "Privacy", sub: "Groth16 ZK-SNARK", icon: "🔐", color: "from-purple-500/20" },
+              { label: "Settlement", sub: "On-Chain Mint", icon: "🏛️", color: "from-emerald-500/20" },
+              { label: "Economy", sub: "Tokenized RWA", icon: "🌐", color: "from-cyan-500/20" },
+            ].map((step, i) => (
+              <div key={i} className="group relative">
+                <div className={`h-full p-6 rounded-2xl bg-gradient-to-b ${step.color} to-transparent border border-white/5 backdrop-blur-sm transition-all hover:border-green-500/30 hover:bg-white/[0.05]`}>
+                  <div className="text-3xl mb-3">{step.icon}</div>
+                  <div className="text-[10px] font-black font-mono text-green-500 uppercase tracking-widest mb-1">{step.label}</div>
+                  <div className="text-[11px] text-white/30 font-medium leading-tight">{step.sub}</div>
+                </div>
+                {i < 4 && (
+                  <div className="hidden md:block absolute top-1/2 -right-2 -translate-y-1/2 z-20">
+                    <ArrowRight className="w-4 h-4 text-white/10" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 6: THE TERMINAL */}
       <section className="relative z-10 max-w-7xl mx-auto px-8 py-20 border-t border-white/5">
         <div className="max-w-3xl mx-auto">

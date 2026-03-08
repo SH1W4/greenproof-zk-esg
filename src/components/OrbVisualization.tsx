@@ -19,6 +19,14 @@ const AnimatedSphere = memo(({ color, speed, distort, active }: OrbProps) => {
     if (!meshRef.current) return;
     const targetScale = hovered ? 1.2 : 1;
     meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
+    
+    // Add pulsing effect for active orb
+    if (active && meshRef.current.children[0]) {
+      const material = (meshRef.current.children[0] as THREE.Mesh).material as any;
+      if (material.emissiveIntensity !== undefined) {
+        material.emissiveIntensity = 0.8 + Math.sin(state.clock.elapsedTime * 4) * 0.4;
+      }
+    }
   });
 
   const emissiveIntensity = active ? 0.8 : hovered ? 0.4 : 0;
