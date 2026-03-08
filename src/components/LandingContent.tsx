@@ -121,36 +121,6 @@ export default function LandingContent() {
             </Link>
           </motion.div>
 
-          {/* SECTION 1.5: PROFESSIONAL WORKFLOW STRIP */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="w-full max-w-5xl mx-auto pt-8"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
-              {[
-                { label: "Perception", sub: "Satellite & Sensors", icon: "📡", color: "from-blue-500/20" },
-                { label: "Consensus", sub: "Trinity Protocol", icon: "⚖️", color: "from-green-500/20" },
-                { label: "Privacy", sub: "Groth16 ZK-SNARK", icon: "🔐", color: "from-purple-500/20" },
-                { label: "Settlement", sub: "On-Chain Mint", icon: "🏛️", color: "from-emerald-500/20" },
-                { label: "Economy", sub: "Tokenized RWA", icon: "🌐", color: "from-cyan-500/20" },
-              ].map((step, i) => (
-                <div key={i} className="group relative">
-                  <div className={`h-full p-6 rounded-2xl bg-gradient-to-b ${step.color} to-transparent border border-white/5 backdrop-blur-sm transition-all hover:border-green-500/30 hover:bg-white/[0.05]`}>
-                    <div className="text-3xl mb-3">{step.icon}</div>
-                    <div className="text-[10px] font-black font-mono text-green-500 uppercase tracking-widest mb-1">{step.label}</div>
-                    <div className="text-[11px] text-white/30 font-medium leading-tight">{step.sub}</div>
-                  </div>
-                  {i < 4 && (
-                    <div className="hidden md:block absolute top-1/2 -right-2 -translate-y-1/2 z-20">
-                      <ArrowRight className="w-4 h-4 text-white/10" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -291,6 +261,34 @@ export default function LandingContent() {
              <span className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.3em] group-hover:text-green-400 transition-colors">Juridical Validation</span>
              <div className="w-1 h-1 bg-green-500 rounded-full shadow-[0_0_10px_#17cf54]" />
           </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 5: WORKFLOW SUMMARY STRIP */}
+      <section className="relative z-10 py-16 px-8 bg-[#020c06] border-b border-white/5">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+            {[
+              { label: "Perception", sub: "Satellite & Sensors", icon: "📡", color: "from-blue-500/20" },
+              { label: "Consensus", sub: "Trinity Protocol", icon: "⚖️", color: "from-green-500/20" },
+              { label: "Privacy", sub: "Groth16 ZK-SNARK", icon: "🔐", color: "from-purple-500/20" },
+              { label: "Settlement", sub: "On-Chain Mint", icon: "🏛️", color: "from-emerald-500/20" },
+              { label: "Economy", sub: "Tokenized RWA", icon: "🌐", color: "from-cyan-500/20" },
+            ].map((step, i) => (
+              <div key={i} className="group relative">
+                <div className={`h-full p-6 rounded-2xl bg-gradient-to-b ${step.color} to-transparent border border-white/5 backdrop-blur-sm transition-all hover:border-green-500/30 hover:bg-white/[0.05]`}>
+                  <div className="text-3xl mb-3">{step.icon}</div>
+                  <div className="text-[10px] font-black font-mono text-green-500 uppercase tracking-widest mb-1">{step.label}</div>
+                  <div className="text-[11px] text-white/30 font-medium leading-tight">{step.sub}</div>
+                </div>
+                {i < 4 && (
+                  <div className="hidden md:block absolute top-1/2 -right-2 -translate-y-1/2 z-20">
+                    <ArrowRight className="w-4 h-4 text-white/10" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
