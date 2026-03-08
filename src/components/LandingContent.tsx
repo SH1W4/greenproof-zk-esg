@@ -153,138 +153,163 @@ export default function LandingContent() {
         </div>
       </section>
 
-      {/* SECTION 2: CINEMATIC PARALLAX */}
-      {/* SECTION 2: SOPHISTICATED CONSENSUS CORE */}
+      {/* SECTION 2: SOPHISTICATED CONSENSUS CORE (Refined) */}
       <section ref={parallaxRef} className="relative h-screen flex items-center justify-center overflow-hidden border-y border-white/5 bg-[#020c06]">
+        {/* Background Atmosphere */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#17cf540a_0%,_transparent_70%)]" />
+        
         <motion.div 
           style={{ scale: shieldScale, opacity: shieldOpacity }}
           className="relative w-full max-w-4xl aspect-video flex items-center justify-center"
         >
-          {/* Central Glow */}
-          <div className="absolute inset-0 bg-green-500/5 blur-[140px] rounded-full scale-75 animate-pulse" />
+          {/* Central Atmospheric Glow */}
+          <div className="absolute inset-0 bg-green-500/5 blur-[160px] rounded-full scale-90 animate-pulse" />
           
-          {/* Abstract Consensus Geometry */}
           <div className="relative w-full h-full flex items-center justify-center">
-            {/* Inner Ring */}
-            <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              className="absolute w-[300px] h-[300px] border border-green-500/10 rounded-full flex items-center justify-center"
-            >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_15px_#17cf54]" />
-            </motion.div>
-
-            {/* Middle Ring */}
-            <motion.div 
-              animate={{ rotate: -360 }}
-              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-              className="absolute w-[450px] h-[450px] border border-green-500/5 rounded-full"
-            >
-              <div className="absolute bottom-0 right-1/2 translate-x-1/2 w-1 h-1 bg-green-400/40 rounded-full" />
-            </motion.div>
-
-            {/* Outer Ring */}
-            <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-              className="absolute w-[600px] h-[600px] border border-green-500/5 rounded-full border-dashed"
-            />
-
-            {/* Core Cinematic Trinity Orbs */}
-            <div className="relative z-10 p-4 rounded-full bg-green-500/[0.01] border border-green-500/5 backdrop-blur-3xl shadow-[0_0_150px_rgba(34,197,94,0.1)]">
-              <motion.div
+            {/* Pulsing Geometry Rings */}
+            {[300, 450, 650].map((size, i) => (
+              <motion.div 
+                key={i}
                 animate={{ 
-                  scale: [1, 1.05, 1],
-                  filter: ["brightness(1) contrast(1.2)", "brightness(1.5) contrast(1.5)", "brightness(1) contrast(1.2)"]
+                  rotate: i % 2 === 0 ? 360 : -360,
+                  borderOpacity: [0.05, 0.15, 0.05]
                 }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="relative w-[320px] h-[320px]"
-              >
-                <Image 
-                  src="/assets/vault/concepts/trinity_orbs_3d.png" 
-                  alt="Trinity of Proof" 
-                  fill
-                  className="object-contain drop-shadow-[0_0_30px_rgba(34,197,94,0.4)]"
-                />
-              </motion.div>
+                transition={{ 
+                  rotate: { duration: 40 + i * 20, repeat: Infinity, ease: "linear" },
+                  borderOpacity: { duration: 4, repeat: Infinity }
+                }}
+                style={{ width: size, height: size }}
+                className="absolute border border-green-500/10 rounded-full"
+              />
+            ))}
+
+            {/* Core Shield (Abstract Icon instead of large image) */}
+            <div className="relative z-10 p-16 rounded-full bg-green-500/[0.01] border border-green-500/10 backdrop-blur-3xl shadow-[0_0_80px_rgba(34,197,94,0.05)]">
+              <ShieldCheck className="w-16 h-16 text-green-500/60" />
             </div>
           </div>
         </motion.div>
 
-        {/* Floating Data Labels */}
+        {/* Minimal Floating Labels */}
         <div className="absolute inset-0 pointer-events-none">
-          <motion.div 
-            style={{ x: n1X, y: n1Y }}
-            className="absolute top-[30%] left-[20%] px-4 py-2 bg-black/40 border border-white/10 rounded-lg backdrop-blur-md shadow-2xl"
-          >
-            <div className="flex items-center gap-2 mb-1">
-              <Database className="w-3 h-3 text-blue-400" />
-              <span className="text-[10px] font-black font-mono text-blue-400 uppercase tracking-[0.2em]">Pillar 01</span>
-            </div>
-            <div className="text-xs font-bold text-white/80">Physical Reality</div>
-            <div className="text-[9px] text-white/30 font-mono mt-1">Satellite Telemetry + IoT</div>
+          <motion.div style={{ x: n1X, y: n1Y }} className="absolute top-[25%] left-[25%] flex items-center gap-2 group">
+             <div className="w-1 h-1 bg-green-500 rounded-full shadow-[0_0_10px_#17cf54]" />
+             <span className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.3em] group-hover:text-green-400 transition-colors">Physical Input</span>
           </motion.div>
-
-          <motion.div 
-            style={{ x: n2X, y: n2Y }}
-            className="absolute bottom-[30%] right-[20%] px-4 py-2 bg-black/40 border border-white/10 rounded-lg backdrop-blur-md shadow-2xl"
-          >
-            <div className="flex items-center gap-2 mb-1">
-              <Scale className="w-3 h-3 text-green-400" />
-              <span className="text-[10px] font-black font-mono text-green-400 uppercase tracking-[0.2em]">Pillar 02</span>
-            </div>
-            <div className="text-xs font-bold text-white/80">Juridical Compliance</div>
-            <div className="text-[9px] text-white/30 font-mono mt-1">NLP Audit + Regulatory Logic</div>
-          </motion.div>
-
-          <motion.div 
-            style={{ y: n3Y }}
-            className="absolute top-[20%] right-[30%] px-4 py-2 bg-black/40 border border-white/10 rounded-lg backdrop-blur-md shadow-2xl"
-          >
-            <div className="flex items-center gap-2 mb-1">
-              <BrainCircuit className="w-3 h-3 text-purple-400" />
-              <span className="text-[10px] font-black font-mono text-purple-400 uppercase tracking-[0.2em]">Pillar 03</span>
-            </div>
-            <div className="text-xs font-bold text-white/80">Ethical Integrity</div>
-            <div className="text-[9px] text-white/30 font-mono mt-1">Social Impact + ESG Metrics</div>
+          <motion.div style={{ x: n2X, y: n2Y }} className="absolute bottom-[25%] right-[25%] flex items-center gap-2 group">
+             <span className="text-[10px] font-black font-mono text-green-500/40 uppercase tracking-[0.3em] group-hover:text-green-400 transition-colors">Juridical Validation</span>
+             <div className="w-1 h-1 bg-green-500 rounded-full shadow-[0_0_10px_#17cf54]" />
           </motion.div>
         </div>
       </section>
 
-      {/* NEW SECTION: INSTITUTIONAL MISSION */}
-      <section className="relative z-10 py-32 px-8 bg-[#020c06]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            <div className="space-y-6">
-              <div className="w-12 h-1 px-0 bg-green-500" />
-              <h3 className="text-3xl font-black uppercase tracking-tighter">The Sovereign Witness Framework</h3>
-              <p className="text-green-100/40 leading-relaxed">
-                GreenProof is not just an ESG dashboard. It is a **Sovereign Witness Framework** (SWF) designed to anchor physical truth onto the blockchain. By utilizing Agentic Orchestration and ZK-Privacy, we eliminate the need for centralized trust.
-              </p>
-            </div>
-            <div className="space-y-6">
-              <div className="w-12 h-1 px-0 bg-green-500/30" />
-              <h3 className="text-3xl font-black uppercase tracking-tighter">Mathematical Immutability</h3>
-              <p className="text-green-100/40 leading-relaxed">
-                Every claim validated by GreenProof results in a **Groth16 Snark Proof**. This means that compliance is proven by mathematics, not by self-reported spreadsheets or corruptible human audits.
-              </p>
-            </div>
-            <div className="space-y-6">
-              <div className="w-12 h-1 px-0 bg-green-500/30" />
-              <h3 className="text-3xl font-black uppercase tracking-tighter">Institutional Liquidity</h3>
-              <p className="text-green-100/40 leading-relaxed">
-                Our protocol enables RWA institutional portability. Via **Chainlink CCIP**, a verified green asset on Sepolia becomes a trusted financial instrument across the entire global interoperable landscape.
-              </p>
-            </div>
+      {/* NEW SECTION: THE TRINITY CONSENSUS TECHNICALS */}
+      <section className="relative z-10 py-32 px-8 border-b border-white/5">
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+          <BadgeCheck className="w-12 h-12 text-green-500/20 mb-6" />
+          <h2 className="text-5xl font-black uppercase tracking-tighter mb-12">
+            The <span className="text-green-500">Trinity</span> Consensus
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { 
+                title: "Equação de Soberania", 
+                desc: "Logic: Σ (Truth[P, J, E]) ≥ 0.66", 
+                detail: "Mínimo de 2/3 de consenso entre oráculos ontologicamente disjuntos para persistência de estado." 
+              },
+              { 
+                title: "ZK Membrane", 
+                desc: "Groth16 Snark Proving", 
+                detail: "Ponto-a-ponto privado. O dado bruto morre no agente; apenas o atestado matemático vive na chain." 
+              },
+              { 
+                title: "Interoperabilidade CCIP", 
+                desc: "Global RWA Settlement", 
+                detail: "Ativos validados tornam-se líquidos em qualquer chain suportada pelo framework Chainlink." 
+              }
+            ].map((item, i) => (
+              <div key={i} className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm group hover:border-green-500/20 transition-all">
+                <div className="text-green-500 font-mono text-[10px] font-black uppercase tracking-[0.3em] mb-4">{item.title}</div>
+                <div className="text-xl font-bold mb-4">{item.desc}</div>
+                <div className="text-sm text-white/30 leading-relaxed">{item.detail}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* SECTION 5: SYSTEM DIAGRAM */}
+      {/* INTERACTIVE MISSION CARDS */}
+      <section className="relative z-10 py-32 px-8 bg-[#020c06]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Sovereign Witness",
+                desc: "Anchor physical truth using decentralized perception agents.",
+                details: "O framework SWF utiliza telemetria satelital e sensores IoT validados via Chainlink Functions para garantir que o 'Real World' não possa ser falsificado.",
+                img: "/assets/vault/concepts/witness_perception.png",
+                color: "green"
+              },
+              {
+                title: "Mathematical Proof",
+                desc: "Compliance proven by code, not by reputation.",
+                details: "Substituímos auditorias humanas subjetivas por circuitos aritméticos ZK-SNARK. O certificado on-chain é o resultado de um cálculo matemático inquestionável.",
+                img: "/assets/vault/concepts/mathematical_lock.png",
+                color: "blue"
+              },
+              {
+                title: "Institutional Liquidity",
+                desc: "Interoperable trust for global high-value assets.",
+                details: "Via CCIP, transformamos conformidade local em liquidez global. O 'Proof-of-Reality' viaja pelas chains com a mesma segurança do protocolo Chainlink.",
+                img: "/assets/vault/concepts/liquidity_bridge.png",
+                color: "emerald"
+              }
+            ].map((card, i) => (
+              <div key={i} className="group relative overflow-hidden rounded-[40px] border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-500 flex flex-col cursor-pointer">
+                {/* Interactive Image Container */}
+                <div className="relative h-64 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                  <Image 
+                    src={card.img} 
+                    alt={card.title} 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#020c06] to-transparent opacity-60" />
+                </div>
+                
+                {/* Content */}
+                <div className="p-8 space-y-4 relative">
+                  <div className={`w-8 h-1 bg-${card.color}-500 mb-4`} />
+                  <h3 className="text-2xl font-black uppercase tracking-tighter">{card.title}</h3>
+                  <p className="text-green-100/40 text-sm leading-relaxed group-hover:hidden">{card.desc}</p>
+                  
+                  {/* Detailed Info (Visible on Hover/Interaction) */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    whileHover={{ opacity: 1, y: 0 }}
+                    className="hidden group-hover:block text-xs text-green-500/80 leading-relaxed font-medium"
+                  >
+                    {card.details}
+                  </motion.div>
+
+                  <div className="pt-4 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-green-500/40">
+                    <span>Explore Protocol</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: SYSTEM DIAGRAM (Refined) */}
       <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 border-t border-white/5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <div className="w-full">
-            <WorkflowDiagram />
+            <div className="relative p-1 rounded-[40px] bg-gradient-to-b from-green-500/10 to-transparent border border-white/10">
+               <WorkflowDiagram />
+            </div>
           </div>
           <div className="space-y-8">
             <h2 className="text-4xl font-black tracking-tighter uppercase leading-[0.9]">
