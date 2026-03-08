@@ -103,7 +103,7 @@ Validate the entire protocol in under 2 minutes:
 
 | Step | Action | Evidence |
 |:---:|:---|:---|
-| 1 | Open **Live Dashboard** | [greenproof-platform.vercel.app/dashboard](https://greenproof.vercel.app/dashboard) |
+| 1 | Open **Live Dashboard** | [greenproof.vercel.app/dashboard](https://greenproof.vercel.app/dashboard) |
 | 2 | Click **"Execute Sovereign Demo"** | Triggers the CRE-orchestrated 2/3 Quorum |
 | 3 | Observe the **Trinity consensus event** in the terminal | Live log stream on dashboard |
 | 4 | Verify the **ZK certificate** at `/verify` | [/verify ↗](https://greenproof.vercel.app/verify) |

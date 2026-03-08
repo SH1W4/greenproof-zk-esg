@@ -270,7 +270,7 @@ export default function LandingContent() {
           <div className="flex flex-wrap items-center justify-center gap-8 text-[11px] font-black uppercase tracking-[0.2em] text-green-100/30">
             <Link href="#tech" className="hover:text-green-500 transition-colors">Technology</Link>
             <Link href="#docs" className="hover:text-green-500 transition-colors">Documentation</Link>
-            <Link href="https://github.com/SH1W4/greenproof-zk-esg" target="_blank" className="hover:text-green-500 transition-colors">GitHub</Link>
+            <Link href="https://github.com/symbeon-labs/greenproof-platform" target="_blank" className="hover:text-green-500 transition-colors">GitHub</Link>
           </div>
 
           <div className="text-[10px] text-green-100/10 font-mono font-bold uppercase tracking-widest">

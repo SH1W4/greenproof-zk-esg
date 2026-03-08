@@ -1,7 +1,7 @@
 # GreenProof: Judge Cheat Sheet
 
 ## Core Links
-- **Live Dashboard**: [greenproof-platform.vercel.app](https://greenproof-platform.vercel.app/dashboard)
+- **Live Dashboard**: [greenproof.vercel.app](https://greenproof.vercel.app/dashboard)
 - **Repo Origin**: [github.com/symbeon-labs/greenproof-platform](https://github.com/symbeon-labs/greenproof-platform)
 - **Protocol Engine (MAS Core)**: [github.com/symbeon-labs/mas-core](https://github.com/symbeon-labs/mas-core)
 
@@ -23,7 +23,7 @@ Follow this flow for the ultimate GreenProof experience:
 
 ## Speed Run (No Login Required)
 Follow these steps for an instant evaluation:
-1. Visit the [Live Dashboard](https://greenproof-platform.vercel.app/dashboard).
+1. Visit the [Live Dashboard](https://greenproof.vercel.app/dashboard).
 2. Click **"Execute Sovereign Demo"**.
 3. Observe the **ZKWitnessStream** in the terminal simulating proof generation. 
    *(Note: For environments without `circom`, use our verified [Logic Audit Tool](../scripts/test-zk-logic.mjs) via `npm run test:zk`).*
