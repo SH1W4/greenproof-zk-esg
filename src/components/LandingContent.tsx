@@ -350,8 +350,13 @@ export default function LandingContent() {
 
         <div className="max-w-7xl mx-auto px-8 relative z-20">
           <div className="max-w-3xl space-y-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-[10px] font-bold uppercase tracking-widest text-green-400">
-              <ShieldCheck className="w-3 h-3" /> Institutional Authority
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-[10px] font-bold uppercase tracking-widest text-green-400">
+                <ShieldCheck className="w-3 h-3" /> Institutional Authority
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] font-bold uppercase tracking-widest text-blue-400">
+                <BrainCircuit className="w-3 h-3" /> Autonomous Orchestration Active
+              </div>
             </div>
             
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
@@ -363,7 +368,7 @@ export default function LandingContent() {
             </h2>
 
             <p className="text-xl md:text-2xl text-green-100/40 leading-relaxed font-medium">
-              GreenProof transcends dashboards. Our **Trinity Consensus** architecture was designed for sectors demanding unquestionable proof of reality. From institutional ESG to high-value sovereign asset traceability.
+              GreenProof transcends dashboards. Orchestrated by the **GP-Architect**, our **Trinity Consensus** framework provides unquestionable proof of reality for institutional ESG and high-value sovereign asset traceability.
             </p>
 
             <div className="flex flex-col md:flex-row gap-12 pt-8">
