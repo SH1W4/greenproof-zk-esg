@@ -395,14 +395,14 @@ export default function LandingContent() {
         <div className="max-w-3xl mx-auto">
           <TerminalCommand 
             commands={[
-              "greenproof-cli vault sync --v3.1.10 --sovereign",
-              "[VAULT] Connection to Knowledge-Nexus secured.",
-              "npx ts-node consensus/gp-proof-engine.ts --audit-mode juridical",
-              "[TH3M1S] Analyzing regulatory compliance... ✓ 100% OK",
-              "[ZK] Generating Snippet Proof (Groth16 Snark) for RWA-001...",
-              "✓ SNARK Proof Verified | Verifier: GP-SENTINEL",
-              "[CCIP] Pushing Sovereign Attestation to Ethereum Mainnet...",
-              "✓ Transaction Confirmed | Proof Immutable on Sovereign Ledger."
+              "gp-architect --mode orchestrate --v3.1.10 --sovereign",
+              "[GP-ARCHITECT] Loading Sovereign DNA & Identity Soul... Done.",
+              "npx ts-node consensus/gp-proof-engine.ts --target trinity",
+              "[GP-ARCHITECT] Orchestrating Truth Pillars (P, J, E)...",
+              "[TH3M1S] Juridical Audit Verified | [ZK] Snark Proof Generated.",
+              "✓ Consensus Σ ≥ 0.66 Achieved | Verifier: GP-SENTINEL",
+              "[CCIP] Dispatching Cross-Chain Attestation to Ethereum...",
+              "✓ Transaction finalized. Sovereign Reality Synchronized."
             ]}
           />
         </div>
