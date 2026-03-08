@@ -185,9 +185,23 @@ export default function LandingContent() {
               className="absolute w-[600px] h-[600px] border border-green-500/5 rounded-full border-dashed"
             />
 
-            {/* Core Shield */}
-            <div className="relative z-10 p-12 rounded-full bg-green-500/[0.02] border border-green-500/10 backdrop-blur-3xl shadow-[0_0_100px_rgba(34,197,94,0.05)]">
-              <ShieldCheck className="w-24 h-24 text-green-500/80" />
+            {/* Core Cinematic Trinity Orbs */}
+            <div className="relative z-10 p-4 rounded-full bg-green-500/[0.01] border border-green-500/5 backdrop-blur-3xl shadow-[0_0_150px_rgba(34,197,94,0.1)]">
+              <motion.div
+                animate={{ 
+                  scale: [1, 1.05, 1],
+                  filter: ["brightness(1) contrast(1.2)", "brightness(1.5) contrast(1.5)", "brightness(1) contrast(1.2)"]
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="relative w-[320px] h-[320px]"
+              >
+                <Image 
+                  src="/assets/vault/concepts/trinity_orbs_3d.png" 
+                  alt="Trinity of Proof" 
+                  fill
+                  className="object-contain drop-shadow-[0_0_30px_rgba(34,197,94,0.4)]"
+                />
+              </motion.div>
             </div>
           </div>
         </motion.div>
