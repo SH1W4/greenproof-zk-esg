@@ -396,13 +396,13 @@ export default function LandingContent() {
           <TerminalCommand 
             commands={[
               "greenproof-cli vault sync --v3.1.10 --sovereign",
-              "[VAULT] Connection to Knowledge-Nexus secured.",
-              "npx ts-node consensus/gp-proof-engine.ts --audit-mode juridical",
-              "[TH3M1S] Analyzing regulatory compliance... ✓ 100% OK",
-              "[ZK] Generating Snippet Proof (Groth16 Snark) for RWA-001...",
-              "✓ SNARK Proof Verified | Verifier: GP-SENTINEL",
-              "[CCIP] Pushing Sovereign Attestation to Ethereum Mainnet...",
-              "✓ Transaction Confirmed | Proof Immutable on Sovereign Ledger."
+              "[VAULT] Conexão ao Knowledge-Nexus estabelecida.",
+              "npx ts-node consensus/gp-proof-engine.ts --audit-mode juridica",
+              "[TH3M1S] Analisando conformidade regulatória... ✓ 100% OK",
+              "[ZK] Gerando Prova Snippet (Groth16 Snark) para RWA-001...",
+              "✓ Prova SNARK Verificada | Verificador: GP-SENTINEL",
+              "[CCIP] Enviando Atestado Soberano para Ethereum Mainnet...",
+              "✓ Transação Confirmada | Prova Imutável em Ledger Soberano."
             ]}
           />
         </div>
