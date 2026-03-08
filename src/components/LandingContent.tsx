@@ -215,17 +215,17 @@ export default function LandingContent() {
             {[
               { 
                 title: "Equação de Soberania", 
-                desc: "Logic: Σ (Truth[P, J, E]) ≥ 0.66", 
+                desc: "Lógica: Σ (Truth[P, J, E]) ≥ 0.66", 
                 detail: "Mínimo de 2/3 de consenso entre oráculos ontologicamente disjuntos para persistência de estado." 
               },
               { 
-                title: "ZK Membrane", 
+                title: "Membrana ZK", 
                 desc: "Groth16 Snark Proving", 
                 detail: "Ponto-a-ponto privado. O dado bruto morre no agente; apenas o atestado matemático vive na chain." 
               },
               { 
                 title: "Interoperabilidade CCIP", 
-                desc: "Global RWA Settlement", 
+                desc: "Liquidação Global de RWA", 
                 detail: "Ativos validados tornam-se líquidos em qualquer chain suportada pelo framework Chainlink." 
               }
             ].map((item, i) => (
@@ -245,22 +245,22 @@ export default function LandingContent() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Sovereign Witness",
-                desc: "Anchor physical truth using decentralized perception agents.",
-                details: "O framework SWF utiliza telemetria satelital e sensores IoT validados via Chainlink Functions para garantir que o 'Real World' não possa ser falsificado.",
+                title: "Testemunho Soberano",
+                desc: "Ancoragem da verdade física usando agentes de percepção descentralizados.",
+                details: "O framework SWF utiliza telemetria satelital e sensores IoT validados via Chainlink Functions para garantir que o 'Mundo Real' não possa ser falsificado.",
                 img: "/assets/vault/concepts/witness_perception.png",
                 color: "green"
               },
               {
-                title: "Mathematical Proof",
-                desc: "Compliance proven by code, not by reputation.",
+                title: "Prova Matemática",
+                desc: "Conformidade provada por código, não por reputação.",
                 details: "Substituímos auditorias humanas subjetivas por circuitos aritméticos ZK-SNARK. O certificado on-chain é o resultado de um cálculo matemático inquestionável.",
                 img: "/assets/vault/concepts/mathematical_lock.png",
                 color: "blue"
               },
               {
-                title: "Institutional Liquidity",
-                desc: "Interoperable trust for global high-value assets.",
+                title: "Liquidez Institucional",
+                desc: "Confiança interoperável para ativos globais de alto valor.",
                 details: "Via CCIP, transformamos conformidade local em liquidez global. O 'Proof-of-Reality' viaja pelas chains com a mesma segurança do protocolo Chainlink.",
                 img: "/assets/vault/concepts/liquidity_bridge.png",
                 color: "emerald"
@@ -376,8 +376,8 @@ export default function LandingContent() {
                 <div className="text-3xl font-black font-mono">100.00%</div>
               </div>
               <div className="space-y-2">
-                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Inter-Chain Bridge</div>
-                <div className="text-3xl font-black font-mono">ACTIVE</div>
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500/60">Ponte Inter-Chain</div>
+                <div className="text-3xl font-black font-mono">ATIVA</div>
               </div>
             </div>
 
