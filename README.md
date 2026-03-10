@@ -82,6 +82,22 @@ GreenProof transforms ESG verification into **cryptographic proof**, enabling ca
 
 ---
 
+---
+
+## 🏛️ Technical Verification & Due Diligence
+
+Investors and grant providers can validate the protocol's Proof of Concept (PoC) in under 2 minutes:
+
+| Step | Action | Evidence |
+|:---:|:---|:---|
+| 1 | Open **Live Dashboard** | [greenproof.vercel.app/dashboard](https://greenproof.vercel.app/dashboard) |
+| 2 | Execute **Sovereign Demo** | Triggers the 2/3 Oracle Quorum (CRE-orchestrated) |
+| 3 | Monitor **Consensus Event** | High-fidelity log stream available on dashboard |
+| 4 | Audit **ZK-Verifier Status** | [/verify ↗](https://greenproof.vercel.app/verify) |
+| 5 | Verify **On-Chain Settlement** | [NFT Contract ↗](https://sepolia.etherscan.io/address/0x3fcf2C7f9a0A966810fD7858A99FA915d5326B54) |
+
+---
+
 ## Chainlink Stack Usage
 
 GreenProof integrates multiple Chainlink technologies as core infrastructure:
