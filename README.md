@@ -3,9 +3,9 @@
 <div align="center">
 
 # GREENPROOF
-### $2.1T Green Bonds Need Cryptographic Truth
+### $2.1T Asset Market Needs Cryptographic Truth
 
-> **Mathematical Proof > Manual Audits. Greenwashing Ends Here.**
+> **Mathematical Proof > Manual Audits. Counterfeit Compliance Ends Here.**
 
 [![Live Demo](https://img.shields.io/badge/🟢_Live_Demo-Vercel-00FF88?style=for-the-badge)](https://greenproof.vercel.app)
 [![CI Build](https://img.shields.io/badge/CI%2FCD-Passing-00FF88?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/symbeon-labs/greenproof-platform/actions)
@@ -23,7 +23,7 @@
 
 GreenProof is a **Decentralized Compliance Oracle for Real-World Assets**.
 
-It replaces manual ESG auditing with a **cryptographic verification pipeline**:
+It replaces manual compliance auditing with a **cryptographic verification pipeline**:
 
 ```
 Real-World Signals → Trinity Consensus → ZK Proof → On-Chain Certificate → Cross-Chain RWA
@@ -31,7 +31,7 @@ Real-World Signals → Trinity Consensus → ZK Proof → On-Chain Certificate �
 
 **What you will see in the demo:**
 - Oracle consensus (Physical, Legal, Ethical) via **Chainlink CRE**
-- **Groth16 ZK-proof** of ESG compliance (without exposing sensitive data)
+- **Groth16 ZK-proof** of asset compliance (without exposing sensitive data)
 - On-chain certificate **NFT mint** on Ethereum Sepolia
 - **Cross-chain portability** via Chainlink CCIP to Arbitrum Sepolia
 
@@ -46,7 +46,7 @@ Real-World Signals → Trinity Consensus → ZK Proof → On-Chain Certificate �
 
 GreenProof is a **decentralized compliance oracle protocol** for Real-World Assets.
 
-It replaces traditional ESG auditing with a cryptographic verification pipeline:
+It replaces traditional compliance auditing with a cryptographic verification pipeline:
 
 ```
 Real-World Signals
@@ -60,12 +60,12 @@ Real-World Signals
 
 ## TL;DR (30 seconds)
 
-GreenProof makes **greenwashing mathematically impossible**.
+GreenProof makes **counterfeit compliance mathematically impossible**.
 
-Instead of trusting ESG reports, the protocol generates **cryptographic compliance proofs**:
+Instead of trusting integrity reports, the protocol generates **cryptographic compliance proofs**:
 
 1. Three independent oracles (Physical, Legal, Ethical) reach a **2/3 consensus**
-2. A **Groth16 ZK-circuit** proves ESG compliance without revealing sensitive data
+2. A **Groth16 ZK-circuit** proves asset compliance without revealing sensitive data
 3. A **certificate NFT** is minted on-chain as a verifiable credential
 4. The asset moves across chains using **Chainlink CCIP**
 
@@ -73,9 +73,9 @@ Instead of trusting ESG reports, the protocol generates **cryptographic complian
 
 ## Why This Matters
 
-The global green bond market exceeds **$2.1 trillion**, yet ESG compliance is still based on trust. Asset managers cannot act on data they cannot verify.
+The global asset market exceeds **$2 trillion**, yet compliance is still largely based on trust. Asset managers cannot act on data they cannot verify.
 
-GreenProof transforms ESG verification into **cryptographic proof**, enabling capital to flow toward truly compliant assets — not just compliant-looking ones.
+GreenProof transforms compliance verification into **cryptographic proof**, enabling capital to flow toward truly compliant assets — not just compliant-looking ones.
 
 ---
 
@@ -125,8 +125,8 @@ A modular, cryptographic consensus engine with three independent nuclei:
 
 ## Why GreenProof Wins
 
-### 🔐 Privacy-Preserving ESG (ZK-Proofs)
-We implement a **Groth16 circuit** (`circom/ESGScore.circom`) that cryptographically proves `score ≥ 80%` **without exposing any industrial telemetry**. This resolves the core privacy paradox of institutional ESG adoption.
+### 🔐 Privacy-Preserving Compliance (ZK-Proofs)
+We implement a **Groth16 circuit** (`circom/ESGScore.circom`) that cryptographically proves `score ≥ 80%` **without exposing any industrial telemetry**. This resolves the core privacy paradox of institutional compliance adoption.
 
 ### ⚡ Autonomous Compliance Engine (CRE)
 The `cre/greenproof-orchestrator.ts` uses **Chainlink Runtime Environment** to execute the full compliance lifecycle — oracle aggregation, ZK proof trigger, and on-chain minting — autonomously and in a verifiable sequence.
@@ -193,18 +193,18 @@ graph TD
     B -->|Quorum Failed| F[❌ Greenwashing Blocked]
     E -->|Proof Valid| G[🏛️ NFT Minted - Sepolia]
     G --> H[🌉 CCIP Bridge — Arbitrum]
-    H --> I[✅ Sovereign ESG Asset]
+    H --> I[✅ Sovereign Compliance Asset]
 ```
 
 ---
 
-## Quick Proof Points
+## 📊 Quick Proof Points
 
 | Claim | Evidence |
 |:---|:---|
-| ZK-SNARKs Working | `circom/ESGScore.circom` + `npm run test:zk` |
+| ZK-SNARKs Working | `circom/ESGScore.circom` + `scripts/run-zk-test.sh` |
 | Live Multi-Chain | Sepolia & Arbitrum Sepolia [Verified] |
-| CCIP Bridge Active | [`0x0220...C656`](https://sepolia.arbiscan.io/address/0x0220496F006f8aC2f4628A0752bB25a013eDC656) |
+| CCIP Bridge Active | [Bridge Contracts ↗](https://sepolia.arbiscan.io/address/0x0220496F006f8aC2f4628A0752bB25a013eDC656) |
 | CI/CD Passing | [GitHub Actions ↗](https://github.com/symbeon-labs/greenproof-platform/actions) |
 | RBAC + Pausable | OpenZeppelin AccessControl & Pausable in all contracts |
 | **Contract Test Suite** | [`npm run test:contracts`](tests/contracts/run-tests.mjs) — 16 tests, all green |
