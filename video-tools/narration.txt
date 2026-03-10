@@ -1,0 +1,15 @@
+The global ESG market exceeds two trillion dollars, yet sustainability claims still rely on manual audits and human trust.
+
+GreenProof changes this entirely. It converts real-world ESG signals into cryptographically verifiable financial assets that cannot be faked.
+
+At the core is a Trinity Consensus model. Three independent agents — GP-Physical, GP-Juridical, and GP-Ethical — each validate a different dimension of reality.
+
+Physical telemetry from satellite and IoT sensors. Legal compliance against regulatory frameworks. And ethical ESG scoring aligned with global standards.
+
+Chainlink CRE — the Chainlink Runtime Environment — orchestrates this entire verification workflow. It coordinates the agents, resolves consensus, and triggers the cryptographic proof.
+
+A Groth16 ZK-SNARK circuit converts the consensus result into a zero-knowledge proof. Sensitive corporate data never touches the blockchain.
+
+Once verified, a compliance certificate NFT is minted on Ethereum Sepolia. Using Chainlink CCIP, this proof becomes a portable, cross-chain sovereign asset.
+
+GreenProof makes greenwashing cryptographically impossible. This is institutional trust, on-chain.

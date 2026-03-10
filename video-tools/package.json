@@ -1,0 +1,14 @@
+{
+  "name": "greenproof-cinematic-demo",
+  "version": "1.0.0",
+  "description": "Automated cinematic demo recorder for GreenProof hackathon submission",
+  "type": "module",
+  "scripts": {
+    "record": "node cinematic-demo.js",
+    "setup": "npx playwright install chromium"
+  },
+  "dependencies": {
+    "obs-websocket-js": "^5.0.6",
+    "playwright": "^1.42.0"
+  }
+}

@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:06,000
+$2T ESG market — still relies on manual audits.
+
+2
+00:00:06,000 --> 00:00:13,000
+GreenProof converts ESG signals into cryptographic proof.
+
+3
+00:00:13,000 --> 00:00:20,000
+Trinity Consensus: Physical · Juridical · Ethical
+
+4
+00:00:20,000 --> 00:00:27,000
+Chainlink CRE orchestrates the verification workflow.
+
+5
+00:00:27,000 --> 00:00:34,000
+Groth16 ZK-SNARK: proof generated, data stays private.
+
+6
+00:00:34,000 --> 00:00:41,000
+Compliance NFT minted on Ethereum Sepolia.
+
+7
+00:00:41,000 --> 00:00:50,000
+Chainlink CCIP bridges the proof cross-chain.
+
+8
+00:00:50,000 --> 00:01:00,000
+Greenwashing is now cryptographically impossible.
