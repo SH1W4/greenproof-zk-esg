@@ -4,3 +4,6 @@
 [submodule "engines/seve"]
 	path = engines/seve
 	url = https://github.com/symbeon-labs/seve-framework.git
+[submodule "packages/membrane-sdk"]
+	path = packages/membrane-sdk
+	url = https://github.com/symbeon-labs/membrane-sdk
