@@ -1,6 +1,5 @@
-![GreenProof Banner](public/assets/branding/trinity_cinematic_final.png)
-
 <div align="center">
+<img src="public/assets/branding/trinity_cinematic_final.png" width="100%" alt="GreenProof Banner">
 
 # GREENPROOF
 ### *A Cryptographic Method for Environmental Attestation via Distributed Consensus and Zero-Knowledge Proofs*
