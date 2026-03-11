@@ -3,7 +3,7 @@
 <div align="center">
 
 # GREENPROOF
-### $2.1T Asset Market Needs Cryptographic Truth
+### *A Cryptographic Method for Environmental Attestation via Distributed Consensus and Zero-Knowledge Proofs*
 
 > **Mathematical Proof > Manual Audits. Counterfeit Compliance Ends Here.**
 
@@ -21,12 +21,12 @@
 
 ## 🏛️ Protocol Snapshot (15 seconds)
 
-GreenProof is a **Decentralized Compliance Oracle for Real-World Assets**.
+GreenProof is a **Cryptographic Method for Real-World Asset Attestation** powered by Distributed Consensus and Zero-Knowledge Proofs.
 
-It replaces manual compliance auditing with a **cryptographic verification pipeline**:
+It replaces manual compliance auditing with a deterministic, privacy-preserving verification pipeline:
 
 ```
-Real-World Signals → Trinity Consensus → ZK Proof → On-Chain Certificate → Cross-Chain RWA
+Real-World Signals → Trinity Consensus → ZK Proof (Groth16) → On-Chain Certificate → Cross-Chain RWA
 ```
 
 **What you will see in the demo:**
