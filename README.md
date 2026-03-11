@@ -254,10 +254,19 @@ Phase 1 (current) implements RBAC, Pausable emergency stops, and ReentrancyGuard
 
 ---
 
-## License & IP
+### 📦 Developers & SDK
 
-Core Protocol IP protected under pending patent **GP-IP-2026-001** (Symbeon Labs).  
-Execution layer released under **[MIT](LICENSE)** for full hackathon transparency.
+The protocol can be integrated into any application using the **Membrane SDK**, which is now maintained as a standalone repository and linked as a git submodule:
+
+- **SDK Repository**: [symbeon-labs/membrane-sdk](https://github.com/symbeon-labs/membrane-sdk)
+- **Local Path**: `packages/membrane-sdk`
+- **Installation**:
+  ```bash
+  git submodule update --init --recursive
+  cd packages/membrane-sdk
+  npm install && npm run build
+  ```
+hackathon transparency.
 
 ---
 
