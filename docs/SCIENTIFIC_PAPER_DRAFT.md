@@ -9,7 +9,7 @@
 
 ## Abstract (Draft)
 
-This paper presents GreenProof, a cryptographic framework for verifiable environmental compliance of Real-World Assets (RWA). The protocol implements a **Trinity Consensus mechanism** where three specialized oracle shards — Physical (IoT/Satellite), Juridical (Th3m1s Engine), and Ethical (SEVE Framework) — must achieve a 2/3 quorum vote. Upon quorum, a **Groth16 ZK-SNARK** circuit generates a zero-knowledge proof that an asset's aggregated Environmental, Social, and Governance (ESG) score satisfies a compliance threshold (`score ≥ 80`) without exposing proprietary industrial telemetry. The certified asset is tokenized as an ERC-721 NFT and made portable across EVM chains via Chainlink CCIP.
+This paper introduces the **Universal Event Attestation Protocol (UEAP)**, a foundational layer (L0) for the **Internet of Verifiable Events**. We present a formal algebraic framework for transforming heterogeneous real-world signals into cryptographically stable evidence. The protocol decouples semantic data from trust infrastructure through a pipeline of normalization, deterministic hashing, and distributed consensus. We demonstrate the practical application of this model in **GreenProof**, an ESG compliance oracle that utilizes a **Trinity Consensus mechanism** (Physical, Juridical, and Ethical) and **Groth16 ZK-SNARKs** to prove asset eligibility without compromising telemetry privacy.
 
 ---
 
@@ -23,13 +23,37 @@ The global green bond market exceeds $2.1 trillion USD (2025) yet remains suscep
 
 ---
 
-## 2. Trinity Consensus — The 2/3 Quorum Model
+## 2. Formal Mathematical Model: The Internet of Verifiable Events
 
-```
-σ_consensus = ∑ votes(i) ≥ 2   where  i ∈ {Physical, Juridical, Ethical}
-```
+UEAP defines the "Internet of Verifiable Events" as a globally accessible ledger for atomic, causally-linked facts.
 
-Each oracle shard independently evaluates its domain and returns a boolean vote. The **Master Orchestrator (CRE)** aggregates votes. Consensus fails gracefully if any two shards reject — preventing false positive compliance.
+### 2.1 Event Definition (E)
+An event is a six-dimensional tuple representing a discrete state change in the physical or digital realm:
+`E = (a, α, o, l, t, ε)`
+Where:
+- `a` = **Actor** (DID/Public Key)
+- `α` = **Action** (Semantic Operation)
+- `o` = **Object** (Target Asset ID)
+- `l` = **Location** (Spatio-temporal coordinates)
+- `t` = **Timestamp** (Unix Anchor)
+- `ε` = **Evidence** (Telemetry/Tele-signatures)
+
+### 2.2 Normalization & Hashing
+To ensure cryptographic determinism, the protocol applies a normalization function `N(E) = E'`. The Event Hash `H` is then calculated:
+`H = ℋ(N(E))` where `ℋ = keccak256`.
+
+### 2.3 Attestation & Registry
+An attestation `A` binds a proof of validity `P` and an issuer's signature `S` to the event hash:
+`A = (H, P, i, S, t)`
+
+### 2.4 Algebra of Events
+Events can be functionally composed to represent complex workflows:
+- **Union (E₁ ∪ E₂)**: Multi-modal fusion.
+- **Sequence (E₁ → E₂)**: Causal temporal link.
+- **Aggregation (∑ Eᵢ)**: Cumulative state tracking.
+
+The complete verification pipeline is defined by:
+`UEAP(E) = Register(Sign(Proof(Hash(N(E)))))`
 
 ---
 
