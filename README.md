@@ -9,32 +9,13 @@
 
 </div>
 
-## 🏗️ Repository Architecture
-
-This repository has been refactored into a **Dual-Layer Architecture** (UEAP + GreenProof) to provide both a generalized protocol and a specific reference implementation.
-
-```mermaid
-graph TD
-    Root["/ (Root)"] --> P["protocol/ueap/"]
-    Root --> A["apps/greenproof/"]
-    Root --> I["infrastructure/"]
-    
-    subgraph "L1: Universal Protocol"
-        P --> PC["ueap/contracts"]
-        P --> PS["ueap/sdk"]
-    end
-    
-    subgraph "L2: Reference App"
-        A --> GPC["greenproof/src"]
-        A --> GPE["greenproof/engines"]
-    end
-```
-
-### 1. 🛡️ [UEAP Protocol](./protocol/ueap)
+## 🛡️ [UEAP Protocol](./protocol/ueap)
 The **Universal Event Attestation Protocol**. A generic, ZK-powered layer for creating verifiable evidence of any real-world event.
 
-### 2. 🍃 [GreenProof App](./apps/greenproof)
+## 🍃 [GreenProof App](./apps/greenproof)
 The official reference application for **Institutional ESG Compliance**. Extends UEAP with specific ESG schemas and Chainlink CRE orchestration.
+
+---
 
 ---
 
@@ -322,6 +303,29 @@ The protocol can be integrated into any application using the **Membrane SDK**, 
   npm install && npm run build
   ```
 hackathon transparency.
+
+---
+
+## 🏗️ Repository Architecture
+
+This repository has been refactored into a **Dual-Layer Architecture** (UEAP + GreenProof) to provide both a generalized protocol and a specific reference implementation.
+
+```mermaid
+graph TD
+    Root["/ (Root)"] --> P["protocol/ueap/"]
+    Root --> A["apps/greenproof/"]
+    Root --> I["infrastructure/"]
+    
+    subgraph "L1: Universal Protocol"
+        P --> PC["ueap/contracts"]
+        P --> PS["ueap/sdk"]
+    end
+    
+    subgraph "L2: Reference App"
+        A --> GPC["greenproof/src"]
+        A --> GPE["greenproof/engines"]
+    end
+```
 
 ---
 
