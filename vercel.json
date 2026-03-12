@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm run build --workspace=apps/greenproof",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "outputDirectory": "apps/greenproof/.next",
+  "github": {
+    "silent": false
+  },
+  "regions": ["sfo1"],
+  "cleanUrls": true
+}
