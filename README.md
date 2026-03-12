@@ -1,5 +1,5 @@
 <div align="center">
-<img src="./apps/greenproof/public/assets/ueap_banner.png" width="100%" alt="UEAP Sovereign Banner">
+<img src="./apps/greenproof/public/assets/branding/trinity_cinematic_final.png" width="100%" alt="GreenProof Banner">
 
 # Symbeon Protocol: Sovereign Nexus
 

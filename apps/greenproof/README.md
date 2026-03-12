@@ -5,7 +5,7 @@
 ---
 
 <div align="center">
-<img src="./public/assets/ueap_banner.png" width="100%" alt="UEAP Sovereign Banner">
+<img src="./public/assets/branding/trinity_cinematic_final.png" width="100%" alt="GreenProof Banner">
 </div>
 
 > [!NOTE]

@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build --workspace=apps/greenproof",
-  "installCommand": "npm install",
+  "installCommand": "npm install --legacy-peer-deps",
   "framework": "nextjs",
   "outputDirectory": "apps/greenproof/.next",
   "github": {
