@@ -14,9 +14,9 @@
 
 ## 🏛️ Protocol Snapshot (15 seconds)
 
-GreenProof is a **Cryptographic Method for Real-World Asset Attestation** powered by Distributed Consensus and Zero-Knowledge Proofs.
+**UEAP is a protocol for transforming real-world events into cryptographically verifiable attestations.**
 
-It replaces manual compliance auditing with a deterministic, privacy-preserving verification pipeline:
+GreenProof is the flagship implementation of the **Internet of Verifiable Events**. It replaces manual compliance auditing with a deterministic, privacy-preserving verification pipeline:
 
 ```
 Real-World Signals → Trinity Consensus → ZK Proof (Groth16) → On-Chain Certificate → Cross-Chain RWA

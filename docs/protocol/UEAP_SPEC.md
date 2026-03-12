@@ -3,35 +3,32 @@
 ## Abstract
 The Universal Event Attestation Protocol (UEAP) is a modular, cryptographic infrastructure for creating verifiable attestations of real-world events. It decouples the mechanism of trust—verification, storage, and transport—from the specific semantics of the event itself.
 
-## Core Model (Event-Proof Handshake)
+## Core Model: Internet of Verifiable Events
 
-### 1. The Event
-An event is the atomic unit of data representing a real-world occurrence.
-```json
-{
-  "actor": "DID or Public Key",
-  "action": "Namespace.Operation",
-  "object": "Target Resource ID",
-  "location": "Geo-spatial or Digital URI",
-  "timestamp": "ISO8601 / Unix",
-  "evidence": "Raw data or hash"
-}
-```
+UEAP defines a formal mathematical framework for transforming any real-world occurrence into a cryptographically stable evidence.
 
-### 2. The Proof
-A cryptographic artifact (ZK-SNARK, Digitally Signed Claim, or Oracle Consensus) that validates the event against a specific rule set.
+### 1. Formal Definition of an Event (E)
+An event is a six-dimensional tuple representing a discrete state change:
+`E = (Actor, Action, Object, Location, Timestamp, Evidence)`
 
-### 3. The Attestation
-The finalized object registered in the ledger.
-```json
-{
-  "eventHash": "bytes32",
-  "issuer": "address",
-  "proof": "bytes",
-  "timestamp": "uint256",
-  "signature": "bytes (optional)"
-}
-```
+- **Actor**: The entity initiating the event (DID/Address).
+- **Action**: The semantic operation (e.g., `ESG.PlantTree`).
+- **Object**: The target of the action (Asset ID).
+- **Location**: Spatial or digital coordinates.
+- **Timestamp**: Temporal anchor (Unix).
+- **Evidence**: Raw data, sensor readings, or specialized metadata.
+
+The **Event Hash (H)** is a deterministic commitment to this state:
+`H(E) = CriptoHash(E)`
+
+### 2. Formal Definition of an Attestation (A)
+An attestation is the verifiable bridge between an event and its validation:
+`A = (H(E), Proof, Issuer, Signature)`
+
+- **H(E)**: The commitment to the event.
+- **Proof (P)**: The validity artifact (e.g., Groth16 ZK-SNARK).
+- **Issuer**: The entity responsible for the verification.
+- **Signature (S)**: The cryptographic anchor of the issuer.
 
 ### 4. The Registry
 An on-chain or distributed ledger that stores attestations and provides a standard verification interface.
