@@ -1,8 +1,64 @@
 <div align="center">
-<img src="public/assets/branding/trinity_cinematic_final.png" width="100%" alt="GreenProof Banner">
+<img src="./apps/greenproof/public/assets/ueap_banner.png" width="100%" alt="UEAP Sovereign Banner">
 
-# GREENPROOF
-### *A Cryptographic Method for Environmental Attestation via Distributed Consensus and Zero-Knowledge Proofs*
+# Symbeon Protocol: Sovereign Nexus
+
+**A Unified Monorepo for Universal Attestation and ESG Compliance**
+
+---
+
+</div>
+
+## 🏗️ Repository Architecture
+
+This repository has been refactored into a **Dual-Layer Architecture** (UEAP + GreenProof) to provide both a generalized protocol and a specific reference implementation.
+
+```mermaid
+graph TD
+    Root["/ (Root)"] --> P["protocol/ueap/"]
+    Root --> A["apps/greenproof/"]
+    Root --> I["infrastructure/"]
+    
+    subgraph "L1: Universal Protocol"
+        P --> PC["ueap/contracts"]
+        P --> PS["ueap/sdk"]
+    end
+    
+    subgraph "L2: Reference App"
+        A --> GPC["greenproof/src"]
+        A --> GPE["greenproof/engines"]
+    end
+```
+
+### 1. 🛡️ [UEAP Protocol](./protocol/ueap)
+The **Universal Event Attestation Protocol**. A generic, ZK-powered layer for creating verifiable evidence of any real-world event.
+
+### 2. 🍃 [GreenProof App](./apps/greenproof)
+The official reference application for **Institutional ESG Compliance**. Extends UEAP with specific ESG schemas and Chainlink CRE orchestration.
+
+---
+
+## 🚀 Rapid Deployment
+
+### Monorepo Setup (Workspaces)
+```bash
+npm install
+```
+
+### Run GreenProof Reference App
+```bash
+npm run dev
+```
+
+---
+
+## 🌌 The Vision
+Our goal is to decouple **Trust** from **Semantics**. Whether it's a carbon credit (GreenProof), a vehicle speed event (GuardDrive), or an AI decision (Symbeon DNA), the **UEAP** provides the cryptographic certainty required for a sovereign future.
+
+---
+
+*Phase 11: Monorepo Transition Completed.*
+o-Knowledge Proofs*
 
 > **Mathematical Proof > Manual Audits. Counterfeit Compliance Ends Here.**
 

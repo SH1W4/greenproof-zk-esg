@@ -1,0 +1,46 @@
+{
+  "name": "seve-framework-contracts",
+  "version": "1.0.0",
+  "description": "SEVE Framework Smart Contracts",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:sepolia": "hardhat run scripts/deploy-token.js --network sepolia",
+    "deploy:mumbai": "hardhat run scripts/deploy-token.js --network mumbai",
+    "deploy:polygon": "hardhat run scripts/deploy-token.js --network polygon",
+    "deploy:arbitrum": "hardhat run scripts/deploy-token.js --network arbitrum",
+    "verify:sepolia": "hardhat verify --network sepolia",
+    "verify:mumbai": "hardhat verify --network mumbai",
+    "verify:polygon": "hardhat verify --network polygon",
+    "verify:arbitrum": "hardhat verify --network arbitrum",
+    "monetization:add-version": "hardhat run scripts/add-version-v1.js --network sepolia",
+    "monetization:dao-proposal": "hardhat run scripts/create-dao-proposal.js --network sepolia",
+    "monetization:register-agent": "hardhat run scripts/register-first-agent.js --network sepolia",
+    "monetization:activate": "npm run monetization:add-version && npm run monetization:dao-proposal && npm run monetization:register-agent",
+    "verify:ready:polygon": "hardhat run scripts/verify-ready-polygon.js --network polygon",
+    "bridge:matic": "node scripts/bridge-matic-to-polygon.js",
+    "bridge:simple": "node scripts/bridge-simple.js",
+    "bridge:socket": "node scripts/bridge-socket-api.js",
+    "bridge:info": "node scripts/bridge-via-api.js",
+    "faucet:matic": "node scripts/get-free-matic.js",
+    "deploy:polygon": "hardhat run scripts/deploy-token.js --network polygon && hardhat run scripts/deploy-protocol.js --network polygon && hardhat run scripts/deploy-dao.js --network polygon",
+    "monetization:activate:polygon": "hardhat run scripts/add-version-v1.js --network polygon && hardhat run scripts/create-dao-proposal.js --network polygon && hardhat run scripts/register-first-agent.js --network polygon"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/contracts": "^4.9.0",
+    "hardhat": "^2.17.0",
+    "dotenv": "^16.3.0"
+  },
+  "keywords": [
+    "blockchain",
+    "smart-contracts",
+    "ethereum",
+    "defi",
+    "ai",
+    "ethics"
+  ],
+  "author": "EON Team - Symbeon Tech",
+  "license": "Symbeon-Vault"
+}
