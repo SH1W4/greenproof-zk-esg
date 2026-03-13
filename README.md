@@ -12,27 +12,33 @@
 
 ---
 
-## 🏛️ Protocol Snapshot (15 seconds)
+## 🏛️ Ecosystem Vision
 
-**UEAP is a protocol for transforming real-world events into cryptographically verifiable attestations.**
+### **"Prove ESG ≥ 80% without revealing private data. Bridge it to any chain in 1 click."**
+> *“Designed to eliminate greenwashing at the infrastructure level.”*
 
-GreenProof is the flagship implementation of the **Internet of Verifiable Events**. It replaces manual compliance auditing with a deterministic, privacy-preserving verification pipeline:
+**GreenProof** is a high-fidelity institutional platform for transforming real-world signals into cryptographically verifiable attestations. It replaces manual compliance auditing with a deterministic, privacy-preserving verification pipeline:
 
 ```
 Real-World Signals → Trinity Consensus → ZK Proof (Groth16) → On-Chain Certificate → Cross-Chain RWA
 ```
 
-**What you will see in the demo:**
-- Oracle consensus (Physical, Legal, Ethical) via **Chainlink CRE**
-- **Groth16 ZK-proof** of asset compliance (without exposing sensitive data)
-- On-chain certificate **NFT mint** on Ethereum Sepolia
-- **Cross-chain portability** via Chainlink CCIP to Arbitrum Sepolia
+---
+
+## 💡 The Solution
+
+Current ESG (Environmental, Social, and Governance) reporting is plagued by **Greenwashing** and **Data Privacy** concerns. GreenProof solves this by combining:
+
+1.  **Triple Oracle Consensus**: Chainlink oracles ingest data from IoT sensors, LLM reports, and audits.
+2.  **ZK Verification**: Proves threshold compliance (`Score >= 80`) without revealing raw datasets.
+3.  **On-chain Certification**: Mints a "GreenProof" NFT certificate on Ethereum Sepolia.
+4.  **CCIP Interoperability**: Bridges credentials across chains with a single click.
 
 ---
 
-## 🏛️ Technical Verification & Due Diligence
+## 🛠️ Technical Verification & Due Diligence
 
-Investors and grant providers can validate the protocol's Proof of Concept (PoC) in under 2 minutes:
+Investors and grant providers can validate the Proof of Concept (PoC) in under 2 minutes:
 
 | Step | Action | Evidence |
 |:---:|:---|:---|
@@ -44,31 +50,9 @@ Investors and grant providers can validate the protocol's Proof of Concept (PoC)
 
 ---
 
-## 🛡️ [UEAP Protocol Layer](./protocol/ueap)
-GreenProof is built on top of the **Universal Event Attestation Protocol**. A generic, ZK-powered layer for creating verifiable evidence of any real-world event.
-
-- **Objective**: Decouple Trust from Semantics.
-- **Reference App**: [GreenProof](./apps/greenproof)
-
----
-
-## 🚀 Rapid Deployment
-
-### Monorepo Setup (Workspaces)
-```bash
-npm install
-```
-
-### Run GreenProof Reference App
-```bash
-npm run dev
-```
-
----
-
 ## 🏗️ Repository Architecture
 
-This repository has been refactored into a **Dual-Layer Architecture** (UEAP + GreenProof) to provide both a generalized protocol and a specific reference implementation.
+This mission is powered by a **Dual-Layer Architecture** that decouples trust from semantics:
 
 ```mermaid
 graph TD
@@ -86,6 +70,9 @@ graph TD
         A --> GPE["greenproof/engines"]
     end
 ```
+
+- **[UEAP Protocol Layer](./protocol/ueap)**: The generic, ZK-powered engine for verifiable evidence.
+- **[GreenProof App](./apps/greenproof)**: The institutional ESG implementation.
 
 ---
 
