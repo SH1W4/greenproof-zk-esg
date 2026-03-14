@@ -1,0 +1,38 @@
+/**
+ * @file tokens.css
+ * @description Design System Tokens for GreenProof / Symbeon Protocol.
+ * Segue a arquitetura de 3 camadas da skill ai-designer-pro.
+ */
+
+:root {
+  /* CAMADA 1: PRIMITIVOS (Valores Brutos) */
+  --primitive-green-500: #17cf54;
+  --primitive-green-600: #12a643;
+  --primitive-green-400: #3ee676;
+  --primitive-dark-900: #020c06;
+  --primitive-dark-800: #051a0d;
+  --primitive-dark-950: #000502;
+  --primitive-white: #f8fafc;
+  --primitive-glass-opacity: 0.6;
+  --primitive-glow-opacity: 0.3;
+
+  /* CAMADA 2: ALIASES (Intenção Semântica) */
+  --color-brand-primary: var(--primitive-green-500);
+  --color-brand-hover: var(--primitive-green-400);
+  --color-bg-main: var(--primitive-dark-900);
+  --color-bg-alt: var(--primitive-dark-800);
+  --color-text-main: var(--primitive-white);
+  --color-text-muted: rgba(248, 250, 252, 0.7);
+  
+  --glass-bg-main: rgba(2, 12, 6, var(--primitive-glass-opacity));
+  --glass-border-main: rgba(23, 207, 84, 0.2);
+  --accent-glow-primary: rgba(23, 207, 84, var(--primitive-glow-opacity));
+
+  /* CAMADA 3: COMPONENTES (Tokens Específicos) */
+  --dashboard-card-bg: linear-gradient(135deg, var(--primitive-dark-800), var(--primitive-dark-950));
+  --button-primary-bg: var(--color-brand-primary);
+  --button-primary-text: var(--primitive-dark-950);
+  --input-border-focus: var(--color-brand-primary);
+  --status-success: var(--primitive-green-500);
+  --terminal-text: var(--primitive-green-400);
+}
